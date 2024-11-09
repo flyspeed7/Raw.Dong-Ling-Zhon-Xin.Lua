@@ -231,27 +231,16 @@ Callback = function()
      end
 })
 local Section = about:AddSection({
-	Name = "更新日志: \n 玩家/功能添加更多功能 \n 加了几个脚本希望你喜欢"
+	Name = "更新日志: \n 加了几个脚本希望你喜欢"
 })
   about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."")  
   about:AddParagraph("您的注入器:"," "..identifyexecutor().."")  
   about:AddParagraph("您当前服务器的ID"," "..game.GameId.."")  
   about:AddParagraph("已获取进程","进程:0×1fa30d90")  
   about:AddParagraph("大家多多不支持","脚本无加密你可以看github")  
-  about:AddParagraph("缝合","做大做强(")  
-   local Tab= Window:MakeTab({ 
-         Name = "微火的脚本", 
-         Icon = "rbxassetid://7733798747", 
-         PremiumOnly = false 
- }) 
- Tab:AddButton({ 
-   Name = "情云脚本", 
-   Callback = function () 
-    loadstring(utf8.char((function() return table.unpack({108,111,97,100,115,116,114,105,110,103,40,103,97,109,101,58,72,116,116,112,71,101,116,40,34,104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,67,104,105,110,97,81,89,47,45,47,109,97,105,110,47,37,69,54,37,56,51,37,56,53,37,69,52,37,66,65,37,57,49,34,41,41,40,41})end)()))()  
-   end 
- }) 
+  about:AddParagraph("缝合","做大做强")  
   
- local Tab= Window:MakeTab({ 
+ local Tab = Window:MakeTab({ 
          Name = "可加入的服务器", 
          Icon = "rbxassetid://7734053426", 
          PremiumOnly = false 
@@ -321,7 +310,7 @@ local Section = about:AddSection({
    end 
  }) 
   
- local Tab= Window:MakeTab({ 
+ local Tab = Window:MakeTab({ 
          Name = "小凌音乐🤤", 
          Icon = "rbxassetid://16060333", 
          PremiumOnly = false 
@@ -437,7 +426,7 @@ local Section = about:AddSection({
    end 
  }) 
   
- local Tab= Window:MakeTab({ 
+ local Tab = Window:MakeTab({ 
          Name = "老外获得罗宝", 
          Icon = "rbxassetid://11560341824", 
          PremiumOnly = false 
