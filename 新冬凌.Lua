@@ -2462,4 +2462,26 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/
            
       end 
  })
- 
+  local Tab= Window:MakeTab({ 
+         Name = "slap battles", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+   local Section = Tab:AddSection({  
+  
+          Name = "可以自己搭配脚本"  
+  
+  })  
+ Tab:AddButton({         
+ Name = "Royele-HUB",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/cheesynob39/Roblox-Scripts/main/Slap_Royale.lua"))()
+      end 
+ })
+  Tab:AddToggle({  
+          Name = "范围",  
+          Default = false,  
+          Callback = function(state)  
+          _G.HeadSize = 20_G.Disabled = truegame:GetService('RunService').RenderStepped:connect(function()if _G.Disabled thenfor i,v in next, game:GetService('Players'):GetPlayers() doif v.Name ~= game:GetService('Players').LocalPlayer.Name thenpcall(function()v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)v.Character.HumanoidRootPart.Transparency = 0.7v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really white")v.Character.HumanoidRootPart.Material = "Neon"v.Character.HumanoidRootPart.CanCollide = falseend)endendendend)
+          end  
+  })  
