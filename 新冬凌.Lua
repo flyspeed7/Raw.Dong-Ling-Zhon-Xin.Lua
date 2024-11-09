@@ -2485,3 +2485,1149 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/
           _G.HeadSize = 20_G.Disabled = truegame:GetService('RunService').RenderStepped:connect(function()if _G.Disabled thenfor i,v in next, game:GetService('Players'):GetPlayers() doif v.Name ~= game:GetService('Players').LocalPlayer.Name thenpcall(function()v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)v.Character.HumanoidRootPart.Transparency = 0.7v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really white")v.Character.HumanoidRootPart.Material = "Neon"v.Character.HumanoidRootPart.CanCollide = falseend)endendendend)
           end  
   })  
+local Tab= Window:MakeTab({ 
+         Name = "后悔电梯", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+ Tab:AddButton({         
+ Name = "秒完成关卡",         
+ Callback = function()   
+local args = "EZLOL"    
+game:GetService("ReplicatedStorage").RE.HDAdminBackdoor:FireServer(args) ​
+      end 
+ }) 
+  Tab:AddButton({         
+ Name = "无限血量[多点几次]",         
+ Callback = function()         
+local args ={
+  [1] = "pvp"
+}
+      end 
+ }) 
+  Tab:AddButton({         
+ Name = "管理员闪电[菜单]",         
+ Callback = function()         
+local args = "kill"
+      end 
+ }) 
+ Tab:AddButton({         
+ Name = "Justaveg-Hub",         
+ Callback = function()         
+  
+ loadstring(game:HttpGet(("https://raw.githubusercontent.com/Justaverageguym/Hub/main/Scripts/Regretevator.lua")))() 
+      end 
+ }) 
+  local Tab= Window:MakeTab({ 
+         Name = "竞争对手", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+ Tab:AddButton({         
+ Name = "Jonny-Hub",         
+ Callback = function()         
+  
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/JonnyCheeser/jonnycheesehub/main/jonnycheeser"))() 
+      end 
+ }) 
+ Tab:AddButton({         
+ Name = "SilentR-Hub",         
+ Callback = function()         
+  
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/KxGOATESQUE/SilentRivals/main/SilentRivals"))() 
+      end 
+ }) 
+ Tab:AddButton({         
+ Name = "速度、跳跃",         
+ Callback = function()         
+  
+ local Players = game:GetService("Players") 
+ local rs = game:GetService("RunService") 
+ local lp = Players.LocalPlayer 
+  
+ local settings = { 
+     WalkSpeed = { 
+         default = 16, 
+         boosted = 100,  
+     }, 
+     JumpPower = { 
+         default = 50, 
+         boosted = 100, 
+     } 
+ } 
+  
+ function apply(humanoid, walkSpeed, jumpPower) 
+     humanoid.WalkSpeed = walkSpeed 
+     humanoid.JumpPower = jumpPower 
+ end 
+  
+ function add(character) 
+     local humanoid = character:WaitForChild("Humanoid") 
+     apply(humanoid, settings.WalkSpeed.boosted, settings.JumpPower.boosted) 
+  
+     humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function() 
+         if humanoid.WalkSpeed ~= settings.WalkSpeed.boosted then 
+             humanoid.WalkSpeed = settings.WalkSpeed.boosted 
+         end 
+     end) 
+  
+     humanoid:GetPropertyChangedSignal("JumpPower"):Connect(function() 
+         if humanoid.JumpPower ~= settings.JumpPower.boosted then 
+             humanoid.JumpPower = settings.JumpPower.boosted 
+         end 
+     end) 
+ end 
+  
+ lp.CharacterAdded:Connect(add) 
+  
+ if lp.Character then 
+     add(lp.Character) 
+ end 
+  
+ rs.RenderStepped:Connect(function() 
+     if lp.Character and lp.Character:FindFirstChild("Humanoid") then 
+         apply(lp.Character.Humanoid, settings.WalkSpeed.boosted, settings.JumpPower.boosted) 
+     end 
+ end) 
+  
+      end 
+ }) 
+ Tab:AddButton({         
+ Name = "ESP",         
+ Callback = function()         
+  
+ local settings = { 
+     enabled = true, 
+     teamCheck = false, 
+ } 
+  
+ local Players = game:GetService("Players") 
+ local RunService = game:GetService("RunService") 
+ local wtf = {} 
+  
+ function esp(player) 
+     if not settings.enabled then return end 
+     if settings.teamCheck and player.Team == Players.LocalPlayer.Team then return end 
+     if player == Players.LocalPlayer then return end 
+  
+     local character = player.Character or player.CharacterAdded:Wait() 
+     local humanoidRootPart = character:WaitForChild("HumanoidRootPart") 
+  
+     local Box = Drawing.new("Square") 
+     Box.Color = Color3.new(1, 0, 0) 
+     Box.Thickness = 2 
+     Box.Transparency = 1 
+     Box.Filled = false 
+  
+     local tracer = Drawing.new("Line") 
+     tracer.Color = Color3.new(1, 0, 0) 
+     tracer.Thickness = 1 
+     tracer.Transparency = 1 
+  
+     local name = Drawing.new("Text") 
+     name.Text = player.Name 
+     name.Color = Color3.new(1, 1, 1) 
+     name.Size = 20 
+     name.Center = true 
+     name.Outline = true 
+     name.Transparency = 1 
+  
+     wtf[player] = {box = Box, tracer = tracer, name = name} 
+  
+     local function loop() 
+         if not player.Character or not player.Character:FindFirstChild("HumanoidRootPart") then 
+             Box.Visible = false 
+             tracer.Visible = false 
+             name.Visible = false 
+             return 
+         end 
+  
+         local hrpPosition, onScreen = workspace.CurrentCamera:WorldToViewportPoint(humanoidRootPart.Position) 
+         if onScreen then 
+             local top = workspace.CurrentCamera:WorldToViewportPoint(humanoidRootPart.Position + Vector3.new(0, 3, 0)) 
+             local bottom = workspace.CurrentCamera:WorldToViewportPoint(humanoidRootPart.Position - Vector3.new(0, 3, 0)) 
+             local size = Vector2.new(math.abs(top.X - bottom.X) * 1.5, math.abs(top.Y - bottom.Y) * 1.5) 
+             Box.Size = size 
+             Box.Position = Vector2.new(hrpPosition.X - size.X / 2, hrpPosition.Y - size.Y / 2) 
+             Box.Visible = true 
+  
+             tracer.From = Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y) 
+             tracer.To = Vector2.new(hrpPosition.X, hrpPosition.Y) 
+             tracer.Visible = true 
+  
+             name.Position = Vector2.new(hrpPosition.X, hrpPosition.Y - size.Y / 2 - 20) 
+             name.Visible = true 
+         else 
+             Box.Visible = false 
+             tracer.Visible = false 
+             name.Visible = false 
+         end 
+     end 
+  
+     RunService.RenderStepped:Connect(loop) 
+ end 
+  
+ function remove(player) 
+     if wtf[player] then 
+         wtf[player].box:Remove() 
+         wtf[player].tracer:Remove() 
+         wtf[player].name:Remove() 
+         wtf[player] = nil 
+     end 
+ end 
+  
+ function add(player) 
+     player.CharacterAdded:Connect(function(character) 
+         esp(player) 
+     end) 
+     player.CharacterRemoving:Connect(function(character) 
+         remove(player) 
+     end) 
+     if player.Character then 
+         esp(player) 
+     end 
+ end 
+  
+ Players.PlayerAdded:Connect(add) 
+  
+ for _, player in pairs(Players:GetPlayers()) do 
+     add(player) 
+ end 
+  
+ function toggle(state) 
+     settings.enabled = state 
+     if not state then 
+         for _, player in pairs(Players:GetPlayers()) do 
+             remove(player) 
+         end 
+     else 
+         for _, player in pairs(Players:GetPlayers()) do 
+             if player.Character then 
+                 esp(player) 
+             end 
+         end 
+     end 
+ end 
+  
+ function this_is_stupid(state) 
+     settings.teamCheck = state 
+ end 
+  
+      end 
+ }) 
+ Tab:AddButton({         
+ Name = "自动胜利",         
+ Callback = function()         
+  
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/SkibidiCen/RivalsAutoFarmNice/main/Code"))() 
+  
+      end 
+ }) 
+  local Tab= Window:MakeTab({ 
+         Name = "💮SCP角色演扮", 
+         Icon = "rbxassetid://7733920644", 
+         PremiumOnly = false 
+ }) 
+ Tab:AddParagraph("C屎人提供.还不快快感谢C屎人!🤓👍") 
+ Tab:AddButton({ 
+   Name = "FreeLean-Hub", 
+   Callback = function ()   
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/KeoneGithub/KeoneGithub/main/FreeLeanSCP",true))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "发疯Bot", 
+   Callback = function () loadstring(game:HttpGet("https://gist.githubusercontent.com/cerealwithmilk/83c17f6e383b2fa0d70a887e14523593/raw/d0bee380c2e3ec3f72dc34d1b8ca345c4efc19d8/scp-roleplay.lua"))() 
+  
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "快速开门、广播+++", 
+   Callback = function () 
+     local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))() 
+ local Window = Rayfield:CreateWindow({ 
+    Name = "Sirius Hub | SCP: Site Roleplay", 
+    LoadingTitle = "Rayfield Interface Suite", 
+    LoadingSubtitle = "by wifi#1000", 
+    ConfigurationSaving = { 
+       Enabled = true, 
+       FolderName = nil, -- Create a custom folder for your hub/game 
+       FileName = "SiriusHub" 
+    }, 
+    Discord = { 
+       Enabled = false, 
+       Invite = "ABCD", -- The Discord invite code, do not include discord.gg/ 
+       RememberJoins = true -- Set this to false to make them join the discord every time they load it up 
+    }, 
+    KeySystem = true, -- Set this to true to use our key system 
+    KeySettings = { 
+       Title = "Sirius Hub", 
+       Subtitle = "Key System", 
+       Note = "Join the discord!", 
+       FileName = "SiriusKey", 
+       SaveKey = true, 
+       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from 
+       Key = "Hello" 
+    } 
+ }) 
+  
+ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Sirius W","All") 
+  
+ local MainTab = Window:CreateTab("Main", 4483362458) -- Title, Image 
+  
+  
+ local Button = MainTab:CreateButton({ 
+    Name = "Click to TP tool", 
+    Callback = function() 
+    mouse = game.Players.LocalPlayer:GetMouse() 
+ tool = Instance.new("Tool") 
+ tool.RequiresHandle = false 
+ tool.Name = "Equip to Click TP" 
+ tool.Activated:connect(function() 
+ local pos = mouse.Hit+Vector3.new(0,2.5,0) 
+ pos = CFrame.new(pos.X,pos.Y,pos.Z) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos 
+ end) 
+ tool.Parent = game.Players.LocalPlayer.Backpack 
+    end, 
+ }) 
+  
+  
+ local Button = MainTab:CreateButton({ 
+    Name = "Instant reset", 
+    Callback = function() 
+ local A_1 = 2 
+ local Event = game:GetService("ReplicatedStorage").Died 
+ Event:FireServer(A_1) 
+  
+    end, 
+ }) 
+  
+  
+ local Button = MainTab:CreateButton({ 
+    Name = "Invisible", 
+    Callback = function() 
+    for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do 
+         if v:IsA("Shirt") or v:IsA("Pants") or v:IsA("Hat") then 
+                 v:Destroy() 
+         end 
+         if v:IsA("Part") or v:IsA("MeshPart") then 
+                 v.Transparency = 1 
+                 if v.Name == "Head" then 
+                         if v:FindFirstChild("face") then 
+                                 v.face:Destroy() 
+                         end 
+                 end 
+         end 
+ end 
+    end, 
+ }) 
+  
+ local Label = MainTab:CreateLabel("For invisible, they will stil be able to see ur head and name.") 
+  
+ local Tab = Window:CreateTab("Spam", 4483362458) -- Title, Image 
+ local Button = Tab:CreateButton({ 
+    Name = "SCPF COMMUNICATIONS RADIO", 
+    Callback = function() 
+ game:GetService("ReplicatedStorage").Team.Radio:FireServer("msg","hi guys!","SCPF COMMUNICATIONS") 
+    end, 
+ }) 
+  
+ local Button1 = Tab:CreateButton({ 
+    Name = "CLASS-D COMMUNICATIONS RADIO", 
+    Callback = function() 
+ game:GetService("ReplicatedStorage").Team.Radio:FireServer("msg","hi guys!","CLASS-D COMMUNICATIONS") 
+    end, 
+ }) 
+  
+ local Button2 = Tab:CreateButton({ 
+    Name = "Normal Chat", 
+    Callback = function() 
+ game:GetService("ReplicatedStorage").Team.Radio:FireServer("msg","hi guys!","CLASS-D COMMUNICATIONS") 
+    end, 
+ }) 
+  
+  
+  
+  
+  
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "SCP可用范围", 
+   Callback = function () 
+     _G.HeadSize = 15 
+ _G.Disabled = true 
+  
+ game:GetService('RunService').RenderStepped:connect(function() 
+ if _G.Disabled then 
+ for i,v in next, game:GetService('Players'):GetPlayers() do 
+ if v.Name ~= game:GetService('Players').LocalPlayer.Name then 
+ pcall(function() 
+ v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize) 
+ v.Character.HumanoidRootPart.Transparency = 0.7 
+ v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue") 
+ v.Character.HumanoidRootPart.Material = "Neon" 
+ v.Character.HumanoidRootPart.CanCollide = false 
+ end) 
+ end 
+ end 
+ end 
+ end) 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "快速射击", 
+   Callback = function () 
+ local g = getgc(true) 
+ local t = {} 
+ local p = game:GetService("Players").LocalPlayer 
+ local function editCurrentGuns() 
+     for _, v in pairs(g) do 
+         if typeof(v) == "table" then 
+             if rawget(v, "Ammo") and rawget(v, "CurrentAmmo") then 
+                 table.insert(t,v) 
+             end 
+         end 
+     end 
+  
+     for _,v in pairs(t) do 
+         v.TBS = 0 
+     end 
+ end 
+ task.spawn(editCurrentGuns) 
+  
+ p.Character:FindFirstChildOfClass("Humanoid"):UnequipTools() 
+ for _,v in pairs(p.Backpack:GetChildren()) do 
+     if v:IsA("Tool") and v:FindFirstChild("identifier") then 
+         v:FindFirstChild("identifier"):Destroy() 
+     end 
+ end; for _, v in pairs(game:GetService("ReplicatedStorage").GunSettings:GetChildren()) do 
+     if v:IsA("ModuleScript") then 
+         local m = require(v) 
+         if m.TBS then 
+             m.TBS = 0 
+         end 
+     end 
+ end; p.Backpack.ChildAdded:Connect(function(v) 
+     p.Character:FindFirstChildOfClass("Humanoid"):UnequipTools() 
+     if v:IsA("Tool") and v:FindFirstChild("identifier") then 
+         v:FindFirstChild("identifier"):Destroy() 
+     end 
+ end) 
+  
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "打身体改爆头", 
+   Callback = function () 
+     local nchook  
+ nchook = hookmetamethod(game, "__namecall", newcclosure(function(self, ...) 
+     local args = {...}  
+     if (not checkcaller()) and tostring(self.Name) == "ShotRemote" and args[2] then  
+         local x = args[2].Parent:FindFirstChild("Head")  
+         local z = args[2].Parent.Parent:FindFirstChild("Head")  
+         local y = args[2].Parent.Parent.Parent:FindFirstChild("Head")  
+         local q = {x, y, z}  
+         for i,v in pairs(q) do  
+             if v == nil then  
+                 table.remove(q, i) 
+             end  
+         end  
+         args[1] = { 
+             q[1].Position.X,  
+             q[1].Position.Y, 
+             q[1].Position.Z, 
+         } 
+         args[2] = q[1]  
+         return self.FireServer(self, unpack(args)) 
+     end  
+     return nchook(self, ...) 
+ end)) 
+  
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "自动换蛋+++", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Nicuse/RobloxScripts/main/SCPRoleplay.lua", true))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "传送到怪物点位", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/sinret/rbxscript.com-scripts-reuploads-/main/scp%20rp2", true))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "SCP最强脚本😋👍", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/AnomalyRBLX/Database/main/Scripts/SCP%3A%20Roleplay"))() 
+   end 
+ }) 
+ Tab:AddParagraph("有一些是电脑用的脚本😋") 
+  
+ local Tab= Window:MakeTab({ 
+         Name = "老大出租车", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+ Tab:AddButton({ 
+   Name = "Raw.Mani", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://pastebin.com/raw/5ScA4pR9"))() 
+   end 
+ }) 
+ Tab:AddParagraph("C屎人提供，谢谢") 
+local Tab= Window:MakeTab({ 
+         Name = "💮武器库💮", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+ Tab:AddButton({ 
+   Name = "自瞄(区分团队)", 
+   Callback = function () 
+     local fov = 100 
+ local maxTransparency = 0.1 -- TransparÃªncia mÃ¡xima dentro do cÃ­rculo (0.1 = 10% de transparÃªncia) 
+ local RunService = game:GetService("RunService") 
+ local UserInputService = game:GetService("UserInputService") 
+ local Players = game:GetService("Players") 
+ local Teams = game:GetService("Teams") -- Adicione esta linha para acessar os times 
+ local Cam = game.Workspace.CurrentCamera 
+  
+ local FOVring = Drawing.new("Circle") 
+ FOVring.Visible = true 
+ FOVring.Thickness = 2 
+ FOVring.Color = Color3.fromRGB(128, 0, 128) -- Cor roxa 
+ FOVring.Filled = false 
+ FOVring.Radius = fov 
+ FOVring.Position = Cam.ViewportSize / 2 
+ FOVring.Transparency = 0.1 -- TransparÃªncia inicial igual ao segundo script 
+  
+ local function updateDrawings() 
+     local camViewportSize = Cam.ViewportSize 
+     FOVring.Position = camViewportSize / 2 
+ end 
+  
+ local function onKeyDown(input) 
+     if input.KeyCode == Enum.KeyCode.Delete then 
+         RunService:UnbindFromRenderStep("FOVUpdate") 
+         FOVring:Remove() 
+     end 
+ end 
+  
+ UserInputService.InputBegan:Connect(onKeyDown) 
+  
+ local function lookAt(target) 
+     local lookVector = (target - Cam.CFrame.Position).unit 
+     local newCFrame = CFrame.new(Cam.CFrame.Position, Cam.CFrame.Position + lookVector) 
+     Cam.CFrame = newCFrame 
+ end 
+  
+ local function calculateTransparency(distance) 
+     -- Ajuste a transparÃªncia com base na distÃ¢ncia do centro do cÃ­rculo 
+     local maxDistance = fov -- A distÃ¢ncia mÃ¡xima do centro do cÃ­rculo 
+     local transparency = (1 - (distance / maxDistance)) * maxTransparency 
+     return transparency 
+ end 
+  
+ local function getClosestPlayerInFOV(trg_part) 
+     local nearest = nil 
+     local last = math.huge 
+     local playerMousePos = Cam.ViewportSize / 2 
+     local localPlayer = Players.LocalPlayer 
+     local localPlayerTeam = localPlayer.Team 
+  
+     for _, player in ipairs(Players:GetPlayers()) do 
+         if player ~= localPlayer then 
+             local part = player.Character and player.Character:FindFirstChild(trg_part) 
+             if part then 
+                 local ePos, isVisible = Cam:WorldToViewportPoint(part.Position) 
+                 local distance = (Vector2.new(ePos.x, ePos.y) - playerMousePos).Magnitude 
+  
+                 -- Adicione uma verificaÃ§Ã£o de equipe aqui 
+                 if isVisible and distance < fov and player.Team ~= localPlayerTeam then 
+                     if distance < last then 
+                         last = distance 
+                         nearest = player 
+                     end 
+                 end 
+             end 
+         end 
+     end 
+  
+     return nearest 
+ end 
+  
+ RunService.RenderStepped:Connect(function() 
+     updateDrawings() 
+     local closest = getClosestPlayerInFOV("Head") 
+     if closest and closest.Character:FindFirstChild("Head") then 
+         lookAt(closest.Character.Head.Position) 
+  
+         if closest then 
+             local ePos, isVisible = Cam:WorldToViewportPoint(closest.Character.Head.Position) 
+             local distance = (Vector2.new(ePos.x, ePos.y) - (Cam.ViewportSize / 2)).Magnitude 
+             FOVring.Transparency = calculateTransparency(distance) 
+         else 
+             FOVring.Transparency = 0.1 -- Mantenha completamente visÃ­vel quando nenhum jogador estiver no FOV 
+         end 
+     else 
+         FOVring.Transparency = 0.1 -- Mantenha completamente visÃ­vel quando nenhum jogador estiver no FOV 
+     end 
+ end) 
+  
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "自瞄、区分墙壁、团队(卡密↓)", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Dustin21335/Universal-aimbot-Roblox/main/Aimbot.lua"))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+         Name = "复制卡密↑", 
+         Callback = function() 
+         setclipboard("Aim2143") 
+ end 
+ }) 
+ Tab:AddParagraph("C屎人提供👍") 
+ Tab:AddButton({ 
+   Name = "Index-Hub", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/TheEmptynessProject/EmptynessProject/main/index.lua"))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "Air-Hub", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/AirHub/main/AirHub.lua"))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "NEXUS-HUB", 
+   Callback = function () 
+     loadstring(game:HttpGet('https://raw.githubusercontent.com/13B8B/NEXUS/main/loadstring'))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "无声瞄准", 
+   Callback = function () 
+     loadstring(game:HttpGet('https://raw.githubusercontent.com/yeerma/fff/main/weaponry'))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "AlphaZero-Hub", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Sw1ndlerScripts/AlphaZero/main/Loader.lua"))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "射速、聚点、无后、秒换蛋", 
+   Callback = function () 
+   -- // Variables 
+  
+ getgenv().fireRate = 0.01 
+ getgenv().reloadTime = 0 
+  
+ -- // Code 
+  
+ local a; 
+ a = hookmetamethod(game, "__namecall", function(self, ...) 
+    local method = getnamecallmethod() 
+    if method == "Play" and tostring(self):lower():find("reload") and reloadTime == 0 then 
+        return true 
+    end 
+  
+    return a(self, ...) 
+ end) 
+  
+ local localPlayer = game:GetService("Players").LocalPlayer 
+ local playerScripts = localPlayer.PlayerScripts 
+ local weaponFramework = playerScripts.WeaponryFramework 
+  
+ local currentWeapons; 
+ for i, v in pairs(getsenv(weaponFramework)) do 
+    if typeof(v) == "function" and i == "OpenInventoryManager" then 
+        currentWeapons = getupvalues(v)[5] 
+    end 
+ end 
+  
+ task.spawn(function() 
+    while task.wait(1) do 
+        for i, v1 in pairs(currentWeapons) do 
+            local v = v1.WeaponStats 
+            if not v1.CurrentAmmo then continue end 
+  
+            v.BloomResetTime = 0 
+            v.MaxBloom = 0 
+            v.Reload_Start = 0 
+            v.Reload_Insert = 0 
+            v.Reload_EndTime = 0 
+            v.Reload_PerAmmo = 0 
+            if v.Spread then 
+                for i1, v2 in pairs(v.Spread) do 
+                    v.Spread[i1] = Vector3.new(0,0,0) 
+                end 
+            end 
+  
+            rawset(v, "FireRate", fireRate) 
+            rawset(v, "Reload_TotalTime", reloadTime) 
+            rawset(v, "Reload_AmmoFull", reloadTime) 
+            rawset(v, "EquipTime", 0) 
+            rawset(v, "Range", math.huge) 
+            rawset(v, "RecoilData", { 
+                ["y"] = { 
+                    ["Damper"] = 0, 
+                    ["Speed"] = 0, 
+                    ["MaxAngle"] = 0, 
+                    ["ADSreduction"] = 0, 
+                    ["MinAngle"] = 0 
+                }, 
+                ["x"] = { 
+                    ["Damper"] = 0, 
+                    ["Speed"] = 0, 
+                    ["MaxAngle"] = 0, 
+                    ["ADSreduction"] = 0, 
+                    ["MinAngle"] = 0 
+                }, 
+                ["z"] = { 
+                    ["Damper"] = 0, 
+                    ["Speed"] = 0, 
+                    ["MaxAngle"] = 0, 
+                    ["ADSreduction"] = 0, 
+                    ["MinAngle"] = 0 
+                } 
+            }) 
+  
+            if v.Animations and v.Animations.reload then 
+                for i, v in pairs(v.Animations.reload.SoundTimeStamps) do 
+                    rawset(v, "Time", 0) 
+                end 
+            end 
+        end 
+    end 
+ end) 
+   end 
+ }) 
+ Tab:AddParagraph("有些是电脑端手机用不了") 
+ local Tab= Window:MakeTab({ 
+         Name = "犯罪率", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+ Tab:AddButton({ 
+   Name = "FemWare 电脑端", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/FemWare/main/FemWare%20Alternative", true))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "FemWare 手机端", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/GlobeReverse/Moonlight/main/Criminality.lua"))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "Moonlight-Hub", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/GlobeReverse/Moonlight/main/Criminality.lua"))() 
+   end 
+ }) 
+ Tab:AddParagraph("感谢QQ群里的《家里》提供!!!!") 
+ Tab:AddParagraph("赞!!!") 
+ local Tab = Window:MakeTab({ 
+         Name = "驾驶帝国", 
+         Icon = "rbxassetid://7734068321", 
+         PremiumOnly = false 
+ }) 
+ Tab:AddButton({ 
+   Name = "Lightu-X(NEO)", 
+   Callback = function () 
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/Lightux/main/README.md'),true))()  
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "Scienco HUB", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/main/drivingempire", true))() 
+   end 
+ }) 
+ Tab:AddParagraph("群友提供") 
+  
+ local Tab= Window:MakeTab({ 
+         Name = "小凌-执行器", 
+         Icon = "rbxassetid://8997388548", 
+         PremiumOnly = false 
+ }) 
+  Tab:AddButton({         
+ Name = "Flooded V",         
+ Callback = function()         
+loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Flooded-V/refs/heads/main/Flooded%20V%20%E6%B1%89%E5%8C%96.Lua"))()
+      end 
+ }) 
+ Tab:AddButton({ 
+   Name = "Kato-UI", 
+   Callback = function ()  loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Xiao-Ling-Kato-Executer/main/Kato%E6%BA%90%E7%A0%81%E6%9C%80%E6%96%B0%EF%BC%88%E7%9C%9F%E7%9A%84%E6%B3%A8%E5%85%A5%E5%99%A8%EF%BC%89.txt"))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "Vega X-UI", 
+   Callback = function () loadstring(game:HttpGet("https://raw.githubusercontent.com/SPDM-Team/Arceus-X-NEO-public/main/Costumers/vegax.lua"))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "Code X-UI", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/SPDM-Team/Arceus-X-NEO-public/main/Costumers/codex.lua"))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "Evon-UI", 
+   Callback = function () 
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SPDM-Team/Arceus-X-NEO-public/main/Costumers/evon.lua"))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "Code X-ios", 
+   Callback = function () loadstring(game:HttpGet("https://raw.githubusercontent.com/SPDM-Team/Arceus-X-NEO-public/main/Costumers/codex_ios.lua"))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "Tx3Xploit-UI", 
+   Callback = function () loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/Cloud-script/main/%E6%B3%A8%E5%85%A5%E5%99%A8"))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "Arceus X-UI", 
+   Callback = function () loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Xiao_Ling-Arceus.Executer/main/Arceus%20X%E6%BA%90%E7%A0%81.lua"))("小凌改Arceus X")  
+   end 
+ }) 
+ local Tab= Window:MakeTab({ 
+         Name = "空脚本特供!(推荐)", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+ Tab:AddButton({ 
+   Name = "空脚本最新(推荐)", 
+   Callback = function () 
+    getgenv().LS="空脚本最新" loadstring(game:HttpGet("https://raw.githubusercontent.com/BINjiaobzx6/BINjiao/main/obf_8AT8q36zDJ1F59bRSuHJi8dH4kHcd8uJQaj7r5eKYwt0JjMt1MWdwdvdA26AG85U.lua"))()  
+   end 
+ }) 
+  
+ Tab:AddButton({ 
+   Name = "空脚本", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/BINjiaobzx6/BINjiao/main/%E7%A9%BA%E8%84%9A%E6%9C%AC1.0.3.txt"))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "XSC 脚本", 
+   Callback = function () 
+     getgenv().XC="作者XC"loadstring(game:HttpGet("https://pastebin.com/raw/PAFzYx0F"))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "空脚本3", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/BINjiaobzx6/BINjiao/main/%E7%A9%BA%E8%84%9A%E6%9C%AC666.txt"))() 
+   end 
+ }) 
+  
+ local Tab= Window:MakeTab({ 
+         Name = "林脚本破解版", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+ Tab:AddButton({ 
+   Name = "林脚本AL团队破解", 
+   Callback = function () 
+     AL = "Advanced Logic团队破解" 
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/longshu886/longscript/main/linpojie"))() 
+   end 
+ }) 
+ local Tab= Window:MakeTab({ 
+         Name = "战争大亨全是改版", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+ Tab:AddButton({ 
+   Name = "Tycoon-HUB", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Nivex123456/War-Tycoon/main/Script"))()  
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "WarTycoon-HUB", 
+   Callback = function () 
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/MariyaFurmanova/Library/main/WarTycoon", true))()  
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "GN-HUB", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/nici002018/GNHub/master/GNHub.lua", true))()   
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "WaeSTycoon-Home", 
+   Callback = function () 
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/MariyaFurmanova/Library/main/WarTycoon", true))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "WateedTucoon-HUB", 
+   Callback = function () 
+      loadstring(game:HttpGet('https://raw.githubusercontent.com/ToraScript/Script/main/WarTycoon'))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "自动偷油桶?", 
+   Callback = function () 
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1007, 46, -32.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-986, 44, -29.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-932, 44, -26.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-908, 44, -26.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-909, 46, -5.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1006, 46, -5.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-987, 44, -2.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-908, 45, -6.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-935, 46, -6.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1028, 46, -49.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1051, 46, -49.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1050, 42, -69.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1022, 43, -71.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-998, 43, -68.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-973, 43, -69.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-969, 44, -91.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-994, 45, -88.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1025, 47, -10.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1083, 47, -118.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1080, 45, -138.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1053, 43, -140.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1057, 47, -118.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-996, 44, -150.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-972, 47, -150.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-976, 49, -127.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-915, 44, -125.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-887, 43, -126.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-890, 45, -105.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-916, 46, -104.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1001, 49, -129.) 
+ wait(0) 
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1026, 47, -10.) 
+ wait(0) 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "改版Tycoon", 
+   Callback = function () 
+    loadstring(gameHttpGet("httpsraw.githubusercontent.comNivex123456War-TycoonmainScript"))()  
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "Oilwarfare-HUB", 
+   Callback = function () 
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Vortex194/main/main/oilwarfare", true))()  
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "Owartycoon-HUB", 
+   Callback = function () 
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/main/0wartycoon", true))()  
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "EngineV2-HUB", 
+   Callback = function () 
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/UI-Engine-V2/main/OWTPublic"))() 
+   end 
+ }) 
+ Tab:AddParagraph("由Krx提供") 
+  
+ local Tab= Window:MakeTab({ 
+         Name = "汽车破坏机", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+ Tab:AddButton({ 
+   Name = "T7ERd3e8脚本", 
+   Callback = function () 
+    loadstring(game:HttpGet('https://pastebin.com/raw/T7ERd3e8'))()  
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "Saucekid(Plus)", 
+   Callback = function () 
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/saucekid/scripts/main/CarCrushers.lua"))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "电脑OP通用", 
+   Callback = function () 
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/saucekid/scripts/main/CarCrushers.lua"))() 
+   end 
+ }) 
+ Tab:AddParagraph("👌") 
+ local Tab= Window:MakeTab({ 
+         Name = "俄亥俄州", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+ Tab:AddButton({ 
+   Name = "Rxn.xyz-HUB", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/rxn-xyz/Ohio./main/Ohio.lua",true))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "神奇的指令", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/longshulol/long/main/longshu/Ohio"))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "HkvHeHed-HUB", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://pastebin.com/raw/hkvHeHed",true))() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "剑客工作室", 
+   Callback = function () 
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/jiankeQWQ/jiankeV3/main/ehaiezhou"))() 
+   end 
+ }) 
+ Tab:AddParagraph("功能自己猜") 
+  
+ local Tab= Window:MakeTab({ 
+         Name = "勇气与黑火药G＆B", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+ Tab:AddButton({ 
+   Name = "清风-劳大版", 
+   Callback = function () loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\40\34\104\116\116\112\115\58\47\47\102\114\101\101\110\111\116\101\46\98\105\122\47\114\97\119\47\109\117\122\110\104\101\114\104\114\117\34\41\44\116\114\117\101\41\41\40\41\10")() 
+   end 
+ }) 
+ Tab:AddButton({ 
+   Name = "清风原版", 
+   Callback = function () loadstring(game:HttpGet(("\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\115\120\99\115\114\49\49\52\53\49\52\47\115\120\99\115\114\49\49\52\53\49\52\49\47\109\97\105\110\47\115\120\99\115\114\49\51\52\56\52\56\52\56\56\46\108\117\97"),true))() 
+   end 
+ }) 
+  
+ local Tab = Window:MakeTab({ 
+         Name = "起床战争", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+  
+ Tab:AddButton({ 
+   Name = "Demonic-HUB-V2", 
+   Callback = function() 
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/Alan0947383/Demonic-HUB-V2/main/S-C-R-I-P-T.lua",true))() 
+   end 
+ }) 
+  
+ Tab:AddButton({ 
+   Name = "VAPE4.0", 
+   Callback = function() 
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))() 
+   end 
+ }) 
+  
+ local Tab = Window:MakeTab({ 
+         Name = "活过杀手", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+  
+ Tab:AddButton({ 
+   Name = "CHaiRWre-HUB", 
+   Callback = function() 
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/Milan08Studio/ChairWare/main/main.lua"))() 
+   end 
+ }) 
+  
+ local Tab = Window:MakeTab({ 
+         Name = "基本都是混音FNF", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+  
+ Tab:AddButton({ 
+   Name = "Library-HUB", 
+   Callback = function() 
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/MariyaFurmanova/Library/main/BasicallyFNF", true))() 
+   end 
+ }) 
+ local Tab = Window:MakeTab({ 
+         Name = "最强的战场", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+  
+ Tab:AddButton({ 
+   Name = "REPoaFWC", 
+   Callback = function() 
+ loadstring(game:HttpGet("https://pastefy.app/REPoaFWC/raw",true))(); 
+   end 
+ }) 
+  
+ Tab:AddButton({ 
+   Name = "Nicuse(需卡密)", 
+   Callback = function() 
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/Nicuse/RobloxScripts/main/SaitamaBattlegrounds.lua"))() 
+   end 
+ }) 
+  
+     Tab:AddButton({ 
+   Name = "BadWare-Hub", 
+   Callback = function() 
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/sandwichk/RobloxScripts/main/Scripts/BadWare/Hub/Load.lua", true))() 
+   end 
+ }) 
+  
+ Tab:AddButton({ 
+   Name = "Battlegrounuds77", 
+   Callback = function () 
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/LOLking123456/Strongest/main/Battlegrounds77"))() 
+   end 
+ }) 
+  
+ Tab:AddButton({ 
+         Name = "↑点击复制卡密↑", 
+         Callback = function() 
+      setclipboard("BestTheStrongest5412Roblox") 
+   end 
+ }) 
+  
