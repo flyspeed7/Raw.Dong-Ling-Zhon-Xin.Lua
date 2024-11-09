@@ -7,28 +7,28 @@ local NotificationHolder = loadstring(game:HttpGet("https://raw.githubuserconten
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
  ) 
- wait(3) 
+ wait(2) 
  Notification:Notify( 
      {Title = "不许圈钱", Description = "圈钱死妈，全家户口就一页"}, 
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
  )
- wait(3)
+ wait(2)
  Notification:Notify( 
-     {Title = "请认准作者:小凌-Q3E4", Description = "作者:Q3E4-小凌"}, 
+     {Title = "请认准作者:小凌-Q3E4", Description = "作者:QE4-小凌"}, 
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
  )
- wait(3)
+ wait(2)
   Notification:Notify( 
      {Title = "作者:1211373508", Description = "QQ 群：884776077"}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
- wait(1)
+ wait(0.55)
  
        local sound = Instance.new("Sound") 
-     sound.SoundId = "rbxassetid://6797864253" 
+     sound.SoundId = "rbxassetid://6073491164" 
      sound.Parent = game.Workspace 
      sound:Play()
   
@@ -112,7 +112,7 @@ local ScreenGui = Instance.new("ScreenGui")
  ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5) 
  ImageLabel.Position = UDim2.new(0.5, 0, 0.4, 0) 
  ImageLabel.Size = UDim2.new(0.2, 0, 0.2, 0) 
- ImageLabel.Image = "rbxassetid://7733770689" 
+ ImageLabel.Image = "rbxassetid://18733651372" 
  ImageLabel.Parent = ScreenGui 
  local TextLabel = Instance.new("TextLabel") 
  TextLabel.Name = "Text" 
@@ -122,7 +122,7 @@ local ScreenGui = Instance.new("ScreenGui")
  TextLabel.Font = Enum.Font.GothamBold 
  TextLabel.TextColor3 = Color3.new(1, 1, 1) 
  TextLabel.TextScaled = true 
- TextLabel.Text = "冬凌中心 5.0.0[FORMAL]" 
+ TextLabel.Text = "冬凌中心 | 5.2.0[FORMAL]" 
  TextLabel.Parent = ScreenGui 
   
  local function animateCredits() 
@@ -132,7 +132,7 @@ local ScreenGui = Instance.new("ScreenGui")
      imageTween:Play() 
      textTween:Play() 
   
-     wait(10) 
+     wait(5) 
   
      ImageLabel.Position = UDim2.new(0.5, 0, 0.4, 0) 
      TextLabel.Position = UDim2.new(0.5, 0, 0.6, 0) 
@@ -141,7 +141,7 @@ local ScreenGui = Instance.new("ScreenGui")
   
  animateCredits() 
   
- local creditText = "冬凌加载中..." 
+ local creditText = "新.冬凌加载中..." 
  local creditDuration = 5 
   
  local decalIds = { 
@@ -204,8 +204,8 @@ local ScreenGui = Instance.new("ScreenGui")
                      wait(1)  
                      vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)  
                   end)  
-                  wait(10)
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/LOL/main/Orion.lua"))()
+                  wait(1)
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/XiaoYunCN/LOL/main/Orion.lua')))()
   local Window = OrionLib:MakeWindow({Name = "冬凌 | 脚本中心", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion", IntroText = "作者:小凌 UI库:小云"})
 
 --[[
@@ -225,7 +225,7 @@ CloseCallback = <function> - Function to execute when the window is closed.
       PremiumOnly = false  
   })  
   about:AddButton({	
-Name = "打死ui[不隐藏]",	
+Name = "Kill gui[不隐藏]",	
 Callback = function()	
   	OrionLib:Destroy()
      end
@@ -233,271 +233,27 @@ Callback = function()
 local Section = about:AddSection({
 	Name = "更新日志: \n 加了几个脚本希望你喜欢"
 })
+
+
   about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."")  
   about:AddParagraph("您的注入器:"," "..identifyexecutor().."")  
   about:AddParagraph("您当前服务器的ID"," "..game.GameId.."")  
   about:AddParagraph("已获取进程","进程:0×1fa30d90")  
   about:AddParagraph("大家多多不支持","脚本无加密你可以看github")  
-  about:AddParagraph("缝合","做大做强")  
-  local Tab = Window:MakeTab({
-
-	Name = "国内脚本",
-
-	Icon = "rbxassetid://4483345998",
-
-	PremiumOnly = false
-
-})
- Tab:AddButton({         
- Name = "微山",         
- Callback = function()         
-           loadstring(game:HttpGet('https://raw.githubusercontent.com/weishanteam/Script/main/HUB_Loader.lua'))()
-           
-      end 
- })
- 
-Tab:AddButton({
-
-	Name = "青风",
-
-	Callback = function()
-
-loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,116,53,87,75,53,72,48,72})end)())))("青风脚本")
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "静新",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/jxdjbx/gggggghjjnbb/main/jdjdd"))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "北极",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://pastebin.com/raw/KwARpDxV",true))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "SF",
-
-	Callback = function()
-
-SF_V7 = "作者_神罚"SheFa = "QQ群637340150"loadstring(game:HttpGet(('https://raw.githubusercontent.com/WDQi/SF/main/%E7%9C%8B%E4%BD%A0M.txt')))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "导管中心",
-
-	Callback = function()
-
-loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\117\115\101\114\97\110\101\119\114\102\102\47\114\111\98\108\111\120\45\47\109\97\105\110\47\37\69\54\37\57\68\37\65\49\37\69\54\37\65\67\37\66\69\37\69\53\37\56\68\37\56\70\37\69\56\37\65\69\37\65\69\34\41\41\40\41\10")()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "忍",
-
-	Callback = function()
-
-loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,52,81,74,109,75,50,99,72})end)())))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "剑客",
-
-	Callback = function()
-
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/jiankeQWQ/Sword-Guest/main/JKYYDS')))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "脚本中心",
-
-	Callback = function()
-
-loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\103\101\109\120\72\119\65\49"))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "鸭",
-
-	Callback = function()
-
-loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,81,89,49,113,112,99,115,106})end)())))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "水下世界",
-
-	Callback = function()
-
-loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\115\106\115\105\100\106\100\110\110\115\110\115\110\115\47\115\106\115\105\100\106\100\110\110\115\110\115\110\115\47\109\97\105\110\47\82\69\65\68\77\69\46\109\100\34\41\41\40\41")()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "QB",
-
-	Callback = function()
-
-loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,51,69,49,54,76,51,90,106})end)())))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "神光",
-
-	Callback = function()
-
-loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,56,102,50,76,99,113,113,80})end)())))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "秋",
-
-	Callback = function()
-
-local SCC_CharPool={
-[1]= tostring(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,87,83,56,53,55,57,54,48,47,45,47,109,97,105,110,47,37,69,55,37,65,55,37,56,66,37,67,50,37,66,55,37,69,56,37,56,55,37,65,65,37,69,53,37,56,56,37,66,54,37,69,56,37,56,52,37,57,65,37,69,54,37,57,67,37,65,67,37,69,54,37,57,54,37,66,48,37,69,54,37,66,65,37,57,48,37,69,55,37,65,48,37,56,49,46,116,120,116})end)()))}
-loadstring(game:HttpGet(SCC_CharPool[1]))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "云",
-
-	Callback = function()
-
-_G.Clouduilib = "白灰脚作者小云，加载出十几秒"loadstring(game:HttpGet("https://raw.githubusercontent.com/CloudX-ScriptsWane/White-ash-script/main/%E7%99%BD%E7%81%B0%E8%84%9A%E6%9C%ACbeta.lua", true))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "XC",
-
-	Callback = function()
-
-getgenv().XC="作者XC"loadstring(game:HttpGet("https://pastebin.com/raw/PAFzYx0F"))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "青",
-
-	Callback = function()
-
-loadstring(game:HttpGet('https://rentry.co/cyq78/raw'))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "星火",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/9319/%E6%98%9F%E7%81%AB%E4%BA%A4%E8%BE%89%E8%84%9A%E6%9C%AC%E6%BA%90%E7%A0%81.lua?sign=pw1GHDb-tSJH25rTcTo_QPhzJBe73nf7djKDL1vQN1M%3D%3A0"))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "鱼",
-
-	Callback = function()
-
-getgenv().FISH = "鱼脚本群:851686462"loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\101\108\112\71\101\116\40\34\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\72\119\81\77\82\90\68\69\34\41\41\40\41")("鱼脚本")
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "皇",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/8577/%E7%9A%87v5.txt?sign=ToDT3Udyh4r3WwDu_yVblRL849qC2GJjjjQ7FTidF_w%3D%3A0"))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "空情",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/8628/%E9%9D%99?sign=uxlt7ravTFmP3TZLNgN7zImLHxJWhH93SEbKgFA_PRc%3D%3A0"))()
-
-    end
-
-})
- local Tab = Window:MakeTab({ 
+  about:AddParagraph("缝合","做大做强(")  
+   local Tab= Window:MakeTab({ 
+         Name = "微火的脚本", 
+         Icon = "rbxassetid://7733798747", 
+         PremiumOnly = false 
+ }) 
+ Tab:AddButton({ 
+   Name = "情云脚本", 
+   Callback = function () 
+    loadstring(utf8.char((function() return table.unpack({108,111,97,100,115,116,114,105,110,103,40,103,97,109,101,58,72,116,116,112,71,101,116,40,34,104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,67,104,105,110,97,81,89,47,45,47,109,97,105,110,47,37,69,54,37,56,51,37,56,53,37,69,52,37,66,65,37,57,49,34,41,41,40,41})end)()))()  
+   end 
+ }) 
+  
+ local Tab= Window:MakeTab({ 
          Name = "可加入的服务器", 
          Icon = "rbxassetid://7734053426", 
          PremiumOnly = false 
@@ -567,7 +323,7 @@ loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/8628/%E9%9D%99?sign=
    end 
  }) 
   
- local Tab = Window:MakeTab({ 
+ local Tab= Window:MakeTab({ 
          Name = "小凌音乐🤤", 
          Icon = "rbxassetid://16060333", 
          PremiumOnly = false 
@@ -683,7 +439,7 @@ loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/8628/%E9%9D%99?sign=
    end 
  }) 
   
- local Tab = Window:MakeTab({ 
+ local Tab= Window:MakeTab({ 
          Name = "老外获得罗宝", 
          Icon = "rbxassetid://11560341824", 
          PremiumOnly = false 
@@ -807,7 +563,7 @@ Tab:AddToggle({
                         fireproximityprompt(descendant)
                     end
                 end
-                task.wait(0.15) -- Adjust the wait time as needed
+                task.wait(0.25) -- Adjust the wait time as needed
             end
         else
             autoInteract = false
@@ -2462,26 +2218,4 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/
            
       end 
  })
-  local Tab= Window:MakeTab({ 
-         Name = "slap battles", 
-         Icon = "rbxassetid://7733779610", 
-         PremiumOnly = false 
- }) 
-   local Section = Tab:AddSection({  
-  
-          Name = "可以自己搭配脚本"  
-  
-  })  
- Tab:AddButton({         
- Name = "Royele-HUB",         
- Callback = function()         
-           loadstring(game:HttpGet("https://raw.githubusercontent.com/cheesynob39/Roblox-Scripts/main/Slap_Royale.lua"))()
-      end 
- })
-  Tab:AddToggle({  
-          Name = "范围",  
-          Default = false,  
-          Callback = function(state)  
-          _G.HeadSize = 20_G.Disabled = truegame:GetService('RunService').RenderStepped:connect(function()if _G.Disabled thenfor i,v in next, game:GetService('Players'):GetPlayers() doif v.Name ~= game:GetService('Players').LocalPlayer.Name thenpcall(function()v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)v.Character.HumanoidRootPart.Transparency = 0.7v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really white")v.Character.HumanoidRootPart.Material = "Neon"v.Character.HumanoidRootPart.CanCollide = falseend)endendendend)
-          end  
-  }) 
+ 
