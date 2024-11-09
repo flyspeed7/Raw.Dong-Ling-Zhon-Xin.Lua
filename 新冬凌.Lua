@@ -205,7 +205,7 @@ local ScreenGui = Instance.new("ScreenGui")
                      vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)  
                   end)  
                   wait(10)
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/XiaoYunCN/LOL/main/Orion.lua')))()
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/LOL/main/Orion.lua", true))()
   local Window = OrionLib:MakeWindow({Name = "冬凌 | 脚本中心", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion", IntroText = "作者:小凌 UI库:小云"})
 
 --[[
@@ -232,36 +232,6 @@ Callback = function()
 })
 local Section = about:AddSection({
 	Name = "更新日志: \n 玩家/功能添加更多功能 \n 加了几个脚本希望你喜欢"
-})
-
-about:AddParagraph("您的roblox帐户信息"," 用户名 "..lplr.Name.."\n 显示名称: "..lplr.DisplayName.."\n 使用者辩证码: "..lplr.UserId)
-about:AddButton({
-	Name = "复制游戏名称",
-	Callback = function()
-      		setclipboard(lplr.Name)
-  	end    
-})
-about:AddButton({
-	Name = "复制显示名称",
-	Callback = function()
-      		setclipboard(lplr.DisplayName)
-  	end    
-})
-
-about:AddParagraph("游戏信息"," 名称: "..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name.."\n ID: "..game.PlaceId.."\n ID游戏: "..game.JobId)
-
-about:AddButton({
-	Name = "复制服务器名称",
-	Callback = function()
-      		setclipboard(game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
-  	end    
-})
-
-about:AddButton({
-	Name = "复制服务器ID",
-	Callback = function()
-      		setclipboard(game.JobId)
-  	end    
 })
   about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."")  
   about:AddParagraph("您的注入器:"," "..identifyexecutor().."")  
