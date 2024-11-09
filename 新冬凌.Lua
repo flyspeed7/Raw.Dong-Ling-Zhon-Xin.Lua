@@ -236,7 +236,6 @@ local Section = about:AddSection({
   about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."")  
   about:AddParagraph("您的注入器:"," "..identifyexecutor().."")  
   about:AddParagraph("您当前服务器的ID"," "..game.GameId.."")  
-  about:AddParagraph("ROBLOX陪你度过了",""..player.AccountAge.."天,其中有很多有趣的事")  
   about:AddParagraph("已获取进程","进程:0×1fa30d90")  
   about:AddParagraph("大家多多不支持","脚本无加密你可以看github")  
   about:AddParagraph("缝合","做大做强(")  
