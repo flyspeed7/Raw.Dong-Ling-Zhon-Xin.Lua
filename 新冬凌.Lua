@@ -7,19 +7,19 @@ local NotificationHolder = loadstring(game:HttpGet("https://raw.githubuserconten
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
  ) 
- wait(5) 
+ wait(3) 
  Notification:Notify( 
      {Title = "不许圈钱", Description = "圈钱死妈，全家户口就一页"}, 
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
  )
- wait(5)
+ wait(3)
  Notification:Notify( 
      {Title = "请认准作者:小凌-Q3E4", Description = "作者:Q3E4-小凌"}, 
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
  )
- wait(5)
+ wait(3)
   Notification:Notify( 
      {Title = "作者:1211373508", Description = "QQ 群：884776077"}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
@@ -28,7 +28,7 @@ local NotificationHolder = loadstring(game:HttpGet("https://raw.githubuserconten
  wait(1)
  
        local sound = Instance.new("Sound") 
-     sound.SoundId = "rbxassetid://6073491164" 
+     sound.SoundId = "rbxassetid://6797864253" 
      sound.Parent = game.Workspace 
      sound:Play()
   
@@ -550,7 +550,7 @@ Tab:AddToggle({
                         fireproximityprompt(descendant)
                     end
                 end
-                task.wait(0.25) -- Adjust the wait time as needed
+                task.wait(0.15) -- Adjust the wait time as needed
             end
         else
             autoInteract = false
