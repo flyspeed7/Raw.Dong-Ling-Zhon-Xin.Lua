@@ -1,11 +1,202 @@
-
+local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
+ local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
+ wait(1)
+ 
+  Notification:Notify( 
+     {Title = "小公告", Description = "开始推演"}, 
+     {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
+ ) 
+ wait(2) 
+ Notification:Notify( 
+     {Title = "不许圈钱", Description = "圈钱死妈，全家户口就一页"}, 
+     {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
+ )
+ wait(2)
+ Notification:Notify( 
+     {Title = "请认准作者:小凌-Q3E4", Description = "作者:QE4-小凌"}, 
+     {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 10, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
+ )
+ wait(2)
+  Notification:Notify( 
+     {Title = "作者:1211373508", Description = "QQ 群：884776077"}, 
+     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
+ ) 
+ wait(0.55)
+ 
+       local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://6073491164" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+  
 --[[
 Title = <string> - The title of the notification.
 Content = <string> - The content of the notification.
 Image = <string> - The icon of the notification.
 Time = <number> - The duration of the notfication.
 ]]
-
+local ScreenGui = Instance.new("ScreenGui") 
+ ScreenGui.Name = "Credits" 
+ ScreenGui.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui") 
+  
+ local playerGui = game.Players.LocalPlayer.PlayerGui 
+  
+ local health = 100 
+  
+ local healthGui = Instance.new("ScreenGui") 
+ healthGui.Name = "HealthGui" 
+ healthGui.Parent = playerGui 
+  
+ local healthFrame = Instance.new("Frame") 
+ healthFrame.Name = "HealthFrame" 
+ healthFrame.Size = UDim2.new(0, 150, 0, 20) 
+ healthFrame.Position = UDim2.new(1, -170, 0, 20) 
+ healthFrame.BackgroundColor3 = Color3.fromRGB(255, 0, 0) 
+ healthFrame.BorderSizePixel = 0 
+ healthFrame.Parent = healthGui 
+ local healthBar = Instance.new("Frame") 
+ healthBar.Name = "HealthBar" 
+ healthBar.Size = UDim2.new(1, 0, 1, 0) 
+ healthBar.BackgroundColor3 = Color3.fromRGB(255, 249, 74) 
+ healthBar.BorderSizePixel = 0 
+ healthBar.Parent = healthFrame 
+  
+ local function updateHealthGUI() 
+    healthBar.Size = UDim2.new(health / 100, 0, 1, 0) 
+ end 
+  
+ updateHealthGUI() 
+  
+ game.Players.LocalPlayer.Character.Humanoid.HealthChanged:Connect(function(newHealth) 
+    health = newHealth 
+    updateHealthGUI() 
+ end) 
+  
+ local playerGui = game.Players.LocalPlayer.PlayerGui 
+  
+ local fpsGui = Instance.new("ScreenGui") 
+ fpsGui.Name = "FpsGui" 
+ fpsGui.Parent = playerGui 
+  
+ local fpsLabel = Instance.new("TextLabel") 
+ fpsLabel.Name = "FpsLabel" 
+ fpsLabel.Size = UDim2.new(0, 100, 0, 20) 
+ fpsLabel.Position = UDim2.new(0, 20, 0, 20) 
+ fpsLabel.BackgroundColor3 = Color3.new(0, 0, 0) 
+ fpsLabel.TextColor3 = Color3.new(1, 1, 1) 
+ fpsLabel.Font = Enum.Font.SourceSans 
+ fpsLabel.FontSize = Enum.FontSize.Size14 
+ fpsLabel.Text = "帧数: " 
+ fpsLabel.Parent = fpsGui 
+  
+ local lastUpdate = tick() 
+  
+ local fps = 0 
+  
+ local function updateFpsCounter() 
+     local deltaTime = tick() - lastUpdate 
+     lastUpdate = tick() 
+  
+     fps = math.floor(1 / deltaTime) 
+  
+     fpsLabel.Text = "帧数: " .. fps 
+ end 
+  
+ game:GetService("RunService").RenderStepped:Connect(updateFpsCounter) 
+  
+ local ImageLabel = Instance.new("ImageLabel") 
+ ImageLabel.Name = "Image" 
+ ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5) 
+ ImageLabel.Position = UDim2.new(0.5, 0, 0.4, 0) 
+ ImageLabel.Size = UDim2.new(0.2, 0, 0.2, 0) 
+ ImageLabel.Image = "rbxassetid://18733651372" 
+ ImageLabel.Parent = ScreenGui 
+ local TextLabel = Instance.new("TextLabel") 
+ TextLabel.Name = "Text" 
+ TextLabel.AnchorPoint = Vector2.new(0.5, 0.5) 
+ TextLabel.Position = UDim2.new(0.5, 0, 0.6, 0) 
+ TextLabel.Size = UDim2.new(0.5, 0, 0.1, 0) 
+ TextLabel.Font = Enum.Font.GothamBold 
+ TextLabel.TextColor3 = Color3.new(1, 1, 1) 
+ TextLabel.TextScaled = true 
+ TextLabel.Text = "冬凌中心 | 5.2.0[FORMAL]" 
+ TextLabel.Parent = ScreenGui 
+  
+ local function animateCredits() 
+     local TweenService = game:GetService("TweenService") 
+     local imageTween = TweenService:Create(ImageLabel, TweenInfo.new(10, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, 0, -0.2, 0)}) 
+     local textTween = TweenService:Create(TextLabel, TweenInfo.new(10, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, 0, -0.1, 0)}) 
+     imageTween:Play() 
+     textTween:Play() 
+  
+     wait(5) 
+  
+     ImageLabel.Position = UDim2.new(0.5, 0, 0.4, 0) 
+     TextLabel.Position = UDim2.new(0.5, 0, 0.6, 0) 
+     ScreenGui:Destroy() 
+ end 
+  
+ animateCredits() 
+  
+ local creditText = "新.冬凌加载中..." 
+ local creditDuration = 5 
+  
+ local decalIds = { 
+     5479567228, 
+     5479565074, 
+     5479559610, 
+ } 
+  
+ local decalId = decalIds[math.random(#decalIds)] 
+ local ScreenGui = Instance.new("ScreenGui") 
+ ScreenGui.Name = "NotificationCreditsGui" 
+ ScreenGui.ResetOnSpawn = false 
+ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling 
+ ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui 
+  
+ local Frame = Instance.new("Frame") 
+ Frame.BackgroundTransparency = 1 
+ Frame.BorderSizePixel = 0 
+ Frame.Position = UDim2.new(1, -200, 1, -50) 
+ Frame.Size = UDim2.new(0, 200, 0, 50) 
+ Frame.Parent = ScreenGui 
+  
+ local Decal = Instance.new("Decal") 
+ Decal.Texture = "rbxassetid://16060333448" .. decalId ---输入图片ID
+ Decal.Face = Enum.NormalId.Back 
+ Decal.Parent = Frame 
+  
+ local TextLabel = Instance.new("TextLabel") 
+ TextLabel.BackgroundTransparency = 1 
+ TextLabel.Font = Enum.Font.SourceSans 
+ TextLabel.Text = creditText 
+ TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255) 
+ TextLabel.TextSize = 16 
+ TextLabel.Position = UDim2.new(0, 10, 0, 10) 
+ TextLabel.Size = UDim2.new(1, -20, 1, -20) 
+ TextLabel.Parent = Frame 
+  
+ local function animateNotification() 
+     Frame:TweenPosition(UDim2.new(1, -200, 1, -50), Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, 0.5, true) 
+     wait(creditDuration - 1) 
+     Frame:TweenPosition(UDim2.new(1, 0, 1, -50), Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, 0.5, true) 
+     wait(0.5) 
+     ScreenGui:Destroy() 
+ end 
+  
+ animateNotification() 
+ local Notification = loadstring(game:HttpGet("https://api.irisapp.ca/Scripts/IrisBetterNotifications.lua")) 
+ local bindable = Instance.new("BindableFunction") 
+ bindable.OnInvoke = function(button) 
+      local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://6073491164" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+ end 
+  
   print("反挂机已经为你开好了 喵~")  
                   local vu = game:GetService("VirtualUser")  
                   game:GetService("Players").LocalPlayer.Idled:connect(function()  
@@ -15,7 +206,7 @@ Time = <number> - The duration of the notfication.
                   end)  
                   wait(1)
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/XiaoYunCN/LOL/main/Orion.lua')))()
-  local Window = OrionLib:MakeWindow({Name = "冬凌 | 脚本中心", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion", IntroText = "作者:小凌 UI库:小云"})
+  local Window = OrionLib:MakeWindow({Name = "冬凌 | 脚本中心", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion", IntroText = "作者:QE4-小凌 UI库:小云"})
 
 --[[
 Name = <string> - The name of the UI.
@@ -29,11 +220,10 @@ Icon = <string> - URL to the image you want displayed on the window.
 CloseCallback = <function> - Function to execute when the window is closed.
 ]]
   local about = Window:MakeTab({  
-      Name = "信息/介绍/设置",  
+      Name = "信息/介绍",  
       Icon = "rbxassetid://7743878358",  
       PremiumOnly = false  
   })  
- 
   about:AddButton({	
 Name = "Kill gui[不隐藏]",	
 Callback = function()	
@@ -41,7 +231,7 @@ Callback = function()
      end
 })
 local Section = about:AddSection({
-	Name = "更新日志: \n 加了好多东西和脚本"
+	Name = "更新日志: \n 加了几个脚本希望你喜欢"
 })
 
 
@@ -291,292 +481,7 @@ local Section = about:AddSection({
                  game.Players.LocalPlayer.Character.Humanoid.Health = Value 
          end          
  }) 
- local Tab = Window:MakeTab({
-
-	Name = "其它国内脚本",
-
-	Icon = "rbxassetid://4483345998",
-
-	PremiumOnly = false
-
-})
-Tab:AddButton ({
-	Name = "XK MAX",
-	Callback = function ()
-	 loadstring(game:HttpGet("https://raw.githubusercontent.com/BINjiaobzx6/BINjiao/main/XK.lua"))()
-	end
-})
-Tab:AddButton ({
-	Name = "XK",
-	Callback = function ()
-	 loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\66\73\78\106\105\97\111\98\122\120\54\47\66\73\78\106\105\97\111\47\109\97\105\110\47\88\75\46\84\88\84\34\41\41\40\41\10")()
-	end
-})
-Tab:AddButton ({
-	Name = "导管中心",
-	Callback = function ()
-	 loadstring(game:HttpGet("https://raw.githubusercontent.com/useranewrff/roblox/main/%E6%9D%A1%E6%AC%BE%E5%8D%8F%E8%AE%AE.lua"))()
-	end
-})
-Tab:AddButton ({
-	Name = "禁漫中心",
-	Callback = function ()
-	 getgenv().lishichuan="禁漫中心1001390385" loadstring(game:HttpGet("https://raw.githubusercontent.com/dingding123hhh/anlushanjinchangantangwanle/main/
-	end
-})
-Tab:AddButton({
-
-	Name = "青风",
-
-	Callback = function()
-
-loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,116,53,87,75,53,72,48,72})end)())))("青风脚本")
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "静新",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/jxdjbx/gggggghjjnbb/main/jdjdd"))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "北极",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://pastebin.com/raw/KwARpDxV",true))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "SF",
-
-	Callback = function()
-
-SF_V7 = "作者_神罚"SheFa = "QQ群637340150"loadstring(game:HttpGet(('https://raw.githubusercontent.com/WDQi/SF/main/%E7%9C%8B%E4%BD%A0M.txt')))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "导管中心",
-
-	Callback = function()
-
-loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\117\115\101\114\97\110\101\119\114\102\102\47\114\111\98\108\111\120\45\47\109\97\105\110\47\37\69\54\37\57\68\37\65\49\37\69\54\37\65\67\37\66\69\37\69\53\37\56\68\37\56\70\37\69\56\37\65\69\37\65\69\34\41\41\40\41\10")()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "忍",
-
-	Callback = function()
-
-loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,52,81,74,109,75,50,99,72})end)())))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "剑客",
-
-	Callback = function()
-
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/jiankeQWQ/Sword-Guest/main/JKYYDS')))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "脚本中心",
-
-	Callback = function()
-
-loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\103\101\109\120\72\119\65\49"))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "鸭",
-
-	Callback = function()
-
-loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,81,89,49,113,112,99,115,106})end)())))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "水下世界",
-
-	Callback = function()
-
-loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\115\106\115\105\100\106\100\110\110\115\110\115\110\115\47\115\106\115\105\100\106\100\110\110\115\110\115\110\115\47\109\97\105\110\47\82\69\65\68\77\69\46\109\100\34\41\41\40\41")()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "QB",
-
-	Callback = function()
-
-loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,51,69,49,54,76,51,90,106})end)())))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "神光",
-
-	Callback = function()
-
-loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,56,102,50,76,99,113,113,80})end)())))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "秋",
-
-	Callback = function()
-
-local SCC_CharPool={
-[1]= tostring(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,87,83,56,53,55,57,54,48,47,45,47,109,97,105,110,47,37,69,55,37,65,55,37,56,66,37,67,50,37,66,55,37,69,56,37,56,55,37,65,65,37,69,53,37,56,56,37,66,54,37,69,56,37,56,52,37,57,65,37,69,54,37,57,67,37,65,67,37,69,54,37,57,54,37,66,48,37,69,54,37,66,65,37,57,48,37,69,55,37,65,48,37,56,49,46,116,120,116})end)()))}
-loadstring(game:HttpGet(SCC_CharPool[1]))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "云",
-
-	Callback = function()
-
-_G.Clouduilib = "白灰脚作者小云，加载出十几秒"loadstring(game:HttpGet("https://raw.githubusercontent.com/CloudX-ScriptsWane/White-ash-script/main/%E7%99%BD%E7%81%B0%E8%84%9A%E6%9C%ACbeta.lua", true))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "剑客 门",
-
-	Callback = function()
-
-jianke_V3 = "作者_初夏"jianke1 = "剑客QQ群347724155"jianke2 = "此脚本为剑客V3门脚本,不是剑客V3整合脚本"loadstring(game:HttpGet(('https://raw.githubusercontent.com/jiankeQWQ/jiankeV3/main/Doors')))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "XC",
-
-	Callback = function()
-
-getgenv().XC="作者XC"loadstring(game:HttpGet("https://pastebin.com/raw/PAFzYx0F"))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "青",
-
-	Callback = function()
-
-loadstring(game:HttpGet('https://rentry.co/cyq78/raw'))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "星火",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/9319/%E6%98%9F%E7%81%AB%E4%BA%A4%E8%BE%89%E8%84%9A%E6%9C%AC%E6%BA%90%E7%A0%81.lua?sign=pw1GHDb-tSJH25rTcTo_QPhzJBe73nf7djKDL1vQN1M%3D%3A0"))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "鱼",
-
-	Callback = function()
-
-getgenv().FISH = "鱼脚本群:851686462"loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\101\108\112\71\101\116\40\34\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\72\119\81\77\82\90\68\69\34\41\41\40\41")("鱼脚本")
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "皇",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/8577/%E7%9A%87v5.txt?sign=ToDT3Udyh4r3WwDu_yVblRL849qC2GJjjjQ7FTidF_w%3D%3A0"))()
-
-    end
-
-})
-
-Tab:AddButton({
-
-	Name = "空情",
-
-	Callback = function()
-
-loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/8628/%E9%9D%99?sign=uxlt7ravTFmP3TZLNgN7zImLHxJWhH93SEbKgFA_PRc%3D%3A0"))()
-
-    end
-
-})
+ 
    local Tab = Window:MakeTab({  
     Name = "通用/玩家",  
     Icon = "rbxassetid://7733970494",  
@@ -594,7 +499,7 @@ loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/8628/%E9%9D%99?sign=
   
           Min = 16,  
   
-          Max = 2000,  
+          Max = 200,  
   
           Default = 16,  
   
@@ -617,7 +522,7 @@ loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/8628/%E9%9D%99?sign=
   
           Min = 50,  
   
-          Max = 2000,  
+          Max = 200,  
   
           Default = 50,  
   
@@ -634,37 +539,18 @@ loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/8628/%E9%9D%99?sign=
           end      
   
   })  
-   
+  
   Tab:AddButton({  
           Name = "控制玩家(小凌汉化)谢谢",  
           Callback = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/XiaoLing-CODE.tk3usj449llspw1/main/%E7%8E%A9%E5%AE%B6%E6%8E%A7%E5%88%B6%20%E6%B1%89%E5%8C%96.txt"))()  
             end  
   })  
   Tab:AddButton({
-	Name = "云☁️飞行V3",
+	Name = "飞行V3",
 	Callback = function()
      loadstring(game:HttpGet('https://pastebin.com/raw/AjDmq385'))()
   	end    
 })
- Tab:AddButton({         
- Name = "自动获取服务器玩家年龄",         
- Callback = function()         
-local Players = game:GetService("Players")
-
-local function displayPlayerAge(player)
-    if player:WaitForChild("PlayerAge") then
-        local age = player.PlayerAge.Value
-        print("玩家 " .. player.Name .. " 的年龄是：" .. age)
-    else
-        print("玩家 " .. player.Name .. " 无年龄信息")
-    end
-end
-
-Players.PlayerAdded:Connect(displayPlayerAge)
-           
-      end 
- })
- 
 Tab:AddToggle({  
           Name = "自动互动",  
           Default = false,  
@@ -2332,7 +2218,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/
            
       end 
  })
-  local Tab= Window:MakeTab({ 
+   local Tab= Window:MakeTab({ 
          Name = "小猪(Piggy)", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
@@ -2344,20 +2230,60 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/
       end 
  })
   local Section = Tab:AddSection({  
-  
+
           Name = "这个是自制🤔"  
-  
+
   })  
  local Tab= Window:MakeTab({ 
-         Name = "Evade", 
+         Name = "0", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
-  Tab:AddButton({         
- Name = "凌中心-Evade",         
- Callback = function()         
-           
-         loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Evade-Loader.Lua/refs/heads/main/Evade-Loader.lua"))()  
-      end 
- })
- 
+ --[[
+Tab:AddSlider({  
+  
+          Name = "视角设置",  
+  
+          Min = 70,  
+  
+          Max = 1000,  
+  
+          Default = 70,  
+  
+          Color = Color3.fromRGB(127,251,111),  
+  
+          Increment = 1,  
+  
+          ValueName = "数值",  
+  
+          Callback = function(Value)  
+  
+                  game.Workspace.CurrentCamera.FieldOfView = Value
+  
+          end      
+  
+  })  
+ Tab:AddSlider({  
+  
+          Name = "缩放距离",  
+  
+          Min = 128,  
+  
+          Max = 10000,  
+  
+          Default = 128,  
+  
+          Color = Color3.fromRGB(127,251,111),  
+  
+          Increment = 1,  
+  
+          ValueName = "数值",  
+  
+          Callback = function(Value)  
+  
+                  game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = Value
+          
+          end      
+  
+  })  
+  ]]--
