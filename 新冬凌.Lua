@@ -1,3 +1,39 @@
+-- 等待玩家加入游戏
+local player = game.Players.LocalPlayer
+
+-- 等待玩家的Character被加载
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- 定义一个函数来高亮显示玩家
+local function highlightPlayer(targetPlayer)
+    -- 遍历玩家的所有子对象
+    for _, v in pairs(targetPlayer.Character:GetChildren()) do
+        -- 如果是Part类型，则改变其颜色
+        if v:IsA("BasePart") then
+            v.Color = Color3.fromRGB(255, 0, 0) -- 将颜色改为红色
+        end
+    end
+end
+
+-- 定义一个函数来取消高亮显示玩家
+local function unhighlightPlayer(targetPlayer)
+    -- 遍历玩家的所有子对象
+    for _, v in pairs(targetPlayer.Character:GetChildren()) do
+        -- 如果是Part类型，则恢复其原始颜色
+        if v:IsA("BasePart") then
+            v.Color = Color3.fromRGB(255, 255, 255) -- 将颜色恢复为白色
+        end
+    end
+end
+
+-- 监听玩家的CharacterAdded事件，当玩家加载完成时高亮显示
+player.CharacterAdded:Connect(function()
+    highlightPlayer(player)
+end)
+
+-- 如果需要取消高亮显示，可以调用unhighlightPlayer函数
+-- unhighlightPlayer(player)
+
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
  local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
  wait(1)
