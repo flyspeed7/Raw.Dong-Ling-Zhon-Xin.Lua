@@ -28,13 +28,13 @@ local NotificationHolder = loadstring(game:HttpGet("https://raw.githubuserconten
  wait(0.55)
  Notification:Notify( 
      {Title = "一根葱", Description = "一根葱"}, 
-     {OutlineColor = Color3.fromRGB(100, 255, 0),Time = nil, Type = "image"}, 
+     {OutlineColor = Color3.fromRGB(100, 255, 0),Time = 90, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(100, 255, 0)} 
  )
  wait(2)
 Notification:Notify( 
      {Title = "卡洛斯", Description = "卡洛斯"}, 
-     {OutlineColor = Color3.fromRGB(255, 75, 0),Time = nil, Type = "image"}, 
+     {OutlineColor = Color3.fromRGB(255, 75, 0),Time = 90, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 75, 0)} 
  )
  wait(2)
@@ -550,7 +550,34 @@ local Section = about:AddSection({
           end      
   
   })  
-  
+Tab:AddDropdown({
+	Name = "下拉菜单",
+	Default = "小凌",
+	Options = {"小凌-凌 awa", "QE4-Q3E4"},
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+--[[
+Name = <string> - The name of the dropdown.
+Default = <string> - The default value of the dropdown.
+Options = <table> - The options in the dropdown.
+Callback = <function> - The function of the dropdown.
+]]
+  Tab:AddColorpicker({
+	Name = "颜色选择器",
+	Default = Color3.fromRGB(255, 0, 0),
+	Callback = function(Value)
+		print(Value)
+	end	  
+})
+
+--[[
+Name = <string> - The name of the colorpicker.
+Default = <color3> - The default value of the colorpicker.
+Callback = <function> - The function of the colorpicker.
+]]
   Tab:AddButton({  
           Name = "控制玩家(小凌汉化)谢谢",  
           Callback = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/XiaoLing-CODE.tk3usj449llspw1/main/%E7%8E%A9%E5%AE%B6%E6%8E%A7%E5%88%B6%20%E6%B1%89%E5%8C%96.txt"))()  
