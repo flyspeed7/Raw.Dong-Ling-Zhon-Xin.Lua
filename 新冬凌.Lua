@@ -517,7 +517,292 @@ local Section = about:AddSection({
                  game.Players.LocalPlayer.Character.Humanoid.Health = Value 
          end          
  }) 
- 
+ local Tab = Window:MakeTab({
+
+	Name = "其它国内脚本",
+
+	Icon = "rbxassetid://4483345998",
+
+	PremiumOnly = false
+
+})
+Tab:AddButton ({
+	Name = "XK MAX",
+	Callback = function ()
+	 loadstring(game:HttpGet("https://raw.githubusercontent.com/BINjiaobzx6/BINjiao/main/XK.lua"))()
+	end
+})
+Tab:AddButton ({
+	Name = "XK",
+	Callback = function ()
+	 loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\66\73\78\106\105\97\111\98\122\120\54\47\66\73\78\106\105\97\111\47\109\97\105\110\47\88\75\46\84\88\84\34\41\41\40\41\10")()
+	end
+})
+Tab:AddButton ({
+	Name = "导管中心",
+	Callback = function ()
+	 loadstring(game:HttpGet("https://raw.githubusercontent.com/useranewrff/roblox/main/%E6%9D%A1%E6%AC%BE%E5%8D%8F%E8%AE%AE.lua"))()
+	end
+})
+Tab:AddButton ({
+	Name = "禁漫中心",
+	Callback = function ()
+	 getgenv().lishichuan="禁漫中心1001390385" loadstring(game:HttpGet("https://raw.githubusercontent.com/dingding123hhh/anlushanjinchangantangwanle/main/
+	end
+})
+Tab:AddButton({
+
+	Name = "青风",
+
+	Callback = function()
+
+loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,116,53,87,75,53,72,48,72})end)())))("青风脚本")
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "静新",
+
+	Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/jxdjbx/gggggghjjnbb/main/jdjdd"))()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "北极",
+
+	Callback = function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/KwARpDxV",true))()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "SF",
+
+	Callback = function()
+
+SF_V7 = "作者_神罚"SheFa = "QQ群637340150"loadstring(game:HttpGet(('https://raw.githubusercontent.com/WDQi/SF/main/%E7%9C%8B%E4%BD%A0M.txt')))()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "导管中心",
+
+	Callback = function()
+
+loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\117\115\101\114\97\110\101\119\114\102\102\47\114\111\98\108\111\120\45\47\109\97\105\110\47\37\69\54\37\57\68\37\65\49\37\69\54\37\65\67\37\66\69\37\69\53\37\56\68\37\56\70\37\69\56\37\65\69\37\65\69\34\41\41\40\41\10")()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "忍",
+
+	Callback = function()
+
+loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,52,81,74,109,75,50,99,72})end)())))()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "剑客",
+
+	Callback = function()
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/jiankeQWQ/Sword-Guest/main/JKYYDS')))()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "脚本中心",
+
+	Callback = function()
+
+loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\103\101\109\120\72\119\65\49"))()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "鸭",
+
+	Callback = function()
+
+loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,81,89,49,113,112,99,115,106})end)())))()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "水下世界",
+
+	Callback = function()
+
+loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\115\106\115\105\100\106\100\110\110\115\110\115\110\115\47\115\106\115\105\100\106\100\110\110\115\110\115\110\115\47\109\97\105\110\47\82\69\65\68\77\69\46\109\100\34\41\41\40\41")()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "QB",
+
+	Callback = function()
+
+loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,51,69,49,54,76,51,90,106})end)())))()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "神光",
+
+	Callback = function()
+
+loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,56,102,50,76,99,113,113,80})end)())))()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "秋",
+
+	Callback = function()
+
+local SCC_CharPool={
+[1]= tostring(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,87,83,56,53,55,57,54,48,47,45,47,109,97,105,110,47,37,69,55,37,65,55,37,56,66,37,67,50,37,66,55,37,69,56,37,56,55,37,65,65,37,69,53,37,56,56,37,66,54,37,69,56,37,56,52,37,57,65,37,69,54,37,57,67,37,65,67,37,69,54,37,57,54,37,66,48,37,69,54,37,66,65,37,57,48,37,69,55,37,65,48,37,56,49,46,116,120,116})end)()))}
+loadstring(game:HttpGet(SCC_CharPool[1]))()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "云",
+
+	Callback = function()
+
+_G.Clouduilib = "白灰脚作者小云，加载出十几秒"loadstring(game:HttpGet("https://raw.githubusercontent.com/CloudX-ScriptsWane/White-ash-script/main/%E7%99%BD%E7%81%B0%E8%84%9A%E6%9C%ACbeta.lua", true))()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "剑客 门",
+
+	Callback = function()
+
+jianke_V3 = "作者_初夏"jianke1 = "剑客QQ群347724155"jianke2 = "此脚本为剑客V3门脚本,不是剑客V3整合脚本"loadstring(game:HttpGet(('https://raw.githubusercontent.com/jiankeQWQ/jiankeV3/main/Doors')))()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "XC",
+
+	Callback = function()
+
+getgenv().XC="作者XC"loadstring(game:HttpGet("https://pastebin.com/raw/PAFzYx0F"))()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "青",
+
+	Callback = function()
+
+loadstring(game:HttpGet('https://rentry.co/cyq78/raw'))()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "星火",
+
+	Callback = function()
+
+loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/9319/%E6%98%9F%E7%81%AB%E4%BA%A4%E8%BE%89%E8%84%9A%E6%9C%AC%E6%BA%90%E7%A0%81.lua?sign=pw1GHDb-tSJH25rTcTo_QPhzJBe73nf7djKDL1vQN1M%3D%3A0"))()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "鱼",
+
+	Callback = function()
+
+getgenv().FISH = "鱼脚本群:851686462"loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\101\108\112\71\101\116\40\34\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\72\119\81\77\82\90\68\69\34\41\41\40\41")("鱼脚本")
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "皇",
+
+	Callback = function()
+
+loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/8577/%E7%9A%87v5.txt?sign=ToDT3Udyh4r3WwDu_yVblRL849qC2GJjjjQ7FTidF_w%3D%3A0"))()
+
+    end
+
+})
+
+Tab:AddButton({
+
+	Name = "空情",
+
+	Callback = function()
+
+loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/8628/%E9%9D%99?sign=uxlt7ravTFmP3TZLNgN7zImLHxJWhH93SEbKgFA_PRc%3D%3A0"))()
+
+    end
+
+})
    local Tab = Window:MakeTab({  
     Name = "通用/玩家",  
     Icon = "rbxassetid://7733970494",  
