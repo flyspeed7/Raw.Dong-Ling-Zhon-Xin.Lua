@@ -7,19 +7,7 @@ local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/
 local notifications = loadstring(game:HttpGet(("https://raw.githubusercontent.com/AbstractPoo/Main/main/Notifications.lua"), true))()
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
  wait(1)
- notifications:notify{
-            Title = "新.冬凌 | 脚本中心",
-            Description = "已启用反挂机",
-            Icon = 7743878358,
-            Accept = {
-                Text = "明白",
-                Callback = function()
-                    print("是的是的是的")
-                end
-            },
-            Length = 30
-        }
-       
+
   Notification:Notify( 
      {Title = "小公告", Description = "开始推演"}, 
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "image"}, 
