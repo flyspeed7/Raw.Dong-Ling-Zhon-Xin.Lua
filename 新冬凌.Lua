@@ -2273,4 +2273,19 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/
            
       end 
  })
- 
+  local Tab= Window:MakeTab({ 
+         Name = "小猪(Piggy)", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+  Tab:AddButton({         
+ Name = "凌中心-Piggy",         
+ Callback = function()         
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Piggy-main-s/refs/heads/main/%E5%B0%8F%E7%8C%AA%E8%84%9A%E6%9C%AC.lua"))()
+      end 
+ })
+  local Section = Tab:AddSection({  
+  
+          Name = "这个是自制🤔"  
+  
+  })  
