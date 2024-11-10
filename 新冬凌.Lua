@@ -2289,3 +2289,16 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/
           Name = "这个是自制🤔"  
   
   })  
+ local Tab= Window:MakeTab({ 
+         Name = "Evade", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+  Tab:AddButton({         
+ Name = "凌中心-Evade",         
+ Callback = function()         
+           
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Evade-Loader.Lua/refs/heads/main/Evade-Loader.lua"))()  
+      end 
+ })
+ 
