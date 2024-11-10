@@ -224,15 +224,7 @@ CloseCallback = <function> - Function to execute when the window is closed.
       Icon = "rbxassetid://7743878358",  
       PremiumOnly = false  
   })  
- about:AddTextbox({  
-          Name = "快捷切换页面(输入页面名称)",  
-          Default = "名称",  
-          TextDisappear = true,  
-          Callback = function(Value)  
-                  ToggleUILib(Value)
-          end           
-  })  
-  
+ 
   about:AddButton({	
 Name = "Kill gui[不隐藏]",	
 Callback = function()	
