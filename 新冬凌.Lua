@@ -37,7 +37,19 @@ end)
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
  local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
  wait(1)
- 
+ Notifications:notify{
+            Title = "新.冬凌 | 脚本中心",
+            Description = "已启用反挂机",
+            Icon = 7743878358,
+            Accept = {
+                Text = "明白",
+                Callback = function()
+                    print("是的是的是的")
+                end
+            },
+            Length = 30
+        }
+       
   Notification:Notify( 
      {Title = "小公告", Description = "开始推演"}, 
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "image"}, 
@@ -158,7 +170,7 @@ local ScreenGui = Instance.new("ScreenGui")
  TextLabel.Font = Enum.Font.GothamBold 
  TextLabel.TextColor3 = Color3.new(1, 1, 1) 
  TextLabel.TextScaled = true 
- TextLabel.Text = "冬凌中心 | 5.2.0[FORMAL]" 
+ TextLabel.Text = "冬凌中心 | 5.3.1[FORMAL]" 
  TextLabel.Parent = ScreenGui 
   
  local function animateCredits() 
