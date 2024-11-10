@@ -546,11 +546,30 @@ local Section = about:AddSection({
             end  
   })  
   Tab:AddButton({
-	Name = "飞行V3",
+	Name = "云☁️飞行V3",
 	Callback = function()
      loadstring(game:HttpGet('https://pastebin.com/raw/AjDmq385'))()
   	end    
 })
+ Tab:AddButton({         
+ Name = "自动获取服务器玩家年龄",         
+ Callback = function()         
+local Players = game:GetService("Players")
+
+local function displayPlayerAge(player)
+    if player:WaitForChild("PlayerAge") then
+        local age = player.PlayerAge.Value
+        print("玩家 " .. player.Name .. " 的年龄是：" .. age)
+    else
+        print("玩家 " .. player.Name .. " 无年龄信息")
+    end
+end
+
+Players.PlayerAdded:Connect(displayPlayerAge)
+           
+      end 
+ })
+ 
 Tab:AddToggle({  
           Name = "自动互动",  
           Default = false,  
