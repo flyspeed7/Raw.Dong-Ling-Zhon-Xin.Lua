@@ -1,37 +1,4 @@
-local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
-local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
- wait(1)
 
-  Notification:Notify( 
-     {Title = "小公告", Description = "开始推演"}, 
-     {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "image"}, 
-     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
- ) 
- wait(2) 
- Notification:Notify( 
-     {Title = "不许圈钱", Description = "圈钱死妈，全家户口就一页"}, 
-     {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "image"}, 
-     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
- )
- wait(2)
- Notification:Notify( 
-     {Title = "请认准作者:小凌-Q3E4", Description = "作者:QE4-小凌"}, 
-     {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 10, Type = "image"}, 
-     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
- )
- wait(2)
-  Notification:Notify( 
-     {Title = "作者:1211373508", Description = "QQ 群：884776077"}, 
-     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
-     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
- ) 
- wait(0.55)
- 
-       local sound = Instance.new("Sound") 
-     sound.SoundId = "rbxassetid://6073491164" 
-     sound.Parent = game.Workspace 
-     sound:Play()
-  
 --[[
 Title = <string> - The title of the notification.
 Content = <string> - The content of the notification.
@@ -825,52 +792,7 @@ loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/8628/%E9%9D%99?sign=
           end      
   
   })  
-   Tab:AddSlider({  
-  
-          Name = "视角设置",  
-  
-          Min = 70,  
-  
-          Max = 1000,  
-  
-          Default = 70,  
-  
-          Color = Color3.fromRGB(127,251,111),  
-  
-          Increment = 1,  
-  
-          ValueName = "数值",  
-  
-          Callback = function(Value)  
-  
-                  game.Workspace.CurrentCamera.FieldOfView = Value
-  
-          end      
-  
-  })  
- Tab:AddSlider({  
-  
-          Name = "缩放距离",  
-  
-          Min = 128,  
-  
-          Max = 10000,  
-  
-          Default = 128,  
-  
-          Color = Color3.fromRGB(127,251,111),  
-  
-          Increment = 1,  
-  
-          ValueName = "数值",  
-  
-          Callback = function(Value)  
-  
-                  game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = Value
-          
-          end      
-  
-  })  
+   
   Tab:AddButton({  
           Name = "控制玩家(小凌汉化)谢谢",  
           Callback = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/XiaoLing-CODE.tk3usj449llspw1/main/%E7%8E%A9%E5%AE%B6%E6%8E%A7%E5%88%B6%20%E6%B1%89%E5%8C%96.txt"))()  
