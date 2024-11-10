@@ -256,18 +256,68 @@ Icon = <string> - URL to the image you want displayed on the window.
 CloseCallback = <function> - Function to execute when the window is closed.
 ]]
   local about = Window:MakeTab({  
-      Name = "信息/介绍",  
+      Name = "信息/介绍/设置",  
       Icon = "rbxassetid://7743878358",  
       PremiumOnly = false  
   })  
+ about:AddTextbox({  
+          Name = "快捷切换页面(输入页面名称)",  
+          Default = "名称",  
+          TextDisappear = true,  
+          Callback = function(Value)  
+                  ToggleUILib(Value)
+          end           
+  })  
+  
   about:AddButton({	
 Name = "Kill gui[不隐藏]",	
 Callback = function()	
   	OrionLib:Destroy()
      end
 })
+ about:AddButton({         
+ Name = "刷新服务器",         
+ Callback = function()         
+      repeat
+            chlplr.Health = 0
+            task.wait()
+        until chlplr.Health ~= 0     
+           
+      end 
+ })
+  about:AddButton({         
+ Name = "重进服务器",         
+ Callback = function()         
+                   game:GetService("TeleportService"):TeleportToPlaceInstance(
+            game.PlaceId,
+            game.JobId,
+            game:GetService("Players").LocalPlayer
+        )
+           
+      end 
+ })
+  about:AddButton({         
+ Name = "保存服务器/数据",         
+ Callback = function()         
+          saveinstance() 
+      end 
+ })
+  about:AddButton({         
+ Name = "离开服务器/数据",         
+ Callback = function()         
+           game:Shutdown()
+      end 
+ })
+  about:AddButton({         
+ Name = "开启最高帧率",         
+ Callback = function()         
+           setfpscap(999)
+           
+      end 
+ })
+ 
 local Section = about:AddSection({
-	Name = "更新日志: \n 加了几个脚本希望你喜欢"
+	Name = "更新日志: \n 加了好多东西和脚本"
 })
 
 
