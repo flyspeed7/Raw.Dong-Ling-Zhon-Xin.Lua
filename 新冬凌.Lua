@@ -231,47 +231,6 @@ Callback = function()
   	OrionLib:Destroy()
      end
 })
- about:AddButton({         
- Name = "刷新服务器",         
- Callback = function()         
-      repeat
-            chlplr.Health = 0
-            task.wait()
-        until chlplr.Health ~= 0     
-           
-      end 
- })
-  about:AddButton({         
- Name = "重进服务器",         
- Callback = function()         
-                   game:GetService("TeleportService"):TeleportToPlaceInstance(
-            game.PlaceId,
-            game.JobId,
-            game:GetService("Players").LocalPlayer
-        )
-           
-      end 
- })
-  about:AddButton({         
- Name = "保存服务器/数据",         
- Callback = function()         
-          saveinstance() 
-      end 
- })
-  about:AddButton({         
- Name = "离开服务器/数据",         
- Callback = function()         
-           game:Shutdown()
-      end 
- })
-  about:AddButton({         
- Name = "开启最高帧率",         
- Callback = function()         
-           setfpscap(999)
-           
-      end 
- })
- 
 local Section = about:AddSection({
 	Name = "更新日志: \n 加了好多东西和脚本"
 })
