@@ -820,7 +820,7 @@ loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/8628/%E9%9D%99?sign=
   
           Min = 16,  
   
-          Max = 200,  
+          Max = 2000,  
   
           Default = 16,  
   
@@ -843,7 +843,7 @@ loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/8628/%E9%9D%99?sign=
   
           Min = 50,  
   
-          Max = 200,  
+          Max = 2000,  
   
           Default = 50,  
   
@@ -860,7 +860,52 @@ loadstring(game:HttpGet("https://ayangwp.cn/api/v3/file/get/8628/%E9%9D%99?sign=
           end      
   
   })  
+   Tab:AddSlider({  
   
+          Name = "视角设置",  
+  
+          Min = 70,  
+  
+          Max = 1000,  
+  
+          Default = 70,  
+  
+          Color = Color3.fromRGB(127,251,111),  
+  
+          Increment = 1,  
+  
+          ValueName = "数值",  
+  
+          Callback = function(Value)  
+  
+                  game.Workspace.CurrentCamera.FieldOfView = Value
+  
+          end      
+  
+  })  
+ Tab:AddSlider({  
+  
+          Name = "缩放距离",  
+  
+          Min = 128,  
+  
+          Max = 10000,  
+  
+          Default = 128,  
+  
+          Color = Color3.fromRGB(127,251,111),  
+  
+          Increment = 1,  
+  
+          ValueName = "数值",  
+  
+          Callback = function(Value)  
+  
+                  game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = Value
+          
+          end      
+  
+  })  
   Tab:AddButton({  
           Name = "控制玩家(小凌汉化)谢谢",  
           Callback = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/XiaoLing-CODE.tk3usj449llspw1/main/%E7%8E%A9%E5%AE%B6%E6%8E%A7%E5%88%B6%20%E6%B1%89%E5%8C%96.txt"))()  
