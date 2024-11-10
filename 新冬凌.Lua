@@ -26,7 +26,18 @@ local NotificationHolder = loadstring(game:HttpGet("https://raw.githubuserconten
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
  wait(0.55)
- 
+ Notification:Notify( 
+     {Title = "一根葱", Description = "一根葱"}, 
+     {OutlineColor = Color3.fromRGB(100, 255, 0),Time = nil, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(100, 255, 0)} 
+ )
+ wait(2)
+Notification:Notify( 
+     {Title = "卡洛斯", Description = "卡洛斯"}, 
+     {OutlineColor = Color3.fromRGB(255, 75, 0),Time = nil, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 75, 0)} 
+ )
+ wait(2)
        local sound = Instance.new("Sound") 
      sound.SoundId = "rbxassetid://6073491164" 
      sound.Parent = game.Workspace 
@@ -231,7 +242,7 @@ Callback = function()
      end
 })
 local Section = about:AddSection({
-	Name = "更新日志: \n 加了几个脚本希望你喜欢"
+	Name = "更新日志: \n 加了很多脚本希望你喜欢"
 })
 
 
@@ -546,7 +557,7 @@ local Section = about:AddSection({
             end  
   })  
   Tab:AddButton({
-	Name = "飞行V3",
+	Name = "云☁️飞行V3",
 	Callback = function()
      loadstring(game:HttpGet('https://pastebin.com/raw/AjDmq385'))()
   	end    
@@ -1493,7 +1504,14 @@ end
          Icon = "rbxassetid://7733674820", 
          PremiumOnly = false 
  }) 
-  
+   Tab:AddButton({         
+ Name = "papat-HUB V2",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/crumies/Pressure-v2/main/script.lua"))()
+           
+      end 
+ })
+ 
   Tab:AddButton({          
   Name = "GOA-HUB",          
   Callback = function()          
@@ -1507,7 +1525,15 @@ end
             loadstring(game:HttpGet("https://raw.githubusercontent.com/LordEyes2/Script/main/PersonalHub"))()  
   
        end  
-  })  
+  }) 
+   Tab:AddButton({         
+ Name = "Nivex-HUB",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/Nivex123456/main/refs/heads/main/Loader.lua"))()
+           
+      end 
+ })
+  
   Tab:AddButton({          
   Name = "DocYongurt",          
   Callback = function()          
