@@ -492,7 +492,160 @@ local Section = about:AddSection({
                  game.Players.LocalPlayer.Character.Humanoid.Health = Value 
          end          
  }) 
- 
+ local Tab = Window:MakeTab({
+	Name = "骂人页",
+	Icon = "rbxassetid://123456789",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "扣字"
+})
+
+_G.szj = true 
+
+function szj()
+	while _G.szj == true do
+	wait(1)
+local args = {
+    [1] = "sz",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+wait(1)
+local args = {
+    [1] = "Lz",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+wait(1)
+local args = {
+    [1] = "sbsb ",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+wait(1)
+local args = {
+    [1] = "lol",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+wait(1)
+local args = {
+    [1] = "HACKER!!!!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+wait(1)
+local args = {
+    [1] = "hacker",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+wait(1)
+local args = {
+    [1] = "EZ LOL",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+    end
+end
+
+Tab:AddLabel("roblox发言有限制，连续7条后要冷却10秒")
+
+Tab:AddToggle({
+	Name = "三字经（秒三）",
+	Default = false,
+	Callback = function(Value)
+	_G.szj = Value
+	    szj()		
+	end    
+})
+
+_G.sz = true
+
+function sz()
+	while _G.sz == true do
+	wait()
+wait(1)
+local args = {
+    [1] = "入鸡",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+wait(1)
+local args = {
+    [1] = "神兽 lol",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+wait(1)
+local args = {
+    [1] = "怎么不说话了，哭了吗😂",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+wait(1)
+local args = {
+    [1] = "凑啥掉😂🤣",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+wait(1)
+local args = {
+    [1] = "大神兽 lol🤣",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+wait(1)
+local args = {
+    [1] = "怎么的？就说你两句，级了？",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+wait(1)
+local args = {
+    [1] = "想要反驳我，大1313🤣",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+	end
+end
+
+Tab:AddToggle({
+	Name = "四字成语（秒四）",
+	Default = false,
+	Callback = function(Value)
+	_G.sz = Value
+	    sz()		
+	end    
+})
    local Tab = Window:MakeTab({  
     Name = "通用/玩家",  
     Icon = "rbxassetid://7733970494",  
