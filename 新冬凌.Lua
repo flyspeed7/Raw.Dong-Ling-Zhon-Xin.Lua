@@ -27,14 +27,14 @@ local NotificationHolder = loadstring(game:HttpGet("https://raw.githubuserconten
  ) 
  wait(0.55)
  Notification:Notify( 
-     {Title = "一根葱", Description = "一根葱"}, 
-     {OutlineColor = Color3.fromRGB(100, 255, 0),Time = 90, Type = "image"}, 
+     {Title = "一根葱😨", Description = "I like 一根葱 :)"}, 
+     {OutlineColor = Color3.fromRGB(100, 255, 0),Time = 20, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(100, 255, 0)} 
  )
  wait(2)
 Notification:Notify( 
-     {Title = "卡洛斯", Description = "卡洛斯"}, 
-     {OutlineColor = Color3.fromRGB(255, 75, 0),Time = 90, Type = "image"}, 
+     {Title = "卡洛斯😍", Description = "I like 卡洛斯 :)"}, 
+     {OutlineColor = Color3.fromRGB(255, 75, 0),Time = 20, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 75, 0)} 
  )
  wait(2)
