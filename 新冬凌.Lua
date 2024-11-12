@@ -38,6 +38,12 @@ Notification:Notify(
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 75, 0)} 
  )
  wait(2)
+Notification:Notify( 
+     {Title = "Orion UI 库提供:", Description = "谢谢 小云!小云! 提供的 Orion UI 库!"}, 
+     {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 20, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
+ )
+ wait(2)
        local sound = Instance.new("Sound") 
      sound.SoundId = "rbxassetid://6073491164" 
      sound.Parent = game.Workspace 
