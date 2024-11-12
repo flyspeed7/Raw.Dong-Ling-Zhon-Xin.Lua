@@ -1,3 +1,5 @@
+
+
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
  local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
  wait(1)
@@ -55,6 +57,26 @@ Notification:Notify(
      sound.Parent = game.Workspace 
      sound:Play()
   
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
+Library.DefaultColor = Color3.fromRGB(255,0,0)
+
+Library:Notification({
+	Text = "新-冬凌中心开发者:小凌和 Q3E4",
+	Duration = 6
+})
+
+wait (3)
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
+Library.DefaultColor = Color3.fromRGB(255,0,0)
+
+Library:Notification({
+	Text = "em...目前好像就这几个吧 x_x",
+	Duration = 6
+})
+
+----------------------------
+wait (1)
 --[[
 Title = <string> - The title of the notification.
 Content = <string> - The content of the notification.
@@ -356,6 +378,26 @@ local Section = about:AddSection({
          Name = "以下是长音乐后面会更恶搞和复制ID \n ok啊更新上了好吧" 
   
  }) 
+  Tab:AddTextbox({  
+          Name = "输入音乐id 就可播放",  
+          Default = "输入...",  
+          TextDisappear = true,  
+          Callback = function()  
+                  local id = tonumber(idBox.Text)
+    if id then
+        audio.SoundId = "rbxassetid://"..id
+        audio:Play()
+    end 
+          end           
+  })  
+ Tab:AddButton({         
+ Name = "停止播放",         
+ Callback = function()         
+           audio:Stop()
+           
+      end
+ })
+ 
       Tab:AddButton({ 
    Name = "植物大战僵尸", 
    Callback = function () 
