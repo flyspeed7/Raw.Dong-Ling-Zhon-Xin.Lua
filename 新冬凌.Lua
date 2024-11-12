@@ -74,7 +74,25 @@ Library:Notification({
 	Text = "em...目前好像就这几个吧 x_x",
 	Duration = 6
 })
+wait(3)
 
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
+Library.DefaultColor = Color3.fromRGB(255,0,0)
+
+Library:Notification({
+	Text = "感谢你使用冬凌脚本中心(ﾟ∀ﾟ)👉",
+	Duration = 6
+})
+wait (3)
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
+Library.DefaultColor = Color3.fromRGB(255,0,0)
+
+Library:Notification({
+	Text = "那么...再见~ヾ(＾∇＾)ﾉ 因为公告结束了😭",
+	Duration = 6
+})
+
+wait (3)
 ----------------------------
 wait (1)
 --[[
@@ -397,7 +415,11 @@ local Section = about:AddSection({
            
       end
  })
- 
+  local Section = Tab:AddSection({  
+  
+          Name = "下面是点击播放😁 \n 对对对很优质的脚本💪"  
+  
+  })  
       Tab:AddButton({ 
    Name = "植物大战僵尸", 
    Callback = function () 
