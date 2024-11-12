@@ -176,7 +176,7 @@ local ScreenGui = Instance.new("ScreenGui")
  Frame.Parent = ScreenGui 
   
  local Decal = Instance.new("Decal") 
- Decal.Texture = "rbxassetid://16060333448" .. decalId ---输入图片ID
+ Decal.Texture = "rbxassetid://11560341824" .. decalId ---输入图片ID
  Decal.Face = Enum.NormalId.Back 
  Decal.Parent = Frame 
   
@@ -203,7 +203,7 @@ local ScreenGui = Instance.new("ScreenGui")
  local bindable = Instance.new("BindableFunction") 
  bindable.OnInvoke = function(button) 
       local sound = Instance.new("Sound") 
-     sound.SoundId = "rbxassetid://6073491164" 
+     sound.SoundId = "rbxassetid://8161248815" 
      sound.Parent = game.Workspace 
      sound:Play()
  end 
@@ -217,7 +217,7 @@ local ScreenGui = Instance.new("ScreenGui")
                   end)  
                   wait(1)
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/XiaoYunCN/LOL/main/Orion.lua')))()
-  local Window = OrionLib:MakeWindow({Name = "冬凌 | 脚本中心", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion", IntroText = "作者:QE4-小凌 UI库:小云☁️"})
+  local Window = OrionLib:MakeWindow({Name = "冬凌中心 | 2024.11.12", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion", IntroText = "作者:QE4-小凌 UI库:小云☁️"})
 
 --[[
 Name = <string> - The name of the UI.
