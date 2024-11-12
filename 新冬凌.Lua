@@ -7,7 +7,13 @@ local NotificationHolder = loadstring(game:HttpGet("https://raw.githubuserconten
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
  ) 
- wait(2) 
+setclipboard("1844125168")
+       Notification:Notify( 
+     {Title = "更新情况::", Description = "今日已更新:音乐~通用~"}, 
+     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
+ ) 
+wait(2)
  Notification:Notify( 
      {Title = "不许圈钱", Description = "圈钱死妈，全家户口就一页"}, 
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "image"}, 
@@ -248,7 +254,7 @@ Callback = function()
      end
 })
 local Section = about:AddSection({
-	Name = "更新日志: \n 加了很多脚本希望你喜欢"
+	Name = "更新日志: \n 加了音乐脚本"
 })
 
 
@@ -347,8 +353,188 @@ local Section = about:AddSection({
  }) 
  local Section = Tab:AddSection({ 
   
-         Name = "以下是长音乐后面会更恶搞和复制ID" 
+         Name = "以下是长音乐后面会更恶搞和复制ID \n ok啊更新上了好吧" 
   
+ }) 
+      Tab:AddButton({ 
+   Name = "植物大战僵尸", 
+   Callback = function () 
+         local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://158260415" 
+     sound.Parent = game.Workspace 
+     sound:Play() 
+     setclipboard("158260415")
+       Notification:Notify( 
+     {Title = "冬凌中心", Description = "已复制到粘贴板..."}, 
+     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
+ ) 
+   end 
+ }) 
+   Tab:AddButton({ 
+   Name = "早安越南", 
+   Callback = function () 
+         local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://8295016126" 
+     sound.Parent = game.Workspace 
+     sound:Play() 
+     setclipboard("8295016126")
+       Notification:Notify( 
+     {Title = "冬凌中心", Description = "已复制到粘贴板..."}, 
+     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
+ ) 
+   end 
+ }) 
+      Tab:AddButton({ 
+   Name = "愤怒芒西 Evade?", 
+   Callback = function () 
+         local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://5029269312" 
+     sound.Parent = game.Workspace 
+     sound:Play() 
+     setclipboard("5029269312")
+       Notification:Notify( 
+     {Title = "冬凌中心", Description = "已复制到粘贴板..."}, 
+     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
+ ) 
+   end 
+ }) 
+      Tab:AddButton({ 
+   Name = "梅西", 
+   Callback = function () 
+         local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://7354576319" 
+     sound.Parent = game.Workspace 
+     sound:Play() 
+     setclipboard("7352576319")
+       Notification:Notify( 
+     {Title = "冬凌中心", Description = "已复制到粘贴板..."}, 
+     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
+ ) 
+   end 
+ }) 
+      Tab:AddButton({ 
+   Name = "永春拳", 
+   Callback = function () 
+         local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://1845973140" 
+     sound.Parent = game.Workspace 
+     sound:Play() 
+     setclipboard("1845973140")
+       Notification:Notify( 
+     {Title = "冬凌中心", Description = "已复制到粘贴板..."}, 
+     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
+ ) 
+   end 
+ }) 
+   Tab:AddButton({ 
+   Name = "带劲的音乐", 
+   Callback = function () 
+         local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://18841891575" 
+     sound.Parent = game.Workspace 
+     sound:Play() 
+     setclipboard("18841891517")
+       Notification:Notify( 
+     {Title = "冬凌中心", Description = "已复制到粘贴板..."}, 
+     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
+ )  
+   end 
+ }) 
+      Tab:AddButton({ 
+   Name = "韩国国歌", 
+   Callback = function () 
+         local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://1837478300" 
+     sound.Parent = game.Workspace 
+     sound:Play() 
+     setclipboard("1837478300")
+       Notification:Notify( 
+     {Title = "冬凌中心", Description = "已复制到粘贴板..."}, 
+     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
+ ) 
+   end 
+ }) 
+      Tab:AddButton({ 
+   Name = "“哥哥你女朋友不会吃醋吧?”", 
+   Callback = function () 
+         local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://8715811379" 
+     sound.Parent = game.Workspace 
+     sound:Play() 
+     setclipboard("8715811379")
+       Notification:Notify( 
+     {Title = "冬凌中心", Description = "已复制到粘贴板..."}, 
+     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
+ ) 
+   end 
+ }) 
+      Tab:AddButton({ 
+   Name = "蜘蛛侠出场声音", 
+   Callback = function () 
+         local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://9108472930" 
+     sound.Parent = game.Workspace 
+     sound:Play() 
+     setclipboard("918472930")
+       Notification:Notify( 
+     {Title = "冬凌中心", Description = "已复制到粘贴板..."}, 
+     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
+ ) 
+   end 
+ }) 
+      Tab:AddButton({ 
+   Name = "消防车", 
+   Callback = function () 
+         local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://317455930" 
+     sound.Parent = game.Workspace 
+     sound:Play() 
+     setclipboard("317455930")
+       Notification:Notify( 
+     {Title = "冬凌中心", Description = "已复制到粘贴板..."}, 
+     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
+ ) 
+   end 
+ }) 
+      Tab:AddButton({ 
+   Name = "万圣节1🎃", 
+   Callback = function () 
+         local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://1837467198" 
+     sound.Parent = game.Workspace 
+     sound:Play() 
+     setclipboard("1837457198")
+       Notification:Notify( 
+     {Title = "冬凌中心", Description = "已复制到粘贴板..."}, 
+     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
+ ) 
+   end 
+ }) 
+   Tab:AddButton({ 
+   Name = "好听的", 
+   Callback = function () 
+         local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://1844125168" 
+     sound.Parent = game.Workspace 
+     sound:Play() 
+     setclipboard("1844125168")
+       Notification:Notify( 
+     {Title = "冬凌中心", Description = "已复制到粘贴板..."}, 
+     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
+ ) 
+   end 
  }) 
  Tab:AddButton({         
  Name = "国外音乐脚本",         
@@ -710,9 +896,9 @@ Tab:AddToggle({
   
   })  
 Tab:AddDropdown({
-	Name = "下拉菜单",
+	Name = "下拉菜单选择",
 	Default = "小凌",
-	Options = {"小凌-凌 awa", "QE4-Q3E4"},
+	Options = {"小凌-凌 awa", "新的冬凌中心 QE4 版😆"},
 	Callback = function(Value)
 		print(Value)
 	end    
@@ -725,7 +911,7 @@ Options = <table> - The options in the dropdown.
 Callback = <function> - The function of the dropdown.
 ]]
   Tab:AddColorpicker({
-	Name = "颜色选择器",
+	Name = "颜色:",
 	Default = Color3.fromRGB(255, 0, 0),
 	Callback = function(Value)
 		print(Value)
@@ -955,7 +1141,7 @@ Tab:AddToggle({
   label.BackgroundColor3 = Color3.fromRGB(139,0,0)  
   label.Size = UDim2.new(0, 100, 0, 20)  
   label.Font = Enum.Font.SourceSans  
-  label.Text = "范围 GUI"  
+  label.Text = "hitbox GUI"  
   label.TextColor3 = Color3.fromRGB(0, 0, 0)  
   label.TextScaled = true  
   label.TextSize = 5.000  
@@ -967,7 +1153,7 @@ Tab:AddToggle({
   Hitbox.Position = UDim2.new(0.114285722, 0, 0.372448981, 0)  
   Hitbox.Size = UDim2.new(0, 90, 0, 40)  
   Hitbox.Font = Enum.Font.SourceSans  
-  Hitbox.Text = "开启范围"  
+  Hitbox.Text = "hitbox"  
   Hitbox.TextColor3 = Color3.fromRGB(0, 0, 0)  
   Hitbox.TextSize = 40.000  
   Hitbox.MouseButton1Down:connect(function()  
@@ -1038,7 +1224,7 @@ Tab:AddToggle({
  })
  
 Tab:AddButton({  
-    Name = "游戏通行证(跑酷游戏)",
+    Name = "游戏通行证(跑酷游戏)假的",
 	Callback = function()
 	for _,v in pairs(game:GetDescendants()) do
 if v.ClassName == "RemoteEvent" then
