@@ -27,7 +27,7 @@ local NotificationHolder = loadstring(game:HttpGet("https://raw.githubuserconten
  ) 
  wait(0.55)
  Notification:Notify( 
-     {Title = "一根葱😨", Description = "I like 一根葱 :)"}, 
+     {Title = "一根葱😍", Description = "I like 一根葱 :)"}, 
      {OutlineColor = Color3.fromRGB(100, 255, 0),Time = 20, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(100, 255, 0)} 
  )
