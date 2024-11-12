@@ -216,8 +216,8 @@ local ScreenGui = Instance.new("ScreenGui")
                      vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)  
                   end)  
                   wait(1)
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/XiaoYunCN/LOL/main/Orion.lua')))()
-  local Window = OrionLib:MakeWindow({Name = "冬凌 | 脚本中心", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion", IntroText = "作者:QE4-小凌 UI库:小云"})
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/flyspeed7/Onion/refs/heads/main/OrionD%2B%2B.Lua')))()
+  local Window = OrionLib:MakeWindow({Name = "冬凌 | 脚本中心", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion", IntroText = "作者:QE4-小凌 UI库:Q3E4"})
 
 --[[
 Name = <string> - The name of the UI.
@@ -499,7 +499,7 @@ local Section = about:AddSection({
 })
 
 local Section = Tab:AddSection({
-	Name = "扣字"
+	Name = "并不是我制作的!🙄 \n 谢谢 林桉恬 是她制作的我只是加到了我的脚本里😎"
 })
 
 _G.szj = true 
@@ -598,7 +598,7 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
 
 wait(1)
 local args = {
-    [1] = "怎么不说话了，哭了吗😂",
+    [1] = "怎么不说话，枯了吗😂",
     [2] = "All"
 }
 
@@ -622,7 +622,7 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
 
 wait(1)
 local args = {
-    [1] = "怎么的？就说你两句，级了？",
+    [1] = "怎么的？说你两句，级了？",
     [2] = "All"
 }
 
@@ -630,7 +630,7 @@ game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageReque
 
 wait(1)
 local args = {
-    [1] = "想要反驳我，大1313🤣",
+    [1] = "想要反驳我，周XX 大1313🤣",
     [2] = "All"
 }
 
