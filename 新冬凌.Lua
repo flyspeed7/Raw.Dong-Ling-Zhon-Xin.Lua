@@ -11,8 +11,8 @@ local NotificationHolder = loadstring(game:HttpGet("https://raw.githubuserconten
  ) 
 setclipboard("1844125168")
        Notification:Notify( 
-     {Title = "更新情况::", Description = "今日已更新:音乐~通用~"}, 
-     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
+     {Title = "更新情况::", Description = "今日已更新:音乐~通用~骂人在自然灾害里面用不了•ᴗ•💧"}, 
+     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
 wait(2)
