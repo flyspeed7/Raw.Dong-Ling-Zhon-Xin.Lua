@@ -2,7 +2,7 @@ local NotificationHolder = loadstring(game:HttpGet("https://raw.githubuserconten
  local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
  wait(1)
        Notification:Notify( 
-     {Title = "🥵更新情况::", Description = "今日已更新:音乐~通用~骂人在自然灾害里面用不了•ᴗ•💧"}, 
+     {Title = "🥵更新情况::", Description = "今日已更新:通用~骂人在自然灾害里面用不了•ᴗ•💧"}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
@@ -293,7 +293,7 @@ local Section = about:AddSection({
   about:AddParagraph("大家多多不支持","脚本无加密你可以看github")  
   about:AddParagraph("缝合","做大做强(")  
    local Tab= Window:MakeTab({ 
-         Name = "微火的脚本", 
+         Name = "情云的脚本", 
          Icon = "rbxassetid://7733798747", 
          PremiumOnly = false 
  }) 
