@@ -1163,30 +1163,7 @@ Tab:AddToggle({
           end      
   
   })  
- Tab:AddSlider({  
-  
-          Name = "范围透明度",  
-  
-          Min = 1,  
-  
-          Max = 100,  
-  
-          Default = 1,  
-  
-          Color = Color3.fromRGB(127,251,111),  
-  
-          Increment = 1,  
-  
-          ValueName = "数值",  
-  
-          Callback = function(Value)  
-  
-                    hitboxTransparency = Value
-                    hitboxesNoCollision()
-  
-          end      
-  
-  })  
+ 
  Tab:AddToggle({  
           Name = "可调节范围(上方调节范围)",  
           Default = false,  
