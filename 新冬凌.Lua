@@ -256,7 +256,7 @@ local ScreenGui = Instance.new("ScreenGui")
                      vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)  
                   end)  
                   wait(1)
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/flyspeed7/ee/refs/heads/main/XiaoLing-Main-GUI')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/XiaoYunCN/LOL/main/Orion.lua')))()
   local Window = OrionLib:MakeWindow({Name = "冬凌中心 | 2024.11.13", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion", IntroText = "作者:QE4-小凌 UI库:OrionUI库UI作者:小云☁️"})
 
 --[[
@@ -1566,7 +1566,97 @@ Tab:AddButton({
           loadstring(game:HttpGet('https://raw.githubusercontent.com/Lucasfin000/SpaceHub/main/UESP'))()  
           end  
   })  
+ Tab:AddButton({         
+ Name = "玩家 and 血量",         
+ Callback = function()         
+           print("加载完成")
+              local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
 
+local function createESP(player)
+    local ESP = Drawing.new("Circle")
+    ESP.Radius = 5
+    ESP.Color = Color3.fromRGB(255, 0, 0)
+    ESP.Thickness = 2
+    ESP.Transparency = 0.5
+    ESP.Visible = false
+
+    local NameTag = Drawing.new("Text")
+    NameTag.Size = 10
+    NameTag.Color = Color3.fromRGB(255, 255, 255)
+    NameTag.Visible = false
+
+    local function updateESP()
+        if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            local position, onScreen = workspace.CurrentCamera:WorldToViewportPoint(player.Character.HumanoidRootPart.Position)
+
+            ESP.Position = Vector2.new(position.X, position.Y)
+            ESP.Visible = onScreen
+
+            NameTag.Position = Vector2.new(position.X, position.Y + 50) -- Adjust the Y offset as needed
+            NameTag.Visible = onScreen
+            NameTag.Text = player.Name
+        else
+            ESP.Visible = false
+            NameTag.Visible = false
+        end
+    end
+
+    game:GetService("RunService").RenderStepped:Connect(updateESP)
+end
+
+-- Loop through all the players in the game
+for _, player in ipairs(Players:GetPlayers()) do
+    if player ~= LocalPlayer then
+        createESP(player)
+    end
+end
+
+-- Update ESP for new players joining the game
+Players.PlayerAdded:Connect(function(player)
+    if player ~= LocalPlayer then
+        createESP(player)
+    end
+end)
+
+-- Remove ESP for players leaving the game
+Players.PlayerRemoving:Connect(function(player)
+    -- TODO: Remove ESP for the player that left the game
+end)
+           
+      end 
+ })
+  Tab:AddButton({         
+ Name = "玩家名字 and 位置",         
+ Callback = function()         
+           local function ApplyESP(v)
+   if v.Character and v.Character:FindFirstChildOfClass'Humanoid' then
+       v.Character.Humanoid.NameDisplayDistance = 9e9
+       v.Character.Humanoid.NameOcclusion = "NoOcclusion"
+       v.Character.Humanoid.HealthDisplayDistance = 9e9
+       v.Character.Humanoid.HealthDisplayType = "AlwaysOn"
+       v.Character.Humanoid.Health = v.Character.Humanoid.Health -- triggers changed
+   end
+end
+for i,v in pairs(game.Players:GetPlayers()) do
+   ApplyESP(v)
+   v.CharacterAdded:Connect(function()
+       task.wait(0.33)
+       ApplyESP(v)
+   end)
+end
+
+game.Players.PlayerAdded:Connect(function(v)
+   ApplyESP(v)
+   v.CharacterAdded:Connect(function()
+       task.wait(0.33)
+       ApplyESP(v)
+   end)
+end)
+           
+      end 
+ })
+ 
  local Tab= Window:MakeTab({ 
          Name = "速度传奇", 
          Icon = "rbxassetid://7733956134", 
