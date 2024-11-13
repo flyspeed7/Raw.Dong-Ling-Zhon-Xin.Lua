@@ -256,7 +256,7 @@ local ScreenGui = Instance.new("ScreenGui")
                      vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)  
                   end)  
                   wait(1)
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/XiaoYunCN/LOL/main/Orion.lua')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/flyspeed7/ee/refs/heads/main/XiaoLing-Main-GUI')))()
   local Window = OrionLib:MakeWindow({Name = "冬凌中心 | 2024.11.12", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion", IntroText = "作者:QE4-小凌 UI库:OrionbUI库 UI作者:小云☁️"})
 
 --[[
