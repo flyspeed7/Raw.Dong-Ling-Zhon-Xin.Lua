@@ -257,7 +257,7 @@ local ScreenGui = Instance.new("ScreenGui")
                   end)  
                   wait(1)
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/XiaoYunCN/LOL/main/Orion.lua')))()
-  local Window = OrionLib:MakeWindow({Name = "冬凌中心 | 2024.11.12", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion", IntroText = "作者:QE4-小凌 UI库:小云☁️"})
+  local Window = OrionLib:MakeWindow({Name = "冬凌中心 | 2024.11.12", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion", IntroText = "作者:QE4-小凌 UI库:OrionbUI库 UI作者:小云☁️"})
 
 --[[
 Name = <string> - The name of the UI.
