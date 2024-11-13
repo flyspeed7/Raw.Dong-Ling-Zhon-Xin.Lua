@@ -1,52 +1,21 @@
-local fnl = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Focat.Libery/refs/heads/main/Libe.LUA"))()
-
--- Make a Notification function
-function notify(title, text, duration)
-  title = title or "今日已更新!"
-  text = text or "1.添加通知库-暂无..."
-  duration = duration or 5
-  
-  fnl:MakeNotification({
-    Title = title,
-    Text = text,
-    Duration = duration
-  })
-end
-
--- Use the func
-notify("Test!", "Testing 123", 3)
-wait(4)
-
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
  local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
  wait(1)
- 
-  Notification:Notify( 
-     {Title = "小公告", Description = "开始推演"}, 
-     {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "image"}, 
-     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
- ) 
-setclipboard("1844125168")
        Notification:Notify( 
-     {Title = "更新情况::", Description = "今日已更新:音乐~通用~骂人在自然灾害里面用不了•ᴗ•💧"}, 
+     {Title = "🥵更新情况::", Description = "今日已更新:音乐~通用~骂人在自然灾害里面用不了•ᴗ•💧"}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
 wait(2)
+ 
  Notification:Notify( 
-     {Title = "不许圈钱", Description = "圈钱死妈，全家户口就一页"}, 
-     {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "image"}, 
-     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
- )
- wait(2)
- Notification:Notify( 
-     {Title = "请认准作者:小凌-Q3E4", Description = "作者:QE4-小凌"}, 
+     {Title = "请认准作者:小凌-Q3E4😋", Description = "作者:QE4-小凌"}, 
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
  )
  wait(2)
   Notification:Notify( 
-     {Title = "作者:1211373508", Description = "QQ 群：884776077"}, 
+     {Title = "是谁制作🤔", Description = "QQ 群：884776077 作者:1211373508"}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
@@ -58,13 +27,7 @@ wait(2)
  )
  wait(2)
 Notification:Notify( 
-     {Title = "卡洛斯😍", Description = "I like 卡洛斯 :)"}, 
-     {OutlineColor = Color3.fromRGB(255, 75, 0),Time = 20, Type = "image"}, 
-     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 75, 0)} 
- )
- wait(2)
-Notification:Notify( 
-     {Title = "Orion UI 库提供:", Description = "谢谢 小云!小云! 提供的 Orion UI 库!"}, 
+     {Title = "Orion UI 库提供:", Description = "谢谢 小云!小云! 提供的 Orion UI 库!🤩"}, 
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 20, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
  )
@@ -105,11 +68,19 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/blood
 Library.DefaultColor = Color3.fromRGB(255,0,0)
 
 Library:Notification({
-	Text = "那么...再见~ヾ(＾∇＾)ﾉ 因为公告结束了😭",
+	Text = "清者自清,浊者自浊!😒",
 	Duration = 6
 })
 
-wait (3)
+wait (1)
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
+Library.DefaultColor = Color3.fromRGB(100,255,0)
+
+Library:Notification({
+	Text = "二改就是二改😒",
+	Duration = 6
+})
+
 ----------------------------
 wait (1)
 --[[
