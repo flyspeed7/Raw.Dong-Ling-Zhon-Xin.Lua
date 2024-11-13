@@ -1,4 +1,4 @@
-local fnl = loadstring(game:HttpGetAsync 'https://raw.githubusercontent.com/Code1Tech/utils/main/notification.lua')()
+local fnl = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Focat.Libery/refs/heads/main/Libe.LUA"))()
 
 -- Make a Notification function
 function notify(title, text, duration)
