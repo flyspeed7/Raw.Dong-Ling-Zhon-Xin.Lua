@@ -1139,47 +1139,7 @@ Tab:AddToggle({
           Name = "范围区"  
   
   })  
- Tab:AddSlider({  
-  
-          Name = "范围大小",  
-  
-          Min = 10,  
-  
-          Max = 100,  
-  
-          Default = 10,  
-  
-          Color = Color3.fromRGB(127,251,111),  
-  
-          Increment = 1,  
-  
-          ValueName = "数值",  
-  
-          Callback = function(Value)  
-  
-                        hitboxSize = Value
-                        hitboxesNoCollision()  
-  
-          end      
-  
-  })  
  
- Tab:AddToggle({  
-          Name = "可调节范围(上方调节范围)",  
-          Default = false,  
-          Callback = function(state)  
-             hitboxEnabled = state
-  
-      if state then
-          connection = game:GetService("RunService").Stepped:Connect(hitboxesNoCollision)
-      else
-          if connection then
-              connection:Disconnect()
-          end
-          hitboxesNoCollision()
-      end
-          end  
-  })  
   Tab:AddButton({  
           Name = "Acrylix（通用）",  
           Callback = function()  
