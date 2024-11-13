@@ -19,7 +19,7 @@ wait(2)
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
- wait(0.55)
+ wait(5)
  Notification:Notify( 
      {Title = "一根葱😍", Description = "I like 一根葱 :)"}, 
      {OutlineColor = Color3.fromRGB(100, 255, 0),Time = 20, Type = "image"}, 
@@ -68,7 +68,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/blood
 Library.DefaultColor = Color3.fromRGB(255,0,0)
 
 Library:Notification({
-	Text = "清者自清,浊者自浊!😒",
+	Text = "Orion UI库提供者:小云☁️",
 	Duration = 6
 })
 
@@ -77,7 +77,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/blood
 Library.DefaultColor = Color3.fromRGB(100,255,0)
 
 Library:Notification({
-	Text = "二改就是二改😒",
+	Text = "谢谢,小云",
 	Duration = 6
 })
 
@@ -88,7 +88,7 @@ Title = <string> - The title of the notification.
 Content = <string> - The content of the notification.
 Image = <string> - The icon of the notification.
 Time = <number> - The duration of the notfication.
-]]
+
 local ScreenGui = Instance.new("ScreenGui") 
  ScreenGui.Name = "Credits" 
  ScreenGui.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui") 
@@ -247,7 +247,7 @@ local ScreenGui = Instance.new("ScreenGui")
      sound.Parent = game.Workspace 
      sound:Play()
  end 
-  
+  ]]
   print("反挂机已经为你开好了 喵~")  
                   local vu = game:GetService("VirtualUser")  
                   game:GetService("Players").LocalPlayer.Idled:connect(function()  
