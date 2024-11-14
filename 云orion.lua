@@ -16,4 +16,4 @@ Library:Notification({
 	Duration = 6
 })
 
- loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
+ local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
