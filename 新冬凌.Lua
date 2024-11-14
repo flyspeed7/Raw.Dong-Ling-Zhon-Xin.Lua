@@ -77,6 +77,24 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/blood
 Library.DefaultColor = Color3.fromRGB(100,255,0)
 
 Library:Notification({
+        Text = "你好,我是小凌-QE4 你用我的UI😡",
+        Duration = 6
+})
+
+wait (3)
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
+Library.DefaultColor = Color3.fromRGB(100,255,0)
+
+Library:Notification({
+        Text = "其实 Orion UI 真正的作者是小云🙄",
+        Duration = 6
+})
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
+Library.DefaultColor = Color3.fromRGB(100,255,0)
+
+Library:Notification({
 	Text = "谢谢,小云",
 	Duration = 6
 })
