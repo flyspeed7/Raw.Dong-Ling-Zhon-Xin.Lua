@@ -1,31 +1,55 @@
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
  local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
  wait(1)
+      local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://4590662766" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+  
        Notification:Notify( 
      {Title = "🥵更新情况::", Description = "今日已更新:通用~骂人在自然灾害里面用不了•ᴗ•💧"}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
 wait(2)
- 
+       local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://4590662766" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+  
  Notification:Notify( 
      {Title = "请认准作者:小凌-Q3E4😋", Description = "作者:QE4-小凌"}, 
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
  )
  wait(2)
+      local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://4590662766" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+  
   Notification:Notify( 
      {Title = "是谁制作🤔", Description = "QQ 群：884776077 作者:1211373508"}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
  wait(5)
+      local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://4590662766" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+  
  Notification:Notify( 
      {Title = "一根葱😍", Description = "I like 一根葱 :)"}, 
      {OutlineColor = Color3.fromRGB(100, 255, 0),Time = 20, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(100, 255, 0)} 
  )
  wait(2)
+      local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://4590662766" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+  
 Notification:Notify( 
      {Title = "Orion UI 库提供:", Description = "谢谢 小云!小云! 提供的 Orion UI 库!🤩"}, 
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 20, Type = "image"}, 
@@ -33,7 +57,7 @@ Notification:Notify(
  )
  wait(2)
        local sound = Instance.new("Sound") 
-     sound.SoundId = "rbxassetid://6073491164" 
+     sound.SoundId = "rbxassetid://4590662766" 
      sound.Parent = game.Workspace 
      sound:Play()
   
@@ -46,10 +70,18 @@ Library:Notification({
 })
 
 wait (3)
-
+      local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://4590662766" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+  
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
 Library.DefaultColor = Color3.fromRGB(255,0,0)
-
+      local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://4590662766" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+  
 Library:Notification({
 	Text = "em...目前好像就这几个吧 x_x",
 	Duration = 6
@@ -58,7 +90,11 @@ wait(3)
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
 Library.DefaultColor = Color3.fromRGB(255,0,0)
-
+      local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://4590662766" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+  
 Library:Notification({
 	Text = "感谢你使用冬凌脚本中心(ﾟ∀ﾟ)👉",
 	Duration = 6
@@ -66,7 +102,11 @@ Library:Notification({
 wait (3)
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
 Library.DefaultColor = Color3.fromRGB(255,0,0)
-
+      local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://4590662766" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+  
 Library:Notification({
 	Text = "Orion UI库提供者:小云☁️",
 	Duration = 6
@@ -75,7 +115,11 @@ Library:Notification({
 wait (1)
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
 Library.DefaultColor = Color3.fromRGB(100,255,0)
-
+      local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://4590662766" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+  
 Library:Notification({
         Text = "你好,我是小凌-QE4 你用我的UI😡",
         Duration = 6
@@ -85,7 +129,11 @@ wait (3)
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
 Library.DefaultColor = Color3.fromRGB(100,255,0)
-
+      local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://4590662766" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+  
 Library:Notification({
         Text = "其实 Orion UI 真正的作者是小云🙄",
         Duration = 6
@@ -93,9 +141,13 @@ Library:Notification({
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
 Library.DefaultColor = Color3.fromRGB(100,255,0)
-
+      local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://4590662766" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+  
 Library:Notification({
-	Text = "谢谢,小云",
+	Text = "谢谢,小云啊",
 	Duration = 6
 })
 
@@ -302,8 +354,6 @@ Callback = function()
 local Section = about:AddSection({
 	Name = "更新日志: \n 加了音乐脚本"
 })
-
-
   about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."")  
   about:AddParagraph("您的注入器:"," "..identifyexecutor().."")  
   about:AddParagraph("您当前服务器的ID"," "..game.GameId.."")  
