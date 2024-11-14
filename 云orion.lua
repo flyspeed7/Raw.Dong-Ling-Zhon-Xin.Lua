@@ -459,7 +459,7 @@ function OrionLib:MakeWindow(WindowConfig)
                 WindowConfig.IntroEnabled = true
         end
         WindowConfig.IntroToggleIcon = WindowConfig.IntroToggleIcon or "rbxassetid://8834748103"
-        WindowConfig.IntroText = WindowConfig.IntroText or "Orion Library"
+        WindowConfig.IntroText = WindowConfig.IntroText or "作者:QE4 小云:Cloud Orion UI"
         WindowConfig.CloseCallback = WindowConfig.CloseCallback or function() end
         WindowConfig.ShowIcon = WindowConfig.ShowIcon or false
         WindowConfig.Icon = WindowConfig.Icon or "rbxassetid://8834748103"
