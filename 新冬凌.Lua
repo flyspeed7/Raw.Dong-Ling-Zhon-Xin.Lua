@@ -318,14 +318,26 @@ local ScreenGui = Instance.new("ScreenGui")
      sound:Play()
  end 
   ]]
-  print("反挂机已经为你开好了 喵~")  
-                  local vu = game:GetService("VirtualUser")  
-                  game:GetService("Players").LocalPlayer.Idled:connect(function()  
-                     vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)  
-                     wait(1)  
-                     vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)  
-                  end)  
-                  wait(1)
+  local first = false
+if hookmetamethod then
+    OldNameCall = hookmetamethod(game, "__namecall", function(Self, ...)
+        local NameCallMethod = getnamecallmethod()
+
+        if tostring(string.lower(NameCallMethod)) == "kick" and not first then
+            print("以为你已打开防踢,反挂机!")
+            return nil
+        end
+
+        return OldNameCall(Self, ...)
+    end)
+    if not First then
+        First = true
+    end
+else
+    warn("AntiKick: unsupported executor, missing hookmetamethod function.")
+    return
+end
+wait(1)
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
   local Window = OrionLib:MakeWindow({Name = "冬凌中心 | 2024.11.13", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
 
