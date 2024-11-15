@@ -1607,7 +1607,7 @@ end
  })
   local Section = Tab:AddSection({  
   
-          Name = "ESP 区"  
+          Name = "ESP 区(假)"  
   
   })  
 Tab:AddButton({  
@@ -2044,8 +2044,13 @@ EspTab:AddToggle({
         toggleBox2D(value)
     end
 })
-
-OrionLib:Init()
+ Tab:AddButton({         
+ Name = "冬凌汉化ESP",         
+ Callback = function()         
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/espesp.lua"))()
+      end 
+ })
+ 
  local Tab= Window:MakeTab({ 
          Name = "速度传奇", 
          Icon = "rbxassetid://7733956134", 
