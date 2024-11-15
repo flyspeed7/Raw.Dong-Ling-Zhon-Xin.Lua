@@ -1066,6 +1066,32 @@ Callback = <function> - The function of the colorpicker.
      loadstring(game:HttpGet('https://pastebin.com/raw/AjDmq385'))()
   	end    
 })
+ Tab:AddButton({         
+ Name = "控制台开启器(F9)",         
+ Callback = function()         
+ 
+-- This Script Made By aabbaaii13 On Discord
+local screengui = Instance.new("ScreenGui", game:GetService("CoreGui"))
+local button = Instance.new("TextButton", screengui)
+screengui.ResetOnSpawn = false
+
+button.Size = UDim2.new(0, 100, 0, 50)
+button.Position = UDim2.new(0, 100, 0, 100)
+button.Text = "开启/关闭"
+button.MouseButton1Click:Connect(function()
+game:GetService("StarterGui"):SetCore("DevConsoleVisible", true)
+end)
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
+Library.DefaultColor = Color3.fromRGB(255,0,0)
+
+Library:Notification({
+	Text = "冬凌:点击开启控制台谢谢您的使用!",
+	Duration = 5
+})
+      end 
+ })
+ 
 Tab:AddToggle({  
           Name = "自动互动",  
           Default = false,  
@@ -1078,7 +1104,7 @@ Tab:AddToggle({
                         fireproximityprompt(descendant)
                     end
                 end
-                task.wait(0.25) -- Adjust the wait time as needed
+                task.wait(0.15) -- Adjust the wait time as needed
             end
         else
             autoInteract = false
