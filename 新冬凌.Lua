@@ -1091,6 +1091,13 @@ Library:Notification({
 })
       end 
  })
+  Tab:AddButton({         
+ Name = "自动检查注入器UNC!",         
+ Callback = function()         
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamkhnah/Khanhdzpro/refs/heads/main/CheckCoolExecutor.lua"))()
+           
+      end 
+ })
  
 Tab:AddToggle({  
           Name = "自动互动",  
