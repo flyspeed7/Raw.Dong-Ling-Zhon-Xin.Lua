@@ -2962,4 +2962,21 @@ Tab:AddSlider({
            
       end 
  })
+ local Tab= Window:MakeTab({ 
+         Name = "最强战场", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+  local Section = Tab:AddSection({  
+  
+          Name = " 打开第二个和第三个可以隐身. \n du8提供,谢谢 du8"  
+  
+  })  
+  Tab:AddButton({         
+ Name = "18064",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://rawscripts.net/raw/The-Strongest-Battlegrounds-Phantasm-SUPPORTS-SOLARA-18046"))()
+           
+      end 
+ })
  
