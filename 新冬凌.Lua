@@ -7,7 +7,7 @@ local NotificationHolder = loadstring(game:HttpGet("https://raw.githubuserconten
      sound:Play()
   
        Notification:Notify( 
-     {Title = "🥵更新情况::", Description = "今日已更新:通用~ Cy刀模拟器~ 骂人在自然灾害里面用不了•ᴗ•"}, 
+     {Title = "🥵更新情况::", Description = "今日已更新:通用~ Cy刀模拟器~ 最强战场~ 骂人在自然灾害里面用不了•ᴗ•"}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
