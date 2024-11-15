@@ -2945,3 +2945,21 @@ Tab:AddSlider({
   
   })  
   ]]--
+ local Tab= Window:MakeTab({ 
+         Name = "Cy刀模拟器", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+  local Section = Tab:AddSection({  
+  
+          Name = "冬凌汉化脚本不是自制"  
+  
+  })  
+ Tab:AddButton({         
+ Name = "Cy刀模拟器 汉化版",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Cy%20Blade.Lua"))()
+           
+      end 
+ })
+ 
