@@ -3441,4 +3441,16 @@ end
            
       end 
  })
+  local Section = Tab:AddSection({  
+  
+          Name = "高质量 Evade 脚本:"  
+  
+  })  
+ Tab:AddButton({         
+ Name = "Review King_HUB",         
+ Callback = function()         
+           pcall(loadstring(game:HttpGet('https://raw.githubusercontent.com/zReal-King/Evade/main/Main.lua')))
+           
+      end 
+ })
  
