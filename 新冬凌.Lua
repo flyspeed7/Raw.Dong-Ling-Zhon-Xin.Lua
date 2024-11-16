@@ -3443,14 +3443,20 @@ end
  })
   local Section = Tab:AddSection({  
   
-          Name = "高质量 Evade 脚本:"  
+          Name = "高质量 Evade 脚本: \n 卡密已经解出来了复习就可以"  
   
   })  
  Tab:AddButton({         
- Name = "Review King_HUB",         
+ Name = "Review King_HUB(卡密系统)",         
  Callback = function()         
            pcall(loadstring(game:HttpGet('https://raw.githubusercontent.com/zReal-King/Evade/main/Main.lua')))
            
+      end 
+ })
+  Tab:AddButton({         
+ Name = "点击复制 Review King_HUB卡密",         
+ Callback = function()         
+           setclipboard("KINGKEYar6sD4TxdwAygGFmMeXR3HpVvJWnf7cjYL58btNuqUzCPSZBKh")
       end 
  })
  
