@@ -401,6 +401,19 @@ Callback = function()
   	OrionLib:Destroy()
      end
 })
+ about:AddButton({         
+ Name = "天黑模式",         
+ Callback = function()         
+           lighting = game:GetService("Lighting")
+if lighting.TimeOfDay == "00:00:00" then
+    lighting.TimeOfDay = 11
+else 
+    lighting.TimeOfDay = 24
+end
+           
+      end 
+ })
+ 
 local Section = about:AddSection({
 	Name = "更新日志: \n 加了音乐脚本"
 })
@@ -1425,9 +1438,116 @@ Tab:AddToggle({
   })  
   local Section = Tab:AddSection({  
   
-          Name = "复杂功能"  
+          Name = "其他/FE 功能"  
   
   })  
+   Tab:AddButton({         
+ Name = "无腿(R15)",         
+ Callback = function()  
+character = game:GetService("Players").LocalPlayer.Character 
+      
+--R15 Rigs
+leftUpperLeg = character:FindFirstChild("LeftUpperLeg")
+if leftUpperLeg then leftUpperLeg:Destroy() end
+leftLowerLeg = character:FindFirstChild("LeftLowerLeg")
+if leftLowerLeg then leftLowerLeg:Destroy() end
+leftFoot = character:FindFirstChild("LeftFoot")
+if leftFoot then leftFoot:Destroy() end
+rightUpperLeg = character:FindFirstChild("RightUpperLeg")
+if rightUpperLeg then rightUpperLeg:Destroy() end
+rightLowerLeg = character:FindFirstChild("RightLowerLeg")
+if rightLowerLeg then rightLowerLeg:Destroy() end
+rightFoot = character:FindFirstChild("RightFoot")
+if rightFoot then rightFoot:Destroy() end
+           
+      end 
+ })
+  Tab:AddButton({         
+ Name = "无腿(R6)",         
+ Callback = function()         
+           character = game:GetService("Players").LocalPlayer.Character
+
+--R6 Rigs
+leftLeg = character:FindFirstChild("Left Leg")
+if leftLeg then leftLeg:Destroy() end
+rightLeg = character:FindFirstChild("Right Leg")
+if rightLeg then rightLeg:Destroy() end
+           
+      end 
+ })
+  Tab:AddButton({         
+ Name = "无手(R15)",         
+ Callback = function()  
+character = game:GetService("Players").LocalPlayer.Character
+       
+          --R15 Rigs
+leftUpperArm = character:FindFirstChild("LeftUpperArm")
+if leftUpperArm then leftUpperArm:Destroy() end
+leftLowerArm = character:FindFirstChild("LeftLowerArm")
+if leftLowerArm then leftLowerArm:Destroy() end
+leftFoot = character:FindFirstChild("LeftFoot")
+if leftFoot then leftFoot:Destroy() end
+rightUpperArm = character:FindFirstChild("RightUpperArm")
+if rightUpperArm then rightUpperArm:Destroy() end
+rightLowerArm = character:FindFirstChild("RightLowerArm")
+if rightLowerArm then rightLowerArm:Destroy() end
+rightFoot = character:FindFirstChild("RightFoot")
+if rightFoot then rightFoot:Destroy() end 
+           
+      end 
+ })
+  Tab:AddButton({         
+ Name = "无手(R6)",         
+ Callback = function()         
+           character = game:GetService("Players").LocalPlayer.Character
+
+--R6 Rigs
+leftArm = character:FindFirstChild("Left Arm")
+if leftArm then leftArm:Destroy() end
+rightArm = character:FindFirstChild("Right Arm")
+if rightArm then rightArm:Destroy() end
+
+           
+      end 
+ })
+  Tab:AddButton({         
+ Name = "悬浮行走",         
+ Callback = function()         
+           player = game:GetService("Players").LocalPlayer
+
+--Remove BodyVelocity to remove float
+if player.Character.HumanoidRootPart:FindFirstChild("WRDBodyVelocity") then
+    player.Character.HumanoidRootPart.WRDBodyVelocity:Destroy()
+--Insert BodyVelocity to add float
+else
+    local bodyVelocity = Instance.new("BodyVelocity")
+    --So we know what specific instance to remove when toggle off
+    bodyVelocity.Name = "WRDBodyVelocity"
+    bodyVelocity.Parent = player.Character.HumanoidRootPart
+end
+           
+      end 
+ })
+  Tab:AddButton({         
+ Name = "大长腿",         
+ Callback = function()         
+           game:GetService("Players").LocalPlayer.Character.Humanoid.HipHeight = 10
+           
+      end 
+ })
+  Tab:AddButton({         
+ Name = "人体扭曲",         
+ Callback = function()         
+           character = game:GetService("Players").LocalPlayer.Character
+rootJoint = character.HumanoidRootPart.RootJoint
+
+rightLeg = character:FindFirstChild("Right Leg") or character:FindFirstChild("LowerRightLeg")
+rootJoint.Part0 = character["Right Leg"]
+rootJoint.Part1 = character.HumanoidRootPart
+           
+      end 
+ })
+ 
  Tab:AddButton({         
  Name = "人物手电筒",         
  Callback = function()         
