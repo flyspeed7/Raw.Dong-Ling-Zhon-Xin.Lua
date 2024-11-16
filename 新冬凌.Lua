@@ -3399,3 +3399,29 @@ Tab:AddSlider({
     game:GetService("ReplicatedStorage").Knit.Services.RaidService.RF.GiveReward:InvokeServer(unpack(args))
        end
   })  
+ local Tab= Window:MakeTab({ 
+         Name = "猜Emoji", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+  Tab:AddButton({         
+ Name = "自动输入单词",         
+ Callback = function()         
+local player = game.Players.LocalPlayer
+
+while wait(0.5) do 
+   local lvl = player.Levels.Normal
+   local door = workspace.Doors.Normal:FindFirstChild(tonumber(lvl.Value))
+   
+   if door then
+local args = {
+    [1] = door.Answers.Answer.Value
+}
+game:GetService("ReplicatedStorage").Events.SubmitAnswer:FireServer(unpack(args))
+       
+    end
+    
+end        
+      end 
+ })
+ 
