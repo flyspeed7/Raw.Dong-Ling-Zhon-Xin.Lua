@@ -401,8 +401,13 @@ Callback = function()
   	OrionLib:Destroy()
      end
 })
+  local Section = about:AddSection({  
+  
+          Name = "天气"  
+  
+  })  
  about:AddButton({         
- Name = "天黑模式",         
+ Name = "凌晨12点",         
  Callback = function()         
            lighting = game:GetService("Lighting")
 if lighting.TimeOfDay == "00:00:00" then
@@ -413,9 +418,48 @@ end
            
       end 
  })
+  about:AddButton({         
+ Name = "下午4点",         
+ Callback = function()         
+                  lighting = game:GetService("Lighting")
+if lighting.TimeOfDay == "16:00:00" then
+    lighting.TimeOfDay = 11
+else 
+    lighting.TimeOfDay = 24
+end
+    
+           
+      end 
+ })
+  about:AddButton({         
+ Name = "中午十一点",         
+ Callback = function()         
+                      lighting = game:GetService("Lighting")
+if lighting.TimeOfDay == "11:00:00" then
+    lighting.TimeOfDay = 11
+else 
+    lighting.TimeOfDay = 24
+end
+
+           
+      end 
+ })
+  about:AddButton({         
+ Name = "早上七点",         
+ Callback = function()         
+                      lighting = game:GetService("Lighting")
+if lighting.TimeOfDay == "07:00:00" then
+    lighting.TimeOfDay = 11
+else 
+    lighting.TimeOfDay = 24
+end
+
+           
+      end 
+ })
  
 local Section = about:AddSection({
-	Name = "更新日志: \n 加了音乐脚本"
+	Name = "更新日志: \n 加了很多的东西你可以到通知查看!"
 })
   about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."")  
   about:AddParagraph("您的注入器:"," "..identifyexecutor().."")  
@@ -2188,7 +2232,7 @@ EspTab:AddToggle({
         toggleESP(value)
     end
 })
-Tab:AddToggle({  
+EspTab:AddToggle({  
           Name = "绘制人物雷达(Beta)",  
           Default = false,  
           Callback = function()  
