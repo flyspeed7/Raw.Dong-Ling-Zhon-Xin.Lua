@@ -7,7 +7,7 @@ local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/
      sound:Play()
   
        Notification:Notify( 
-     {Title = "🥵更新情况::", Description = "今日已更新:通用~ 绘制人物雷达~ 骂人在自然灾害里面用不了•ᴗ•"}, 
+     {Title = "😋更新状况:注入器已无法读取OrionUI库!", Description = "今日已更新:通用~ 绘制人物雷达~ 骂人在自然灾害里面用不了•ᴗ•"}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
