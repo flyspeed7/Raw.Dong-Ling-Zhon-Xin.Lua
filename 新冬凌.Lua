@@ -3424,4 +3424,21 @@ game:GetService("ReplicatedStorage").Events.SubmitAnswer:FireServer(unpack(args)
 end        
       end 
  })
+  local Tab= Window:MakeTab({ 
+         Name = "冬凌汉化 EVADE", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+  local Section = Tab:AddSection({  
+  
+          Name = "只是汉化，并不是我做的"  
+  
+  })  
+  Tab:AddButton({         
+ Name = "汉化 Evade",         
+ Callback = function()         
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E5%86%AC%E5%87%8C%3A%20Evade.Lua"))()
+           
+      end 
+ })
  
