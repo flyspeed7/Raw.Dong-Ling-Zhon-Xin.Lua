@@ -153,11 +153,6 @@ Library:Notification({
 
 ----------------------------
 wait (1)
---[[
-Title = <string> - The title of the notification.
-Content = <string> - The content of the notification.
-Image = <string> - The icon of the notification.
-Time = <number> - The duration of the notfication.
 
 local ScreenGui = Instance.new("ScreenGui") 
  ScreenGui.Name = "Credits" 
@@ -233,7 +228,7 @@ local ScreenGui = Instance.new("ScreenGui")
  ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5) 
  ImageLabel.Position = UDim2.new(0.5, 0, 0.4, 0) 
  ImageLabel.Size = UDim2.new(0.2, 0, 0.2, 0) 
- ImageLabel.Image = "rbxassetid://18733651372" 
+ ImageLabel.Image = "rbxassetid://11560341824" 
  ImageLabel.Parent = ScreenGui 
  local TextLabel = Instance.new("TextLabel") 
  TextLabel.Name = "Text" 
@@ -243,7 +238,7 @@ local ScreenGui = Instance.new("ScreenGui")
  TextLabel.Font = Enum.Font.GothamBold 
  TextLabel.TextColor3 = Color3.new(1, 1, 1) 
  TextLabel.TextScaled = true 
- TextLabel.Text = "冬凌中心 | 5.2.0[FORMAL]" 
+ TextLabel.Text = "邮箱:xiaoling.q3e4@gmail.com" 
  TextLabel.Parent = ScreenGui 
   
  local function animateCredits() 
@@ -262,7 +257,7 @@ local ScreenGui = Instance.new("ScreenGui")
   
  animateCredits() 
   
- local creditText = "新.冬凌加载中..." 
+ local creditText = "如有问题请反馈邮箱!!!" 
  local creditDuration = 5 
   
  local decalIds = { 
@@ -1092,7 +1087,7 @@ Library:Notification({
       end 
  })
   Tab:AddButton({         
- Name = "自动检查注入器UNC!",         
+ Name = "自动检查注入器COOL!",         
  Callback = function()         
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamkhnah/Khanhdzpro/refs/heads/main/CheckCoolExecutor.lua"))()
            
@@ -3300,7 +3295,7 @@ Tab:AddSlider({
   
   })  
  Tab:AddButton({         
- Name = "Cy刀模拟器 汉化版",         
+ Name = "Cy刀模拟器 平板可用",         
  Callback = function()         
            loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Cy%20Blade.Lua"))()
            
@@ -3323,4 +3318,33 @@ Tab:AddSlider({
            
       end 
  })
- 
+  local Tab= Window:MakeTab({ 
+         Name = "夜灯", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+  local Section = Tab:AddSection({  
+  
+          Name = "XI Hub 汉化版"  
+  
+  })  
+ Tab:AddButton({         
+ Name = "汉化 XI Hub",         
+ Callback = function()         
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E5%A4%9C%E7%81%AF.lua"))()
+           
+      end 
+ })
+  local Tab= Window:MakeTab({ 
+         Name = "城市防御大亨", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+ Tab:AddToggle({  
+          Name = "无限金钱😍",  
+          Default = false,  
+          Callback = function()  
+              local args = { [1] = math.huge }
+    game:GetService("ReplicatedStorage").Knit.Services.RaidService.RF.GiveReward:InvokeServer(unpack(args))
+       end
+  })  
