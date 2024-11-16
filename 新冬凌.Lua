@@ -1428,6 +1428,16 @@ Tab:AddToggle({
           Name = "复杂功能"  
   
   })  
+ Tab:AddButton({         
+ Name = "人物手电筒",         
+ Callback = function()         
+           character = game:GetService("Players").LocalPlayer.Character
+pointLight = Instance.new("PointLight")
+pointLight.Parent = character.HumanoidRootPart
+           
+      end 
+ })
+ 
    Tab:AddButton({         
  Name = "踏空",         
  Callback = function()         
