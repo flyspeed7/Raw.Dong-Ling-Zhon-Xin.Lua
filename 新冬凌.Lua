@@ -3640,4 +3640,16 @@ end
            setclipboard("KINGKEYar6sD4TxdwAygGFmMeXR3HpVvJWnf7cjYL58btNuqUzCPSZBKh")
       end 
  })
+  local Tab= Window:MakeTab({ 
+         Name = "汉堡大亨", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+  Tab:AddButton({         
+ Name = "无线金钱",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterGuy/Scriptblox-ExploitFin/refs/heads/main/Burgeria%20Tycoon.txt"))()
+           
+      end 
+ })
  
