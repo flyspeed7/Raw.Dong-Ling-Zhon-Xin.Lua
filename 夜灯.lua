@@ -33,12 +33,12 @@ lp.CharacterAdded:Connect(function(c)
 end)
 
 local Notif = library:InitNotifications()
-local LoadingXSX = Notif:Notify("冬凌汉化队 | 夜灯", 4, "By:Catsus Q3E4")
+local LoadingXSX = Notif:Notify("冬凌汉化 | 夜灯", 4, "By:Catsus Q3E4")
 
 function encode(thing) return game:GetService("HttpService"):JSONEncode(thing) end
 function decode(thing) return game:GetService("HttpService"):JSONDecode(thing) end
 
-library.title = "XI Hub"
+library.title = "冬凌汉化 | 夜灯"
 
 if isfile("XIHub/Settings.json") then
  settings = game:GetService("HttpService"):JSONDecode(readfile("XIHub/Settings.json"))
