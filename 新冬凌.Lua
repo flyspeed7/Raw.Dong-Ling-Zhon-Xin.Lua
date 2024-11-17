@@ -342,29 +342,10 @@ local TweenService = game:GetService("TweenService")
     
     while true do
         changeColor()
-        wait(1) 
+        wait(0.5) 
 end
-  local first = false
-if hookmetamethod then
-    OldNameCall = hookmetamethod(game, "__namecall", function(Self, ...)
-        local NameCallMethod = getnamecallmethod()
-
-        if tostring(string.lower(NameCallMethod)) == "kick" and not first then
-            print("以为你已打开防踢,反挂机!")
-            return nil
-        end
-
-        return OldNameCall(Self, ...)
-    end)
-    if not First then
-        First = true
-    end
-else
-    warn("AntiKick: unsupported executor, missing hookmetamethod function.")
-    return
-end
-wait(1)
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/LOL/main/Orion.lua"))()
+  
+local OrionLib = loadstring(game:HttpGet(""))()
   local Window = OrionLib:MakeWindow({Name = "冬凌中心 | 2024.11.17", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
 
 --[[
