@@ -48,7 +48,7 @@ toggleGuiButton.Size = UDim2.new(0, 45, 0, 45)
 toggleGuiButton.Position = UDim2.new(0, 10, 0, 10)
 toggleGuiButton.BackgroundColor3 = Color3.fromRGB(128, 128, 128)
 toggleGuiButton.TextColor3 = Color3.new(1, 1, 1)
-toggleGuiButton.Text = "开/关"
+toggleGuiButton.Text = "开"
 toggleGuiButton.Parent = screenGui
 
 local toggleButtonCorner = Instance.new("UICorner")
