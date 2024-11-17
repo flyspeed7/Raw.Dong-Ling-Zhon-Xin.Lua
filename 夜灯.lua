@@ -68,7 +68,7 @@ STab:NewToggle("收集硬币", settings.CollectCoins, function(value)
     CC = value
     settings.CollectCoins = value
 end)
-local Toggle = STab:NewToggle("FullBright", settings.FB, function(value)
+local Toggle = STab:NewToggle("高亮", settings.FB, function(value)
  settings.FB = value
  if value then
   game:GetService("Lighting").Ambient = Color3.fromRGB(255,255,255)
