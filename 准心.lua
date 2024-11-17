@@ -33,22 +33,22 @@ local function createButton(name, position, text)
     return button
 end
 
-local redButton = createButton("RedButton", UDim2.new(0, 10, 0, 5), "Red")
-local blueButton = createButton("BlueButton", UDim2.new(0, 10, 0, 60), "Blue")
-local whiteButton = createButton("WhiteButton", UDim2.new(0, 10, 0, 115), "White")
-local blackButton = createButton("BlackButton", UDim2.new(0, 10, 0, 170), "Black")
+local redButton = createButton("RedButton", UDim2.new(0, 10, 0, 5), "红色")
+local blueButton = createButton("BlueButton", UDim2.new(0, 10, 0, 60), "蓝色")
+local whiteButton = createButton("WhiteButton", UDim2.new(0, 10, 0, 115), "白色")
+local blackButton = createButton("BlackButton", UDim2.new(0, 10, 0, 170), "黑色")
 
-local greenButton = createButton("GreenButton", UDim2.new(0, 10 + 75 + 5, 0, 5), "Green")
-local yellowButton = createButton("YellowButton", UDim2.new(0, 10 + 75 + 5, 0, 60), "Yellow")
-local pinkButton = createButton("PinkButton", UDim2.new(0, 10 + 75 + 5, 0, 115), "Pink")
-local extraBlackButton = createButton("ExtraBlackButton", UDim2.new(0, 10 + 75 + 5, 0, 170), "Black")
+local greenButton = createButton("GreenButton", UDim2.new(0, 10 + 75 + 5, 0, 5), "绿色")
+local yellowButton = createButton("YellowButton", UDim2.new(0, 10 + 75 + 5, 0, 60), "黄色")
+local pinkButton = createButton("PinkButton", UDim2.new(0, 10 + 75 + 5, 0, 115), "粉色")
+local extraBlackButton = createButton("ExtraBlackButton", UDim2.new(0, 10 + 75 + 5, 0, 170), "灰色")
 
 local toggleGuiButton = Instance.new("TextButton")
 toggleGuiButton.Size = UDim2.new(0, 45, 0, 45)
 toggleGuiButton.Position = UDim2.new(0, 10, 0, 10)
 toggleGuiButton.BackgroundColor3 = Color3.fromRGB(128, 128, 128)
 toggleGuiButton.TextColor3 = Color3.new(1, 1, 1)
-toggleGuiButton.Text = "Open"
+toggleGuiButton.Text = "开/关"
 toggleGuiButton.Parent = screenGui
 
 local toggleButtonCorner = Instance.new("UICorner")
@@ -135,5 +135,5 @@ end)
 
 toggleGuiButton.MouseButton1Click:Connect(function()
     frame.Visible = not frame.Visible
-    toggleGuiButton.Text = frame.Visible and "Close" or "Open"
+    toggleGuiButton.Text = frame.Visible and "关" or "开"
 end)
