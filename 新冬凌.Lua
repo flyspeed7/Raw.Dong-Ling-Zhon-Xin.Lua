@@ -1,11 +1,12 @@
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
+
  wait(1)
+
       local sound = Instance.new("Sound") 
      sound.SoundId = "rbxassetid://4590662766" 
      sound.Parent = game.Workspace 
      sound:Play()
-  
        Notification:Notify( 
      {Title = "😋更新状况:注入器已无法读取OrionUI库!", Description = "今日已更新:通用~ 绘制人物雷达~ 骂人在自然灾害里面用不了•ᴗ•"}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 10, Type = "image"}, 
@@ -33,23 +34,11 @@ wait(2)
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
- wait(5)
-      local sound = Instance.new("Sound") 
-     sound.SoundId = "rbxassetid://4590662766" 
-     sound.Parent = game.Workspace 
-     sound:Play()
-  
- Notification:Notify( 
-     {Title = "一根葱😍", Description = "I like 一根葱 :)"}, 
-     {OutlineColor = Color3.fromRGB(100, 255, 0),Time = 20, Type = "image"}, 
-     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(100, 255, 0)} 
- )
  wait(2)
       local sound = Instance.new("Sound") 
      sound.SoundId = "rbxassetid://4590662766" 
      sound.Parent = game.Workspace 
      sound:Play()
-  
 Notification:Notify( 
      {Title = "Orion UI 库提供:", Description = "谢谢 小云!小云! 提供的 Orion UI 库!🤩"}, 
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 20, Type = "image"}, 
@@ -60,7 +49,6 @@ Notification:Notify(
      sound.SoundId = "rbxassetid://4590662766" 
      sound.Parent = game.Workspace 
      sound:Play()
-  
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
 Library.DefaultColor = Color3.fromRGB(255,0,0)
 
