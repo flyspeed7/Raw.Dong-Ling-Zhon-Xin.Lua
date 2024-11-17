@@ -300,7 +300,7 @@ local ScreenGui = Instance.new("ScreenGui")
      sound.Parent = game.Workspace 
      sound:Play()
  end 
-  ]]
+
 local TweenService = game:GetService("TweenService")
     local NeonWaterMark = Instance.new("ScreenGui")
     local TextLabel = Instance.new("TextLabel")
@@ -344,7 +344,7 @@ local TweenService = game:GetService("TweenService")
         changeColor()
         wait(0.5) 
 end
-
+  ]]
   local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
   local Window = OrionLib:MakeWindow({Name = "冬凌中心 | 2024.11.17", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
 
