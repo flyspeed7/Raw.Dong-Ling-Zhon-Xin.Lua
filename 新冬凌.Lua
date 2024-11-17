@@ -1,3 +1,4 @@
+--[[
 local TweenService = game:GetService("TweenService")
     local NeonWaterMark = Instance.new("ScreenGui")
     local TextLabel = Instance.new("TextLabel")
@@ -40,7 +41,7 @@ local TweenService = game:GetService("TweenService")
     while true do
         changeColor()
 end
-
+  ]]
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
 
