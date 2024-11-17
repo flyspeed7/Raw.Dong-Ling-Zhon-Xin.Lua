@@ -364,8 +364,8 @@ else
     return
 end
 wait(1)
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
-  local Window = OrionLib:MakeWindow({Name = "冬凌中心 | 2024.11.13", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/LOL/main/Orion.lua"))()
+  local Window = OrionLib:MakeWindow({Name = "冬凌中心 | 2024.11.17", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
 
 --[[
 Name = <string> - The name of the UI.
