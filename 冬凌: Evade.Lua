@@ -1,10 +1,10 @@
-local WorkspacePlayers = game:GetService("Workspace").Game.Players;
-local Players = game:GetService('Players');
-local localplayer = Players.LocalPlayer;
+local WorkspacePlayers = game:GetService("Workspace").Game.Players
+local Players = game:GetService('Players')
+local localplayer = Players.LocalPlayer
 -- semicolon but cool :sunglasses:
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/9Strew/roblox/main/proc/jans"))()
 local Esp = loadstring(game:HttpGet("https://raw.githubusercontent.com/9Strew/roblox/main/proc/kiriotesp"))()
+
 Esp.Enabled = false
 Esp.Tracers = false
 Esp.Boxes = false
