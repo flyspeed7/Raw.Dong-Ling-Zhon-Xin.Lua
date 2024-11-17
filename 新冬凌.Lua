@@ -1,3 +1,46 @@
+local TweenService = game:GetService("TweenService")
+    local NeonWaterMark = Instance.new("ScreenGui")
+    local TextLabel = Instance.new("TextLabel")
+    local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+
+
+    NeonWaterMark.Name = "NeonWaterMark"
+    NeonWaterMark.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    NeonWaterMark.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    NeonWaterMark.ResetOnSpawn = false
+
+    TextLabel.Parent = NeonWaterMark
+    TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel.BackgroundTransparency = 1.000
+    TextLabel.BorderSizePixel = 0
+    TextLabel.Position = UDim2.new(0, 0, 0, 0)
+    TextLabel.Size = UDim2.new(0.2, 0, 0.15, 0)
+    TextLabel.Font = Enum.Font.RobotoMono
+    TextLabel.Text = "冬凌-版本:6.1.0"
+    TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel.TextScaled = true
+    TextLabel.TextSize = 28.000
+    TextLabel.TextWrapped = true
+    TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+    
+    UITextSizeConstraint.MaxTextSize = 28
+    UITextSizeConstraint.MinTextSize = 14
+    UITextSizeConstraint.Parent = TextLabel
+
+    
+    local function changeColor()
+        local rainbowColor = Color3.fromHSV(tick() % 5 / 5, 1, 1)
+        local info = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+        local tween = TweenService:Create(TextLabel, info, {TextColor3 = rainbowColor})
+        tween:Play()
+    end
+
+    
+    while true do
+        changeColor()
+end
+
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
 
@@ -8,7 +51,7 @@ local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/
      sound.Parent = game.Workspace 
      sound:Play()
        Notification:Notify( 
-     {Title = "😋更新状况:注入器已无法读取OrionUI库!", Description = "今日已更新:通用~ 绘制人物雷达~ 骂人在自然灾害里面用不了•ᴗ•"}, 
+     {Title = "😋更新状况:注入器已无法读取OrionUI库!", Description = "今日已更新:通用~ 天气～ 骂人在自然灾害里面用不了•ᴗ•"}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
