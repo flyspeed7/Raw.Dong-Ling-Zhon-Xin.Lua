@@ -319,7 +319,7 @@ local TweenService = game:GetService("TweenService")
     TextLabel.Position = UDim2.new(0, 0, 0, 0)
     TextLabel.Size = UDim2.new(0.2, 0, 0.15, 0)
     TextLabel.Font = Enum.Font.RobotoMono
-    TextLabel.Text = "冬凌版本:6.0.9"
+    TextLabel.Text = "冬凌版本:6.1.0"
     TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
     TextLabel.TextScaled = true
     TextLabel.TextSize = 28.000
@@ -344,8 +344,8 @@ local TweenService = game:GetService("TweenService")
         changeColor()
         wait(0.5) 
 end
-  
-local OrionLib = loadstring(game:HttpGet(""))()
+
+  local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
   local Window = OrionLib:MakeWindow({Name = "冬凌中心 | 2024.11.17", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
 
 --[[
