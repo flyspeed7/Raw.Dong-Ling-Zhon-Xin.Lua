@@ -36,9 +36,6 @@ local TweenService = game:GetService("TweenService")
         local tween = TweenService:Create(TextLabel, info, {TextColor3 = rainbowColor})
         tween:Play()
     end
-
-    
-    while true do
         changeColor()
 end
   ]]
@@ -52,7 +49,7 @@ local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/
      sound.Parent = game.Workspace 
      sound:Play()
        Notification:Notify( 
-     {Title = "😋更新状况:注入器已无法读取OrionUI库!", Description = "今日已更新:通用~ 天气～ 骂人在自然灾害里面用不了•ᴗ•"}, 
+     {Title = "😋更新状况:注入器已无法读取OrionUI库!", Description = "今日已更新:通用~ 骂人在自然灾害里面用不了•ᴗ•"}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
@@ -477,7 +474,7 @@ local Section = about:AddSection({
   about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."")  
   about:AddParagraph("您的注入器:"," "..identifyexecutor().."")  
   about:AddParagraph("您当前服务器的ID"," "..game.GameId.."")  
-  about:AddParagraph("已获取进程","进程:0×1fa30d90")  
+  about:AddParagraph("已获取进程","进程:0×0")  
   about:AddParagraph("大家多多不支持","脚本无加密你可以看github")  
   about:AddParagraph("缝合","做大做强(")  
    local Tab= Window:MakeTab({ 
@@ -1083,10 +1080,17 @@ Tab:AddToggle({
     Icon = "rbxassetid://7733970494",  
     PremiumOnly = false  
     })  
-  
+   Tab:AddButton({         
+ Name = "改版冬凌;琳自己开发的😏",         
+ Callback = function()         
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%80%81%E5%86%AC%E5%87%8C%202.lua"))()
+           
+      end 
+ })
+ 
   local Section = Tab:AddSection({  
   
-          Name = "有一点功能开不了"  
+          Name = "新版本结束 \n 加入快速功能"  
   
   })  
   Tab:AddSlider({  
@@ -1135,6 +1139,11 @@ Tab:AddToggle({
           end      
   
   })  
+  local Section = Tab:AddSection({  
+  
+          Name = "快速功能结束 \n 加入有趣的功能"  
+  
+  })  
 Tab:AddDropdown({
 	Name = "下拉菜单选择",
 	Default = "小凌",
@@ -1172,6 +1181,13 @@ Callback = <function> - The function of the colorpicker.
  Name = "十字准心",         
  Callback = function()         
             loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E5%87%86%E5%BF%83.lua"))()
+           
+      end 
+ })
+  Tab:AddButton({         
+ Name = "冬凌飞行 V3",         
+ Callback = function()         
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/flyV3.lua"))()
            
       end 
  })
