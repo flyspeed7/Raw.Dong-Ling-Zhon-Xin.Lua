@@ -1076,7 +1076,7 @@ Tab:AddToggle({
 	end    
 })
    local Tab = Window:MakeTab({  
-    Name = "通用/玩家",  
+    Name = "Main's",  
     Icon = "rbxassetid://7733970494",  
     PremiumOnly = false  
     })  
