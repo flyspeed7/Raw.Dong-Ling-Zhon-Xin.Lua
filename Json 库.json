@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="edge">
+<meta charset="utf-8">
+
+<meta name="x5-pagetype" content="webapp">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="telephone=no" name="format-detection" />
+<title>Geting</title>
+
+<script type="text/javascript">
+    window.location.replace("https://h5.qzone.qq.com/refreshskey/index?from=hybridFrame&refer_url=https%3A%2F%2Fh5.qzone.qq.com%2Fbgcover%2Findex%3F_wv%3D2098179%26qua%3DV1_AND_SQ_9.0.90_7218_YYB_D%26_proxy%3D1");
+</script>
+</head>
+<body>
+</body>
+</html>
