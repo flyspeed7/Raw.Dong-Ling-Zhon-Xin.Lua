@@ -3,8 +3,8 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 local Window = Fluent:CreateWindow({
-    Title = "QE4 | 冬凌 | 脚本中心" .. Fluent.Version,
-    SubTitle = "作者:QE4-小凌",
+    Title = "琳 | 冬凌 2 | 脚本中心" .. Fluent.Version,
+    SubTitle = "作者:是琳琳鸭～",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
@@ -15,7 +15,7 @@ local Options = Fluent.Options
 
 do
     Fluent:Notify({
-        Title = "欢迎使用QE4版冬凌中心",
+        Title = "欢迎使用琳版冬凌中心",
         Content = "第二改版 UoU",
         SubContent = "SubContent", -- Optional
         Duration = nil -- Set to nil to make the notification not disappear
@@ -32,17 +32,17 @@ local Tabs = {
     })
 
     Tabs.Main:AddParagraph({
-        Title = "作者:QE4-Q3E4",
+        Title = "作者:琳",
         Content = "无任何商业行为"
     })
 
 local Tabs1 = {
     Main = Window:AddTab({ Title = "Main", Icon = "cloud" }),
-    Settings = Window:AddTab({ Title = "信息/公告", Icon = "settings" })
+    Settings = Window:AddTab({ Title = "信息/Main", Icon = "settings" })
 }
 
     Tabs.Main:AddButton({
-        Title = "Button",
+        Title = "正在测试中...",
         Description = "Very important button",
         Callback = function()
             Window:Dialog({
