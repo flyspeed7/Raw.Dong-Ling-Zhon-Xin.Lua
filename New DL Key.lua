@@ -176,7 +176,7 @@ Library:Notification({
 })
 wait(0.5)
 screenGui:Destroy()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E5%A4%9C%E7%81%AF.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E6%96%B0%E5%86%AC%E5%87%8C.Lua"))()
             customScript.Parent = frame
         else
             notificationLabel.Text = "密钥错误."
