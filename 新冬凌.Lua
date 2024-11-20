@@ -1955,7 +1955,88 @@ end)
            
       end 
  })
+ Tab:AddButton({         
+ Name = "AI Esp",         
+ Callback = function()         
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
 
+local function CreateTagAndTracer(player)
+    player.CharacterAdded:Connect(function(character)
+        -- Nome acima da cabeça do jogador
+        local head = character:WaitForChild("Head")
+        
+        local tag = Instance.new("BillboardGui")
+        tag.Name = "NameTag"
+        tag.Adornee = head
+        tag.Size = UDim2.new(0, 100, 0, 40)
+        tag.StudsOffset = Vector3.new(0, 2, 0)
+        tag.AlwaysOnTop = true
+        
+        local text = Instance.new("TextLabel")
+        text.Size = UDim2.new(1, 0, 1, 0)
+        text.Text = player.Name
+        text.BackgroundTransparency = 1
+        text.TextScaled = true
+        text.Font = Enum.Font.SourceSansBold
+        text.TextStrokeTransparency = 0.5
+        text.TextColor3 = player.Team and player.Team.TeamColor.Color or Color3.new(1, 1, 1)
+        text.Parent = tag
+        tag.Parent = head
+
+        player:GetPropertyChangedSignal("Team"):Connect(function()
+            text.TextColor3 = player.Team and player.Team.TeamColor.Color or Color3.new(1, 1, 1)
+        end)
+
+        -- Tracer
+        local tracer = Drawing.new("Line")
+        tracer.Thickness = 1
+        tracer.Color = text.TextColor3
+        tracer.Visible = false
+
+        local tracerConnection
+        tracerConnection = RunService.RenderStepped:Connect(function()
+            if character and character:FindFirstChild("HumanoidRootPart") then
+                local rootPart = character.HumanoidRootPart
+                local screenPosition, onScreen = workspace.CurrentCamera:WorldToViewportPoint(rootPart.Position)
+
+                if onScreen then
+                    tracer.From = Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y)
+                    tracer.To = Vector2.new(screenPosition.X, screenPosition.Y)
+                    tracer.Visible = true
+                    tracer.Color = player.Team and player.Team.TeamColor.Color or Color3.new(1, 1, 1)
+                else
+                    tracer.Visible = false
+                end
+            else
+                tracer.Visible = false
+            end
+        end)
+
+        character:WaitForChild("Humanoid").Died:Connect(function()
+            tracer.Visible = false
+            if tracerConnection then
+                tracerConnection:Disconnect()
+            end
+        end)
+    end)
+end
+
+for _, player in ipairs(Players:GetPlayers()) do
+    if player ~= Players.LocalPlayer then
+        CreateTagAndTracer(player)
+    end
+end
+
+Players.PlayerAdded:Connect(function(player)
+    if player ~= Players.LocalPlayer then
+        CreateTagAndTracer(player)
+    end
+end)
+           
+      end 
+ })
+ 
 local RunService = game:GetService("RunService")
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
