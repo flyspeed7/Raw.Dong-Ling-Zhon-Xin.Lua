@@ -50,6 +50,13 @@ local function createKeySystemGui()
     closeButton.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
     closeButton.MouseButton1Click:Connect(function()
         screenGui:Destroy()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
+Library.DefaultColor = Color3.fromRGB(255,0,0)
+Library:Notification({
+	Text = "再见了bro",
+	Duration = 4
+})
+
     end)
 
     local keyBox = Instance.new("TextBox")
@@ -115,8 +122,13 @@ local function createKeySystemGui()
     copyButton.MouseButton1Click:Connect(function()
         local link = "QQ群:884776077"  
         setclipboard(link)
-        notificationLabel.Text = "已复制"
-        
+        local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
+Library.DefaultColor = Color3.fromRGB(255,0,0)
+Library:Notification({
+	Text = "链接复制成功!",
+	Duration = 4
+})
+
         
         wait(2)
         notificationLabel.Text = ""
@@ -147,6 +159,23 @@ local function createKeySystemGui()
             -- Load your custom script here
             local customScript = Instance.new("Script")
             customScript.Source = 
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
+Library.DefaultColor = Color3.fromRGB(255,0,0)
+
+Library:Notification({
+	Text = "" .. player.Name .. "您的密钥获取成功!",
+	Duration = 4
+})
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
+Library.DefaultColor = Color3.fromRGB(255,0,0)
+
+Library:Notification({
+	Text = "欢迎使用冬凌中心!",
+	Duration = 4
+})
+wait(0.5)
+screenGui:Destroy()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E5%A4%9C%E7%81%AF.lua"))()
             customScript.Parent = frame
         else
