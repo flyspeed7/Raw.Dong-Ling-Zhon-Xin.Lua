@@ -1349,7 +1349,7 @@ Tab:AddButton({
           Name = "输入音乐id 就可播放",  
           Default = "输入...",  
           TextDisappear = true,  
-          Callback = function(idBox.Text)  
+          Callback = function()  
                   local id = tonumber(idBox.Text)
     if id then
         audio.SoundId = "rbxassetid://"..id
@@ -1697,12 +1697,6 @@ Tab:AddButton({
                  game.Players.LocalPlayer.Character.Humanoid.Health = Value 
          end          
  }) 
- local Tab = Window:MakeTab({
-	Name = "骂人页",
-	Icon = "rbxassetid://123456789",
-	PremiumOnly = false
-})
-
 local Section = Tab:AddSection({
 	Name = "并不是我制作的!🙄 \n 谢谢 林桉恬 是她制作的我只是加到了我的脚本里😎"
 })
