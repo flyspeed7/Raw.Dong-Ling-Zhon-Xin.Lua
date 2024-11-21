@@ -353,7 +353,7 @@ end
   ]]
 loadstring(game:HttpGet('https://raw.githubusercontent.com/vqmpjayZ/More-Scripts/main/Anti-Chat-Logger'))() 
   local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
-  local Window = OrionLib:MakeWindow({Name = "冬凌中心 | 2024.11.17", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
+  local Window = OrionLib:MakeWindow({Name = "Y&F-HUB | 2024.11.21", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
 
 --[[
 Name = <string> - The name of the UI.
@@ -1261,7 +1261,7 @@ game.Players.PlayerAdded:Connect(function(player)
 end) 
   
  local Tab= Window:MakeTab({ 
-         Name = "可加入的服务器", 
+         Name = "加入服务器/音乐", 
          Icon = "rbxassetid://7734053426", 
          PremiumOnly = false 
  }) 
@@ -1329,12 +1329,11 @@ end)
          game:GetService("TeleportService"):Teleport(game_id, game.Players.LocalPlayer) 
    end 
  }) 
+  local Section = Tab:AddSection({  
   
- local Tab= Window:MakeTab({ 
-         Name = "小凌音乐🤤", 
-         Icon = "rbxassetid://16060333", 
-         PremiumOnly = false 
- }) 
+          Name = "下面是音乐 \n 别问我为什么要加到这里来简化!"  
+  
+  })  
 Tab:AddButton({ 
    Name = "情云脚本", 
    Callback = function () 
@@ -1350,7 +1349,7 @@ Tab:AddButton({
           Name = "输入音乐id 就可播放",  
           Default = "输入...",  
           TextDisappear = true,  
-          Callback = function()  
+          Callback = function(idBox.Text)  
                   local id = tonumber(idBox.Text)
     if id then
         audio.SoundId = "rbxassetid://"..id
@@ -1657,13 +1656,13 @@ Tab:AddButton({
  }) 
   
  local Tab= Window:MakeTab({ 
-         Name = "老外获得罗宝", 
+         Name = "Get罗宝/自动骂人", 
          Icon = "rbxassetid://11560341824", 
          PremiumOnly = false 
  }) 
  local Section = Tab:AddSection({ 
   
-         Name = "以下为老外脚本😨😡🤓😂🤮🤣😎😒🤔" 
+         Name = "以下为老外脚本 \n 骂人在下面哦" 
   
  }) 
  Tab:AddButton({ 
