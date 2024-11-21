@@ -39,10 +39,18 @@ local TweenService = game:GetService("TweenService")
         changeColor()
 end
   ]]
+
+local VU = game:GetService("VirtualUser")
+
+game.Players.LocalPlayer.Idled:Connect(function()
+  VU:CaptureController()
+  VU:ClickButton2(Vector2.new())
+end)
+
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
 
- wait(1)
+ wait(0.25)
 
       local sound = Instance.new("Sound") 
      sound.SoundId = "rbxassetid://4590662766" 
