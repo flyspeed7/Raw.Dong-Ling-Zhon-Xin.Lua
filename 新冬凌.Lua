@@ -890,9 +890,6 @@ chatTab:AddTextbox({
     end
 })
 
-local autobypass = false
-local textBox = game:GetService("CoreGui").ExperienceChat.appLayout.chatInputBar.Background.Container.TextContainer.TextBoxContainer.TextBox
-
 chatTab:AddLabel("                                        聊天冻结")
 
 local spamMessage = ""
