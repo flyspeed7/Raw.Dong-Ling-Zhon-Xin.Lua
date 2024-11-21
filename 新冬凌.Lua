@@ -893,63 +893,6 @@ chatTab:AddTextbox({
 local autobypass = false
 local textBox = game:GetService("CoreGui").ExperienceChat.appLayout.chatInputBar.Background.Container.TextContainer.TextBoxContainer.TextBox
 
-chatTab:AddToggle({
-    Name = "自动绕过",
-    Default = false,
-    Callback = function(val)
-        autobypass = val
-
-        if val == true then
-            OrionLib:MakeNotification({
-                Name = "提示",
-                Content = "自动绕过已开启!",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-        else
-            OrionLib:MakeNotification({
-                Name = "提示",
-                Content = "自动绕过已关闭!",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-        
-
-        textBox.FocusLost:Connect(function(enter)
-            if enter and autobypass then
-                if textBox.Text ~= "" then
-                    if method == "ěx́ǎḿṕĺě" then
-                        chat(bypasstext(textBox.Text, 1))
-                        textBox.Text = ""
-                    elseif method == "éxạmṕĺe" then
-                        chat(bypasstext(textBox.Text, 2))
-                        textBox.Text = ""
-                    elseif method == "ẹ̲х̲ạ̲ṃ̲р̲ḷ̲ẹ̲" then
-                        chat(bypasstext(textBox.Text, 3))
-                        textBox.Text = ""
-                    elseif method == "e>x>a>m>p>l>e" then
-                        chat(bypasstext(textBox.Text, 4))
-                        textBox.Text = ""
-                    elseif method == "￵example" then
-                        chat(bypasstext(textBox.Text, 5))
-                        textBox.Text = ""
-                    elseif method == "3></-\\/\\/\\p|_3" then
-                        chat(bypasstext(textBox.Text, 6))
-                        textBox.Text = ""
-                    else
-                        OrionLib:MakeNotification({
-                            Name = "提示.",
-                            Content = "看起来你没有选择方法!",
-                            Image = "rbxassetid://4483345998",
-                            Time = 5
-                        })
-                    end
-                end
-            end
-        end)
-    end
-})
-
 chatTab:AddLabel("                                         聊天记录")
 
 local logging = false
