@@ -49,7 +49,7 @@ local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/
      sound.Parent = game.Workspace 
      sound:Play()
        Notification:Notify( 
-     {Title = "😋更新状况:注入器已无法读取OrionUI库!", Description = "今日已更新:通用~ 骂人在自然灾害里面用不了•ᴗ•"}, 
+     {Title = "😋更新状况:已读取OrionUI库!", Description = "今日已更新:刀刃球~ 做标抓取器~"}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
@@ -99,11 +99,7 @@ Library:Notification({
 })
 
 wait (3)
-      local sound = Instance.new("Sound") 
-     sound.SoundId = "rbxassetid://4590662766" 
-     sound.Parent = game.Workspace 
-     sound:Play()
-  
+
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
 Library.DefaultColor = Color3.fromRGB(255,0,0)
       local sound = Instance.new("Sound") 
@@ -142,46 +138,7 @@ Library:Notification({
 })
 
 wait (1)
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
-Library.DefaultColor = Color3.fromRGB(100,255,0)
-      local sound = Instance.new("Sound") 
-     sound.SoundId = "rbxassetid://4590662766" 
-     sound.Parent = game.Workspace 
-     sound:Play()
-  
-Library:Notification({
-        Text = "你好,我是小凌-QE4 你用我的UI😡",
-        Duration = 6
-})
 
-wait (3)
-
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
-Library.DefaultColor = Color3.fromRGB(100,255,0)
-      local sound = Instance.new("Sound") 
-     sound.SoundId = "rbxassetid://4590662766" 
-     sound.Parent = game.Workspace 
-     sound:Play()
-  
-Library:Notification({
-        Text = "其实 Orion UI 真正的作者是小云🙄",
-        Duration = 6
-})
-
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
-Library.DefaultColor = Color3.fromRGB(100,255,0)
-      local sound = Instance.new("Sound") 
-     sound.SoundId = "rbxassetid://4590662766" 
-     sound.Parent = game.Workspace 
-     sound:Play()
-  
-Library:Notification({
-	Text = "谢谢,小云啊",
-	Duration = 6
-})
-
-----------------------------
-wait (1)
 --[[
 local ScreenGui = Instance.new("ScreenGui") 
  ScreenGui.Name = "Credits" 
@@ -1164,12 +1121,14 @@ Callback = <function> - The function of the dropdown.
 		print(Value)
 	end	  
 })
-
---[[
-Name = <string> - The name of the colorpicker.
-Default = <color3> - The default value of the colorpicker.
-Callback = <function> - The function of the colorpicker.
-]]
+ Tab:AddButton({         
+ Name = "坐标抓取器",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/hassanxzayn-lua/maincoordinatesgrabber/refs/heads/main/new"))()
+           
+      end 
+ })
+ 
   Tab:AddButton({  
           Name = "控制玩家(小凌汉化)谢谢",  
           Callback = function()        loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/XiaoLing-CODE.tk3usj449llspw1/main/%E7%8E%A9%E5%AE%B6%E6%8E%A7%E5%88%B6%20%E6%B1%89%E5%8C%96.txt"))()  
@@ -2738,6 +2697,21 @@ EspTab:AddToggle({
           Name = "以下脚本目前可用"  
   
   })  
+ Tab:AddButton({         
+ Name = "Qumu-HUb(推荐)",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/lolditto-q-u-m-u-u-qwq-idk/Seeds-NEXT--LOL/main/auto_parry___lol____________idk.lua"))()
+           
+      end 
+ })
+  Tab:AddButton({         
+ Name = "喵娘中心(推荐)",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/Akirascripts/Lunar/refs/heads/main/LuanrOnTop"))()
+           
+      end 
+ })
+ 
   Tab:AddButton({  
     Name = "BDOLL-HUB",  
     Callback = function ()  
@@ -2782,7 +2756,7 @@ EspTab:AddToggle({
  }) 
  Tab:AddButton({ 
   
-         Name = "LOLking-hub卡密如果没用就删了感叹号", 
+         Name = "复制 LOLking-hub卡密如果没用就删了感叹号", 
   
          Callback = function() 
   
@@ -3725,7 +3699,7 @@ end
  })
   local Section = Tab:AddSection({  
   
-          Name = "高质量 Evade 脚本: \n 卡密已经解出来了复习就可以"  
+          Name = "高质量 Evade 脚本: \n 卡密已经解出来了复制就可以"  
   
   })  
  Tab:AddButton({         
