@@ -855,7 +855,7 @@ function bypasstext(text, method)
 end
 
 chatTab:AddTextbox({
-	Name = "聊天",
+	Name = "聊天(回车键发送)",
 	TextDisappear = true,
 	Callback = function(val)
         if val ~= "" then
@@ -892,73 +892,6 @@ chatTab:AddTextbox({
 
 local autobypass = false
 local textBox = game:GetService("CoreGui").ExperienceChat.appLayout.chatInputBar.Background.Container.TextContainer.TextBoxContainer.TextBox
-
-chatTab:AddLabel("                                         聊天记录")
-
-local logging = false
-local webhook = ""
-
-function sendToWebhook(msg, username)
-
-    local data = {
-        content = msg,
-        username = username
-    }
-
-    local requestData = {
-        Url = webhook,
-        Method = "POST",
-        Headers = {
-            ["Content-Type"] = "application/json",
-        },
-        Body = game:GetService("HttpService"):JSONEncode(data)
-    }
-
-    request(requestData)
-
-end
-
-chatTab:AddTextbox({
-    Name = "网页Hook",
-    TextDisappear = false,
-    Callback = function(val)
-        webhook = val
-    end
-})
-
-chatTab:AddToggle({
-    Name = "记录📝",
-    Default = false,
-    Callback = function(val)
-        if webhook == "" then
-            OrionLib:MakeNotification({
-                Name = "提示.",
-                Content = "看起来你没有输入网址!",
-                Image = "rbxassetid://4483345998",
-                Time = 5
-            })
-            return
-        else
-            logging = val
-
-            if val == true then
-                OrionLib:MakeNotification({
-                    Name = "开始记录📝",
-                    Content = "已开始记录您的网址Hook记录!",
-                    Image = "rbxassetid://4483345998",
-                    Time = 5
-                })
-            else
-                OrionLib:MakeNotification({
-                    Name = "开始记录📝",
-                    Content = "已停止给你的网址Hook记录!",
-                    Image = "rbxassetid://4483345998",
-                    Time = 5
-                })
-            end
-        end
-    end
-})
 
 chatTab:AddLabel("                                        聊天冻结")
 
