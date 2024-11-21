@@ -372,7 +372,7 @@ CloseCallback = <function> - Function to execute when the window is closed.
       Icon = "rbxassetid://7743878358",  
       PremiumOnly = false  
   })  
-     local Section = Tab:AddSection({  
+     local Section = about:AddSection({  
   
           Name = "界面设置"  
   
@@ -382,12 +382,6 @@ Name = "断开Orion连接",
 Callback = function()	
   	OrionLib:Destroy()
      end
-})
-about:AddButton({
-    Name = "加载服务器",
-    Callback = function()
-        refreshServers()
-    end
 })
 about:AddButton({
     Name = "重新加入服务器",
