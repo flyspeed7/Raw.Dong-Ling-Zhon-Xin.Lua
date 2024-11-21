@@ -1,3 +1,4 @@
+error("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           谢谢你使用冬凌中心! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
 --[[
 local TweenService = game:GetService("TweenService")
     local NeonWaterMark = Instance.new("ScreenGui")
@@ -102,7 +103,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/blood
 Library.DefaultColor = Color3.fromRGB(255,0,0)
 
 Library:Notification({
-	Text = "新-冬凌中心开发者:小凌和 Q3E4",
+	Text = "新-冬凌中心开发者:琳 和 Q3E4",
 	Duration = 6
 })
 
@@ -116,7 +117,7 @@ Library.DefaultColor = Color3.fromRGB(255,0,0)
      sound:Play()
   
 Library:Notification({
-	Text = "em...目前好像就这几个吧 x_x",
+	Text = "[打开控制台有惊喜!]",
 	Duration = 6
 })
 wait(3)
@@ -371,12 +372,30 @@ CloseCallback = <function> - Function to execute when the window is closed.
       Icon = "rbxassetid://7743878358",  
       PremiumOnly = false  
   })  
+     local Section = Tab:AddSection({  
+  
+          Name = "界面设置"  
+  
+  })  
   about:AddButton({	
-Name = "Kill gui[不隐藏]",	
+Name = "断开Orion连接",	
 Callback = function()	
   	OrionLib:Destroy()
      end
 })
+about:AddButton({
+    Name = "加载服务器",
+    Callback = function()
+        refreshServers()
+    end
+})
+about:AddButton({
+    Name = "重新加入服务器",
+    Callback = function()
+        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
+    end
+})
+
   local Section = about:AddSection({  
   
           Name = "天气"  
@@ -435,7 +454,8 @@ lighting.Brightness = 6
 local Section = about:AddSection({
 	Name = "更新日志: \n 加了很多的东西你可以到通知查看!"
 })
-  about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."")  
+  about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."") 
+  about:AddParagraph("您的名称:",""..game.Players.LocalPlayer.DisplayName.."")  
   about:AddParagraph("您的注入器:"," "..identifyexecutor().."")  
   about:AddParagraph("您当前服务器的ID"," "..game.GameId.."")  
   about:AddParagraph("已获取进程","进程:0×0")  
@@ -463,7 +483,7 @@ chatTab:AddLabel("                                      聊天绕过")
 local method = nil
 
 chatTab:AddDropdown({
-	Name = "绕过脏话 example(选一个语言)",
+	Name = "绕过模式(选一个语法下面是模板)",
 	Options = {"ěx́ǎḿṕĺě", "éxạmṕĺe", "ẹ̲х̲ạ̲ṃ̲р̲ḷ̲ẹ̲", "e>x>a>m>p>l>e", "￵example", "3></-\\/\\/\\p|_3"},
 	Callback = function(val)
         method = val
@@ -1023,26 +1043,6 @@ serversTab:AddButton({
     end
 })
 
-local othersTab = Window:MakeTab({
-    Name = "其他功能",
-    Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-othersTab:AddButton({
-    Name = "重新加入",
-    Callback = function()
-        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
-    end
-})
-
-othersTab:AddButton({
-    Name = "销毁 UI",
-    Callback = function()
-        OrionLib:Destroy()
-    end
-})
-
 local apiKey = ""
 local isChatbotEnabled = false
 local responseDistance = 5
@@ -1108,7 +1108,8 @@ botTab:AddTextbox({
  botTab:AddButton({         
  Name = "复制API Key",         
  Callback = function()         
-           setclipboard("https://api.groq.com/openai/v1/chat/completions")
+           setclipboard("lama3-8b-8192")
+       
       end 
  })
  
