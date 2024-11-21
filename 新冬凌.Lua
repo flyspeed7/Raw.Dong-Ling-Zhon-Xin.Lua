@@ -455,15 +455,13 @@ end
       end 
  })
   about:AddButton({         
- Name = "早上七点",         
+ Name = "早上六点",         
  Callback = function()         
-                      lighting = game:GetService("Lighting")
-if lighting.TimeOfDay == "07:00:00" then
-    lighting.TimeOfDay = 11
-else 
-    lighting.TimeOfDay = 24
-end
+  local lighting = game:GetService("Lighting")
 
+lighting.TimeOfDay = "06:00:00"
+
+lighting.Brightness = 6
            
       end 
  })
