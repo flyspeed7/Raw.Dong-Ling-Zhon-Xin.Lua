@@ -913,7 +913,7 @@ chatTab:AddToggle({
                 Image = "rbxassetid://4483345998",
                 Time = 5
             })
-        end
+        
 
         textBox.FocusLost:Connect(function(enter)
             if enter and autobypass then
