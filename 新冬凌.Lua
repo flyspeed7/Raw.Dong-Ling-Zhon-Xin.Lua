@@ -351,6 +351,7 @@ local TweenService = game:GetService("TweenService")
         wait(0.5) 
 end
   ]]
+loadstring(game:HttpGet('https://raw.githubusercontent.com/vqmpjayZ/More-Scripts/main/Anti-Chat-Logger'))() 
   local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
   local Window = OrionLib:MakeWindow({Name = "冬凌中心 | 2024.11.17", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
 
@@ -440,17 +441,951 @@ local Section = about:AddSection({
   about:AddParagraph("已获取进程","进程:0×0")  
   about:AddParagraph("大家多多不支持","脚本无加密你可以看github")  
   about:AddParagraph("缝合","做大做强(")  
-   local Tab= Window:MakeTab({ 
-         Name = "情云的脚本", 
-         Icon = "rbxassetid://7733798747", 
-         PremiumOnly = false 
- }) 
- Tab:AddButton({ 
-   Name = "情云脚本", 
-   Callback = function () 
-    loadstring(utf8.char((function() return table.unpack({108,111,97,100,115,116,114,105,110,103,40,103,97,109,101,58,72,116,116,112,71,101,116,40,34,104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,67,104,105,110,97,81,89,47,45,47,109,97,105,110,47,37,69,54,37,56,51,37,56,53,37,69,52,37,66,65,37,57,49,34,41,41,40,41})end)()))()  
-   end 
- }) 
+
+function chat(msg)
+
+    if game:GetService("TextChatService").ChatVersion == Enum.ChatVersion.TextChatService then
+        game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync(msg)
+    else
+        game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
+    end
+
+end
+
+local chatTab = Window:MakeTab({
+	Name = "聊天素材",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+chatTab:AddLabel("                                      聊天绕过")
+
+local method = nil
+
+chatTab:AddDropdown({
+	Name = "绕过脏话 example(选一个语言)",
+	Options = {"ěx́ǎḿṕĺě", "éxạmṕĺe", "ẹ̲х̲ạ̲ṃ̲р̲ḷ̲ẹ̲", "e>x>a>m>p>l>e", "￵example", "3></-\\/\\/\\p|_3"},
+	Callback = function(val)
+        method = val
+	end
+})
+
+function bypasstext(text, method)
+    if method == 1 then
+        local function addAccents(word)
+            local accents = {
+                a = "ǎ",
+                b = "ḃ",
+                c = "ć",
+                d = "d́",
+                e = "ě",
+                f = "ḟ",
+                g = "ġ",
+                h = "ḣ",
+                i = "í",
+                j = "j́",
+                k = "ḱ",
+                l = "ĺ",
+                m = "ḿ",
+                n = "n̋",
+                o = "ō",
+                p = "ṕ",
+                q = "q́",
+                r = "ŕ",
+                s = "ś",
+                t = "t̋",
+                u = "ū",
+                v = "v̇",
+                w = "ẃ",
+                x = "x́",
+                y = "ý",
+                z = "ź",
+                A = "Ǎ",
+                B = "Ḃ",
+                C = "Ć",
+                D = "D́",
+                E = "Ě",
+                F = "Ḟ",
+                G = "Ġ",
+                H = "Ḣ",
+                I = "Í",
+                J = "J́",
+                K = "Ḱ",
+                L = "Ĺ",
+                M = "Ḿ",
+                N = "N̋",
+                O = "Ō",
+                P = "Ṕ",
+                Q = "Q́",
+                R = "Ŕ",
+                S = "Ś",
+                T = "T̋",
+                U = "Ū",
+                V = "V̇",
+                W = "Ẃ",
+                X = "X́",
+                Y = "Ý",
+                Z = "Ź"
+            }
+
+            local bypassedWord = ""
+            for i = 1, #word do
+                local letter = word:sub(i, i)
+                if accents[letter] then
+                    bypassedWord = bypassedWord .. accents[letter]
+                else
+                    bypassedWord = bypassedWord .. letter
+                end
+            end
+
+            return bypassedWord
+        end
+
+        local function bypassString(input)
+            local words = {}
+            for word in string.gmatch(input, "%S+") do
+                table.insert(words, addAccents(word))
+            end
+            return table.concat(words, " ")
+        end
+
+        return bypassString(text)
+    elseif method == 2 then
+        local function addAccents2(word)
+            local accents2 = {
+                a = "ạ",
+                b = "ḃ",
+                c = "c",
+                d = "d́",
+                e = "e",
+                f = "ḟ",
+                g = "ġ",
+                h = "ḣ",
+                i = "i",
+                j = "j́",
+                k = "ḳ",
+                l = "ĺ",
+                m = "m",
+                n = "n̋",
+                o = "o",
+                p = "ṕ",
+                q = "q́",
+                r = "ŕ",
+                s = "ṣ",
+                t = "t",
+                u = "ụ",
+                v = "v̇",
+                w = "ẃ",
+                x = "x́",
+                y = "y",
+                z = "z",
+                A = "Ạ",
+                B = "Ḃ",
+                C = "C",
+                D = "D́",
+                E = "E",
+                F = "Ḟ",
+                G = "Ġ",
+                H = "Ḣ",
+                I = "I",
+                J = "J́",
+                K = "Ḱ",
+                L = "Ĺ",
+                M = "M",
+                N = "N",
+                O = "O",
+                P = "Ṕ",
+                Q = "Q́",
+                R = "Ŕ",
+                S = "Ṣ",
+                T = "T",
+                U = "Ụ",
+                V = "V̇",
+                W = "Ẃ",
+                X = "X́",
+                Y = "Y",
+                Z = "Z"
+            }
+
+            local bypassedWord = ""
+            for i = 1, #word do
+                local letter = word:sub(i, i)
+                if accents2[letter] then
+                    bypassedWord = bypassedWord .. accents2[letter]
+                else
+                    bypassedWord = bypassedWord .. letter
+                end
+            end
+
+            return bypassedWord
+        end
+
+        local function bypassString(input)
+            local words = {}
+            for word in string.gmatch(input, "%S+") do
+                table.insert(words, addAccents2(word))
+            end
+            return table.concat(words, " ")
+        end
+
+        return bypassString(text)
+    elseif method == 3 then
+        local function addAccents3(word)
+            local accents3 = {
+                a = "ạ̲",
+                b = "ḅ̲",
+                c = "с̲",
+                d = "ḍ̲",
+                e = "ẹ̲",
+                f = "f̲",
+                g = "ɡ̲",
+                h = "ḥ̲",
+                i = "ị̲",
+                j = "ј̲",
+                k = "ḳ̲",
+                l = "ḷ̲",
+                m = "ṃ̲",
+                n = "ṇ̲",
+                o = "ọ̲",
+                p = "р̲",
+                q = "q̲",
+                r = "ṛ̲",
+                s = "ṣ̲",
+                t = "ṭ̲",
+                u = "ụ̲",
+                v = "ṿ̲",
+                w = "ẉ̲",
+                x = "х̲",
+                y = "ỵ̲",
+                z = "ẓ̲",
+                A = "Ạ̲",
+                B = "Ḅ̲",
+                C = "С̲",
+                D = "Ḍ̲",
+                E = "Ẹ̲",
+                F = "F̲",
+                G = "Ɡ̲",
+                H = "Ḥ̲",
+                I = "Ị̲",
+                J = "Ј̲",
+                K = "Ḳ̲",
+                L = "Ḷ̲",
+                M = "Ṃ̲",
+                N = "Ṇ̲",
+                O = "Ọ̲",
+                P = "Р̲",
+                Q = "Q̲",
+                R = "Ṛ̲",
+                S = "Ṣ̲",
+                T = "Ṭ̲",
+                U = "Ụ̲",
+                V = "Ṿ̲",
+                W = "Ẉ̲",
+                X = "Х̲",
+                Y = "Ỵ̲",
+                Z = "Ẓ̲"
+            }
+
+            local bypassedWord = ""
+            for i = 1, #word do
+                local letter = word:sub(i, i)
+                if accents3[letter] then
+                    bypassedWord = bypassedWord .. accents3[letter]
+                else
+                    bypassedWord = bypassedWord .. letter
+                end
+            end
+
+            return bypassedWord
+        end
+
+        local function bypassString(input)
+            local words = {}
+            for word in string.gmatch(input, "%S+") do
+                table.insert(words, addAccents3(word))
+            end
+            return table.concat(words, " ")
+        end
+
+        return bypassString(text)
+    elseif method == 4 then
+        local function modifyText(input)
+            local modifiedText = ""
+            for i = 1, #input do
+                modifiedText = modifiedText .. string.sub(input, i, i) .. ">"
+            end
+
+            return modifiedText
+        end
+
+        return modifyText(text)
+    elseif method == 5 then
+        local function addAccents5(word)
+            local accents5 = {
+                a = "a",
+                b = "b￵￵",
+                c = "c￵￵",
+                d = "d",
+                e = "￵￵e",
+                f = "￵￵󠀕f￵￵",
+                g = "g",
+                h = "h￵￵",
+                i = "￵￵i",
+                j = "￵￵j￵￵",
+                k = "k",
+                l = "l￵￵",
+                m = "m",
+                n = "n",
+                o = "o￵￵",
+                p = "p",
+                q = "q￵￵",
+                r = "￵￵r￵￵",
+                s = "￵￵s",
+                t = "￵￵t￵￵",
+                u = "u",
+                v = "v",
+                w = "w",
+                x = "x",
+                y = "y",
+                z = "￵￵z￵￵󠀕",
+                A = "A￵￵󠀕",
+                B = "B",
+                C = "C",
+                D = "￵￵D",
+                E = "￵￵E￵￵󠀕",
+                F = "F￵￵",
+                G = "￵￵G",
+                H = "H",
+                I = "￵￵I",
+                J = "￵￵J",
+                K = "K",
+                L = "￵￵L",
+                M = "M￵￵",
+                N = "N￵￵",
+                O = "O",
+                P = "P￵￵",
+                Q = "Q",
+                R = "￵￵R",
+                S = "S",
+                T = "T",
+                U = "￵￵U",
+                V = "V",
+                W = "W￵￵",
+                X = "￵￵X",
+                Y = "￵￵Y",
+                Z = "Z￵￵󠀕"
+            }
+
+            local bypassedWord = ""
+            for i = 1, #word do
+                local letter = word:sub(i, i)
+                if accents5[letter] then
+                    bypassedWord = bypassedWord .. accents5[letter]
+                else
+                    bypassedWord = bypassedWord .. letter
+                end
+            end
+
+            return bypassedWord
+        end
+
+        local function bypassString(input)
+            local words = {}
+            for word in string.gmatch(input, "%S+") do
+                table.insert(words, addAccents5(word))
+            end
+            return table.concat(words, "")
+        end
+
+        return bypassString(text)
+    elseif method == 6 then
+        local function addAccents6(word)
+            local accents6 = {
+                a = "/-\\",
+                b = "L3",
+                c = "C",
+                d = "CL",
+                e = "3",
+                f = "F",
+                g = "G",
+                h = "|-|",
+                i = "L",
+                j = "J",
+                k = "L<",
+                l = "|_",
+                m = "/\\/\\",
+                n = "/\\/",
+                o = "0",
+                p = "P",
+                q = "Q",
+                r = "R",
+                s = "$",
+                t = "T",
+                u = "|_|",
+                v = "\\/",
+                w = "\\/\\/",
+                x = "><",
+                y = "Y",
+                z = "Z"
+            }
+
+            local bypassedWord = ""
+            for i = 1, #word do
+                local letter = word:sub(i, i):lower()
+                if accents6[letter] then
+                    bypassedWord = bypassedWord .. accents6[letter]
+                else
+                    bypassedWord = bypassedWord .. letter
+                end
+            end
+
+            return bypassedWord
+        end
+
+        local function bypassString(input)
+            local words = {}
+            for word in string.gmatch(input, "%S+") do
+                table.insert(words, addAccents6(word))
+            end
+            return table.concat(words, " ")
+        end
+
+        return bypassString(text)
+    end
+end
+
+chatTab:AddTextbox({
+	Name = "聊天",
+	TextDisappear = true,
+	Callback = function(val)
+        if val ~= "" then
+            if method == "ěx́ǎḿṕĺě" then
+                chat(bypasstext(val, 1))
+            elseif method == "éxạmṕĺe" then
+                chat(bypasstext(val, 2))
+            elseif method == "ẹ̲х̲ạ̲ṃ̲р̲ḷ̲ẹ̲" then
+                chat(bypasstext(val, 3))
+            elseif method == "e>x>a>m>p>l>e" then
+                chat(bypasstext(val, 4))
+            elseif method == "￵example" then
+                chat(bypasstext(val, 5))
+            elseif method == "3></-\\/\\/\\p|_3" then
+                chat(bypasstext(val, 6))
+            else
+                OrionLib:MakeNotification({
+                    Name = "提示.",
+                    Content = "看起来没有选择方法!",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+        else
+            OrionLib:MakeNotification({
+                Name = "提示.",
+                Content = "看起来你没有输入文本!",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        end
+    end
+})
+
+local autobypass = false
+local textBox = game:GetService("CoreGui").ExperienceChat.appLayout.chatInputBar.Background.Container.TextContainer.TextBoxContainer.TextBox
+
+chatTab:AddToggle({
+    Name = "自动绕过",
+    Default = false,
+    Callback = function(val)
+        autobypass = val
+
+        if val == true then
+            OrionLib:MakeNotification({
+                Name = "提示",
+                Content = "自动绕过已开启!",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        else
+            OrionLib:MakeNotification({
+                Name = "提示",
+                Content = "自动绕过已关闭!",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        end
+
+        textBox.FocusLost:Connect(function(enter)
+            if enter and autobypass then
+                if textBox.Text ~= "" then
+                    if method == "ěx́ǎḿṕĺě" then
+                        chat(bypasstext(textBox.Text, 1))
+                        textBox.Text = ""
+                    elseif method == "éxạmṕĺe" then
+                        chat(bypasstext(textBox.Text, 2))
+                        textBox.Text = ""
+                    elseif method == "ẹ̲х̲ạ̲ṃ̲р̲ḷ̲ẹ̲" then
+                        chat(bypasstext(textBox.Text, 3))
+                        textBox.Text = ""
+                    elseif method == "e>x>a>m>p>l>e" then
+                        chat(bypasstext(textBox.Text, 4))
+                        textBox.Text = ""
+                    elseif method == "￵example" then
+                        chat(bypasstext(textBox.Text, 5))
+                        textBox.Text = ""
+                    elseif method == "3></-\\/\\/\\p|_3" then
+                        chat(bypasstext(textBox.Text, 6))
+                        textBox.Text = ""
+                    else
+                        OrionLib:MakeNotification({
+                            Name = "提示.",
+                            Content = "看起来你没有选择方法!",
+                            Image = "rbxassetid://4483345998",
+                            Time = 5
+                        })
+                    end
+                end
+            end
+        end)
+    end
+})
+
+chatTab:AddLabel("                                         聊天记录")
+
+local logging = false
+local webhook = ""
+
+function sendToWebhook(msg, username)
+
+    local data = {
+        content = msg,
+        username = username
+    }
+
+    local requestData = {
+        Url = webhook,
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json",
+        },
+        Body = game:GetService("HttpService"):JSONEncode(data)
+    }
+
+    request(requestData)
+
+end
+
+chatTab:AddTextbox({
+    Name = "网页Hook",
+    TextDisappear = false,
+    Callback = function(val)
+        webhook = val
+    end
+})
+
+chatTab:AddToggle({
+    Name = "记录📝",
+    Default = false,
+    Callback = function(val)
+        if webhook == "" then
+            OrionLib:MakeNotification({
+                Name = "提示.",
+                Content = "看起来你没有输入网址!",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            return
+        else
+            logging = val
+
+            if val == true then
+                OrionLib:MakeNotification({
+                    Name = "开始记录📝",
+                    Content = "已开始记录您的网址Hook记录!",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            else
+                OrionLib:MakeNotification({
+                    Name = "开始记录📝",
+                    Content = "已停止给你的网址Hook记录!",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+        end
+    end
+})
+
+chatTab:AddLabel("                                        聊天冻结")
+
+local spamMessage = ""
+local spamInterval = 1
+local spaming = false
+
+chatTab:AddTextbox({
+    Name = "消息",
+    TextDisappear = false,
+    Callback = function(val)
+        spamMessage = val
+    end
+})
+
+chatTab:AddSlider({
+    Name = "间隔",
+    Min = spamInterval,
+    Max = 100,
+    Default = spamInterval,
+    Increasmemt = 1,
+    ValueName = "seconds",
+    Callback = function(val)
+        spamInterval = val
+    end
+})
+
+chatTab:AddToggle({
+    Name = "冻结",
+    Default = false,
+    Callback = function(val)
+        if spamMessage == "" then
+            OrionLib:MakeNotification({
+                Name = "提示.",
+                Content = "看起来你没有输入文本!",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        else
+            spaming = val
+
+            if spaming then
+                repeat wait(spamInterval)
+                    chat(spamMessage)
+                until spaming == false
+            end
+        end
+    end
+})
+
+chatTab:AddLabel("                                            其他;另外")
+
+chatTab:AddButton({
+    Name = "高消息",
+    Callback = function()
+        chat("".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. "")
+    end
+})
+
+chatTab:AddButton({
+    Name = "修复过滤器",
+    Callback = function()
+        chat("abcdefg()!")
+    end
+})
+
+local botTab = Window:MakeTab({
+    Name = "聊天机器人",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local serversTab = Window:MakeTab({
+    Name = "服务器",
+    Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+function getServers()
+    local request = request({
+        Url = "https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Desc&limit=100",
+        Method = "GET",
+    })
+
+    if request.StatusCode == 200 then
+        local serverData = game:GetService("HttpService"):JSONDecode(request.Body)
+        local serverList = {}
+
+        for _, server in pairs(serverData.data) do
+            local serverInfo = {
+                serverId = server.id or "N/A",
+                players = server.playing or 0,
+                maxPlayers = server.maxPlayers or 0,
+                ping = server.ping or "N/A",
+            }
+
+            table.insert(serverList, serverInfo)
+        end
+
+        return serverList
+    else
+        return nil
+    end
+end
+
+function refreshServers()
+
+    local servers = getServers()
+    if servers then
+        for _, server in pairs(servers) do
+            serversTab:AddButton({
+                Name = "Players: " .. server.players .. "/" .. server.maxPlayers .. "\nPing: " .. server.ping,
+                Callback = function()
+                    game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, server.serverId, game.Players.LocalPlayer)
+                end
+            })
+        end
+    end
+
+    serversTab:AddButton({
+        Name = "刷新",
+        Callback = function()
+            refreshServers()
+        end
+    })
+end
+
+serversTab:AddButton({
+    Name = "加载服务器",
+    Callback = function()
+        refreshServers()
+    end
+})
+
+local othersTab = Window:MakeTab({
+    Name = "其他功能",
+    Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+othersTab:AddButton({
+    Name = "重新加入",
+    Callback = function()
+        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
+    end
+})
+
+othersTab:AddButton({
+    Name = "销毁 UI",
+    Callback = function()
+        OrionLib:Destroy()
+    end
+})
+
+local apiKey = ""
+local isChatbotEnabled = false
+local responseDistance = 5
+local botTemperature = 1
+local botModel = "llama3-8b-8192"
+local personality = "Default"
+local blacklist = {}
+
+function isBlacklisted(name)
+    for _, blacklisted in pairs(blacklist) do
+        if name == blacklisted then
+            return true
+        end
+    end
+
+    return false
+end
+
+function askChatbot(msg, plrname)
+    local requestData = {
+        model = botModel,
+        temperature = botTemperature,
+        messages = {
+            {
+                role = "system",
+                content = "answer with short response(200 characters max) while following roblox chat filter. your personality: " .. personality
+            },
+            {
+                role = "user",
+                content = "My Name Is " .. plrname
+            },
+            {
+                role = "user",
+                content = msg
+            }
+        }
+    }
+
+    local response = request({
+        Url = "https://api.groq.com/openai/v1/chat/completions",
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json",
+            ["Authorization"] = "Bearer " .. apiKey
+        },
+        Body = game:GetService("HttpService"):JSONEncode(requestData)
+    })
+
+    if #game:GetService("HttpService"):JSONDecode(response.Body).choices[1].message.content >= 200 then
+        print("影响已被服务器限制🚫!")
+    else
+        return game:GetService("HttpService"):JSONDecode(response.Body).choices[1].message.content
+    end
+end
+
+botTab:AddTextbox({
+    Name = "输入API Key🔑(复制下面的进来)",
+    TextDisappear = false,
+    Callback = function(val)
+        apiKey = val
+    end
+})
+ botTab:AddButton({         
+ Name = "复制API Key",         
+ Callback = function()         
+           setclipboard("https://api.groq.com/openai/v1/chat/completions")
+      end 
+ })
+ 
+botTab:AddSlider({
+    Name = "影响距离",
+    Min = 0,
+    Max = 100,
+    Default = 5,
+    Increasmemt = 1,
+    ValueName = "studs",
+    Callback = function(val)
+        responseDistance = val
+    end
+})
+
+botTab:AddDropdown({
+	Name = "人物角色",
+	Default = botModel,
+	Options = {"gemma2-9b-it解码", "gemma-7b-it解码", "llama3-groq-70b-8192-解码", "llama3-groq-8b-8192解码", "llama-3.1-70b输出", "llama-3.1-8b无限", "llama-3.2-11b解码", "llama-3.2-90b解码", "llama3-70b-8192解码", "llama3-8b-8192解码"},
+	Callback = function(val)
+        botModel = val
+	end
+})
+
+botTab:AddDropdown({
+    Name = "个性",
+    Default = personality,
+    Options = {"默认", "进取心", "开心", "罪犯", "印度骗子", "书呆子", "讽刺", "傻逼"},
+    Callback = function(val)
+        personality = val
+    end
+})
+
+botTab:AddTextbox({
+    Name = "定制个性",
+    TextDisappear = false,
+    Callback = function(val)
+        personality = val
+    end
+})
+
+botTab:AddTextbox({
+    Name = "提示",
+    TextDisappear = true,
+    Callback = function(val)
+        OrionLib:MakeNotification({
+            Name = "机器人的响应:",
+            Content = askChatbot(val, game.Players.LocalPlayer.Name),
+            Image = "rbxassetid://4483345998",
+            Time = 15
+        })
+    end
+})
+
+botTab:AddSlider({
+    Name = "温度",
+    Min = 0,
+    Max = 2,
+    Default = botTemperature,
+    Increment = 0.01,
+    Callback = function(val)
+        botTemperature = val
+    end
+})
+
+botTab:AddTextbox({
+    Name = "(输入)加入黑名单",
+    TextDisappear = true,
+    Callback = function(val)
+        if game.Players:FindFirstChild(val) then
+            table.insert(blacklist, val)
+
+            OrionLib:MakeNotification({
+                Name = "黑名单系统",
+                Content = "玩家已被加入黑名单!",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        end
+    end
+})
+
+botTab:AddTextbox({
+    Name = "白名单",
+    TextDisappear = true,
+    Callback = function(val)
+        for i, name in pairs(blacklist) do
+            if name == val then
+                table.remove(blacklist, i)
+
+                OrionLib:MakeNotification({
+                    Name = "白名单响应:",
+                    Content = "玩家已被加入白名单!",
+                    Image = "rbxassetid://4483345998",
+                    Time = 5
+                })
+            end
+        end
+    end
+})
+
+botTab:AddToggle({
+    Name = "开启",
+    Default = false,
+    Callback = function(val)
+        isChatbotEnabled = val
+
+        if val == true then
+            OrionLib:MakeNotification({
+                Name = "Ai 聊天机器人",
+                Content = "聊天机器人已启用!",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        elseif val == false then
+            OrionLib:MakeNotification({
+                Name = "Ai 聊天机器人",
+                Content = "聊天机器人已关闭!",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        end
+    end
+})
+
+for _, player in pairs(game.Players:GetPlayers()) do
+    player.Chatted:Connect(function(message)
+        local distance = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - player.Character.HumanoidRootPart.Position).Magnitude
+        if isChatbotEnabled and distance <= responseDistance and player.Name ~= game.Players.LocalPlayer.Name and not isBlacklisted(player.Name) then
+            chat(askChatbot(message, player.Name))
+        end
+
+        if logging then
+            sendToWebhook("```" .. message .. "```", player.Name)
+        end
+    end)
+end
+
+game.Players.PlayerAdded:Connect(function(player)
+    player.Chatted:Connect(function(message)
+        local distance = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - player.Character.HumanoidRootPart.Position).Magnitude
+        if isChatbotEnabled and distance <= responseDistance and player.Name ~= game.Players.LocalPlayer.Name and not isBlacklisted(player.Name) then
+            chat(askChatbot(message, player.Name))
+        end
+
+        if logging then
+            sendToWebhook("```" .. message .. "```", player.Name)
+        end
+    end)
+end) 
   
  local Tab= Window:MakeTab({ 
          Name = "可加入的服务器", 
@@ -527,6 +1462,12 @@ local Section = about:AddSection({
          Icon = "rbxassetid://16060333", 
          PremiumOnly = false 
  }) 
+Tab:AddButton({ 
+   Name = "情云脚本", 
+   Callback = function () 
+    loadstring(utf8.char((function() return table.unpack({108,111,97,100,115,116,114,105,110,103,40,103,97,109,101,58,72,116,116,112,71,101,116,40,34,104,116,116,112,115,58,47,47,114,97,119,46,103,105,116,104,117,98,117,115,101,114,99,111,110,116,101,110,116,46,99,111,109,47,67,104,105,110,97,81,89,47,45,47,109,97,105,110,47,37,69,54,37,56,51,37,56,53,37,69,52,37,66,65,37,57,49,34,41,41,40,41})end)()))()  
+   end 
+ })
  local Section = Tab:AddSection({ 
   
          Name = "以下是长音乐后面会更恶搞和复制ID \n ok啊更新上了好吧" 
