@@ -58,7 +58,7 @@ local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/
      sound.Parent = game.Workspace 
      sound:Play()
        Notification:Notify( 
-     {Title = "😋更新状况:已读取OrionUI库!", Description = "今日已更新:刀刃球~ 做标抓取器~"}, 
+     {Title = "😋更新状况:已读取OrionUI库", Description = "今日已更新:刀刃球~ 做标抓取器~"}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
@@ -69,7 +69,7 @@ wait(2)
      sound:Play()
   
  Notification:Notify( 
-     {Title = "请认准作者:小凌-Q3E4😋", Description = "作者:QE4-小凌"}, 
+     {Title = "📝请认准作者:小凌-Q3E4", Description = "作者:QE4-小凌"}, 
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
  )
@@ -80,7 +80,7 @@ wait(2)
      sound:Play()
   
   Notification:Notify( 
-     {Title = "是谁制作🤔", Description = "QQ 群：884776077 作者:1211373508"}, 
+     {Title = "🤔是谁制作", Description = "QQ 群：884776077 作者:1211373508"}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
@@ -90,7 +90,7 @@ wait(2)
      sound.Parent = game.Workspace 
      sound:Play()
 Notification:Notify( 
-     {Title = "Orion UI 库提供:", Description = "谢谢 小云!小云! 提供的 Orion UI 库!🤩"}, 
+     {Title = "Orion UI 库提供:", Description = "谢谢 小云!小云! 提供的 Orion UI 库!🤩"}, 
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 20, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
  )
@@ -103,7 +103,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/blood
 Library.DefaultColor = Color3.fromRGB(255,0,0)
 
 Library:Notification({
-	Text = "新-冬凌中心开发者:琳 和 Q3E4",
+	Text = "新-冬凌中心开发者:琳 和 Q3E4",
 	Duration = 6
 })
 
@@ -130,7 +130,7 @@ Library.DefaultColor = Color3.fromRGB(255,0,0)
      sound:Play()
   
 Library:Notification({
-	Text = "感谢你使用冬凌脚本中心(ﾟ∀ﾟ)👉",
+	Text = "感谢你使用冬凌脚本中心",
 	Duration = 6
 })
 wait (3)
@@ -142,7 +142,7 @@ Library.DefaultColor = Color3.fromRGB(255,0,0)
      sound:Play()
   
 Library:Notification({
-	Text = "Orion UI库提供者:小云☁️",
+	Text = "Orion UI库提供者:小云☁️",
 	Duration = 6
 })
 
@@ -368,7 +368,7 @@ Icon = <string> - URL to the image you want displayed on the window.
 CloseCallback = <function> - Function to execute when the window is closed.
 ]]
   local about = Window:MakeTab({  
-      Name = "信息/介绍",  
+      Name = "信息/介绍",  
       Icon = "rbxassetid://7743878358",  
       PremiumOnly = false  
   })  
@@ -467,7 +467,7 @@ function chat(msg)
 end
 
 local chatTab = Window:MakeTab({
-	Name = "聊天素材",
+	Name = "聊天素材",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -904,14 +904,14 @@ chatTab:AddTextbox({
     end
 })
 
-chatTab:AddLabel("                                        聊天冻结")
+chatTab:AddLabel("                                        定时发送")
 
 local spamMessage = ""
 local spamInterval = 1
 local spaming = false
 
 chatTab:AddTextbox({
-    Name = "消息",
+    Name = "自动发送的消息",
     TextDisappear = false,
     Callback = function(val)
         spamMessage = val
@@ -919,7 +919,7 @@ chatTab:AddTextbox({
 })
 
 chatTab:AddSlider({
-    Name = "间隔",
+    Name = "发送间隔(秒)",
     Min = spamInterval,
     Max = 100,
     Default = spamInterval,
@@ -931,7 +931,7 @@ chatTab:AddSlider({
 })
 
 chatTab:AddToggle({
-    Name = "冻结",
+    Name = "启用自动发送",
     Default = false,
     Callback = function(val)
         if spamMessage == "" then
@@ -956,7 +956,7 @@ chatTab:AddToggle({
 chatTab:AddLabel("                                            其他;另外")
 
 chatTab:AddButton({
-    Name = "高消息",
+    Name = "一键刷屏",
     Callback = function()
         chat("".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. " ".. "\u{000D}" .. "")
     end
@@ -970,13 +970,13 @@ chatTab:AddButton({
 })
 
 local botTab = Window:MakeTab({
-    Name = "聊天机器人",
+    Name = "聊天机器人",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
 local serversTab = Window:MakeTab({
-    Name = "服务器",
+    Name = "服务器",
     Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -1256,7 +1256,7 @@ game.Players.PlayerAdded:Connect(function(player)
 end) 
   
  local Tab= Window:MakeTab({ 
-         Name = "加入服务器/音乐", 
+         Name = "加入服务器/音乐", 
          Icon = "rbxassetid://7734053426", 
          PremiumOnly = false 
  }) 
@@ -1651,7 +1651,7 @@ Tab:AddButton({
  }) 
   
  local Tab= Window:MakeTab({ 
-         Name = "Get罗宝/自动骂人", 
+         Name = "Get罗宝/自动骂人", 
          Icon = "rbxassetid://11560341824", 
          PremiumOnly = false 
  }) 
@@ -1841,7 +1841,7 @@ Tab:AddToggle({
 	end    
 })
    local Tab = Window:MakeTab({  
-    Name = "Main's",  
+    Name = "Main's",  
     Icon = "rbxassetid://7733970494",  
     PremiumOnly = false  
     })  
@@ -3097,7 +3097,7 @@ end)
 Players.PlayerRemoving:Connect(onPlayerRemoving)
 
 local EspTab = Window:MakeTab({
-    Name = "绘制页面",
+    Name = "绘制页面",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -3149,7 +3149,7 @@ EspTab:AddToggle({
  })
  
  local Tab= Window:MakeTab({ 
-         Name = "速度传奇", 
+         Name = "速度传奇", 
          Icon = "rbxassetid://7733956134", 
          PremiumOnly = false 
  }) 
@@ -3190,7 +3190,7 @@ EspTab:AddToggle({
       end 
  }) 
  local Tab= Window:MakeTab({ 
-         Name = "忍者传奇", 
+         Name = "忍者传奇", 
          Icon = "rbxassetid://7733798901", 
          PremiumOnly = false 
  }) 
@@ -3498,7 +3498,7 @@ EspTab:AddToggle({
  }) 
   
    local Tab= Window:MakeTab({  
-          Name = "刀刃球",  
+          Name = "刀刃球",  
           Icon = "rbxassetid://7733675107",  
           PremiumOnly = false  
   })  
@@ -3548,7 +3548,7 @@ EspTab:AddToggle({
       end 
  }) 
  local Tab= Window:MakeTab({ 
-         Name = "死亡球", 
+         Name = "死亡球", 
          Icon = "rbxassetid://7733779668", 
          PremiumOnly = false 
  }) 
@@ -3577,7 +3577,7 @@ EspTab:AddToggle({
  }) 
   
  local Tab= Window:MakeTab({ 
-         Name = "枪球", 
+         Name = "枪球", 
          Icon = "rbxassetid://7734068495", 
          PremiumOnly = false 
  }) 
@@ -3588,7 +3588,7 @@ EspTab:AddToggle({
       end 
  }) 
  local Tab= Window:MakeTab({ 
-         Name = "压力", 
+         Name = "压力", 
          Icon = "rbxassetid://7733674820", 
          PremiumOnly = false 
  }) 
@@ -3648,7 +3648,7 @@ EspTab:AddToggle({
     end 
  }) 
  local Tab= Window:MakeTab({ 
-         Name = "Doors", 
+         Name = "Doors1/2", 
          Icon = "rbxassetid://7734022041", 
          PremiumOnly = false 
  }) 
@@ -3770,7 +3770,7 @@ EspTab:AddToggle({
       end  
   })      
  local Tab= Window:MakeTab({ 
-         Name = "伐木大亨2", 
+         Name = "伐木大亨2", 
          Icon = "rbxassetid://7733799901", 
          PremiumOnly = false 
  }) 
@@ -3822,7 +3822,7 @@ EspTab:AddToggle({
       end 
  }) 
  local Tab= Window:MakeTab({  
-          Name = "The Rake",  
+          Name = "The Rake",  
           Icon = "rbxassetid://7733779610",  
           PremiumOnly = false  
   })  
@@ -3876,7 +3876,7 @@ EspTab:AddToggle({
        end  
   }) 
       local Tab = Window:MakeTab({  
-          Name = "CW(战斗勇士)",  
+          Name = "CW(战斗勇士)",  
           Icon = "rbxassetid://7733779610",  
           PremiumOnly = false  
   })  
@@ -4111,7 +4111,7 @@ EspTab:AddToggle({
     end  
   })  
   local Tab= Window:MakeTab({  
-          Name = "BF",  
+          Name = "BF",  
           Icon = "rbxassetid://7733779610",  
           PremiumOnly = false  
   })  
@@ -4171,7 +4171,7 @@ EspTab:AddToggle({
        end  
   })  
  local Tab= Window:MakeTab({ 
-         Name = "吃掉世界", 
+         Name = "吃掉世界", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
@@ -4188,7 +4188,7 @@ EspTab:AddToggle({
       end 
  }) 
  local Tab= Window:MakeTab({ 
-         Name = "彩虹盆友", 
+         Name = "彩虹盆友", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
@@ -4231,7 +4231,7 @@ EspTab:AddToggle({
       end 
  })
  local Tab= Window:MakeTab({ 
-         Name = "鱼(Fish)", 
+         Name = "鱼(Fcish)", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
@@ -4271,7 +4271,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/
  })
  
   local Tab= Window:MakeTab({ 
-         Name = "元素力量大亨", 
+         Name = "元素力量大亨", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
@@ -4283,7 +4283,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/
       end 
  })
   local Tab= Window:MakeTab({ 
-         Name = "战壕", 
+         Name = "战壕", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
@@ -4295,12 +4295,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/
       end 
  })
   local Tab= Window:MakeTab({ 
-         Name = "武器太多了", 
+         Name = "武器太多了", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
   Tab:AddButton({         
- Name = "汉化版",         
+ Name = "汉化版(已删库)",         
  Callback = function()         
            print("执行脚本")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Orion-Library.UI/refs/heads/main/%E5%B0%8F%E5%87%8C%E4%B8%AD%E5%BF%83%E7%9A%84%F0%9F%98%B0%F0%9F%A4%94%F0%9F%A4%A3%F0%9F%91%8D%F0%9F%A4%93%F0%9F%98%8E%F0%9F%98%92%F0%9F%A4%AE%F0%9F%98%82%F0%9F%98%A1%F0%9F%98%A8%F0%9F%98%AD%F0%9F%A5%B0%F0%9F%99%82%F0%9F%92%80%F0%9F%98%93%F0%9F%92%94%F0%9F%A5%B5%F0%9F%A7%90Orion%20Library.Lua"))()
@@ -4309,7 +4309,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/
  })
  
   local Tab= Window:MakeTab({ 
-         Name = "单词炸弹", 
+         Name = "单词炸弹", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
@@ -4321,7 +4321,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/
       end 
  })
    local Tab= Window:MakeTab({ 
-         Name = "小猪(Piggy)", 
+         Name = "小猪(Piggy)", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
@@ -4336,11 +4336,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/
           Name = "这个是自制🤔"  
 
   })  
- local Tab= Window:MakeTab({ 
-         Name = "0", 
-         Icon = "rbxassetid://7733779610", 
-         PremiumOnly = false 
- }) 
  --[[
 Tab:AddSlider({  
   
@@ -4390,7 +4385,7 @@ Tab:AddSlider({
   })  
   ]]--
  local Tab= Window:MakeTab({ 
-         Name = "Cy刀模拟器", 
+         Name = "Cy刀模拟器", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
@@ -4407,7 +4402,7 @@ Tab:AddSlider({
       end 
  })
  local Tab= Window:MakeTab({ 
-         Name = "最强战场", 
+         Name = "最强战场", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
@@ -4424,7 +4419,7 @@ Tab:AddSlider({
       end 
  })
   local Tab= Window:MakeTab({ 
-         Name = "夜灯", 
+         Name = "夜灯", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
@@ -4441,7 +4436,7 @@ Tab:AddSlider({
       end 
  })
   local Tab= Window:MakeTab({ 
-         Name = "城市防御大亨", 
+         Name = "城市防御大亨", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
@@ -4454,7 +4449,7 @@ Tab:AddSlider({
        end
   })  
  local Tab= Window:MakeTab({ 
-         Name = "猜Emoji", 
+         Name = "猜Emoji", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
@@ -4479,7 +4474,7 @@ end
       end 
  })
   local Tab= Window:MakeTab({ 
-         Name = "冬凌汉化 EVADE", 
+         Name = "冬凌汉化 EVADE", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
@@ -4514,7 +4509,7 @@ end
       end 
  })
   local Tab= Window:MakeTab({ 
-         Name = "汉堡大亨", 
+         Name = "汉堡大亨", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
@@ -4526,7 +4521,7 @@ end
       end 
  })
    local Tab= Window:MakeTab({ 
-         Name = "穿着溜冰鞋的布娃娃Obby", 
+         Name = "穿着溜冰鞋的布娃娃Obby", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
