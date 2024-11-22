@@ -3159,13 +3159,7 @@ EspTab:AddToggle({
         toggleBox2D(value)
     end
 })
- EspTab:AddButton({         
- Name = "冬凌汉化ESP",         
- Callback = function()         
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/espesp.lua"))()
-      end 
- })
- 
+
  local Tab= Window:MakeTab({ 
          Name = "速度传奇", 
          Icon = "rbxassetid://7733956134", 
