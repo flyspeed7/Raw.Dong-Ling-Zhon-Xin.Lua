@@ -28,7 +28,7 @@
  up.Size = UDim2.new(0, 44, 0, 28) 
  up.Font = Enum.Font.SourceSans 
  up.Text = "上" 
- up.TextColor3 = Color3.fromRGB(0, 0, 0) 
+ up.TextColor3 = Color3.fromRGB(255, 255, 255) 
  up.TextSize = 14.000  
   
  down.Name = "down" 
@@ -38,7 +38,7 @@
  down.Size = UDim2.new(0, 44, 0, 28) 
  down.Font = Enum.Font.SourceSans 
  down.Text = "下" 
- down.TextColor3 = Color3.fromRGB(0, 0, 0) 
+ down.TextColor3 = Color3.fromRGB(255, 255, 255) 
  down.TextSize = 14.000  
   
  onof.Name = "onof" 
