@@ -4237,7 +4237,7 @@ EspTab:AddToggle({
  }) 
    local Section = Tab:AddSection({  
   
-          Name = "自动摇摆1 2不能一起用"  
+          Name = "自动摇摆1"  
   
   })  
   Tab:AddButton({         
@@ -4246,19 +4246,7 @@ EspTab:AddToggle({
            loadstring(game:HttpGet("https://raw.githubusercontent.com/Kitler69/InfiniteWare/refs/heads/main/Launcher",true))()
       end 
  }) 
- Tab:AddToggle({  
-          Name = "自动摇摆 2",  
-          Default = false,  
-          Callback = function()  
-          loadstring(game:HttpGet("https://raw.githubusercontent.com/Kitler69/InfiniteWare/refs/heads/main/Launcher",true))()
-          end  
-  })  
   
-   local Section = Tab:AddSection({  
-  
-          Name = "下面是脚本中心"  
-  
-  })  
    Tab:AddButton({         
  Name = "Speed_HUB",         
  Callback = function()         
