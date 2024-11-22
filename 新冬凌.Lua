@@ -3101,7 +3101,37 @@ local EspTab = Window:MakeTab({
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
+EspTab:AddToggle({
+    Name = "绘制 位置",
+    Default = false,
+    Callback = function(v)
+                 local function ApplyESP(v)
+   if v.Character and v.Character:FindFirstChildOfClass'Humanoid' then
+       v.Character.Humanoid.NameDisplayDistance = 9e9
+       v.Character.Humanoid.NameOcclusion = "NoOcclusion"
+       v.Character.Humanoid.HealthDisplayDistance = 9e9
+       v.Character.Humanoid.HealthDisplayType = "AlwaysOn"
+       v.Character.Humanoid.Health = v.Character.Humanoid.Health -- triggers changed
+   end
+end
+for i,v in pairs(game.Players:GetPlayers()) do
+   ApplyESP(v)
+   v.CharacterAdded:Connect(function()
+       task.wait(0.33)
+       ApplyESP(v)
+   end)
+end
 
+game.Players.PlayerAdded:Connect(function(v)
+   ApplyESP(v)
+   v.CharacterAdded:Connect(function()
+       task.wait(0.33)
+       ApplyESP(v)
+   end)
+end)
+           
+    end
+})
 EspTab:AddToggle({
     Name = "绘制名字",
     Default = false,
@@ -3141,7 +3171,7 @@ EspTab:AddToggle({
         toggleBox2D(value)
     end
 })
- Tab:AddButton({         
+ EspTab:AddButton({         
  Name = "冬凌汉化ESP",         
  Callback = function()         
         loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/espesp.lua"))()
@@ -4440,19 +4470,24 @@ Tab:AddSlider({
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
- Tab:AddToggle({  
-          Name = "无限金钱😍",  
-          Default = false,  
-          Callback = function()  
-              local args = { [1] = math.huge }
+ Tab:AddButton({         
+ Name = "无限金钱",         
+ Callback = function()         
+               local args = { [1] = math.huge }
     game:GetService("ReplicatedStorage").Knit.Services.RaidService.RF.GiveReward:InvokeServer(unpack(args))
-       end
-  })  
- local Tab= Window:MakeTab({ 
-         Name = "猜Emoji", 
+           
+      end 
+ })
+   local Tab= Window:MakeTab({ 
+         Name = "彩虹盆友", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
+   local Section = Tab:AddSection({  
+  
+          Name = "目前可用..."  
+  
+  })  
   Tab:AddButton({         
  Name = "自动输入单词",         
  Callback = function()         
