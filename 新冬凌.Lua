@@ -1,11 +1,3 @@
-a=Instance.new("ScreenGui", game.CoreGui)
-b=Instance.new("TextLabel")
-b.Parent=a
-b.Position = UDim2.new(0,0,0,0)
-b.Size = UDim2.new(0, 500, 0, 530)
-b.Text="冬凌版本:6.10"
-b.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-b.BackgroundTransparency = 1
 print("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           谢谢你使用冬凌中心! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
 --[[
 local TweenService = game:GetService("TweenService")
@@ -81,27 +73,7 @@ wait(2)
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
  )
- wait(2)
-      local sound = Instance.new("Sound") 
-     sound.SoundId = "rbxassetid://4590662766" 
-     sound.Parent = game.Workspace 
-     sound:Play()
   
-  Notification:Notify( 
-     {Title = "🤔是谁制作", Description = "QQ 群：884776077 作者:1211373508"}, 
-     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 5, Type = "image"}, 
-     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
- ) 
- wait(2)
-      local sound = Instance.new("Sound") 
-     sound.SoundId = "rbxassetid://4590662766" 
-     sound.Parent = game.Workspace 
-     sound:Play()
-Notification:Notify( 
-     {Title = "Orion UI 库提供:", Description = "谢谢 小云!小云! 提供的 Orion UI 库!🤩"}, 
-     {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 20, Type = "image"}, 
-     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
- )
  wait(2)
        local sound = Instance.new("Sound") 
      sound.SoundId = "rbxassetid://4590662766" 
@@ -360,9 +332,11 @@ local TweenService = game:GetService("TweenService")
         wait(0.5) 
 end
   ]]
-loadstring(game:HttpGet('https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua'))() 
-  local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
-  local Window = OrionLib:MakeWindow({Name = "Y&F-HUB | 2024.11.22", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua'))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"))() 
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
+  local Window = OrionLib:MakeWindow({Name = "Y&F-HUB | 2024.11.23", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
   local about = Window:MakeTab({  
       Name = "信息/介绍",  
       Icon = "rbxassetid://7743878358",  
