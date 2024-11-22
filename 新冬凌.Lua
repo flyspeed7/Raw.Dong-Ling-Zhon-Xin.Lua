@@ -117,7 +117,7 @@ Library.DefaultColor = Color3.fromRGB(255,0,0)
      sound:Play()
   
 Library:Notification({
-	Text = "[打开控制台有惊喜!]",
+	Text = "Y&F-HUB = 缝合😂",
 	Duration = 6
 })
 wait(3)
