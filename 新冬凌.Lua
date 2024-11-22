@@ -1,3 +1,11 @@
+a=Instance.new("ScreenGui", game.CoreGui)
+b=Instance.new("TextLabel")
+b.Parent=a
+b.Position = UDim2.new(0,0,0,0)
+b.Size = UDim2.new(0, 500, 0, 530)
+b.Text="冬凌版本:6.10"
+b.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+b.BackgroundTransparency = 1
 print("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           谢谢你使用冬凌中心! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
 --[[
 local TweenService = game:GetService("TweenService")
@@ -4243,19 +4251,19 @@ EspTab:AddToggle({
       end 
  })
  local Tab= Window:MakeTab({ 
-         Name = "鱼(Fcish)", 
+         Name = "🔥鱼(Fcish)", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
    local Section = Tab:AddSection({  
   
-          Name = "自动摇摆1"  
+          Name = "汉化版"  
   
   })  
   Tab:AddButton({         
- Name = "自动摇摆 1",         
+ Name = "死鱼;冬凌汉化",         
  Callback = function()         
-           loadstring(game:HttpGet("https://raw.githubusercontent.com/Kitler69/InfiniteWare/refs/heads/main/Launcher",true))()
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Fisch.lua"))()
       end 
  }) 
   
