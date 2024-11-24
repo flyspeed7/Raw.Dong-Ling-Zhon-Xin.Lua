@@ -58,7 +58,7 @@ local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/
      sound.Parent = game.Workspace 
      sound:Play()
        Notification:Notify( 
-     {Title = "😋更新状况:已读取OrionUI库", Description = "今日已更新:刀刃球~ 做标抓取器~"}, 
+     {Title = "😋更新状况:已读取OrionUI库", Description = "今日已更新:简化时间"}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
@@ -83,7 +83,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/blood
 Library.DefaultColor = Color3.fromRGB(255,0,0)
 
 Library:Notification({
-	Text = "新-冬凌中心开发者:琳 和 Q3E4",
+	Text = "新-冬凌中心开发者:琳 和Q3E4",
 	Duration = 6
 })
 
