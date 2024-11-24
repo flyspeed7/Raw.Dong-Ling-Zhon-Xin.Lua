@@ -1,5 +1,4 @@
-warn("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           谢谢你使用冬凌中心! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
-OrionLib:Destroy()
+ print("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           谢谢你使用冬凌中心! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
 --[[
 local TweenService = game:GetService("TweenService")
     local NeonWaterMark = Instance.new("ScreenGui")
@@ -102,19 +101,6 @@ Library:Notification({
 	Duration = 6
 })
 wait(3)
-
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
-Library.DefaultColor = Color3.fromRGB(255,0,0)
-      local sound = Instance.new("Sound") 
-     sound.SoundId = "rbxassetid://4590662766" 
-     sound.Parent = game.Workspace 
-     sound:Play()
-  
-Library:Notification({
-	Text = "感谢你使用冬凌脚本中心",
-	Duration = 6
-})
-wait (3)
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
 Library.DefaultColor = Color3.fromRGB(255,0,0)
       local sound = Instance.new("Sound") 
