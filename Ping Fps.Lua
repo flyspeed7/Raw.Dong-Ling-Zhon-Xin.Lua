@@ -37,10 +37,10 @@ fpsLabel.Parent = displayFrame
 local function calculateMetrics()
 	local pingTimeSec = game.Players.LocalPlayer:GetNetworkPing()
 	local pingTimeMs = pingTimeSec * 1000
-	pingLabel.Text = "  Ping: " .. tostring(math.floor(pingTimeMs)) .. "ms"
+	pingLabel.Text = "    延迟: " .. tostring(math.floor(pingTimeMs)) .. "ms"
 
 	local realFPS = workspace:GetRealPhysicsFPS()
-	fpsLabel.Text = "FPS: " .. tostring(math.floor(realFPS))
+	fpsLabel.Text = "帧率: " .. tostring(math.floor(realFPS))
 end
 
 game:GetService("RunService").RenderStepped:Connect(function()
