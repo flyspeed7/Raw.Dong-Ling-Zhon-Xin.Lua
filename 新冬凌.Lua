@@ -1948,10 +1948,9 @@ Library:Notification({
       end 
  })
   Tab:AddButton({         
- Name = "自动检查注入器COOL!",         
+ Name = "检查注入器UNC(控制台)",         
  Callback = function()         
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Iamkhnah/Khanhdzpro/refs/heads/main/CheckCoolExecutor.lua"))()
-           
+loadstring(game:HttpGet("https://github.com/ltseverydayyou/uuuuuuu/blob/main/UNC%20test?raw=true"))() 
       end 
  })
  
