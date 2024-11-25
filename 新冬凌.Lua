@@ -1,4 +1,4 @@
- print("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           谢谢你使用冬凌中心! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
+print("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           谢谢你使用冬凌中心! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
 --[[
 local TweenService = game:GetService("TweenService")
     local NeonWaterMark = Instance.new("ScreenGui")
@@ -3608,7 +3608,7 @@ getgenv().auto_spam = Value
 	end    
 })
 
-Tab:AddParagraph("Inf","inf Gem Need All Quest")
+Tab:AddParagraph("无限反击","可以无视冷却")
 
 Tab:AddToggle({
 	Name = "无限反鸡",
