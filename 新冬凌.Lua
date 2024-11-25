@@ -3557,16 +3557,86 @@ EspTab:AddToggle({
  }) 
   
  local Tab= Window:MakeTab({ 
-         Name = "枪球", 
+         Name = "枪球(更新)", 
          Icon = "rbxassetid://7734068495", 
          PremiumOnly = false 
  }) 
- Tab:AddButton({         
- Name = "自动打击",         
- Callback = function()         
-           loadstring(game:HttpGet("https://raw.githubusercontent.com/Turtle-Secure/Gun-Ball/main/.lua"))() 
-      end 
- }) 
+local Section = Tab:AddSection({
+	Name = "测试版;By:Q3E4"
+})
+Tab:AddParagraph("介绍自动开枪:","是在一定距离内点击按钮的")
+
+Tab:AddToggle({
+	Name = "自动开枪",
+	Default = false,
+	Callback = function(Value)
+		getgenv().auto_block = Value
+        local function auto()
+            while true do
+                if auto_block then
+                    game:GetService("ReplicatedStorage").RemoteEvent:FireServer({
+                        ["name"] = "defense",
+                        ["origin"] = "balltargets"
+                    },{})
+                else break
+                end
+                wait()
+            end
+        end
+        auto()
+	end    
+})
+
+Tab:AddToggle({
+	Name = "自动翻转球!",
+	Default = false,
+	Callback = function(Value)
+getgenv().auto_spam = Value
+        local function auto()
+            while true do
+                if auto_spamshooot then
+                    game:GetService("ReplicatedStorage").RemoteEvent:FireServer({
+                        ["name"] = "defense",
+                        ["origin"] = "balltargets"
+                    },{})
+                else break
+                end
+                wait()
+            end
+        end
+        auto()
+	end    
+})
+
+Tab:AddParagraph("Inf","inf Gem Need All Quest")
+
+Tab:AddToggle({
+	Name = "无限反鸡",
+	Default = false,
+	Callback = function(Value)
+		getgenv().inf_gems = Value
+        local function auto()
+            while true do
+                if inf_gems then
+                    local ohTable1 = {
+                        ["name"] = "redeem",
+                        ["origin"] = "quests"
+                    }
+                    local ohTable2 = {
+                        [1] = getgenv().quest
+                    }
+
+                    game:GetService("ReplicatedStorage").RemoteEvent:FireServer(ohTable1, ohTable2)
+                    game:GetService("ReplicatedStorage").RemoteEvent:FireServer(ohTable1, ohTable2)
+                    game:GetService("ReplicatedStorage").RemoteEvent:FireServer(ohTable1, ohTable2)
+                else break
+                end
+                wait()
+            end
+        end
+        auto()
+	end    
+})
  local Tab= Window:MakeTab({ 
          Name = "压力", 
          Icon = "rbxassetid://7733674820", 
