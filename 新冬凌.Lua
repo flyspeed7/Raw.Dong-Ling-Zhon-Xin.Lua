@@ -1802,13 +1802,6 @@ Tab:AddToggle({
     Icon = "rbxassetid://7733970494",  
     PremiumOnly = false  
     })  
-   Tab:AddButton({         
- Name = "改版冬凌;琳自己开发的😏",         
- Callback = function()         
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%80%81%E5%86%AC%E5%87%8C%202.lua"))()
-           
-      end 
- })
  
   local Section = Tab:AddSection({  
   
@@ -1866,16 +1859,15 @@ Tab:AddToggle({
           Name = "快速功能结束 \n 加入有趣的功能"  
   
   })  
+--[[
 Tab:AddDropdown({
-	Name = "下拉菜单选择",
+	Name = "选择传送玩家",
 	Default = "小凌",
 	Options = {"小凌-凌 awa", "新的冬凌中心 QE4 版😆"},
-	Callback = function(Value)
-		print(Value)
+	Callback = function(players)
+    lp.Character.HumanoidRootPart.CFrame = plrs:FindFirstChild(name).Character.HumanoidRootPart.CFrame
 	end    
 })
-
---[[
 Name = <string> - The name of the dropdown.
 Default = <string> - The default value of the dropdown.
 Options = <table> - The options in the dropdown.
@@ -1889,7 +1881,7 @@ Callback = <function> - The function of the dropdown.
 	end	  
 })
  Tab:AddButton({         
- Name = "坐标抓取器",         
+ Name = "坐标抓取器(熟人东西还要卡密)",         
  Callback = function()         
            loadstring(game:HttpGet("https://raw.githubusercontent.com/hassanxzayn-lua/maincoordinatesgrabber/refs/heads/main/new"))()
            
