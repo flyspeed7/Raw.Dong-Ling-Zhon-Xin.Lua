@@ -4490,11 +4490,16 @@ Tab:AddSlider({
            
       end 
  })
-   local Tab= Window:MakeTab({ 
-         Name = "彩虹盆友", 
+  local Tab= Window:MakeTab({ 
+         Name = "单词炸弹💣", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
+   local Section = Tab:AddSection({  
+  
+          Name = "无问题"  
+  
+  })  
    local Section = Tab:AddSection({  
   
           Name = "目前可用..."  
@@ -4520,90 +4525,7 @@ game:GetService("ReplicatedStorage").Events.SubmitAnswer:FireServer(unpack(args)
 end        
       end 
  })
-  local Tab= Window:MakeTab({ 
-         Name = " EVADE", 
-         Icon = "rbxassetid://7733779610", 
-         PremiumOnly = false 
- }) 
-     local Section = Tab:AddSection({  
   
-          Name = "移动页面"  
-  
-  })  
-   Tab:AddSlider({  
-
-          Name = "逃脱改速度",  
-
-          Min = 5,  
-
-          Max = 20000,  
-
-          Default = 5,  
-
-          Color = Color3.fromRGB(127,251,111),  
-
-          Increment = 1,  
-
-          ValueName = "数值",  
-
-          Callback = function(Value)  
-
-              Settings.Speed = Value
-
-          end      
-
-  })  
-    Tab:AddSlider({  
-
-          Name = "逃脱改跳跃",  
-
-          Min = 5,  
-
-          Max = 20000,  
-
-          Default = 5,  
-
-          Color = Color3.fromRGB(127,251,111),  
-
-          Increment = 1,  
-
-          ValueName = "数值",  
-
-          Callback = function(Value)  
-
-              Settings.Jump = Value
-
-          end      
-
-  })  
-   local Section = Tab:AddSection({  
-  
-          Name = "功能页面"  
-  
-  })  
- Tab:AddButton({         
- Name = "高亮",         
- Callback = function()         
-                      Game.Lighting.Brightness = 4
-        Game.Lighting.FogEnd = 10000
-        Game.Lighting.GlobalShadows = false
-    Game.Lighting.ClockTime = 12
-           
-      end 
- })
- Tab:AddToggle({  
-          Name = "无抖动",  
-          Default = false,  
-          Callback = function(State)  
-    Settings.NoCameraShake = State
-          end  
-  })  
- 
-   local Section = Tab:AddSection({  
-  
-          Name = "修补..."  
-  
-  })  
   local Section = Tab:AddSection({  
   
           Name = "高质量 Evade 脚本: \n 卡密已经解出来了复制就可以"  
@@ -4715,3 +4637,20 @@ Tab:AddButton({
     end
     end
 })
+  local Tab= Window:MakeTab({ 
+         Name = "搜索脚本", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+   local Section = Tab:AddSection({  
+  
+          Name = "api 接口：Scriptblox.com"  
+  
+  })  
+Tab:AddButton({         
+ Name = "打开脚本搜索器",         
+ Callback = function()         
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ECCSco/ECCS-V3/refs/heads/main/ECCS%20Searcher%20V2.7.lua"))()
+           
+      end 
+ })
