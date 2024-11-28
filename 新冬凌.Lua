@@ -320,7 +320,7 @@ local TweenService = game:GetService("TweenService")
 end
   ]]
 local args = {
-    [1] = "大家好好,我是"..game.Players.LocalPlayer.DisplayName.."很高兴认识你!",
+    [1] = "Hello,I'm"..game.Players.LocalPlayer.DisplayName.."!",
     [2] = "All"
 }
 
@@ -359,10 +359,6 @@ local Section = about:AddSection({
   about:AddParagraph("您的名称:",""..game.Players.LocalPlayer.DisplayName.."")  
   about:AddParagraph("您的注入器:"," "..identifyexecutor().."")  
   about:AddParagraph("您当前服务器的ID"," "..game.GameId.."")  
-  about:AddLabel("你的账户年龄:"..player.AccountAge.."天")
-  about:AddLabel("你的客户端ID:"..game:GetService("RbxAnalyticsService"):GetClientId())
-  about:AddLabel("你当前的服务器名称:"..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
- 
    local Section = about:AddSection({  
   
           Name = "公告"  
