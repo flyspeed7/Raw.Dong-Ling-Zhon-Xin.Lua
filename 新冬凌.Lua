@@ -319,6 +319,12 @@ local TweenService = game:GetService("TweenService")
         wait(0.5) 
 end
   ]]
+local args = {
+    [1] = "大家好好,我是"..game.Players.LocalPlayer.DisplayName.."很高兴认识你!",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua'))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"))() 
