@@ -4715,3 +4715,21 @@ Tab:AddButton({
         loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\103\101\109\120\72\119\65\49"))()
     end
 })
+  local Tab= Window:MakeTab({ 
+         Name = "墓地大亨", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+   local Section = Tab:AddSection({  
+  
+          Name = "无限马内和炸服"  
+  
+  })  
+Tab:AddButton({         
+ Name = "Tap-hub",         
+ Callback = function()         
+          
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BaconBABA/Admin-Panel/refs/heads/main/sigmaboy.md"))() 
+           
+      end 
+ })
