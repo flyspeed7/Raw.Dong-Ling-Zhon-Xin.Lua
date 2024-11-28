@@ -4654,3 +4654,64 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/ECCSco/ECCS-V3/refs/h
            
       end 
  })
+local Tab = Window:MakeTab({
+    Name = "脚本中心",
+    Icon = "rbxassetid://10527577695",
+    PremiumOnly = false
+})
+
+Tab:AddButton({
+    Name = "云脚本",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoYunCN/6666666666/main/%E4%BA%91%E8%84%9A%E6%9C%AC%E6%B5%8B%E8%AF%95%E7%89%88%E4%BA%91%E8%84%9A%E6%9C%AC%E6%B5%8B%E8%AF%95%E7%89%88Xiao%20Yun.lua"))()
+    end
+})
+
+Tab:AddButton({
+    Name = "禁漫中心",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/dingding123hhh/anlushanjinchangantangwanle/main/jmjmjmjmjmjmjmjmjmjmjmjmjmjmjmjm.lua"))()
+    end
+})
+
+Tab:AddButton({
+    Name = "皮脚本",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaopi77/xiaopi77/main/QQ1002100032-Roblox-Pi-script.lua"))()
+    end
+})
+
+Tab:AddButton({
+    Name = "神光脚本",
+    Callback = function()
+    loadstring(game:HttpGet(utf8.char((function() return table.unpack({104,116,116,112,115,58,47,47,112,97,115,116,101,98,105,110,46,99,111,109,47,114,97,119,47,56,102,50,76,99,113,113,80})end)())))()
+    end
+})
+
+Tab:AddButton({
+    Name = "青脚本",
+    Callback = function()
+    loadstring(game:HttpGet('https://rentry.co/ct293/raw'))()
+    end
+})
+
+Tab:AddButton({
+   Name = "XK脚本中心",
+   Callback = function()
+ loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\66\73\78\106\105\97\111\98\122\120\54\47\66\73\78\106\105\97\111\47\109\97\105\110\47\88\75\46\84\88\84\34\41\41\40\41\10")()
+   end
+})
+
+Tab:AddButton({
+    Name = "USA脚本卡密:USA AER",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/boyscp/beta/main/USA.lua"))()
+	end
+})
+
+Tab:AddButton({
+    Name = "脚本中心",
+    Callback = function()
+        loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\103\101\109\120\72\119\65\49"))()
+    end
+})
