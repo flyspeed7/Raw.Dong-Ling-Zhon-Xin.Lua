@@ -331,7 +331,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Li
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
   local Window = OrionLib:MakeWindow({Name = "Y&F-HUB | 2024.11.28", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
   local about = Window:MakeTab({  
-      Name = "信息/介绍",  
+      Name = "信息/公告/设置",  
       Icon = "rbxassetid://7743878358",  
       PremiumOnly = false  
   })  
@@ -352,10 +352,31 @@ about:AddButton({
         game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
     end
 })
-
+local Section = about:AddSection({
+	Name = "基础信息"
+})
+  about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."") 
+  about:AddParagraph("您的名称:",""..game.Players.LocalPlayer.DisplayName.."")  
+  about:AddParagraph("您的注入器:"," "..identifyexecutor().."")  
+  about:AddParagraph("您当前服务器的ID"," "..game.GameId.."")  
+  about:AddLabel("你的账户年龄:"..player.AccountAge.."天")
+  about:AddLabel("你的客户端ID:"..game:GetService("RbxAnalyticsService"):GetClientId())
+  about:AddLabel("你当前的服务器名称:"..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
+ 
+   local Section = about:AddSection({  
+  
+          Name = "公告"  
+  
+  })  
+about:AddLabel("主脚本作者:Q3E4 QQ:1211373508")
+about:AddLabel("密钥系统作者:琳 谷歌邮箱:get.linscr@gmail.com")
+about:AddParagraph("琳(特别不自恋)要干什么?", "她要干汉化、密钥系统、加/解密")
+about:AddParagraph("Q3E4(他喜欢某个人) 要干什么?", "编写脚本(这个人懒到不想加密)、修复错误. ⬇️⬇️⬇️")
+about:AddLabel(" 查找/更新脚本 .")
+about:AddLabel("我们团队:NOOB-TEAM")
   local Section = about:AddSection({  
   
-          Name = "天气"  
+          Name = "天气/时间"  
   
   })  
  about:AddButton({         
@@ -408,16 +429,6 @@ lighting.Brightness = 6
       end 
  })
  
-local Section = about:AddSection({
-	Name = "更新日志: \n 加了很多的东西你可以到通知查看!"
-})
-  about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."") 
-  about:AddParagraph("您的名称:",""..game.Players.LocalPlayer.DisplayName.."")  
-  about:AddParagraph("您的注入器:"," "..identifyexecutor().."")  
-  about:AddParagraph("您当前服务器的ID"," "..game.GameId.."")  
-  about:AddParagraph("已获取进程","进程:0×0")  
-  about:AddParagraph("大家多多不支持","脚本无加密你可以看github")  
-  about:AddParagraph("缝合","做大做强(")  
 
 function chat(msg)
 
