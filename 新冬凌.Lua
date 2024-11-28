@@ -319,12 +319,6 @@ local TweenService = game:GetService("TweenService")
         wait(0.5) 
 end
   ]]
-local args = {
-    [1] = "Hello,I'm"..game.Players.LocalPlayer.DisplayName.."!",
-    [2] = "All"
-}
-
-game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua'))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"))() 
@@ -4247,99 +4241,7 @@ Tab:AddToggle({
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
-local function tpSpawn()
-    Character.HumanoidRootPart.CFrame = CFrame.new(188,32,271)
-end
 
-local ESP = Instance.new("Highlight")
-ESP.OutlineColor = Color3.new(255,255,255)
-ESP.OutlineTransparency = 0
-ESP.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-ESP.FillColor = Color3.new(255,0,0)
-ESP.FillTransparency = 0.5
-ESP.Parent = game:GetService("ReplicatedStorage")
-ESP.Name = "ESPHighlightinger"
-
-local desthigh = game.ReplicatedStorage:FindFirstChild("ESPHighlight")
-if desthigh then
-    desthigh:Destroy()
-end
-ESP.Name = "ESPHighlight"
-
-local pESP = Instance.new("Highlight")
-pESP.OutlineColor = Color3.new(255,255,255)
-pESP.OutlineTransparency = 0
-pESP.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-pESP.FillColor = Color3.new(0,255,0)
-pESP.FillTransparency = 0.5
-pESP.Parent = game:GetService("ReplicatedStorage")
-pESP.Name = "pESPHighlightinger"
-
-local desthigh = game.ReplicatedStorage:FindFirstChild("pESPHighlight")
-if desthigh then
-    desthigh:Destroy()
-end
-pESP.Name = "pESPHighlight"
-
-local Headlight = Instance.new("PointLight")
-Headlight.Name = "Headlight"
-Headlight.Parent = Character:WaitForChild("Head")
-Headlight.Brightness = 2.5
-Headlight.Enabled = false
-Headlight.Range = 40
-Headlight.Color = Color3.new(255,255,255)
-Headlight.Shadows = true
-
-local destlight = Character:WaitForChild("Head"):FindFirstChild("Headlight")
-if destlight then
-    if destlight.Shadows == false then
-        destlight:Destroy()
-    end
-end
-Headlight.Shadows = false
-
-Tab:AddToggle({
-        Name = "怪物 ESP",
-        Default = false,
-        Callback = function(Value)
-                if Value == true then
-            for _, monster in pairs(workspace.Monsters:GetChildren()) do
-                local newlight = ESP:Clone()
-                newlight.Parent = monster
-            end
-        else
-            for _, i in pairs(workspace.Monsters:GetChildren()) do
-                local esp = i:FindFirstChild(ESP.Name)
-                if esp then
-                    esp:Destroy()
-                end
-            end
-        end
-        end    
-})
-
-Tab:AddToggle({
-        Name = "玩家 ESP",
-        Default = false,
-        Callback = function(Value)
-                if Value == true then
-            for _, player in pairs(game.Players:GetChildren()) do
-                if player.Name ~= Character.Name then
-                    local newlight = pESP:Clone()
-                    newlight.Parent = player.Character
-                end
-            end
-        else
-            for _, player in pairs(game.Players:GetChildren()) do
-                local esp = player.Character:FindFirstChild(pESP.Name)
-                if esp then
-                    esp:Destroy()
-                end
-            end
-        end
-        end    
-})
--- 188, 32, 271
 
 Tab:AddButton({
         Name = "自动收集积木块",
