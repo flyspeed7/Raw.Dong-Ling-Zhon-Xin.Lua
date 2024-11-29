@@ -53,7 +53,7 @@ if DeviceType == "Mobile" then
     TextButton.Size = UDim2.new(0, 45, 0, 45)
     TextButton.AutoButtonColor = false
     TextButton.Font = Enum.Font.SourceSans
-    TextButton.Text = "Open"
+    TextButton.Text = "开"
     TextButton.TextColor3 = Color3.new(220, 125, 255)
     TextButton.TextSize = 20
 
@@ -64,8 +64,8 @@ if DeviceType == "Mobile" then
 end
 
 local Window = Fluent:CreateWindow({
-    Title = game:GetService("MarketplaceService"):GetProductInfo(16732694052).Name .." | CupPink - Premium",
-    SubTitle = " (discord.gg/cT34Cx4TGC)",
+    Title = game:GetService("MarketplaceService"):GetProductInfo(16732694052).Name .." | 冬凌汉化",
+    SubTitle = "QQ群:884776077",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
     Acrylic = false, -- The blur may be detectable, setting this to false disables blur entirely
