@@ -4329,7 +4329,7 @@ Tab:AddButton({
         Character.HumanoidRootPart.CFrame = workspace["GroupBuildStructures"]:FindFirstChildOfClass("Model"):FindFirstChild("Trigger").CFrame
     end    
 })
-
+--[[
 local ESP = Instance.new("Highlight")
 ESP.OutlineColor = Color3.new(255,255,255)
 ESP.OutlineTransparency = 0
@@ -4418,7 +4418,7 @@ Tab:AddToggle({
         end
         end    
 })
-
+]]
  Tab:AddButton({         
  Name = "主要的/Ture2",         
  Callback = function()         
