@@ -3475,6 +3475,35 @@ EspTab:AddToggle({
           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(178.33023071289062, 91245.96875, 152.53775024414062) 
          end 
  }) 
+   local Tab = Window:MakeTab({ 
+         Name = "FE脚本", 
+         Icon = "rbxassetid://4483345998", 
+         PremiumOnly = false 
+ }) 
+ Tab:AddButton({ 
+         Name = "C00l 客户端(真)", 
+         Callback = function() 
+    loadstring(game:GetObjects("rbxassetid://8127297852")[1].Source)() 
+           end     
+ }) 
+ Tab:AddButton({ 
+         Name = "1x1x1x1 客户端(真)", 
+         Callback = function() 
+      loadstring(game:HttpGet(('https://pastebin.com/raw/JipYNCht'),true))() 
+           end     
+ }) 
+ Tab:AddButton({ 
+         Name = "变玩家（R6）", 
+         Callback = function() 
+      loadstring(game:HttpGet("https://pastebin.com/raw/XR4sGcgJ"))() 
+           end     
+ }) 
+ Tab:AddButton({ 
+         Name = "动画中心", 
+         Callback = function() 
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Animation-Hub/main/Animation%20Gui", true))() 
+           end     
+ }) 
   
    local Tab= Window:MakeTab({  
           Name = "刀刃球",  
