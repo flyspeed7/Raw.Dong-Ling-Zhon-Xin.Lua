@@ -58,7 +58,7 @@ local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/
      sound.Parent = game.Workspace 
      sound:Play()
        Notification:Notify( 
-     {Title = "😋更新状况:已读取OrionUI库", Description = "今日已更新:简化时间"}, 
+     {Title = "😋更新状况:已读取OrionUI库", Description = "今日已更新:新人物#北极星~ FE脚本～ 其他~"}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
@@ -69,7 +69,7 @@ wait(2)
      sound:Play()
   
  Notification:Notify( 
-     {Title = "📝请认准作者:小凌-Q3E4", Description = "作者:QE4-小凌"}, 
+     {Title = "📝请认准作者:小凌-Q3E4", Description = " 作者:QE4-小凌 \n QQ号:1211373508"}, 
      {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(255, 84, 84)} 
  )
@@ -87,7 +87,7 @@ Library:Notification({
 	Duration = 6
 })
 
-wait (3)
+wait (1.5)
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
 Library.DefaultColor = Color3.fromRGB(255,0,0)
@@ -100,7 +100,7 @@ Library:Notification({
 	Text = "Y&F-HUB = 缝合😂",
 	Duration = 6
 })
-wait(3)
+wait(1.5)
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
 Library.DefaultColor = Color3.fromRGB(255,0,0)
       local sound = Instance.new("Sound") 
@@ -361,8 +361,9 @@ local Section = about:AddSection({
 about:AddLabel("主脚本作者:Q3E4 QQ:1211373508")
 about:AddLabel("密钥系统作者:琳 谷歌邮箱:get.linscr@gmail.com")
 about:AddParagraph("琳(特别不自恋)要干什么?", "她要干汉化、密钥系统、加/解密")
-about:AddParagraph("Q3E4(他喜欢某个人) 要干什么?", "编写脚本(这个人懒到不想加密)、修复错误. ⬇️⬇️⬇️")
-about:AddLabel(" 查找/更新脚本 .")
+about:AddParagraph("Q3E4(他喜欢某个人) 要干什么?", "编写脚本(这个人懒到不想加密)、修复错误、更新脚本、有时汉化脚本.")
+about:AddParagraph("北极星(无信息)他要干什么?", "发一点新鲜东西、99+加密网站")
+about:AddLabel("1×1×1×1&Coolkidd&true94(四个Roblox黑客)")
 about:AddLabel("我们团队:NOOB-TEAM")
   local Section = about:AddSection({  
   
