@@ -119,7 +119,7 @@ local RunCount = false
 -- // // // Functions // // // --
 function ShowNotification(String)
     Fluent:Notify({
-        Title = "欢迎,使用汉化死鱼脚本",
+        Title = "开启功能!",
         Content = String,
         Duration = 5
     })
@@ -526,7 +526,7 @@ corner.CornerRadius = UDim.new(0, 10)
 
 local function updateShadowCount()
     local count = #workspace.Shadows:GetChildren()
-    shadowCountLabel.Text = "Shadow Count: " .. count
+    shadowCountLabel.Text = "区域阴影: " .. count
 end
 
 spawn(function()
@@ -540,25 +540,32 @@ end)
 
 local Tabs = { -- https://lucide.dev/icons/
     Home = Window:AddTab({ Title = "主页", Icon = "home" }),
-    Exclusives = Window:AddTab({ Title = "独家功能", Icon = "heart" }),
-    Main = Window:AddTab({ Title = "主要的", Icon = "list" }),
+    Exclusives = Window:AddTab({ Title = "独家", Icon = "heart" }),
+    Main = Window:AddTab({ Title = "主要", Icon = "list" }),
     Items = Window:AddTab({ Title = "其他", Icon = "box" }),
     Teleports = Window:AddTab({ Title = "传送", Icon = "map-pin" }),
     Misc = Window:AddTab({ Title = "功能", Icon = "file-text" }),
-    Trade = Window:AddTab({ Title = "设置/玩家", Icon = "gift" })
+    Trade = Window:AddTab({ Title = "设置", Icon = "gift" })
 }
 
 local Options = Fluent.Options
 
 do
     Tabs.Home:AddButton({
-        Title = "复制 Discord l链接",
+        Title = "复制 Discord 链接",
         Description = "Join our main discord!",
         Callback = function()
             setclipboard("https://discord.gg/25ms")
         end
     })
 
+    Tabs.Home:AddButton({
+        Title = "复制QQ群",
+        Description = "Join our main discord!",
+        Callback = function()
+            setclipboard("群:884776077")
+        end
+    })
     -- // Exclusives Tab // --
     local sectionExclus = Tabs.Exclusives:AddSection("鱼竿美化功能")
     local CountShadows = Tabs.Exclusives:AddToggle("CountShadows", {Title = "亚特兰蒂斯", Default = false })
@@ -585,7 +592,7 @@ do
         end
     end)
     local RodDupe_Delay = Tabs.Exclusives:AddSlider("RodDupe_Delay", {
-        Title = "深渊鱼竿自动泛滥延迟",
+        Title = "深渊鱼竿延迟",
         Description = "",
         Default = 0.2,
         Min = 0,
@@ -689,7 +696,7 @@ do
             stopAutoReel()
         end
     end)
-    local FreezeCharacter = Tabs.Main:AddToggle("FreezeCharacter", {Title = "人物冻结", Default = false })
+    local FreezeCharacter = Tabs.Main:AddToggle("FreezeCharacter", {Title = "无法移动", Default = false })
     FreezeCharacter:OnChanged(function()
         local oldpos = HumanoidRootPart.CFrame
         FreezeChar = Options.FreezeCharacter.Value
@@ -744,7 +751,7 @@ do
         end
     })
     Tabs.Items:AddButton({
-        Title = "出售全部",
+        Title = "出售库存",
         Description = "",
         Callback = function()
             SellAll()
@@ -752,9 +759,9 @@ do
     })
 
     -- // Treasure Tab // --
-    local section = Tabs.Items:AddSection("修复/获取")
+    local section = Tabs.Items:AddSection("修复")
     Tabs.Items:AddButton({
-        Title = "杰克骨梳",
+        Title = "杰克骨头",
         Callback = function()
             HumanoidRootPart.CFrame = CFrame.new(-2824.359, 214.311, 1518.130)
         end
@@ -879,7 +886,7 @@ do
         Description = "Teleports to the Traveler Merchant.",
         Callback = function()
             local Merchant = game.Workspace.active:FindFirstChild("Merchant Boat")
-            if not Merchant then return ShowNotification("Not found Merchant") end
+            if not Merchant then return ShowNotification("没有找到") end
             HumanoidRootPart.CFrame = CFrame.new(game.Workspace.active["Merchant Boat"].Boat["Merchant Boat"].r.HandlesR.Position)
         end
     })
@@ -915,7 +922,7 @@ do
 		end
     end)
     local WalkOnWaterZone = Tabs.Misc:AddDropdown("WalkOnWaterZone", {
-        Title = "水上行走区域",
+        Title = "钓鱼传送区域区域",
         Values = {"海洋", "荒凉深渊", "深渊"},
         Multi = false,
         Default = "Ocean",
@@ -951,7 +958,7 @@ do
 
     -- // Misc Tab // --
     local section = Tabs.Misc:AddSection("功能")
-    local BypassRadar = Tabs.Misc:AddToggle("BypassRadar", {Title = "绕过鱼雷达", Default = false })
+    local BypassRadar = Tabs.Misc:AddToggle("BypassRadar", {Title = "开启鱼雷达", Default = false })
     BypassRadar:OnChanged(function()
         for _, v in pairs(game:GetService("CollectionService"):GetTagged("radarTag")) do
 			if v:IsA("BillboardGui") or v:IsA("SurfaceGui") then
@@ -959,7 +966,7 @@ do
 			end
 		end
     end)
-    local BypassGPS = Tabs.Misc:AddToggle("BypassGPS", {Title = "绕过 GPS", Default = false })
+    local BypassGPS = Tabs.Misc:AddToggle("BypassGPS", {Title = "显示XYZ轴", Default = false })
     BypassGPS:OnChanged(function()
         if Options.BypassGPS.Value == true then
             local XyzClone = game:GetService("ReplicatedStorage").resources.items.items.GPS.GPS.gpsMain.xyz:Clone()
@@ -1029,8 +1036,7 @@ do
             setclipboard("game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(" .. XYZ .. ")")
         end
     })
-
-    local JustUI = Tabs.Misc:AddToggle("JustUI", {Title = "自适应 UI", Default = true })
+    local JustUI = Tabs.Misc:AddToggle("JustUI", {Title = "显示UI界面", Default = true })
     JustUI:OnChanged(function()
         local BlackShow = JustUI.Value
         if BlackShow then
@@ -1043,12 +1049,12 @@ do
     local IdentityHiderUI = Tabs.Misc:AddToggle("IdentityHiderUI", {Title = "适配 UI", Default = false })    
     IdentityHiderUI:OnChanged(function()
         while Options.IdentityHiderUI.Value == true do
-            if UserPlayer:FindFirstChild("streak") then UserPlayer.streak.Text = "HIDDEN" end
-            if UserPlayer:FindFirstChild("level") then UserPlayer.level.Text = "Level: HIDDEN" end
-            if UserPlayer:FindFirstChild("level") then UserPlayer.user.Text = "HIDDEN" end
+            if UserPlayer:FindFirstChild("streak") then UserPlayer.streak.Text = "     " end
+            if UserPlayer:FindFirstChild("level") then UserPlayer.level.Text = "等级: 1" end
+            if UserPlayer:FindFirstChild("level") then UserPlayer.user.Text = "User003496c50117f" end
             local hud = LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("hud"):WaitForChild("safezone")
-            if hud:FindFirstChild("coins") then hud.coins.Text = "HIDDEN$" end
-            if hud:FindFirstChild("lvl") then hud.lvl.Text = "HIDDEN LVL" end
+            if hud:FindFirstChild("coins") then hud.coins.Text = "0 C$" end
+            if hud:FindFirstChild("lvl") then hud.lvl.Text = "无" end
             task.wait(0.01)
         end
     end)
@@ -1068,7 +1074,7 @@ do
         end
     })
 
-    local section = Tabs.Trade:AddSection("Coming Soon...")
+    local section = Tabs.Trade:AddSection("待添加...")
 end
 
 Window:SelectTab(1)
