@@ -4330,10 +4330,6 @@ Tab:AddButton({
     end    
 })
 
-Tab:AddParagraph("制作：Q3E4","QQ群:884776077")local function tpSpawn()
-    Character.HumanoidRootPart.CFrame = CFrame.new(188,32,271)
-end
-
 local ESP = Instance.new("Highlight")
 ESP.OutlineColor = Color3.new(255,255,255)
 ESP.OutlineTransparency = 0
@@ -4422,96 +4418,7 @@ Tab:AddToggle({
         end
         end    
 })
--- 188, 32, 271
 
-Tab:AddButton({
-        Name = "自动收集积木块",
-        Callback = function()
-        for v=1, 24 do
-            if workspace:FindFirstChild("Block"..v) then
-                Character.HumanoidRootPart.CFrame = workspace:FindFirstChild("Block"..v).TouchTrigger.CFrame
-                wait(0.2)
-                Character.HumanoidRootPart.CFrame = workspace["GroupBuildStructures"]:FindFirstChildOfClass("Model").Trigger.CFrame
-                wait(0.2)
-                tpSpawn()
-                wait(0.2)
-            end
-        end
-        end    
-})
-
-Tab:AddButton({
-        Name = "自动收集食品包",
-        Callback = function()
-        for v=1, 15 do
-            if workspace:FindFirstChild("FoodGreen") then
-                Character.HumanoidRootPart.CFrame = workspace:FindFirstChild("FoodGreen").TouchTrigger.CFrame
-                wait(0.2)
-                Character.HumanoidRootPart.CFrame = workspace["GroupBuildStructures"]:FindFirstChildOfClass("Model").Trigger.CFrame
-                wait(0.2)
-                tpSpawn()
-                wait(0.2)
-            end
-            if workspace:FindFirstChild("FoodOrange") then
-                Character.HumanoidRootPart.CFrame = workspace:FindFirstChild("FoodOrange").TouchTrigger.CFrame
-                wait(0.2)
-                Character.HumanoidRootPart.CFrame = workspace["GroupBuildStructures"]:FindFirstChildOfClass("Model").Trigger.CFrame
-                wait(0.2)
-                tpSpawn()
-                wait(0.2)
-            end
-            if workspace:FindFirstChild("FoodPink") then
-                Character.HumanoidRootPart.CFrame = workspace:FindFirstChild("FoodPink").TouchTrigger.CFrame
-                wait(0.2)
-                Character.HumanoidRootPart.CFrame = workspace["GroupBuildStructures"]:FindFirstChildOfClass("Model").Trigger.CFrame
-                wait(0.2)
-                tpSpawn()
-                wait(0.2)
-            end
-        end
-        end    
-})
-
-Tab:AddButton({
-        Name = "自动收集保险丝",
-        Callback = function()
-        for v=1, 14 do
-            if workspace:FindFirstChild("Fuse"..v) then
-                Character.HumanoidRootPart.CFrame = workspace:FindFirstChild("Fuse"..v).TouchTrigger.CFrame
-                wait(0.2)
-                Character.HumanoidRootPart.CFrame = workspace["GroupBuildStructures"]:FindFirstChildOfClass("Model").Trigger.CFrame
-                wait(0.2)
-                tpSpawn()
-                wait(0.2)
-            end
-        end
-        end    
-})
-
-Tab:AddButton({
-        Name = "自动收集电池",
-        Callback = function()
-        for v=1, 24 do
-            if workspace:FindFirstChild("Battery") then
-                Character.HumanoidRootPart.CFrame = workspace:FindFirstChild("Battery").TouchTrigger.CFrame
-                wait(0.2)
-                Character.HumanoidRootPart.CFrame = workspace["GroupBuildStructures"]:FindFirstChildOfClass("Model").Trigger.CFrame
-                wait(0.2)
-                tpSpawn()
-                wait(0.2)
-            end
-        end
-        end    
-})
-
-Tab:AddButton({
-        Name = "传送到威胁",
-        Callback = function()
-        Character.HumanoidRootPart.CFrame = workspace["GroupBuildStructures"]:FindFirstChildOfClass("Model"):FindFirstChild("Trigger").CFrame
-    end    
-})
-
-Tab:AddParagraph("制作：Q3E4","QQ群:884776077")
  Tab:AddButton({         
  Name = "主要的/Ture2",         
  Callback = function()         
@@ -4560,15 +4467,21 @@ Tab:AddParagraph("制作：Q3E4","QQ群:884776077")
           Name = "汉化版"  
   
   })  
+Tab:AddButton({         
+ Name = "死鱼;冬凌汉化(很推荐)",         
+ Callback = function()          loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E6%B8%B8%E6%88%8F/Auto-fishing-Rsc.Lua"))()
+           
+      end 
+ })
   Tab:AddButton({         
- Name = "死鱼;冬凌汉化",         
+ Name = "死鱼;冬凌汉化(不推荐)",         
  Callback = function()         
            loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Fisch.lua"))()
       end 
  }) 
   
    Tab:AddButton({         
- Name = "Speed_HUB",         
+ Name = "Speed_HUB(还可以)",         
  Callback = function()         
            
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
@@ -4576,14 +4489,14 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/
       end 
  })
   Tab:AddButton({         
- Name = "noname_HUB",         
+ Name = "noname_HUB(一坨)",         
  Callback = function()         
            loadstring(game:HttpGet("https://noname-hub.fun/loader.lua"))()
            
       end 
  })
    Tab:AddButton({         
- Name = "Nidev_HUB",         
+ Name = "Nidev_HUB(一坨)",         
  Callback = function()         
            
            loadstring(game:HttpGet("https://raw.githubusercontent.com/Nivex123456/main/refs/heads/main/Loader.lua"))()
