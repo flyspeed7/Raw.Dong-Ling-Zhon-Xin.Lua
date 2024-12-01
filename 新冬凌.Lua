@@ -1,3 +1,29 @@
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+_G.AutoEarn = false
+_G.AutoBuy = false
+_G.AutoRebirth = false
+
+local unitNames = {
+    "Archer",
+    "Turret",
+    "Ninja",
+    "Soldier",
+    "Sniper",
+    "Bomber",
+    "Wizard"
+}
+
+local function isUnitName(name)
+    for _, unitName in ipairs(unitNames) do
+        if string.find(name:lower(), unitName:lower()) then
+            return true
+        end
+    end
+    return false
+end
+
 print("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           WebHook 加载好了! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
 --[[
 local TweenService = game:GetService("TweenService")
@@ -4825,6 +4851,67 @@ Tab:AddSlider({
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
+ Tab:AddToggle({  
+          Name = "自动偷钱",  
+          Default = false,  
+          Callback = function(state)  
+    _G.AutoEarn = state
+    while _G.AutoEarn and task.wait(-9e9) do
+        for i = 1, 30 do
+            if not _G.AutoEarn then break end
+            game:GetService("ReplicatedStorage").Knit.Services.TycoonService.RF.PayIncome:InvokeServer(game:GetService("Players").LocalPlayer)
+            task.wait(-9e9)
+        end
+    end
+          end  
+  })  
+  Tab:AddToggle({  
+          Name = "自动重生",  
+          Default = false,  
+          Callback = function(state)  
+    _G.AutoRebirth = state
+    while _G.AutoRebirth and task.wait(-9e9) do
+        game:GetService("ReplicatedStorage"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("TycoonService"):WaitForChild("RF"):WaitForChild("Rebirth"):InvokeServer()
+    end
+          end  
+  })  
+  Tab:AddToggle({  
+          Name = "自动买东西",  
+          Default = false,  
+          Callback = function(state)  
+    _G.AutoBuy = state
+    while _G.AutoBuy and task.wait(-9e9) do
+        for _, tycoon in ipairs(workspace:WaitForChild("Tycoons"):GetChildren()) do
+            if tycoon:IsA("Folder") and tycoon:GetAttribute("Owner") == game.Players.LocalPlayer.Name then
+                local buttonFolder = tycoon:FindFirstChild("Buttons")
+                
+                if buttonFolder then
+                    for _, button in ipairs(buttonFolder:GetChildren()) do
+                        if button:IsA("Model") and not string.find(button.Name:lower(), "gamepass") then
+                            local isUnit = isUnitName(button.Name)
+                            local purchaseType = isUnit and 3 or 1
+                            
+                            local tycoonService = game:GetService("ReplicatedStorage"):WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("TycoonService")
+                            tycoonService.RF.BuyObject:InvokeServer(button.Name, purchaseType)
+                        end
+                    end
+                end
+            end
+        end
+    end
+          end  
+  })  
+ Tab:AddButton({         
+ Name = "改 60 速度",         
+ Callback = function()         
+           character.Humanoid.WalkSpeed = 60
+player.CharacterAdded:Connect(function(newCharacter)
+    character = newCharacter
+    character.Humanoid.WalkSpeed = 60
+end)
+      end 
+ })
+ 
  Tab:AddButton({         
  Name = "无限金钱",         
  Callback = function()         
