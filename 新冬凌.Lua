@@ -58,7 +58,7 @@ local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/
      sound.Parent = game.Workspace 
      sound:Play()
        Notification:Notify( 
-     {Title = "😋更新状况:已读取OrionUI库", Description = "今日已更新:新人物#北极星~ FE脚本～ 其他~"}, 
+     {Title = "😋更新状况:已读取OrionUI库", Description = "今日已更新:新人物#北极星~ FE脚本～ Y&F专区～"}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
