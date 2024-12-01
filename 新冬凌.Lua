@@ -4710,6 +4710,29 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
+Tab:AddButton({         
+ Name = "杀死全部",         
+ Callback = function()         
+                   for _, enemy in ipairs(game.Workspace.Enemies.dungeon:GetChildren()) do
+            hit:FireServer(enemy, 100, true, "item6_rarity1")
+        end
+     
+      end 
+ })
+  Tab:AddToggle({  
+          Name = "循环杀死全部",  
+          Default = false,  
+          Callback = function(State)  
+        _G.kill = bool
+        while _G.kill do
+            for _, enemy in ipairs(game.Workspace.Enemies.dungeon:GetChildren()) do
+                hit:FireServer(enemy, 100, true, "item6_rarity1")
+            end
+            wait(0.1)
+        end
+          end  
+  })  
+ 
   Tab:AddButton({         
  Name = "汉化版(已删库)",         
  Callback = function()         
