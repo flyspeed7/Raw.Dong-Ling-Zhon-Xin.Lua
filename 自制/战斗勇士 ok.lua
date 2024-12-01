@@ -342,8 +342,7 @@ end)
 UITextSizeConstraint.Parent = TextButton
 UITextSizeConstraint.MaxTextSize = 30
 
-local lib = loadstring(game:HttpGet"https://pastebin.com/raw/aDQ86WZA")()
-
+local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/flyspeed7/Only/main/UI%20%E9%80%8F%E6%98%8E%20Libe.Lua")()
 local win = lib:Window("Y&F | 战斗勇士",Color3.fromRGB(0, 255, 0), Enum.KeyCode.E)
 
 local tab = win:Tab("主要")
