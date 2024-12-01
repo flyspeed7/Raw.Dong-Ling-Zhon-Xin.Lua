@@ -430,7 +430,129 @@ function chat(msg)
     end
 
 end
-
+  local Tab= Window:MakeTab({ 
+         Name = "Y&F-HUB专区", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+   local Section = Tab:AddSection({  
+  
+          Name = "我制作的(理论上因该是).\n 我在脚本网站找的脚本我缝合到了一起!"  
+  
+  })  
+Tab:AddButton({         
+ Name = "Y&F 一路向西",         
+ Callback = function()         
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E4%B8%80%E8%B7%AF%E5%90%91%E8%A5%BF%20ok.lua"))()   
+           
+      end 
+ })
+Tab:AddButton({         
+ Name = "Y&F 僵尸起义",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E5%83%B5%E5%B0%B8%E8%B5%B7%E4%B9%89%20OK.lua"))()
+           
+      end 
+ })
+ Tab:AddButton({         
+ Name = "Y&F 奶酪逃亡",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E5%A5%B6%E9%85%AA%E9%80%83%E4%BA%A1%20ok.lua"))()
+           
+      end 
+ })
+ Tab:AddButton({         
+ Name = "Y&F 寻宝模拟器",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E5%AF%BB%E5%AE%9D%E6%A8%A1%E6%8B%9F%E5%99%A8%20ok.lua"))()
+           
+      end 
+ })
+ Tab:AddButton({         
+ Name = "Y&F 辛运方块",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E5%B9%B8%E8%BF%90%E6%96%B9%E5%9D%97%20ok.lua"))()
+           
+      end 
+ })
+ Tab:AddButton({         
+ Name = "Y&F 彩虹朋友",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E5%BD%A9%E8%99%B9%E6%9C%8B%E5%8F%8B(OK).lua"))()
+           
+      end 
+ })
+ Tab:AddButton({         
+ Name = "Y&F 我的餐厅",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E6%88%91%E7%9A%84%E9%A4%90%E5%8E%85%20ok.lua"))()
+           
+      end 
+ })
+ Tab:AddButton({         
+ Name = "Y&F 战争大亨",         
+ Callback = function()         
+           
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E6%88%98%E4%BA%89%E5%A4%A7%E4%BA%A8%20ok.lua"))()
+      end 
+ })
+ Tab:AddButton({         
+ Name = "Y&F 战斗勇士",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E6%88%98%E6%96%97%E5%8B%87%E5%A3%AB%20ok.lua"))()
+           
+      end 
+ })
+ Tab:AddButton({         
+ Name = "Y&F 极限捉迷藏",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E6%9E%81%E9%99%90%E6%8D%89%E8%BF%B7%E8%97%8F%20ok.lua"))()
+           
+      end 
+ })
+ Tab:AddButton({         
+ Name = "Y&F 汽车经销商大亨",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E6%B1%BD%E8%BD%A6%E7%BB%8F%E9%94%80%E5%A4%A7%E4%BA%A8%20ok.lua"))()
+           
+      end 
+ })
+ Tab:AddButton({         
+ Name = "Y&F 破坏者谜团 2",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E7%A0%B4%E5%9D%8F%E8%80%85%E8%B0%9C%E5%9B%A2%20ok.lua"))()
+           
+      end 
+ })
+ Tab:AddButton({         
+ Name = "Y&F 自然灾害模拟器",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E8%87%AA%E7%84%B6%E7%81%BE%E5%AE%B3%20OK.lua"))()
+           
+      end 
+ })
+ Tab:AddButton({         
+ Name = "Y&F 躲避 EVADE",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E8%BA%B2%E9%81%BF%20ok.lua"))()
+           
+      end 
+ })
+ Tab:AddButton({         
+ Name = "Y&F 造船寻宝",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E9%80%A0%E8%88%B9%E5%AF%BB%E5%AE%9D%20ok.lua"))()
+           
+      end 
+ })
+ Tab:AddButton({         
+ Name = "Y&F 餐厅大亨 2",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E9%A4%90%E5%8E%85%E5%A4%A7%E4%BA%A82ok.lua"))()
+           
+      end 
+ })
+ 
 local chatTab = Window:MakeTab({
 	Name = "聊天素材",
 	Icon = "rbxassetid://4483345998",
