@@ -347,9 +347,9 @@ end
   ]]
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua'))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"))() 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/WASD-ping.Lua"))() 
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
-  local Window = OrionLib:MakeWindow({Name = "Y&F-HUB | 2024.11.28", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
+  local Window = OrionLib:MakeWindow({Name = "Y&F-HUB | 12.2", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
   local about = Window:MakeTab({  
       Name = "信息/公告/设置",  
       Icon = "rbxassetid://7743878358",  
@@ -390,7 +390,7 @@ about:AddParagraph("琳(特别不自恋)要干什么?", "她要干汉化、密�
 about:AddParagraph("Q3E4(他喜欢某个人) 要干什么?", "编写脚本(这个人懒到不想加密)、修复错误、更新脚本、有时汉化脚本.")
 about:AddParagraph("北极星(无信息)他要干什么?", "发一点新鲜东西、99+加密网站")
 about:AddLabel("1×1×1×1&Coolkidd&true94(四个Roblox黑客)")
-about:AddLabel("我们团队:NOOB-TEAM")
+about:AddLabel("我们团队:NOOB-TEAM       GUI on 2024.12.2 New")
   local Section = about:AddSection({  
   
           Name = "天气/时间"  
