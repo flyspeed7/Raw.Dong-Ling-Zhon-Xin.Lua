@@ -467,6 +467,14 @@ end
   
   })  
 Tab:AddButton({         
+ Name = "Y&F scry hide seek",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/Scary%20Hide%20%26%20Seek.Lua"))()
+           
+      end 
+ })
+ 
+Tab:AddButton({         
  Name = "Y&F 一路向西",         
  Callback = function()         
         loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E4%B8%80%E8%B7%AF%E5%90%91%E8%A5%BF%20ok.lua"))()   
