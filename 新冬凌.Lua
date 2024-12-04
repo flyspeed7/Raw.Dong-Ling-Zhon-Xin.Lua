@@ -24,7 +24,7 @@ local function isUnitName(name)
     return false
 end
 
-print("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           WebHook 加载好了! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
+print("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           WebHook加载好了! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
 --[[
 local TweenService = game:GetService("TweenService")
     local NeonWaterMark = Instance.new("ScreenGui")
@@ -84,11 +84,31 @@ local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/
      sound.Parent = game.Workspace 
      sound:Play()
        Notification:Notify( 
-     {Title = "😋更新状况:已读取OrionUI库", Description = "今日已更新:Y&F专区～ 公告事件～"}, 
+     {Title = "😋更新状况:已读取OrionUI库", Description = "正在加载html..."}, 
      {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 10, Type = "image"}, 
      {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
  ) 
-wait(2)
+wait(6)
+local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://1237557124" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+       Notification:Notify( 
+     {Title = "🔑正在加载OrionLib库", Description = "html已经加载好了!"}, 
+     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 10, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
+ ) 
+wait(5)
+local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://1237557124" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+       Notification:Notify( 
+     {Title = "✅加载好了!", Description = "全部东西已经加载好了!"}, 
+     {OutlineColor = Color3.fromRGB(255, 0, 0),Time = 10, Type = "image"}, 
+     {Image = "http://www.roblox.com/asset/?id=7733747106", ImageColor = Color3.fromRGB(0, 0, 255)} 
+ ) 
+wait(1)
        local sound = Instance.new("Sound") 
      sound.SoundId = "rbxassetid://1237557124" 
      sound.Parent = game.Workspace 
@@ -123,7 +143,7 @@ Library.DefaultColor = Color3.fromRGB(255,0,0)
      sound:Play()
   
 Library:Notification({
-	Text = "Y&F-HUB = 缝合😂",
+	Text = "Y&F-HUB进入中...",
 	Duration = 6
 })
 wait(1.5)
@@ -391,6 +411,16 @@ about:AddParagraph("Q3E4(他喜欢某个人) 要干什么?", "编写脚本(这�
 about:AddParagraph("北极星(无信息)他要干什么?", "发一点新鲜东西、99+加密网站")
 about:AddLabel("1×1×1×1&Coolkidd&true94(四个Roblox黑客)")
 about:AddLabel("我们团队:NOOB-TEAM       GUI on 2024.12.2 New")
+   local Section = about:AddSection({  
+  
+          Name = " 更新日志\n 近5天的更新"  
+  
+  })  
+about:AddParagraph("12.4日:", "移除服务器页面,添加fisch脚本两个,优化名字长度.")
+about:AddParagraph("12.3日:", "添加Y&F公告预览,Y&F专区.")
+about:AddParagraph("12.2日:", "添加墓地大亨,冬凌飞行 V3")
+about:AddParagraph("12.1日:", "添加脚本搜索,优化公告页面")
+about:AddParagraph("11.30日:", "改名为Y&F-HUB持续优化(界面UI添加有用东西.")
   local Section = about:AddSection({  
   
           Name = "天气/时间"  
@@ -1094,68 +1124,6 @@ local botTab = Window:MakeTab({
     Name = "聊天机器人",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
-})
-
-local serversTab = Window:MakeTab({
-    Name = "服务器",
-    Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-function getServers()
-    local request = request({
-        Url = "https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Desc&limit=100",
-        Method = "GET",
-    })
-
-    if request.StatusCode == 200 then
-        local serverData = game:GetService("HttpService"):JSONDecode(request.Body)
-        local serverList = {}
-
-        for _, server in pairs(serverData.data) do
-            local serverInfo = {
-                serverId = server.id or "N/A",
-                players = server.playing or 0,
-                maxPlayers = server.maxPlayers or 0,
-                ping = server.ping or "N/A",
-            }
-
-            table.insert(serverList, serverInfo)
-        end
-
-        return serverList
-    else
-        return nil
-    end
-end
-
-function refreshServers()
-
-    local servers = getServers()
-    if servers then
-        for _, server in pairs(servers) do
-            serversTab:AddButton({
-                Name = "Players: " .. server.players .. "/" .. server.maxPlayers .. "\nPing: " .. server.ping,
-                Callback = function()
-                    game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, server.serverId, game.Players.LocalPlayer)
-                end
-            })
-        end
-    end
-
-    serversTab:AddButton({
-        Name = "刷新",
-        Callback = function()
-            refreshServers()
-        end
-    })
-end
-
-serversTab:AddButton({
-    Name = "加载服务器",
-    Callback = function()
-        refreshServers()
-    end
 })
 
 local apiKey = ""
