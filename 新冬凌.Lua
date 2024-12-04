@@ -4644,7 +4644,7 @@ Tab:AddToggle({
       end 
  })
  local Tab= Window:MakeTab({ 
-         Name = "🔥鱼(Fcish)", 
+         Name = "🔥鱼(Fisch)", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
@@ -4654,20 +4654,27 @@ Tab:AddToggle({
   
   })  
 Tab:AddButton({         
- Name = "死鱼;冬凌汉化(很推荐)",         
- Callback = function()          loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E6%B8%B8%E6%88%8F/Auto-fishing-Rsc.Lua"))()
-           
+ Name = "死鱼;冬凌汉化 1(很推荐)",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E6%B8%B8%E6%88%8F/%E9%B1%BC%2C%E8%84%9A%E6%9C%AC2.LUA"))()
+      end 
+ })
+ 
+Tab:AddButton({         
+ Name = "死鱼;冬凌汉化 2(很推荐)",         
+ Callback = function()          
+          loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E6%B8%B8%E6%88%8F/%E9%B1%BC%2C%E8%84%9A%E6%9C%AC.lua"))()
       end 
  })
   Tab:AddButton({         
- Name = "死鱼;冬凌汉化(不推荐)",         
+ Name = "死鱼;冬凌汉化 3(不推荐)",         
  Callback = function()         
            loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Fisch.lua"))()
       end 
  }) 
   
    Tab:AddButton({         
- Name = "Speed_HUB(还可以)",         
+ Name = "Speed_HUB(很推荐)",         
  Callback = function()         
            
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
@@ -4952,7 +4959,7 @@ end)
       end 
  })
   local Tab= Window:MakeTab({ 
-         Name = "单词炸弹💣", 
+         Name = "单词炸弹💣", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
@@ -5099,7 +5106,7 @@ Tab:AddButton({
     end
 })
   local Tab= Window:MakeTab({ 
-         Name = "搜索脚本", 
+         Name = "搜索脚本", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
@@ -5116,8 +5123,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/ECCSco/ECCS-V3/refs/h
       end 
  })
 local Tab = Window:MakeTab({
-    Name = "脚本中心",
-    Icon = "rbxassetid://10527577695",
+    Name = "脚本中心",
+    Icon = "rbxassetid://106300469096792",
     PremiumOnly = false
 })
 
@@ -5171,13 +5178,13 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-    Name = "脚本中心",
+    Name = "脚本中心XC",
     Callback = function()
         loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\103\101\109\120\72\119\65\49"))()
     end
 })
   local Tab= Window:MakeTab({ 
-         Name = "墓地大亨", 
+         Name = "墓地大亨", 
          Icon = "rbxassetid://7733779610", 
          PremiumOnly = false 
  }) 
