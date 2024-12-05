@@ -413,9 +413,10 @@ about:AddLabel("1×1×1×1&Coolkidd&true94(四个Roblox黑客)")
 about:AddLabel("我们团队:NOOB-TEAM       GUI on 2024.12.2 New")
    local Section = about:AddSection({  
   
-          Name = " 更新日志\n 近5天的更新"  
+          Name = " 更新日志\n 更新所记录的内容"  
   
   })  
+about:AddParagraph("12.5日", "添加狩猎季节绘制动物,少量添加脚本")
 about:AddParagraph("12.4日:", "移除服务器页面,添加fisch脚本两个,优化名字长度.")
 about:AddParagraph("12.3日:", "添加Y&F公告预览,Y&F专区.")
 about:AddParagraph("12.2日:", "添加墓地大亨,冬凌飞行 V3")
