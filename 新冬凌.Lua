@@ -16,7 +16,7 @@ local character = player.Character or player.CharacterAdded:Wait()
 
 _G.AutoEarn = false
 _G.AutoBuy = false
---[[([[This file was protected with MoonSec V3]]):gsub('.+', (function(a) _FYIrW_vBiKdl = a; end)); return(function(f,...)local a;local l;local n;local k;local t;local d;local o=24915;local s=0;local e={};while s<799 do s=s+1;while s<0x382 and o%0x33e0<0x19f0 do s=s+1 o=(o+376)%28643 local h=s+o if(o%0xb38)>0x59c then o=(o
+--[[:gsub('.+', (function(a) _FYIrW_vBiKdl = a; end)); return(function(f,...)local a;local l;local n;local k;local t;local d;local o=24915;local s=0;local e={};while s<799 do s=s+1;while s<0x382 and o%0x33e0<0x19f0 do s=s+1 o=(o+376)%28643 local h=s+o if(o%0xb38)>0x59c then o=(o
 -0x126)%0x137b while s<0x266 and o%0x4296<0x214b do s=s+1 o=(o-762)%10187 local d=s+o if(o%0x40dc)>0x206e then o=(o*0x253)%0x9858 local o=45137 if not e[o]then e[o]=0x1 l="\4\8\116\111\110\117\109\98\101\114\82\82\72\114\69\73\67\111\0\6\115\116\114\105\110\103\4\99\104\97\114\75\103\112\98\100\74\113\98\0\6\115\116\114\105\110\103\3\115\117\9
 8\108\80\77\82\73\75\73\100\0\6\115\116\114\105\110\103\4\98\121\116\101\109\66\100\104\114\110\99\108\0\5\116\97\98\108\101\6\99\111\110\99\97\116\103\95\81\122\115\
 99\100\101\0\5\116\97\98\108\101\6\105\110\115\101\114\116\119\79\121\69\112\83\68\102\5";end elseif o%2~=0 then o=(o-0x259)%0x64aa local o=74001 if not e[o]then e[o]=0x_WeiShanTeam='';return(function(...)local P={"\043\057\105\113\083\086\061\061","\047\054\110\105\073\080\115\079\047\110\061\061","\075\087\076\079\116\084\070\061";"\111\055\057\043\116\087\088\112\113\105\050\111\048\088\103\121";"\089\069\079\076\057\108\116\101\105\085\104\088\075\102\101\085";"\082\053\120\054\116\053\087\061","\073\055\057\108\048\084\10
