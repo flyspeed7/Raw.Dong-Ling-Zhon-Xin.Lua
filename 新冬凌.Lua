@@ -2014,10 +2014,11 @@ Callback = <function> - The function of the dropdown.
 	end	  
 })
  Tab:AddButton({         
- Name = "坐标抓取器(熟人东西还要卡密)",         
+ Name = "视角锁定",         
  Callback = function()         
-           loadstring(game:HttpGet("https://raw.githubusercontent.com/hassanxzayn-lua/maincoordinatesgrabber/refs/heads/main/new"))()
-           
+loadstring(game:HttpGet('https://pastebin.com/raw/CjNsnSDy'))()
+loadstring(game:HttpGet('https://pastebin.com/raw/WQ9NPeDS'))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MiniNoobie/ShiftLockx/main/Shiftlock-MiniNoobie",true))() 
       end 
  })
  
