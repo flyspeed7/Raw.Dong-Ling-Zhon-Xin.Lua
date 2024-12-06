@@ -618,7 +618,46 @@ Tab:AddButton({
            
       end 
  })
- 
+ local Tab = Window:MakeTab({
+	Name = "指令挂&提示",
+	Icon = "rbxassetid://7734068321",
+	PremiumOnly = false
+})
+Tab:AddButton({
+  Name = "指令脚本",
+  Callback = function()
+  loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+  end
+}
+Tab:AddLabel("fly 飞行")
+Tab:AddLabel("Esp 绘制别人")
+Tab:AddLabel("bang 能够掀人")
+Tab:AddLabel("noface 没有脸")
+Tab:AddLabel("headsit 坐在玩家头上加玩家名字")
+Tab:AddLabel("float悬浮")
+Tab:AddLabel("re重置人物但位置不变")
+Tab:AddLabel("dance跳舞")
+Tab:AddLabel("nolegs没有腿")
+Tab:AddLabel("walltp碰到墙壁传送到墙壁顶部")
+Tab:AddLabel("bring+玩家名字可以让玩家吸到你手上但是只能用于一些服务器")
+Tab:AddLabel("carpet趴着走")
+Tab:AddLabel("infjump无限跳跃")
+Tab:AddLabel("xray透视地图所有物体变透明")
+Tab:AddLabel("bang玩家开头两个英文吸在玩家身后")
+Tab:AddLabel("noanim没有动作")
+Tab:AddLabel("spin人物旋转")
+Tab:AddLabel("sitwalk坐着走")
+Tab:AddLabel("trip让你的人物摔倒")
+Tab:AddLabel("antikick防踢")
+Tab:AddLabel("lay躺下")
+Tab:AddLabel("sit坐")
+Tab:AddLabel("god 加血")
+Tab:AddLabel("invisfling 配合加血可以旋转")
+Tab:AddLabel("goto 玩家名字传送")
+Tab:AddLabel("unxray 关闭透视")
+Tab:AddLabel("noclip 穿墙")
+Tab:AddLabel("有的可能不能用")
+
 local chatTab = Window:MakeTab({
 	Name = "聊天素材",
 	Icon = "rbxassetid://4483345998",
