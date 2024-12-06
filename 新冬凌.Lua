@@ -395,6 +395,7 @@ about:AddButton({
 local Section = about:AddSection({
 	Name = "基础信息"
 })
+about:AddLabel("         半缝合脚本")
   about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."") 
   about:AddParagraph("您的名称:",""..game.Players.LocalPlayer.DisplayName.."")  
   about:AddParagraph("您的注入器:"," "..identifyexecutor().."")  
