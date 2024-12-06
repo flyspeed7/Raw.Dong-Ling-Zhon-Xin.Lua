@@ -143,7 +143,7 @@ Library.DefaultColor = Color3.fromRGB(255,0,0)
      sound:Play()
   
 Library:Notification({
-	Text = "Y&F-HUB进入中...",
+	Text = "秋枫脚本 进入中...",
 	Duration = 6
 })
 wait(1.5)
@@ -369,7 +369,7 @@ end
 loadstring(game:HttpGet('https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua'))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/WASD-ping.Lua"))() 
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
-  local Window = OrionLib:MakeWindow({Name = "Y&F-HUB | 12.2", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
+  local Window = OrionLib:MakeWindow({Name = "秋枫| 12.6", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
   local about = Window:MakeTab({  
       Name = "信息/公告/设置",  
       Icon = "rbxassetid://7743878358",  
@@ -395,7 +395,7 @@ about:AddButton({
 local Section = about:AddSection({
 	Name = "基础信息"
 })
-about:AddLabel("         半缝合脚本")
+about:AddLabel("   秋枫      半缝合脚本")
   about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."") 
   about:AddParagraph("您的名称:",""..game.Players.LocalPlayer.DisplayName.."")  
   about:AddParagraph("您的注入器:"," "..identifyexecutor().."")  
@@ -418,7 +418,7 @@ about:AddLabel("我们团队:NOOB-TEAM       GUI on 2024.12.2 New")
   
   })  
 about:AddLabel("12月的内容:                 最多记录20天内的更新")
-about:AddParagraph("12.6日", "添加寻宝模拟器、格蕾丝两款脚本")
+about:AddParagraph("12.6日", "名字更改为秋枫脚本 添加寻宝模拟器、格蕾丝两款脚本")
 about:AddParagraph("12.5日", "添加狩猎季节绘制动物,少量添加脚本")
 about:AddParagraph("12.4日:", "移除服务器页面,添加fisch脚本两个,优化名字长度.")
 about:AddParagraph("12.3日:", "添加Y&F公告预览,Y&F专区.")
