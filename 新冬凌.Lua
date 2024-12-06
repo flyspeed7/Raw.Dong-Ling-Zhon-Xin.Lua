@@ -8,6 +8,7 @@
   F             F                    H               U               B        
 «这个是 秋枫 的英文名{Fall Foliage}所以就搞了个 (F&F-HUB) 的东西💀»
 ]]
+
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 
