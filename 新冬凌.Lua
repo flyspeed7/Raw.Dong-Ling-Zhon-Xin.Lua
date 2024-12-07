@@ -1,7 +1,53 @@
+print("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           谢谢你使用冬凌中心! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
+
+       local sound = Instance.new("Sound") --防 Fluxus 注入器使用,一次不够就三次!
+     sound.SoundId = "rbxassetid://1237557124" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
+Library.DefaultColor = Color3.fromRGB(255,0,0)
+
+Library:Notification({
+        Text = "新-冬凌中心开发者:琳 和Q3E4",
+        Duration = 6
+})
+
+wait (1.5)
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
+Library.DefaultColor = Color3.fromRGB(255,0,0)
+      local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://1237557124" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+
+Library:Notification({
+        Text = "欢迎使用秋枫脚本",
+        Duration = 6
+})
+wait(1.5)
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
+Library.DefaultColor = Color3.fromRGB(255,0,0)
+      local sound = Instance.new("Sound") 
+     sound.SoundId = "rbxassetid://1237557124" 
+     sound.Parent = game.Workspace 
+     sound:Play()
+
+Library:Notification({
+        Text = "Orion UI库提供者:小云☁️",
+        Duration = 6
+})
+
 loadstring(game:HttpGet('https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua'))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/WASD-ping.Lua"))() 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"))() 
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
-  local Window = OrionLib:MakeWindow({Name = "秋枫[修复版12.6]", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
+local Window = OrionLib:MakeWindow({Name = "秋枫[修复版 | 12.7]", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
+OrionLib:MakeNotification({
+      Name = "秋枫脚本.",
+      Content = "✅脚本加载完成.",
+      Image = "rbxassetid://4483345998",
+      Time = 5
+             })
   local about = Window:MakeTab({  
       Name = "信息/公告/设置",  
       Icon = "rbxassetid://7743878358",  
