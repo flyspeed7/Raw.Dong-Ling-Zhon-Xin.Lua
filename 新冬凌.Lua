@@ -323,7 +323,7 @@ Tab:AddLabel("noclip 穿墙")
 Tab:AddLabel("有的可能不能用")
 
 local chatTab = Window:MakeTab({
-	Name = "聊天素材",
+	Name = "聊天绕过",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -1408,27 +1408,6 @@ Tab:AddToggle({
           Name = "快速功能结束 \n 加入有趣的功能"  
   
   })  
---[[
-Tab:AddDropdown({
-	Name = "选择传送玩家",
-	Default = "小凌",
-	Options = {"小凌-凌 awa", "新的冬凌中心 QE4 版😆"},
-	Callback = function(players)
-    lp.Character.HumanoidRootPart.CFrame = plrs:FindFirstChild(name).Character.HumanoidRootPart.CFrame
-	end    
-})
-Name = <string> - The name of the dropdown.
-Default = <string> - The default value of the dropdown.
-Options = <table> - The options in the dropdown.
-Callback = <function> - The function of the dropdown.
-]]
-  Tab:AddColorpicker({
-	Name = "颜色:",
-	Default = Color3.fromRGB(255, 0, 0),
-	Callback = function(Value)
-		print(Value)
-	end	  
-})
  Tab:AddButton({         
  Name = "视角锁定",         
  Callback = function()         
@@ -1490,7 +1469,7 @@ Library:Notification({
       end 
  })
   Tab:AddButton({         
- Name = "检查注入器UNC(控制台)",         
+ Name = "检查注入器UNC(电脑注入器)",         
  Callback = function()         
 loadstring(game:HttpGet("https://github.com/ltseverydayyou/uuuuuuu/blob/main/UNC%20test?raw=true"))() 
       end 
@@ -3901,96 +3880,6 @@ Tab:AddButton({
         Character.HumanoidRootPart.CFrame = workspace["GroupBuildStructures"]:FindFirstChildOfClass("Model"):FindFirstChild("Trigger").CFrame
     end    
 })
---[[
-local ESP = Instance.new("Highlight")
-ESP.OutlineColor = Color3.new(255,255,255)
-ESP.OutlineTransparency = 0
-ESP.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-ESP.FillColor = Color3.new(255,0,0)
-ESP.FillTransparency = 0.5
-ESP.Parent = game:GetService("ReplicatedStorage")
-ESP.Name = "ESPHighlightinger"
-
-local desthigh = game.ReplicatedStorage:FindFirstChild("ESPHighlight")
-if desthigh then
-    desthigh:Destroy()
-end
-ESP.Name = "ESPHighlight"
-
-local pESP = Instance.new("Highlight")
-pESP.OutlineColor = Color3.new(255,255,255)
-pESP.OutlineTransparency = 0
-pESP.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-pESP.FillColor = Color3.new(0,255,0)
-pESP.FillTransparency = 0.5
-pESP.Parent = game:GetService("ReplicatedStorage")
-pESP.Name = "pESPHighlightinger"
-
-local desthigh = game.ReplicatedStorage:FindFirstChild("pESPHighlight")
-if desthigh then
-    desthigh:Destroy()
-end
-pESP.Name = "pESPHighlight"
-
-local Headlight = Instance.new("PointLight")
-Headlight.Name = "Headlight"
-Headlight.Parent = Character:WaitForChild("Head")
-Headlight.Brightness = 2.5
-Headlight.Enabled = false
-Headlight.Range = 40
-Headlight.Color = Color3.new(255,255,255)
-Headlight.Shadows = true
-
-local destlight = Character:WaitForChild("Head"):FindFirstChild("Headlight")
-if destlight then
-    if destlight.Shadows == false then
-        destlight:Destroy()
-    end
-end
-Headlight.Shadows = false
-
-Tab:AddToggle({
-        Name = "实体 ESP",
-        Default = false,
-        Callback = function(Value)
-                if Value == true then
-            for _, monster in pairs(workspace.Monsters:GetChildren()) do
-                local newlight = ESP:Clone()
-                newlight.Parent = monster
-            end
-        else
-            for _, i in pairs(workspace.Monsters:GetChildren()) do
-                local esp = i:FindFirstChild(ESP.Name)
-                if esp then
-                    esp:Destroy()
-                end
-            end
-        end
-        end    
-})
-
-Tab:AddToggle({
-        Name = "玩家 ESP",
-        Default = false,
-        Callback = function(Value)
-                if Value == true then
-            for _, player in pairs(game.Players:GetChildren()) do
-                if player.Name ~= Character.Name then
-                    local newlight = pESP:Clone()
-                    newlight.Parent = player.Character
-                end
-            end
-        else
-            for _, player in pairs(game.Players:GetChildren()) do
-                local esp = player.Character:FindFirstChild(pESP.Name)
-                if esp then
-                    esp:Destroy()
-                end
-            end
-        end
-        end    
-})
-]]
  Tab:AddButton({         
  Name = "主要的/Ture2",         
  Callback = function()         
@@ -4171,54 +4060,6 @@ Tab:AddButton({
           Name = "这个是自制🤔"  
 
   })  
- --[[
-Tab:AddSlider({  
-  
-          Name = "视角设置",  
-  
-          Min = 70,  
-  
-          Max = 1000,  
-  
-          Default = 70,  
-  
-          Color = Color3.fromRGB(127,251,111),  
-  
-          Increment = 1,  
-  
-          ValueName = "数值",  
-  
-          Callback = function(Value)  
-  
-                  game.Workspace.CurrentCamera.FieldOfView = Value
-  
-          end      
-  
-  })  
- Tab:AddSlider({  
-  
-          Name = "缩放距离",  
-  
-          Min = 128,  
-  
-          Max = 10000,  
-  
-          Default = 128,  
-  
-          Color = Color3.fromRGB(127,251,111),  
-  
-          Increment = 1,  
-  
-          ValueName = "数值",  
-  
-          Callback = function(Value)  
-  
-                  game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = Value
-          
-          end      
-  
-  })  
-  ]]--
  local Tab= Window:MakeTab({ 
          Name = "Cy刀模拟器", 
          Icon = "rbxassetid://7733779610", 
@@ -4584,23 +4425,6 @@ Tab:AddButton({
  Callback = function()         
           
 loadstring(game:HttpGet("https://raw.githubusercontent.com/BaconBABA/Admin-Panel/refs/heads/main/sigmaboy.md"))() 
-           
-      end 
- })
-  local Tab= Window:MakeTab({ 
-         Name = "格蕾丝", 
-         Icon = "rbxassetid://7733779610", 
-         PremiumOnly = false 
- }) 
-   local Section = Tab:AddSection({  
-  
-          Name = "点击打开页面"  
-  
-  })  
-Tab:AddButton({         
- Name = "OeionlibGUI",         
- Callback = function()         
-           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E6%B8%B8%E6%88%8F/%E6%A0%BC%E8%95%BE%E4%B8%9D.Lua"))()
            
       end 
  })
