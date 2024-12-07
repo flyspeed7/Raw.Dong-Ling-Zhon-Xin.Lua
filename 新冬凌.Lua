@@ -92,6 +92,7 @@ about:AddLabel("我们团队:NOOB-TEAM       GUI on 2024.12.2 New")
   
   })  
 about:AddLabel("12月的内容:                 最多记录20天内的更新")
+about:AddParagraph("12.7日", "修复脚本,移除两个脚本,添加修复格蕾丝移除怪物问题")
 about:AddParagraph("12.6日", "名字更改为秋枫脚本 添加寻宝模拟器、格蕾丝两款脚本")
 about:AddParagraph("12.5日", "添加狩猎季节绘制动物,少量添加脚本")
 about:AddParagraph("12.4日:", "移除服务器页面,添加fisch脚本两个,优化名字长度.")
@@ -3328,6 +3329,90 @@ Tab:AddToggle({
            loadstring(game:HttpGet(("https://raw.githubusercontent.com/NOOBARMYSCRIPTER/NOOBARMYSCRIPTER/main/AXE%20LOOP%20SCRIPT"), true))() 
       end 
  }) 
+  local Tab= Window:MakeTab({ 
+         Name = "格蕾丝", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+   local Section = Tab:AddSection({  
+  
+          Name = "自制脚本"  
+  
+  })  
+ Tab:AddButton({         
+ Name = "移除怪物+拉杆提示",         
+ Callback = function()         
+        game.StarterGui:SetCore("SendNotification", {
+Title = "欢迎使用",
+Text = "脚本加载好了!",
+Duration = 3
+})
+workspace.DescendantAdded:Connect(function(descendant)
+    if descendant:IsA("ParticleEmitter") then
+        descendant.Rate = descendant.Rate * 10
+    end
+end)
+
+workspace.DescendantAdded:Connect(function(descendant)
+    if descendant.Name == "base" and descendant:IsA("BasePart") then
+        local player = game.Players.LocalPlayer
+        if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            descendant.CFrame = player.Character.HumanoidRootPart.CFrame
+
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "拉杆已拉",
+                Text = "门开了!",
+                Duration = 3
+            })
+        end
+    end
+end)
+
+workspace.DescendantAdded:Connect(function(descendant)
+    if descendant.Name == "eye" or descendant.Name == "elkman" or descendant.Name == "Rush" or descendant.Name == "Worm" or descendant.Name == "eyePrime" then
+        descendant:Destroy()
+    end
+end)
+
+local RS = game:GetService("ReplicatedStorage")
+
+RS.eyegui:Destroy()
+RS.smilegui:Destroy()
+RS.SendRush:Destroy()
+RS.SendWorm:Destroy()
+RS.SendSorrow:Destroy()
+RS.SendGoatman:Destroy()
+
+task.wait(0.1)
+
+RS.Worm:Destroy()
+RS.elkman:Destroy()
+
+task.wait(0.1)
+
+RS.QuickNotes.Eye:Destroy()
+RS.QuickNotes.Rush:Destroy()
+RS.QuickNotes.Sorrow:Destroy()
+RS.QuickNotes.elkman:Destroy()
+RS.QuickNotes.EyePrime:Destroy()
+RS.QuickNotes.SlugFish:Destroy()
+RS.QuickNotes.FakeDoor:Destroy()
+RS.QuickNotes.SleepyHead:Destroy()
+
+while true do
+    local players = game:GetService("Players")
+    local plr = players.LocalPlayer
+    local SmileGui = plr:WaitForChild("PlayerGui"):WaitForChild("smilegui")
+    if SmileGui then
+        SmileGui:Destroy() 
+    end
+    task.wait(0.1)
+end   
+           
+      end 
+ })
+ 
+ 
  local Tab= Window:MakeTab({  
           Name = "The Rake",  
           Icon = "rbxassetid://7733779610",  
