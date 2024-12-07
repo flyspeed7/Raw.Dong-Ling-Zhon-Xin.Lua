@@ -1,56 +1,14 @@
-       local sound = Instance.new("Sound") 
-     sound.SoundId = "rbxassetid://1237557124" 
-     sound.Parent = game.Workspace 
-     sound:Play()
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
-Library.DefaultColor = Color3.fromRGB(255,0,0)
-
-Library:Notification({
-	Text = "秋枫开发者:琳 和Q3E4",
-	Duration = 6
-})
-
-wait (1.5)
-
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
-Library.DefaultColor = Color3.fromRGB(255,0,0)
-      local sound = Instance.new("Sound") 
-     sound.SoundId = "rbxassetid://1237557124" 
-     sound.Parent = game.Workspace 
-     sound:Play()
-  
-Library:Notification({
-	Text = "秋枫脚本 进入中...",
-	Duration = 6
-})
-wait(1.5)
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
-Library.DefaultColor = Color3.fromRGB(255,0,0)
-      local sound = Instance.new("Sound") 
-     sound.SoundId = "rbxassetid://1237557124" 
-     sound.Parent = game.Workspace 
-     sound:Play()
-  
-Library:Notification({
-	Text = "Orion UI库提供者:小云☁️",
-	Duration = 6
-})
-
-wait (1)
-
 loadstring(game:HttpGet('https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua'))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/WASD-ping.Lua"))() 
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
-  local Window = OrionLib:MakeWindow({Name = "秋枫| 12.6", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
+  local Window = OrionLib:MakeWindow({Name = "秋枫[修复版12.6]", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
   local about = Window:MakeTab({  
       Name = "信息/公告/设置",  
       Icon = "rbxassetid://7743878358",  
       PremiumOnly = false  
   })  
      local Section = about:AddSection({  
-  
           Name = "界面设置"  
-  
   })  
   about:AddButton({	
 Name = "断开Orion连接",	
@@ -73,9 +31,7 @@ about:AddLabel("   秋枫      半缝合脚本")
   about:AddParagraph("您的注入器:"," "..identifyexecutor().."")  
   about:AddParagraph("您当前服务器的ID"," "..game.GameId.."")  
    local Section = about:AddSection({  
-  
           Name = "公告"  
-  
   })  
 about:AddLabel("主脚本作者:Q3E4 QQ:1211373508")
 about:AddLabel("密钥系统作者:琳 谷歌邮箱:get.linscr@gmail.com")
