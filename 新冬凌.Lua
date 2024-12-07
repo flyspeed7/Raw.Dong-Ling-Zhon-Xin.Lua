@@ -1361,7 +1361,7 @@ screengui.ResetOnSpawn = false
 
 button.Size = UDim2.new(0, 100, 0, 50)
 button.Position = UDim2.new(0, 100, 0, 100)
-button.Text = "开启/关闭"
+button.Text = "开启"
 button.MouseButton1Click:Connect(function()
 game:GetService("StarterGui"):SetCore("DevConsoleVisible", true)
 end)
