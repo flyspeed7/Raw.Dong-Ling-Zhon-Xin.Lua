@@ -1,28 +1,3 @@
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-
-_G.AutoEarn = false
-_G.AutoBuy = false
-_G.AutoRebirth = false
-
-local unitNames = {
-    "Archer",
-    "Turret",
-    "Ninja",
-    "Soldier",
-    "Sniper",
-    "Bomber",
-    "Wizard"
-}
-local function isUnitName(name)
-    for _, unitName in ipairs(unitNames) do
-        if string.find(name:lower(), unitName:lower()) then
-            return true
-        end
-    end
-    return false
-end
-
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
 
