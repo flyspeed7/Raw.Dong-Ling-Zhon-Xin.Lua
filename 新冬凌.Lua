@@ -5264,3 +5264,21 @@ refreshBillboards()
            
       end 
  })
+  local Tab= Window:MakeTab({ 
+         Name = "格蕾丝", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+   local Section = Tab:AddSection({  
+  
+          Name = "点击打开页面"  
+  
+  })  
+Tab:AddButton({         
+ Name = "OeionlibGUI",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E6%B8%B8%E6%88%8F/%E6%A0%BC%E8%95%BE%E4%B8%9D.Lua"))()
+           
+      end 
+ })
+ 
