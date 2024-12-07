@@ -1,5 +1,3 @@
-print("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           WebHook加载好了! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
-
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 
@@ -16,7 +14,6 @@ local unitNames = {
     "Bomber",
     "Wizard"
 }
-
 local function isUnitName(name)
     for _, unitName in ipairs(unitNames) do
         if string.find(name:lower(), unitName:lower()) then
@@ -25,13 +22,6 @@ local function isUnitName(name)
     end
     return false
 end
-
-local VU = game:GetService("VirtualUser")
-
-game.Players.LocalPlayer.Idled:Connect(function()
-  VU:CaptureController()
-  VU:ClickButton2(Vector2.new())
-end)
 
 local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))() 
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))() 
@@ -1119,12 +1109,6 @@ chatTab:AddButton({
     Callback = function()
         chat("abcdefg()!")
     end
-})
-
-local botTab = Window:MakeTab({
-    Name = "聊天机器人",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
 })
 
 local apiKey = ""
