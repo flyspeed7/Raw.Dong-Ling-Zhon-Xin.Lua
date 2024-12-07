@@ -1,3 +1,5 @@
+print("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           WebHook加载好了! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
+
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 
@@ -23,49 +25,6 @@ local function isUnitName(name)
     end
     return false
 end
-
-print("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           WebHook加载好了! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
---[[
-local TweenService = game:GetService("TweenService")
-    local NeonWaterMark = Instance.new("ScreenGui")
-    local TextLabel = Instance.new("TextLabel")
-    local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
-
-
-    NeonWaterMark.Name = "NeonWaterMark"
-    NeonWaterMark.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-    NeonWaterMark.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-    NeonWaterMark.ResetOnSpawn = false
-
-    TextLabel.Parent = NeonWaterMark
-    TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    TextLabel.BackgroundTransparency = 1.000
-    TextLabel.BorderSizePixel = 0
-    TextLabel.Position = UDim2.new(0, 0, 0, 0)
-    TextLabel.Size = UDim2.new(0.2, 0, 0.15, 0)
-    TextLabel.Font = Enum.Font.RobotoMono
-    TextLabel.Text = "冬凌-版本:6.1.0"
-    TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-    TextLabel.TextScaled = true
-    TextLabel.TextSize = 28.000
-    TextLabel.TextWrapped = true
-    TextLabel.TextXAlignment = Enum.TextXAlignment.Left
-
-    
-    UITextSizeConstraint.MaxTextSize = 28
-    UITextSizeConstraint.MinTextSize = 14
-    UITextSizeConstraint.Parent = TextLabel
-
-    
-    local function changeColor()
-        local rainbowColor = Color3.fromHSV(tick() % 5 / 5, 1, 1)
-        local info = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
-        local tween = TweenService:Create(TextLabel, info, {TextColor3 = rainbowColor})
-        tween:Play()
-    end
-        changeColor()
-end
-  ]]
 
 local VU = game:GetService("VirtualUser")
 
