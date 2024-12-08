@@ -37,7 +37,162 @@ Library:Notification({
         Text = "Orion UI库提供者:小云☁️",
         Duration = 6
 })
-
+local ScreenGui = Instance.new("ScreenGui") 
+ ScreenGui.Name = "Credits" 
+ ScreenGui.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui") 
+  
+ local playerGui = game.Players.LocalPlayer.PlayerGui 
+  
+ local health = 100 
+  
+ local healthGui = Instance.new("ScreenGui") 
+ healthGui.Name = "HealthGui" 
+ healthGui.Parent = playerGui 
+  
+ local healthFrame = Instance.new("Frame") 
+ healthFrame.Name = "HealthFrame" 
+ healthFrame.Size = UDim2.new(0, 150, 0, 20) 
+ healthFrame.Position = UDim2.new(1, -170, 0, 20) 
+ healthFrame.BackgroundColor3 = Color3.fromRGB(255, 0, 0) 
+ healthFrame.BorderSizePixel = 0 
+ healthFrame.Parent = healthGui 
+ local healthBar = Instance.new("Frame") 
+ healthBar.Name = "HealthBar" 
+ healthBar.Size = UDim2.new(1, 0, 1, 0) 
+ healthBar.BackgroundColor3 = Color3.fromRGB(255, 249, 74) 
+ healthBar.BorderSizePixel = 0 
+ healthBar.Parent = healthFrame 
+  
+ local function updateHealthGUI() 
+    healthBar.Size = UDim2.new(health / 100, 0, 1, 0) 
+ end 
+  
+ updateHealthGUI() 
+  
+ game.Players.LocalPlayer.Character.Humanoid.HealthChanged:Connect(function(newHealth) 
+    health = newHealth 
+    updateHealthGUI() 
+ end) 
+  
+ local playerGui = game.Players.LocalPlayer.PlayerGui 
+  
+ local fpsGui = Instance.new("ScreenGui") 
+ fpsGui.Name = "FpsGui" 
+ fpsGui.Parent = playerGui 
+  
+ local fpsLabel = Instance.new("TextLabel") 
+ fpsLabel.Name = "FpsLabel" 
+ fpsLabel.Size = UDim2.new(0, 100, 0, 20) 
+ fpsLabel.Position = UDim2.new(0, 20, 0, 20) 
+ fpsLabel.BackgroundColor3 = Color3.new(0, 0, 0) 
+ fpsLabel.TextColor3 = Color3.new(1, 1, 1) 
+ fpsLabel.Font = Enum.Font.SourceSans 
+ fpsLabel.FontSize = Enum.FontSize.Size14 
+ fpsLabel.Text = "帧数: " 
+ fpsLabel.Parent = fpsGui 
+  
+ local lastUpdate = tick() 
+  
+ local fps = 0 
+  
+ local function updateFpsCounter() 
+     local deltaTime = tick() - lastUpdate 
+     lastUpdate = tick() 
+  
+     fps = math.floor(1 / deltaTime) 
+  
+     fpsLabel.Text = "帧数: " .. fps 
+ end 
+  
+ game:GetService("RunService").RenderStepped:Connect(updateFpsCounter) 
+  
+ local ImageLabel = Instance.new("ImageLabel") 
+ ImageLabel.Name = "Image" 
+ ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5) 
+ ImageLabel.Position = UDim2.new(0.5, 0, 0.4, 0) 
+ ImageLabel.Size = UDim2.new(0.2, 0, 0.2, 0) 
+ ImageLabel.Image = "https://rscripts.net/_next/image?url=https%3A%2F%2Ftr.rbxcdn.com%2F180DAY-f74b041a8c0673828dd007ad559b2b3a%2F480%2F270%2FImage%2FJpeg%2FnoFilter&w=640&q=75" 
+ ImageLabel.Parent = ScreenGui 
+ local TextLabel = Instance.new("TextLabel") 
+ TextLabel.Name = "Text" 
+ TextLabel.AnchorPoint = Vector2.new(0.5, 0.5) 
+ TextLabel.Position = UDim2.new(0.5, 0, 0.6, 0) 
+ TextLabel.Size = UDim2.new(0.5, 0, 0.1, 0) 
+ TextLabel.Font = Enum.Font.GothamBold 
+ TextLabel.TextColor3 = Color3.new(1, 1, 1) 
+ TextLabel.TextScaled = true 
+ TextLabel.Text = "秋枫脚本12.8" 
+ TextLabel.Parent = ScreenGui 
+  
+ local function animateCredits() 
+     local TweenService = game:GetService("TweenService") 
+     local imageTween = TweenService:Create(ImageLabel, TweenInfo.new(10, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, 0, -0.2, 0)}) 
+     local textTween = TweenService:Create(TextLabel, TweenInfo.new(10, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, 0, -0.1, 0)}) 
+     imageTween:Play() 
+     textTween:Play() 
+  
+     wait(10) 
+  
+     ImageLabel.Position = UDim2.new(0.5, 0, 0.4, 0) 
+     TextLabel.Position = UDim2.new(0.5, 0, 0.6, 0) 
+     ScreenGui:Destroy() 
+ end 
+  
+ animateCredits() 
+  
+ local creditText = "😘欢迎主人使用 喵～" 
+ local creditDuration = 5 
+  
+ local decalIds = { 
+     5479567228, 
+     5479565074, 
+     5479559610, 
+ } 
+  
+ local decalId = decalIds[math.random(#decalIds)] 
+ local ScreenGui = Instance.new("ScreenGui") 
+ ScreenGui.Name = "NotificationCreditsGui" 
+ ScreenGui.ResetOnSpawn = false 
+ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling 
+ ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui 
+  
+ local Frame = Instance.new("Frame") 
+ Frame.BackgroundTransparency = 1 
+ Frame.BorderSizePixel = 0 
+ Frame.Position = UDim2.new(1, -200, 1, -50) 
+ Frame.Size = UDim2.new(0, 200, 0, 50) 
+ Frame.Parent = ScreenGui 
+  
+ local Decal = Instance.new("Decal") 
+ Decal.Texture = "rbxassetid://16060333448" .. decalId 
+ Decal.Face = Enum.NormalId.Back 
+ Decal.Parent = Frame 
+  
+ local TextLabel = Instance.new("TextLabel") 
+ TextLabel.BackgroundTransparency = 1 
+ TextLabel.Font = Enum.Font.SourceSans 
+ TextLabel.Text = creditText 
+ TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255) 
+ TextLabel.TextSize = 16 
+ TextLabel.Position = UDim2.new(0, 10, 0, 10) 
+ TextLabel.Size = UDim2.new(1, -20, 1, -20) 
+ TextLabel.Parent = Frame 
+  
+ local function animateNotification() 
+     Frame:TweenPosition(UDim2.new(1, -200, 1, -50), Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, 0.5, true) 
+     wait(creditDuration - 1) 
+     Frame:TweenPosition(UDim2.new(1, 0, 1, -50), Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, 0.5, true) 
+     wait(0.5) 
+     ScreenGui:Destroy() 
+ end 
+  
+ animateNotification() 
+ local Notification = loadstring(game:HttpGet("https://api.irisapp.ca/Scripts/IrisBetterNotifications.lua")) 
+ local bindable = Instance.new("BindableFunction") 
+ bindable.OnInvoke = function(button) 
+ print("1") 
+ end 
+  
 loadstring(game:HttpGet('https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua'))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"))() 
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
