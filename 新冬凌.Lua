@@ -4575,4 +4575,28 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/BaconBABA/Admin-Panel
            
       end 
  })
+  local Tab= Window:MakeTab({ 
+         Name = "风险运输", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+   local Section = Tab:AddSection({  
+  
+          Name = "自己汉化的"  
+  
+  })  
+Tab:AddButton({         
+ Name = "复制游戏名",         
+ Callback = function()         
+           setclipboard("Risky Haul")
+           
+      end 
+ })
+ Tab:AddButton({         
+ Name = "汉化脚本",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E9%A3%8E%E9%99%A9%E8%BF%90%E8%BE%93.Lua"))()
+           
+      end 
+ })
  
