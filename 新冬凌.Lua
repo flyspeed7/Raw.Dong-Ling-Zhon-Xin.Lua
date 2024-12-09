@@ -1,6 +1,5 @@
 local o = "秋枫[Beta12.8]"
 local p = "https://raw.githubusercontent.com/flyspeed7/Raw.Main-New.GUI.Lua/refs/heads/main/Raw.Main-Orion.UI.Lua"
-local p = loadstring(game:HttpGet(p,true))()
 print("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           谢谢你使用冬凌中心! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
 
        local sound = Instance.new("Sound") --防 Fluxus 注入器使用,一次不够就三次!
@@ -114,7 +113,7 @@ local ScreenGui = Instance.new("ScreenGui")
  ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5) 
  ImageLabel.Position = UDim2.new(0.5, 0, 0.4, 0) 
  ImageLabel.Size = UDim2.new(0.2, 0, 0.2, 0) 
- ImageLabel.Image = "https://rscripts.net/_next/image?url=https%3A%2F%2Ftr.rbxcdn.com%2F180DAY-f74b041a8c0673828dd007ad559b2b3a%2F480%2F270%2FImage%2FJpeg%2FnoFilter&w=640&q=75" 
+ ImageLabel.Image = "rbxassetid://77380683580754" 
  ImageLabel.Parent = ScreenGui 
  local TextLabel = Instance.new("TextLabel") 
  TextLabel.Name = "Text" 
@@ -198,6 +197,7 @@ local ScreenGui = Instance.new("ScreenGui")
   
 loadstring(game:HttpGet('https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua'))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"))() 
+local p = loadstring(game:HttpGet(p,true))()
 local Window = p:MakeWindow({Name =o, HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
 p:MakeNotification({
       Name = "秋枫脚本.",
