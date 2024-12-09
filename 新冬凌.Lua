@@ -1,3 +1,6 @@
+local o = "秋枫[Beta12.8]"
+local p = "https://raw.githubusercontent.com/flyspeed7/Raw.Main-New.GUI.Lua/refs/heads/main/Raw.Main-Orion.UI.Lua"
+local p = loadstring(game:HttpGet(p,true))()
 print("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           谢谢你使用冬凌中心! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
 
        local sound = Instance.new("Sound") --防 Fluxus 注入器使用,一次不够就三次!
@@ -195,9 +198,8 @@ local ScreenGui = Instance.new("ScreenGui")
   
 loadstring(game:HttpGet('https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua'))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"))() 
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
-local Window = OrionLib:MakeWindow({Name = "秋枫[修复版 | 12.7]", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
-OrionLib:MakeNotification({
+local Window = p:MakeWindow({Name =o, HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
+p:MakeNotification({
       Name = "秋枫脚本.",
       Content = "✅脚本加载完成.",
       Image = "rbxassetid://4483345998",
