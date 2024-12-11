@@ -1,4 +1,8 @@
-local o = "秋枫[Beta12.8]"
+local m = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua"
+local n = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"
+local b = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/UI/%E9%80%9A%E7%9F%A5.Lua"
+local o = "[秋枫12.9]"
+local v = "秋枫脚本 12.9"
 local p = "https://raw.githubusercontent.com/flyspeed7/Raw.Main-New.GUI.Lua/refs/heads/main/Raw.Main-Orion.UI.Lua"
 print("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           谢谢你使用冬凌中心! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
 
@@ -103,7 +107,7 @@ local ScreenGui = Instance.new("ScreenGui")
   
      fps = math.floor(1 / deltaTime) 
   
-     fpsLabel.Text = "帧数: " .. fps 
+     fpsLabel.Text = "FPS: " .. fps 
  end 
   
  game:GetService("RunService").RenderStepped:Connect(updateFpsCounter) 
@@ -123,7 +127,7 @@ local ScreenGui = Instance.new("ScreenGui")
  TextLabel.Font = Enum.Font.GothamBold 
  TextLabel.TextColor3 = Color3.new(1, 1, 1) 
  TextLabel.TextScaled = true 
- TextLabel.Text = "秋枫脚本12.8" 
+ TextLabel.Text = v
  TextLabel.Parent = ScreenGui 
   
  local function animateCredits() 
@@ -195,8 +199,8 @@ local ScreenGui = Instance.new("ScreenGui")
  print("1") 
  end 
   
-loadstring(game:HttpGet('https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua'))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"))() 
+loadstring(game:HttpGet(n,true))()
+loadstring(game:HttpGet(m,true))() 
 local p = loadstring(game:HttpGet(p,true))()
 local Window = p:MakeWindow({Name =o, HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
 p:MakeNotification({
@@ -205,6 +209,7 @@ p:MakeNotification({
       Image = "rbxassetid://4483345998",
       Time = 5
              })
+loadstring(game:HttpGet(b,true))() 
   local about = Window:MakeTab({  
       Name = "信息/公告/设置",  
       Icon = "rbxassetid://7743878358",  
@@ -245,10 +250,11 @@ about:AddLabel("1×1×1×1&Coolkidd&true94(四个Roblox黑客)")
 about:AddLabel("我们团队:NOOB-TEAM       GUI on 2024.12.2 New")
    local Section = about:AddSection({  
   
-          Name = " 更新日志\n 更新所记录的内容"  
+          Name = " 更新日志\n 更新所记录的内容,哪天没写就是没更新"  
   
   })  
 about:AddLabel("12月的内容:                 最多记录20天内的更新")
+about:AddParagraph("12.11日", "通知优化,代码加载/读取优化")
 about:AddParagraph("12.7日", "修复脚本,移除两个脚本,添加修复格蕾丝移除怪物问题")
 about:AddParagraph("12.6日", "名字更改为秋枫脚本 添加寻宝模拟器、格蕾丝两款脚本")
 about:AddParagraph("12.5日", "添加狩猎季节绘制动物,少量添加脚本")
