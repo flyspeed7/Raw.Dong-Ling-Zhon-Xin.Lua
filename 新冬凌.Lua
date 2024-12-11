@@ -1,6 +1,5 @@
 local m = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua"
 local n = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"
-local b = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/UI/%E9%80%9A%E7%9F%A5.Lua"
 local o = "[秋枫12.9]"
 local v = "秋枫脚本 12.9"
 local p = "https://raw.githubusercontent.com/flyspeed7/Raw.Main-New.GUI.Lua/refs/heads/main/Raw.Main-Orion.UI.Lua"
@@ -50,7 +49,7 @@ local ScreenGui = Instance.new("ScreenGui")
  local playerGui = game.Players.LocalPlayer.PlayerGui 
   
  local health = 100 
-  
+ local c = "4.23"
  local healthGui = Instance.new("ScreenGui") 
  healthGui.Name = "HealthGui" 
  healthGui.Parent = playerGui 
@@ -209,7 +208,14 @@ p:MakeNotification({
       Image = "rbxassetid://4483345998",
       Time = 5
              })
-loadstring(game:HttpGet(b,true))() 
+local notification =
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/wrestonbest/My-Scripts/refs/heads/main/Notification/main.lua"))()
+    notification({
+            Title = "加载耗时:",
+            Text = c,
+            Duration = 5
+  })
+
   local about = Window:MakeTab({  
       Name = "信息/公告/设置",  
       Icon = "rbxassetid://7743878358",  
@@ -3499,7 +3505,7 @@ Tab:AddToggle({
  }) 
    local Section = Tab:AddSection({  
   
-          Name = "自制脚本"  
+          Name = "消除鬼物脚本"  
   
   })  
  Tab:AddButton({         
