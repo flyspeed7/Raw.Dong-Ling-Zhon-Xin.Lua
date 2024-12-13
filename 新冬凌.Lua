@@ -1,24 +1,9 @@
 local m = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua"
 local n = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"
-local o = "[秋枫12.9]"
-local v = "秋枫脚本 12.9"
+local o = "[秋枫13]"
+local v = "秋枫脚本13"
 local p = "https://raw.githubusercontent.com/flyspeed7/Raw.Main-New.GUI.Lua/refs/heads/main/Raw.Main-Orion.UI.Lua"
 print("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           谢谢你使用冬凌中心! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
-
-       local sound = Instance.new("Sound") --防 Fluxus 注入器使用,一次不够就三次!
-     sound.SoundId = "rbxassetid://1237557124" 
-     sound.Parent = game.Workspace 
-     sound:Play()
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
-Library.DefaultColor = Color3.fromRGB(255,0,0)
-
-Library:Notification({
-        Text = "新-冬凌中心开发者:琳 和Q3E4",
-        Duration = 6
-})
-
-wait (1.5)
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
 Library.DefaultColor = Color3.fromRGB(255,0,0)
       local sound = Instance.new("Sound") 
@@ -136,7 +121,7 @@ local ScreenGui = Instance.new("ScreenGui")
      imageTween:Play() 
      textTween:Play() 
   
-     wait(10) 
+     wait(5) 
   
      ImageLabel.Position = UDim2.new(0.5, 0, 0.4, 0) 
      TextLabel.Position = UDim2.new(0.5, 0, 0.6, 0) 
@@ -145,7 +130,7 @@ local ScreenGui = Instance.new("ScreenGui")
   
  animateCredits() 
   
- local creditText = "😘欢迎主人使用 喵～" 
+ local creditText = "你好世界" 
  local creditDuration = 5 
   
  local decalIds = { 
@@ -202,12 +187,6 @@ loadstring(game:HttpGet(n,true))()
 loadstring(game:HttpGet(m,true))() 
 local p = loadstring(game:HttpGet(p,true))()
 local Window = p:MakeWindow({Name =o, HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
-p:MakeNotification({
-      Name = "秋枫脚本.",
-      Content = "✅脚本加载完成.",
-      Image = "rbxassetid://4483345998",
-      Time = 5
-             })
 local notification =
         loadstring(game:HttpGet("https://raw.githubusercontent.com/wrestonbest/My-Scripts/refs/heads/main/Notification/main.lua"))()
     notification({
@@ -398,7 +377,12 @@ Tab:AddButton({
            
       end 
  })
- 
+p:MakeNotification({
+      Name = "秋枫脚本.",
+      Content = "✅脚本加载完成.",
+      Image = "rbxassetid://4483345998",
+      Time = 5
+             })
 local chatTab = Window:MakeTab({
 	Name = "聊天绕过",
 	Icon = "rbxassetid://4483345998",
