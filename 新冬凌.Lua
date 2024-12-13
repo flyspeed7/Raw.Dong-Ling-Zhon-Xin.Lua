@@ -187,8 +187,7 @@ loadstring(game:HttpGet(n,true))()
 loadstring(game:HttpGet(m,true))() 
 local p = loadstring(game:HttpGet(p,true))()
 local Window = p:MakeWindow({Name =o, HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
-local notification =
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/wrestonbest/My-Scripts/refs/heads/main/Notification/main.lua"))()
+local notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/wrestonbest/My-Scripts/refs/heads/main/Notification/main.lua"))()
     notification({
             Title = "加载耗时:",
             Text = c,
@@ -377,12 +376,13 @@ Tab:AddButton({
            
       end 
  })
-p:MakeNotification({
-      Name = "秋枫脚本.",
-      Content = "✅脚本加载完成.",
-      Image = "rbxassetid://4483345998",
-      Time = 5
-             })
+local notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/wrestonbest/My-Scripts/refs/heads/main/Notification/main.lua"))()
+    notification({
+            Title = "秋枫加载好了",
+            Text = "你可以使用了",
+            Duration = 20
+  })
+
 local chatTab = Window:MakeTab({
 	Name = "聊天绕过",
 	Icon = "rbxassetid://4483345998",
