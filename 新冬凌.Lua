@@ -3,8 +3,141 @@ local n = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lu
 local o = "[秋枫13]"
 local v = "秋枫脚本13"
 local p = "https://raw.githubusercontent.com/flyspeed7/Raw.Main-New.GUI.Lua/refs/heads/main/Raw.Main-Orion.UI.Lua"
-print("\n ---------------------------------     \n          冬凌中心 Y&F-HUB加载好了! \n           谢谢你使用冬凌中心! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
+local x = "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant"
+
+local aimbotEnabled = false
+local fovEnabled = false
+local fovRadius = 100
+local fovCircle
+local aimbotKey = Enum.KeyCode.E 
+local smoothing = 2 
+local smoothingEnabled = true
+
+local espEnabled = false
+local chamsEnabled = false
+local nameTags = {}
+local highlightInstances = {}
+
+local speedEnabled = false
+local jumpHeight = 50
+
+local function createFovCircle()
+    if fovCircle then fovCircle:Remove() end
+    fovCircle = Drawing.new("Circle")
+    fovCircle.Visible = fovEnabled
+    fovCircle.Color = Color3.fromRGB(255, 255, 255)
+    fovCircle.Thickness = 1
+    fovCircle.Filled = false
+    fovCircle.Radius = fovRadius
+    fovCircle.Position = Vector2.new(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y / 2)
+end
+
+createFovCircle()
+
+local function getTeamColor(player)
+    local team = player.Team
+    if team then
+        return team.Color
+    else
+        return Color3.fromRGB(255, 255, 255) -- Default color for non-teamed players
+    end
+end
+
+local function getClosestPlayer()
+    local closestPlayer = nil
+    local shortestDistance = fovRadius
+
+    for _, player in pairs(game.Players:GetPlayers()) do
+        if player ~= game.Players.LocalPlayer and player.Character and player.Character:FindFirstChild("Head") then
+            local headPosition = player.Character.Head.Position
+            local screenPoint, onScreen = workspace.CurrentCamera:WorldToViewportPoint(headPosition)
+
+            if onScreen then
+                local distance = (Vector2.new(screenPoint.X, screenPoint.Y) - fovCircle.Position).Magnitude
+                if distance < shortestDistance then
+                    shortestDistance = distance
+                    closestPlayer = player
+                end
+            end
+        end
+    end
+    return closestPlayer
+end
+
+local function aimbot()
+    if aimbotEnabled then
+        local target = getClosestPlayer()
+        if target and target.Character and target.Character:FindFirstChild("Head") then
+            local headPosition = target.Character.Head.Position
+            local camera = workspace.CurrentCamera
+            local currentPos = camera.CFrame.Position
+            local targetCFrame = CFrame.new(currentPos, headPosition)
+            if smoothingEnabled then
+                local smoothFactor = smoothing / 5
+                camera.CFrame = CFrame.new(currentPos, currentPos + (headPosition - currentPos).unit * smoothFactor)
+            else
+                camera.CFrame = targetCFrame
+            end
+        end
+    end
+end
+
+game:GetService("RunService").RenderStepped:Connect(aimbot)
+
+local function updateNameTags()
+    for _, tag in pairs(nameTags) do
+        tag:Remove()
+    end
+    nameTags = {}
+
+    if espEnabled then
+        for _, player in pairs(game.Players:GetPlayers()) do
+            if player ~= game.Players.LocalPlayer and player.Character and player.Character:FindFirstChild("Head") then
+                local nameTag = Drawing.new("Text")
+                nameTag.Text = player.Name
+                nameTag.Size = 16
+                nameTag.Center = true
+                nameTag.Outline = true
+                nameTag.Color = getTeamColor(player)
+                local screenPos = workspace.CurrentCamera:WorldToViewportPoint(player.Character.Head.Position)
+                nameTag.Position = Vector2.new(screenPos.X, screenPos.Y - 50) 
+                nameTags[player] = nameTag
+            end
+        end
+    end
+end
+
+local function applyChams()
+    for _, highlight in pairs(highlightInstances) do
+        highlight:Destroy()
+    end
+    highlightInstances = {}
+
+    if chamsEnabled then
+        for _, player in pairs(game.Players:GetPlayers()) do
+            if player.Character and player.Character:FindFirstChild("Head") then
+                local highlight = Instance.new("Highlight")
+                highlight.FillColor = getTeamColor(player)
+                highlight.OutlineTransparency = 0.5
+                highlight.Parent = player.Character
+                highlightInstances[player] = highlight
+            end
+        end
+    end
+end
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    updateNameTags()
+    applyChams()
+end)
+
+print("\n ---------------------------------     \n          冬凌中心 秋枫 加载好了! \n           谢谢你使用冬凌中心! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
+local msg = Instance.new("Message",workspace)
+msg.Text = "✅基本的已加载完成✅"
+wait(2)
+msg:Destroy()
+
+local Library = loadstring(game:HttpGet(x,true))()
 Library.DefaultColor = Color3.fromRGB(255,0,0)
       local sound = Instance.new("Sound") 
      sound.SoundId = "rbxassetid://1237557124" 
@@ -16,7 +149,7 @@ Library:Notification({
         Duration = 6
 })
 wait(1.5)
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant", true))()
+local Library = loadstring(game:HttpGet(x,true))()
 Library.DefaultColor = Color3.fromRGB(255,0,0)
       local sound = Instance.new("Sound") 
      sound.SoundId = "rbxassetid://1237557124" 
@@ -34,7 +167,7 @@ local ScreenGui = Instance.new("ScreenGui")
  local playerGui = game.Players.LocalPlayer.PlayerGui 
   
  local health = 100 
- local c = "4.23"
+ local c = "3.91"
  local healthGui = Instance.new("ScreenGui") 
  healthGui.Name = "HealthGui" 
  healthGui.Parent = playerGui 
@@ -189,7 +322,7 @@ local p = loadstring(game:HttpGet(p,true))()
 local Window = p:MakeWindow({Name =o, HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
 local notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/wrestonbest/My-Scripts/refs/heads/main/Notification/main.lua"))()
     notification({
-            Title = "加载耗时:",
+            Title = "主页加载耗时:",
             Text = c,
             Duration = 5
   })
@@ -238,6 +371,7 @@ about:AddLabel("我们团队:NOOB-TEAM       GUI on 2024.12.2 New")
   
   })  
 about:AddLabel("12月的内容:                 最多记录20天内的更新")
+about:AddParagraph("12.14日", "添加自瞄、通知修复和优化布局")
 about:AddParagraph("12.11日", "通知优化,代码加载/读取优化")
 about:AddParagraph("12.7日", "修复脚本,移除两个脚本,添加修复格蕾丝移除怪物问题")
 about:AddParagraph("12.6日", "名字更改为秋枫脚本 添加寻宝模拟器、格蕾丝两款脚本")
@@ -378,9 +512,9 @@ Tab:AddButton({
  })
 local notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/wrestonbest/My-Scripts/refs/heads/main/Notification/main.lua"))()
     notification({
-            Title = "秋枫加载好了",
-            Text = "你可以使用了",
-            Duration = 20
+            Title = "秋枫窗口加载好了",
+            Text = "正在认证您是否是机器人.....",
+            Duration = 10 
   })
 
 local chatTab = Window:MakeTab({
@@ -1413,9 +1547,13 @@ Tab:AddToggle({
     PremiumOnly = false  
     })  
  
+  Tab:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."") 
+  Tab:AddParagraph("您的名称:",""..game.Players.LocalPlayer.DisplayName.."")  
+  Tab:AddParagraph("您的注入器:"," "..identifyexecutor().."")  
+  Tab:AddParagraph("您当前服务器的ID"," "..game.GameId.."")  
   local Section = Tab:AddSection({  
   
-          Name = "新版本结束 \n 加入快速功能"  
+          Name = "快速功能"  
   
   })  
   Tab:AddSlider({  
@@ -1464,6 +1602,18 @@ Tab:AddToggle({
           end      
   
   })  
+Tab:AddSlider({
+    Name = "视角大小",
+    Min = 70,
+    Max = 200,
+    Default = 70,
+    Color = Color3.fromRGB(127, 251, 111),
+    Increment = 1,
+    Callback = function(Value)
+        workspace.CurrentCamera.FieldOfView = Value
+    end
+})
+about:AddLabel("!半缝合脚本!       秋枫        Powered By:Q3E4")
   local Section = Tab:AddSection({  
   
           Name = "快速功能结束 \n 加入有趣的功能"  
@@ -2140,25 +2290,7 @@ end
   loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Dex%20Explorer.txt"))()  
   end  
   })  
-  local Section = Tab:AddSection({  
   
-          Name = "自瞄"  
-  
-  })  
-   Tab:AddButton({         
- Name = "情云同款",         
- Callback = function()         
-            local fov = 100 local smoothness = 10 local crosshairDistance = 5 local RunService = game:GetService("RunService") local UserInputService = game:GetService("UserInputService") local Players = game:GetService("Players") local Cam = game.Workspace.CurrentCamera local FOVring = Drawing.new("Circle") FOVring.Visible = true FOVring.Thickness = 2 FOVring.Color = Color3.fromRGB(0, 255, 0) FOVring.Filled = false FOVring.Radius = fov FOVring.Position = Cam.ViewportSize / 2 local Player = Players.LocalPlayer local PlayerGui = Player:WaitForChild("PlayerGui") local ScreenGui = Instance.new("ScreenGui") ScreenGui.Name = "FovAdjustGui" ScreenGui.Parent = PlayerGui local Frame = Instance.new("Frame") Frame.Name = "MainFrame" Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30) Frame.BorderColor3 = Color3.fromRGB(128, 0, 128) Frame.BorderSizePixel = 2 Frame.Position = UDim2.new(0.3, 0, 0.3, 0) Frame.Size = UDim2.new(0.4, 0, 0.4, 0) Frame.Active = true Frame.Draggable = true Frame.Parent = ScreenGui local MinimizeButton = Instance.new("TextButton") MinimizeButton.Name = "MinimizeButton" MinimizeButton.Text = "-" MinimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255) MinimizeButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50) MinimizeButton.Position = UDim2.new(0.9, 0, 0, 0) MinimizeButton.Size = UDim2.new(0.1, 0, 0.1, 0) MinimizeButton.Parent = Frame local isMinimized = false MinimizeButton.MouseButton1Click:Connect(function() isMinimized = not isMinimized if isMinimized then Frame:TweenSize(UDim2.new(0.1, 0, 0.1, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.3, true) MinimizeButton.Text = "+" else Frame:TweenSize(UDim2.new(0.4, 0, 0.4, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.3, true) MinimizeButton.Text = "-" end end) local FovLabel = Instance.new("TextLabel") FovLabel.Name = "FovLabel" FovLabel.Text = "自瞄范围" FovLabel.TextColor3 = Color3.fromRGB(255, 255, 255) FovLabel.BackgroundTransparency = 1 FovLabel.Position = UDim2.new(0.1, 0, 0.1, 0) FovLabel.Size = UDim2.new(0.8, 0, 0.2, 0) FovLabel.Parent = Frame local FovSlider = Instance.new("TextBox") FovSlider.Name = "FovSlider" FovSlider.Text = tostring(fov) FovSlider.TextColor3 = Color3.fromRGB(255, 255, 255) FovSlider.BackgroundColor3 = Color3.fromRGB(50, 50, 50) FovSlider.Position = UDim2.new(0.1, 0, 0.3, 0) FovSlider.Size = UDim2.new(0.8, 0, 0.2, 0) FovSlider.Parent = Frame local SmoothnessLabel = Instance.new("TextLabel") SmoothnessLabel.Name = "SmoothnessLabel" SmoothnessLabel.Text = "自瞄平滑度" SmoothnessLabel.TextColor3 = Color3.fromRGB(255, 255, 255) SmoothnessLabel.BackgroundTransparency = 1 SmoothnessLabel.Position = UDim2.new(0.1, 0, 0.5, 0) SmoothnessLabel.Size = UDim2.new(0.8, 0, 0.2, 0) SmoothnessLabel.Parent = Frame local SmoothnessSlider = Instance.new("TextBox") SmoothnessSlider.Name = "SmoothnessSlider" SmoothnessSlider.Text = tostring(smoothness) SmoothnessSlider.TextColor3 = Color3.fromRGB(255, 255, 255) SmoothnessSlider.BackgroundColor3 = Color3.fromRGB(50, 50, 50) SmoothnessSlider.Position = UDim2.new(0.1, 0, 0.7, 0) SmoothnessSlider.Size = UDim2.new(0.8, 0, 0.2, 0) SmoothnessSlider.Parent = Frame local CrosshairDistanceLabel = Instance.new("TextLabel") CrosshairDistanceLabel.Name = "CrosshairDistanceLabel" CrosshairDistanceLabel.Text = "自瞄预判距离" CrosshairDistanceLabel.TextColor3 = Color3.fromRGB(255, 255, 255) CrosshairDistanceLabel.BackgroundTransparency = 1 CrosshairDistanceLabel.Position = UDim2.new(0.1, 0, 0.9, 0) CrosshairDistanceLabel.Size = UDim2.new(0.8, 0, 0.2, 0) CrosshairDistanceLabel.Parent = Frame local CrosshairDistanceSlider = Instance.new("TextBox") CrosshairDistanceSlider.Name = "CrosshairDistanceSlider" CrosshairDistanceSlider.Text = tostring(crosshairDistance) CrosshairDistanceSlider.TextColor3 = Color3.fromRGB(255, 255, 255) CrosshairDistanceSlider.BackgroundColor3 = Color3.fromRGB(50, 50, 50) CrosshairDistanceSlider.Position = UDim2.new(0.1, 0, 1.1, 0) CrosshairDistanceSlider.Size = UDim2.new(0.8, 0, 0.2, 0) CrosshairDistanceSlider.Parent = Frame local targetCFrame = Cam.CFrame local function updateDrawings() local camViewportSize = Cam.ViewportSize FOVring.Position = camViewportSize / 2 FOVring.Radius = fov end local function onKeyDown(input) if input.KeyCode == Enum.KeyCode.Delete then RunService:UnbindFromRenderStep("FOVUpdate") FOVring:Remove() end end UserInputService.InputBegan:Connect(onKeyDown) local function getClosestPlayerInFOV(trg_part) local nearest = nil local last = math.huge local playerMousePos = Cam.ViewportSize / 2 for _, player in ipairs(Players:GetPlayers()) do if player ~= Players.LocalPlayer then local part = player.Character and player.Character:FindFirstChild(trg_part) if part then local ePos, isVisible = Cam:WorldToViewportPoint(part.Position) local distance = (Vector2.new(ePos.x, ePos.y) - playerMousePos).Magnitude if distance < last and isVisible and distance < fov then last = distance nearest = player end end end end return nearest end RunService.RenderStepped:Connect(function() updateDrawings() local closest = getClosestPlayerInFOV("Head") if closest and closest.Character:FindFirstChild("Head") then local targetCharacter = closest.Character local targetHead = targetCharacter.Head local targetRootPart = targetCharacter:FindFirstChild("HumanoidRootPart") local isMoving = targetRootPart.Velocity.Magnitude > 0.1 local targetPosition if isMoving then targetPosition = targetHead.Position + (targetHead.CFrame.LookVector * crosshairDistance) else targetPosition = targetHead.Position end targetCFrame = CFrame.new(Cam.CFrame.Position, targetPosition) else targetCFrame = Cam.CFrame end Cam.CFrame = Cam.CFrame:Lerp(targetCFrame, 1 / smoothness) end) FovSlider.FocusLost:Connect(function(enterPressed, inputThatCausedFocusLoss) if enterPressed then local newFov = tonumber(FovSlider.Text) if newFov then fov = newFov else FovSlider.Text = tostring(fov) end end end) SmoothnessSlider.FocusLost:Connect(function(enterPressed, inputThatCausedFocusLoss) if enterPressed then local newSmoothness = tonumber(SmoothnessSlider.Text) if newSmoothness then smoothness = newSmoothness else SmoothnessSlider.Text = tostring(smoothness) end end end) CrosshairDistanceSlider.FocusLost:Connect(function(enterPressed, inputThatCausedFocusLoss) if enterPressed then local newCrosshairDistance = tonumber(CrosshairDistanceSlider.Text) if newCrosshairDistance then crosshairDistance = newCrosshairDistance else CrosshairDistanceSlider.Text = tostring(crosshairDistance) end end end)
-           
-      end 
- })
-  Tab:AddButton({         
- Name = "林自瞄",         
- Callback = function()         
-           loadstring(game:HttpGet("https://raw.githubusercontent.com/odhdshhe/bu/refs/heads/main/%E6%9C%88%E4%BA%AE%E5%8A%A0%E5%AF%86%E8%BF%87%E7%9A%84%E6%9E%97%E7%9A%84%E8%87%AA%E7%9E%84.lua"))()
-           
-      end 
- })
   local Section = Tab:AddSection({  
   
           Name = "ESP 区(假)"  
@@ -2707,6 +2839,121 @@ EspTab:AddToggle({
     Default = false,
     Callback = function(value)
         toggleBox2D(value)
+    end
+})
+local Tab = Window:MakeTab({
+    Name = "自瞄",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Section = Tab:AddSection({  
+  
+          Name = "自瞄其他脚本"  
+  
+  })  
+   Tab:AddButton({         
+ Name = "情云同款",         
+ Callback = function()         
+            local fov = 100 local smoothness = 10 local crosshairDistance = 5 local RunService = game:GetService("RunService") local UserInputService = game:GetService("UserInputService") local Players = game:GetService("Players") local Cam = game.Workspace.CurrentCamera local FOVring = Drawing.new("Circle") FOVring.Visible = true FOVring.Thickness = 2 FOVring.Color = Color3.fromRGB(0, 255, 0) FOVring.Filled = false FOVring.Radius = fov FOVring.Position = Cam.ViewportSize / 2 local Player = Players.LocalPlayer local PlayerGui = Player:WaitForChild("PlayerGui") local ScreenGui = Instance.new("ScreenGui") ScreenGui.Name = "FovAdjustGui" ScreenGui.Parent = PlayerGui local Frame = Instance.new("Frame") Frame.Name = "MainFrame" Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30) Frame.BorderColor3 = Color3.fromRGB(128, 0, 128) Frame.BorderSizePixel = 2 Frame.Position = UDim2.new(0.3, 0, 0.3, 0) Frame.Size = UDim2.new(0.4, 0, 0.4, 0) Frame.Active = true Frame.Draggable = true Frame.Parent = ScreenGui local MinimizeButton = Instance.new("TextButton") MinimizeButton.Name = "MinimizeButton" MinimizeButton.Text = "-" MinimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255) MinimizeButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50) MinimizeButton.Position = UDim2.new(0.9, 0, 0, 0) MinimizeButton.Size = UDim2.new(0.1, 0, 0.1, 0) MinimizeButton.Parent = Frame local isMinimized = false MinimizeButton.MouseButton1Click:Connect(function() isMinimized = not isMinimized if isMinimized then Frame:TweenSize(UDim2.new(0.1, 0, 0.1, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.3, true) MinimizeButton.Text = "+" else Frame:TweenSize(UDim2.new(0.4, 0, 0.4, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, 0.3, true) MinimizeButton.Text = "-" end end) local FovLabel = Instance.new("TextLabel") FovLabel.Name = "FovLabel" FovLabel.Text = "自瞄范围" FovLabel.TextColor3 = Color3.fromRGB(255, 255, 255) FovLabel.BackgroundTransparency = 1 FovLabel.Position = UDim2.new(0.1, 0, 0.1, 0) FovLabel.Size = UDim2.new(0.8, 0, 0.2, 0) FovLabel.Parent = Frame local FovSlider = Instance.new("TextBox") FovSlider.Name = "FovSlider" FovSlider.Text = tostring(fov) FovSlider.TextColor3 = Color3.fromRGB(255, 255, 255) FovSlider.BackgroundColor3 = Color3.fromRGB(50, 50, 50) FovSlider.Position = UDim2.new(0.1, 0, 0.3, 0) FovSlider.Size = UDim2.new(0.8, 0, 0.2, 0) FovSlider.Parent = Frame local SmoothnessLabel = Instance.new("TextLabel") SmoothnessLabel.Name = "SmoothnessLabel" SmoothnessLabel.Text = "自瞄平滑度" SmoothnessLabel.TextColor3 = Color3.fromRGB(255, 255, 255) SmoothnessLabel.BackgroundTransparency = 1 SmoothnessLabel.Position = UDim2.new(0.1, 0, 0.5, 0) SmoothnessLabel.Size = UDim2.new(0.8, 0, 0.2, 0) SmoothnessLabel.Parent = Frame local SmoothnessSlider = Instance.new("TextBox") SmoothnessSlider.Name = "SmoothnessSlider" SmoothnessSlider.Text = tostring(smoothness) SmoothnessSlider.TextColor3 = Color3.fromRGB(255, 255, 255) SmoothnessSlider.BackgroundColor3 = Color3.fromRGB(50, 50, 50) SmoothnessSlider.Position = UDim2.new(0.1, 0, 0.7, 0) SmoothnessSlider.Size = UDim2.new(0.8, 0, 0.2, 0) SmoothnessSlider.Parent = Frame local CrosshairDistanceLabel = Instance.new("TextLabel") CrosshairDistanceLabel.Name = "CrosshairDistanceLabel" CrosshairDistanceLabel.Text = "自瞄预判距离" CrosshairDistanceLabel.TextColor3 = Color3.fromRGB(255, 255, 255) CrosshairDistanceLabel.BackgroundTransparency = 1 CrosshairDistanceLabel.Position = UDim2.new(0.1, 0, 0.9, 0) CrosshairDistanceLabel.Size = UDim2.new(0.8, 0, 0.2, 0) CrosshairDistanceLabel.Parent = Frame local CrosshairDistanceSlider = Instance.new("TextBox") CrosshairDistanceSlider.Name = "CrosshairDistanceSlider" CrosshairDistanceSlider.Text = tostring(crosshairDistance) CrosshairDistanceSlider.TextColor3 = Color3.fromRGB(255, 255, 255) CrosshairDistanceSlider.BackgroundColor3 = Color3.fromRGB(50, 50, 50) CrosshairDistanceSlider.Position = UDim2.new(0.1, 0, 1.1, 0) CrosshairDistanceSlider.Size = UDim2.new(0.8, 0, 0.2, 0) CrosshairDistanceSlider.Parent = Frame local targetCFrame = Cam.CFrame local function updateDrawings() local camViewportSize = Cam.ViewportSize FOVring.Position = camViewportSize / 2 FOVring.Radius = fov end local function onKeyDown(input) if input.KeyCode == Enum.KeyCode.Delete then RunService:UnbindFromRenderStep("FOVUpdate") FOVring:Remove() end end UserInputService.InputBegan:Connect(onKeyDown) local function getClosestPlayerInFOV(trg_part) local nearest = nil local last = math.huge local playerMousePos = Cam.ViewportSize / 2 for _, player in ipairs(Players:GetPlayers()) do if player ~= Players.LocalPlayer then local part = player.Character and player.Character:FindFirstChild(trg_part) if part then local ePos, isVisible = Cam:WorldToViewportPoint(part.Position) local distance = (Vector2.new(ePos.x, ePos.y) - playerMousePos).Magnitude if distance < last and isVisible and distance < fov then last = distance nearest = player end end end end return nearest end RunService.RenderStepped:Connect(function() updateDrawings() local closest = getClosestPlayerInFOV("Head") if closest and closest.Character:FindFirstChild("Head") then local targetCharacter = closest.Character local targetHead = targetCharacter.Head local targetRootPart = targetCharacter:FindFirstChild("HumanoidRootPart") local isMoving = targetRootPart.Velocity.Magnitude > 0.1 local targetPosition if isMoving then targetPosition = targetHead.Position + (targetHead.CFrame.LookVector * crosshairDistance) else targetPosition = targetHead.Position end targetCFrame = CFrame.new(Cam.CFrame.Position, targetPosition) else targetCFrame = Cam.CFrame end Cam.CFrame = Cam.CFrame:Lerp(targetCFrame, 1 / smoothness) end) FovSlider.FocusLost:Connect(function(enterPressed, inputThatCausedFocusLoss) if enterPressed then local newFov = tonumber(FovSlider.Text) if newFov then fov = newFov else FovSlider.Text = tostring(fov) end end end) SmoothnessSlider.FocusLost:Connect(function(enterPressed, inputThatCausedFocusLoss) if enterPressed then local newSmoothness = tonumber(SmoothnessSlider.Text) if newSmoothness then smoothness = newSmoothness else SmoothnessSlider.Text = tostring(smoothness) end end end) CrosshairDistanceSlider.FocusLost:Connect(function(enterPressed, inputThatCausedFocusLoss) if enterPressed then local newCrosshairDistance = tonumber(CrosshairDistanceSlider.Text) if newCrosshairDistance then crosshairDistance = newCrosshairDistance else CrosshairDistanceSlider.Text = tostring(crosshairDistance) end end end)
+           
+      end 
+ })
+  Tab:AddButton({         
+ Name = "林自瞄",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/odhdshhe/bu/refs/heads/main/%E6%9C%88%E4%BA%AE%E5%8A%A0%E5%AF%86%E8%BF%87%E7%9A%84%E6%9E%97%E7%9A%84%E8%87%AA%E7%9E%84.lua"))()
+           
+      end 
+ })
+  
+   local Section = Tab:AddSection({  
+  
+          Name = "内置脚本"  
+  
+  })  
+Tab:AddToggle({
+    Name = "开/关 自瞄",
+    Default = false,
+    Callback = function(Value)
+        aimbotEnabled = Value
+    end
+})
+
+Tab:AddToggle({
+    Name = "显示自瞄圈圈",
+    Default = false,
+    Callback = function(Value)
+        fovEnabled = Value
+        fovCircle.Visible = fovEnabled
+    end
+})
+
+Tab:AddSlider({
+    Name = "自瞄大小",
+    Min = 50,
+    Max = 300,
+    Default = 100,
+    Color = Color3.fromRGB(255, 255, 255),
+    Increment = 1,
+    Callback = function(Value)
+        fovRadius = Value
+        fovCircle.Radius = fovRadius
+    end
+})
+
+Tab:AddBind({
+    Name = "自瞄热键",
+    Default = aimbotKey,
+    Hold = false,
+    Callback = function()
+        aimbotEnabled = not aimbotEnabled
+    end
+})
+
+Tab:AddToggle({
+    Name = "开/关 平滑",
+    Default = true,
+    Callback = function(Value)
+        smoothingEnabled = Value
+    end
+})
+
+Tab:AddSlider({
+    Name = "平滑",
+    Min = 1,
+    Max = 10,
+    Default = smoothing,
+    Color = Color3.fromRGB(255, 255, 255),
+    Increment = 1,
+    Callback = function(Value)
+        smoothing = Value
+    end
+})
+
+Tab:AddToggle({
+    Name = "显示人物",
+    Default = false,
+    Callback = function(Value)
+        espEnabled = Value
+    end    
+})
+
+Tab:AddToggle({
+    Name = "开/关",
+    Default = false,
+    Callback = function(Value)
+        chamsEnabled = Value
+    end
+})
+Tab:AddSlider({
+    Name = "视角大小(可能导致自瞄错位)",
+    Min = 70,
+    Max = 200,
+    Default = 70,
+    Color = Color3.fromRGB(255, 255, 255),
+    Increment = 1,
+    Callback = function(Value)
+        workspace.CurrentCamera.FieldOfView = Value
     end
 })
 
