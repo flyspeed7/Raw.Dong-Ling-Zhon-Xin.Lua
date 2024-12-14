@@ -1613,7 +1613,7 @@ Tab:AddSlider({
         workspace.CurrentCamera.FieldOfView = Value
     end
 })
-about:AddLabel("!半缝合脚本!       秋枫        Powered By:Q3E4")
+Tab:AddLabel("!半缝合脚本!       秋枫        Powered By:Q3E4")
   local Section = Tab:AddSection({  
   
           Name = "快速功能结束 \n 加入有趣的功能"  
@@ -2767,7 +2767,7 @@ end)
 Players.PlayerRemoving:Connect(onPlayerRemoving)
 
 local EspTab = Window:MakeTab({
-    Name = "绘制页面",
+    Name = "Esp",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -2841,11 +2841,11 @@ EspTab:AddToggle({
         toggleBox2D(value)
     end
 })
-local Tab = Window:MakeTab({
-    Name = "自瞄",
-    Icon = "rbxassetid://4483345998",
-    PremiumOnly = false
-})
+  local Tab= Window:MakeTab({ 
+         Name = "Aimbot", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
 local Section = Tab:AddSection({  
   
           Name = "自瞄其他脚本"  
