@@ -2,7 +2,7 @@ local m = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lu
 local n = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"
 local o = "[秋枫13]"
 local v = "秋枫脚本13"
-local p = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/UI/Raw.Main-Orion.UI.Lua"
+local p = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"
 local x = "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant"
 
 local aimbotEnabled = false
