@@ -1,54 +1,3 @@
-local ScreenGui1 = Instance.new("ScreenGui")
-local TextLabel3 = Instance.new("TextLabel")
-local ScreenGui2 = Instance.new("ScreenGui")
-local TextLabel3 = Instance.new("TextLabel")
-local ScreenGui3 = Instance.new("ScreenGui")
-local TextLabel4 = Instance.new("TextLabel")
-
-ScreenGui1.Parent = game.CoreGui
-ScreenGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-TextLabel3.Name = "TextLabel3"
-TextLabel3.Parent = ScreenGui2
-TextLabel3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel3.BackgroundTransparency = 1.000
-TextLabel3.Position = UDim2.new(-1.448, 0,0.255, 0)
-TextLabel3.Size = UDim2.new(0.51219511, 0, 0.28553617, 0)
-TextLabel3.Font = Enum.Font.SourceSans
-TextLabel3.Text = "欢迎使用秋枫"
-TextLabel3.TextColor3 = Color3.fromRGB(255, 0, 0)
-TextLabel3.TextScaled = true
-TextLabel3.TextSize = 14.000
-TextLabel3.TextWrapped = true
-
-ScreenGui3.Name = "ScreenGui3"
-ScreenGui3.Parent = game.CoreGui
-ScreenGui3.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-TextLabel4.Name = "TextLabel3"
-TextLabel4.Parent = ScreenGui2
-TextLabel4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel4.BackgroundTransparency = 1.000
-TextLabel4.Position = UDim2.new(-1.448, 0,0.255, 0)
-TextLabel4.Size = UDim2.new(0.51219511, 0, 0.28553617, 0)
-TextLabel4.Font = Enum.Font.SourceSans
-TextLabel4.Text = "正在加载..."
-TextLabel4.TextColor3 = Color3.fromRGB(255, 255, 0)
-TextLabel4.TextScaled = true
-TextLabel4.TextSize = 14.000
-TextLabel4.TextWrapped = true
-
-TextLabel3:TweenPosition(UDim2.new(0.231, 0,0.255, 0), "InOut", "Quad", 1, true)
-wait(2)
-TextLabel3:TweenPosition(UDim2.new(1.526, 0,0.255, 0), "InOut", "Quad", 2, true)
-wait(1)
-TextLabel4:TweenPosition(UDim2.new(0.231, 0,0.255, 0), "InOut", "Quad", 1, true)
-wait(2)
-TextLabel4:TweenPosition(UDim2.new(1.526, 0,0.255, 0), "InOut", "Quad", 1, true)
-wait(2)
-TextLabel3:Destroy()
-TextLabel4:Destroy()
-
 local m = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua"
 local n = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"
 local o = "[秋枫13]"
@@ -375,7 +324,7 @@ local notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/
     notification({
             Title = "主页加载耗时:",
             Text = c,
-            Duration = 5
+            Duration = 2.5
   })
 
   local about = Window:MakeTab({  
@@ -565,7 +514,7 @@ local notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/
     notification({
             Title = "秋枫窗口加载好了",
             Text = "正在认证您是否是机器人.....",
-            Duration = 10 
+            Duration = 5 
   })
 
 local chatTab = Window:MakeTab({
