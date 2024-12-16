@@ -1,3 +1,121 @@
+local ScreenGui1 = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner1 = Instance.new("UICorner")
+local TextLabel1 = Instance.new("TextLabel")
+local UICorner2 = Instance.new("UICorner")
+local TextLabel2 = Instance.new("TextLabel")
+local UICorner3 = Instance.new("UICorner")
+local ImageLabel = Instance.new("ImageLabel")
+local ScreenGui2 = Instance.new("ScreenGui")
+local TextLabel3 = Instance.new("TextLabel")
+local ScreenGui2 = Instance.new("ScreenGui")
+local TextLabel3 = Instance.new("TextLabel")
+local ScreenGui3 = Instance.new("ScreenGui")
+local TextLabel4 = Instance.new("TextLabel")
+local notification = Instance.new("ScreenGui")
+local Popup = Instance.new("Frame")
+local UIListLayout = Instance.new("UIListLayout")
+local notification2 = Instance.new("TextLabel")
+local UIGradient = Instance.new("UIGradient")
+local UICorner = Instance.new("UICorner")
+
+ScreenGui1.Parent = game.CoreGui
+ScreenGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui1
+Frame.BackgroundColor3 = Color3.fromRGB(0,0,0)
+Frame.Position = UDim2.new(-1.448, 0,0.065, 0)
+Frame.Size = UDim2.new(0.275353014, 0, 0.820448875, 0)
+
+UICorner1.CornerRadius = UDim.new(0, 30)
+UICorner1.Parent = Frame
+
+TextLabel1.Parent = Frame
+TextLabel1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel1.BackgroundTransparency = 0
+TextLabel1.Size = UDim2.new(1, 0, 0.705167174, 0)
+TextLabel1.Font = Enum.Font.Michroma
+TextLabel1.Text = ""
+TextLabel1.TextColor3 = Color3.fromRGB(0, 255, 255)
+TextLabel1.TextScaled = true
+TextLabel1.TextSize = 14.000
+TextLabel1.TextWrapped = true
+
+UICorner2.CornerRadius = UDim.new(0, 30)
+UICorner2.Parent = TextLabel1
+
+TextLabel2.Parent = Frame
+TextLabel2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel2.BackgroundTransparency = 1.000
+TextLabel2.Position = UDim2.new(0, 0, 0.705167174, 0)
+TextLabel2.Size = UDim2.new(1, 0, 0.294832826, 0)
+TextLabel2.Font = Enum.Font.Michroma
+TextLabel2.Text = ""
+TextLabel2.TextColor3 = Color3.fromRGB(255, 255, 0)
+TextLabel2.TextScaled = true
+TextLabel2.TextSize = 14.000
+TextLabel2.TextWrapped = true
+
+UICorner3.CornerRadius = UDim.new(0, 30)
+UICorner3.Parent = TextLabel2
+
+ImageLabel.Parent = Frame
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 0
+ImageLabel.Position = UDim2.new(0.0842586756, 0, 0.408814579, 0)
+ImageLabel.Size = UDim2.new(0.703620017, 0, 0.227963522, 0)
+ImageLabel.Image = ""
+
+ScreenGui2.Name = "ScreenGui2"
+ScreenGui2.Parent = game.CoreGui
+ScreenGui2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextLabel3.Name = "TextLabel3"
+TextLabel3.Parent = ScreenGui2
+TextLabel3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel3.BackgroundTransparency = 1.000
+TextLabel3.Position = UDim2.new(-1.448, 0,0.255, 0)
+TextLabel3.Size = UDim2.new(0.51219511, 0, 0.28553617, 0)
+TextLabel3.Font = Enum.Font.SourceSans
+TextLabel3.Text = "欢迎使用秋枫"
+TextLabel3.TextColor3 = Color3.fromRGB(255, 0, 0)
+TextLabel3.TextScaled = true
+TextLabel3.TextSize = 14.000
+TextLabel3.TextWrapped = true
+
+ScreenGui3.Name = "ScreenGui3"
+ScreenGui3.Parent = game.CoreGui
+ScreenGui3.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextLabel4.Name = "TextLabel3"
+TextLabel4.Parent = ScreenGui2
+TextLabel4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel4.BackgroundTransparency = 1.000
+TextLabel4.Position = UDim2.new(-1.448, 0,0.255, 0)
+TextLabel4.Size = UDim2.new(0.51219511, 0, 0.28553617, 0)
+TextLabel4.Font = Enum.Font.SourceSans
+TextLabel4.Text = "正在加载..."
+TextLabel4.TextColor3 = Color3.fromRGB(255, 255, 0)
+TextLabel4.TextScaled = true
+TextLabel4.TextSize = 14.000
+TextLabel4.TextWrapped = true
+
+Frame:TweenPosition(UDim2.new(0.367, 0,0.065, 0), "InOut", "Quad", 1, true)
+wait(5)
+Frame:TweenPosition(UDim2.new(1.526, 0,0.065, 0), "InOut", "Quad", 1, true)
+wait(1)
+TextLabel3:TweenPosition(UDim2.new(0.231, 0,0.255, 0), "InOut", "Quad", 1, true)
+wait(2)
+TextLabel3:TweenPosition(UDim2.new(1.526, 0,0.255, 0), "InOut", "Quad", 2, true)
+wait(1)
+TextLabel4:TweenPosition(UDim2.new(0.231, 0,0.255, 0), "InOut", "Quad", 1, true)
+wait(2)
+TextLabel4:TweenPosition(UDim2.new(1.526, 0,0.255, 0), "InOut", "Quad", 1, true)
+wait(2)
+Frame:Destroy()
+TextLabel3:Destroy()
+TextLabel4:Destroy()
+
 local m = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua"
 local n = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"
 local o = "[秋枫13]"
