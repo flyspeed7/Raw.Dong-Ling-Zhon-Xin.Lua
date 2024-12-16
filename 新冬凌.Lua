@@ -5,6 +5,27 @@ local v = "秋枫脚本13"
 local p = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"
 local x = "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant"
 
+while true do
+    local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+local touchGui = playerGui:WaitForChild("TouchGui")
+local touchFrame = touchGui:WaitForChild("TouchControlFrame")
+local jumpButton = touchFrame:WaitForChild("JumpButton")
+
+
+jumpButton.Size = UDim2.new(0.121, 0, 0.3, 0) -- Increased size for a more prominent circle
+jumpButton.Position = UDim2.new(1, -165, 1, -140)
+
+
+local uiCorner = Instance.new("UICorner")
+uiCorner.CornerRadius = UDim.new(1, 0)
+uiCorner.Parent = jumpButton
+
+    task.wait()
+end
+
 local aimbotEnabled = false
 local fovEnabled = false
 local fovRadius = 100
