@@ -315,9 +315,9 @@ local ScreenGui = Instance.new("ScreenGui")
  end 
   
 loadstring(game:HttpGet(n,true))()
-local p = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/UI/Raw.Main-Orion.UI.Lua"))()
-local Window = p:MakeWindow({Name =o, HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
-p:MakeNotification({
+local A = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/UI/Raw.Main-Orion.UI.Lua"))()
+local Window = A:MakeWindow({Name =o, HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
+A:MakeNotification({
       Name = "秋枫脚本.",
       Content = "✅脚本加载完成.",
       Image = "rbxassetid://4483345998",
