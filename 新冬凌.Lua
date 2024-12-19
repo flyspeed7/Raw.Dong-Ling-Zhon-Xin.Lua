@@ -334,7 +334,9 @@ A:MakeNotification({
   about:AddButton({	
 Name = "断开Orion连接",	
 Callback = function()	
+
   	OrionLib:Destroy()
+
      end
 })
 about:AddButton({
@@ -349,7 +351,6 @@ local Section = about:AddSection({
 about:AddLabel("   秋枫      半缝合脚本")
   about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."") 
   about:AddParagraph("您的名称:",""..game.Players.LocalPlayer.DisplayName.."")  
-  about:AddParagraph("您的用户ID", "".. LocalPlayer.UserId .."")
   about:AddParagraph("您的注入器:"," "..identifyexecutor().."")  
   about:AddParagraph("您当前服务器的ID"," "..game.GameId.."")  
    local Section = about:AddSection({  
@@ -512,7 +513,7 @@ local notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/
     notification({
             Title = "秋枫窗口加载好了",
             Text = "正在认证您是否是机器人.....",
-            Duration = 5 
+            Duration = 2.5 
   })
 
 local chatTab = Window:MakeTab({
