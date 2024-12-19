@@ -1,8 +1,8 @@
 local m = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua"
 local n = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"
-local o = "[秋枫13]"
-local v = "秋枫脚本13"
-local p = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"
+local o = "[秋枫13.2]"
+local v = "秋枫脚本13.2"
+local p = "https://raw.githubusercontent.com/flyspeed7/XiaoLing-UwU/refs/heads/main/Raw.Main-Orion.UI.Lua"
 local x = "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant"
 
 local aimbotEnabled = false
@@ -320,13 +320,12 @@ loadstring(game:HttpGet(n,true))()
 loadstring(game:HttpGet(m,true))() 
 local p = loadstring(game:HttpGet(p,true))()
 local Window = p:MakeWindow({Name =o, HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
-local notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/wrestonbest/My-Scripts/refs/heads/main/Notification/main.lua"))()
-    notification({
-            Title = "主页加载耗时:",
-            Text = c,
-            Duration = 2.5
-  })
-
+p:MakeNotification({
+      Name = "秋枫脚本.",
+      Content = "✅脚本加载完成.",
+      Image = "rbxassetid://4483345998",
+      Time = 5
+             })
   local about = Window:MakeTab({  
       Name = "信息/公告/设置",  
       Icon = "rbxassetid://7743878358",  
@@ -353,6 +352,7 @@ local Section = about:AddSection({
 about:AddLabel("   秋枫      半缝合脚本")
   about:AddParagraph("您的用户名:"," "..game.Players.LocalPlayer.Name.."") 
   about:AddParagraph("您的名称:",""..game.Players.LocalPlayer.DisplayName.."")  
+  about:AddParagraph("您的用户ID", "".. LocalPlayer.UserId .."")
   about:AddParagraph("您的注入器:"," "..identifyexecutor().."")  
   about:AddParagraph("您当前服务器的ID"," "..game.GameId.."")  
    local Section = about:AddSection({  
@@ -371,6 +371,7 @@ about:AddLabel("我们团队:NOOB-TEAM       GUI on 2024.12.2 New")
   
   })  
 about:AddLabel("12月的内容:                 最多记录20天内的更新")
+about:AddParagraph("12.19日", "添加搜索栏,重置通知")
 about:AddParagraph("12.14日", "添加自瞄、通知修复和优化布局")
 about:AddParagraph("12.11日", "通知优化,代码加载/读取优化")
 about:AddParagraph("12.7日", "修复脚本,移除两个脚本,添加修复格蕾丝移除怪物问题")
