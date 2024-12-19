@@ -1,4 +1,3 @@
---local m = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Robot-load%E2%9C%94.Lua"
 local n = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"
 local o = "[秋枫13.2]"
 local v = "秋枫脚本13.2"
@@ -316,7 +315,6 @@ local ScreenGui = Instance.new("ScreenGui")
  end 
   
 loadstring(game:HttpGet(n,true))()
-loadstring(game:HttpGet(m,true))() 
 local p = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/XiaoLing-UwU/refs/heads/main/Raw.Main-Orion.UI.Lua"))()
 local Window = p:MakeWindow({Name =o, HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
 p:MakeNotification({
