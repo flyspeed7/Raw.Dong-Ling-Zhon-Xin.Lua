@@ -1,11 +1,3 @@
---[[
-语法:Luau or Lua.
-字体:英文粗写.
-透明度:1(可更改).
-请加密该 OrionUI!
-源码泄露/泛滥不关我事.
-定制:Q3E4/LIN or 1211373508.
-]]--
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
@@ -20,12 +12,12 @@ local OrionLib = {
         Flags = {},
         Themes = {
                 Default = {
-                        Main = Color3.fromRGB(0, 0, 0),
-                        Second = Color3.fromRGB(0, 0, 0),
-                        Stroke = Color3.fromRGB(255, 255, 255),
-                        Divider = Color3.fromRGB(255, 255, 255),
+                        Main = Color3.fromRGB(255, 255, 255),
+                        Second = Color3.fromRGB(255, 255, 255),
+                        Stroke = Color3.fromRGB(0, 0, 0),
+                        Divider = Color3.fromRGB(0, 0, 0),
                         Text = Color3.fromRGB(255, 255, 0),
-                        TextDark = Color3.fromRGB(255, 255, 0)
+                        TextDark = Color3.fromRGB(255, 255, 150)
                 }
         },
         SelectedTheme = "Default",
@@ -33,7 +25,6 @@ local OrionLib = {
         SaveCfg = false
 }
 
---Feather Icons https://github.com/evoincorp/lucideblox/tree/master/src/modules/util - Created by 7kayoh
 local Icons = {}
 
 local Success, Response = pcall(function()
@@ -281,7 +272,7 @@ end)
 
 CreateElement("TFrame", function()
         local TFrame = Create("Frame", {
-                BackgroundTransparency = 0.5
+                BackgroundTransparency = 1
         })
         return TFrame
 end)
@@ -310,7 +301,7 @@ CreateElement("Button", function()
         local Button = Create("TextButton", {
                 Text = "",
                 AutoButtonColor = false,
-                BackgroundTransparency = 0.5,
+                BackgroundTransparency = 1,
                 BorderSizePixel = 0
         })
         return Button
@@ -318,7 +309,7 @@ end)
 
 CreateElement("ScrollFrame", function(Color, Width)
         local ScrollFrame = Create("ScrollingFrame", {
-                BackgroundTransparency = 0.5,
+                BackgroundTransparency = 1,
                 MidImage = "rbxassetid://7445543667",
                 BottomImage = "rbxassetid://7445543667",
                 TopImage = "rbxassetid://7445543667",
@@ -333,7 +324,7 @@ end)
 CreateElement("Image", function(ImageID)
         local ImageNew = Create("ImageLabel", {
                 Image = ImageID,
-                BackgroundTransparency = 0.5
+                BackgroundTransparency = 1
         })
 
         if GetIcon(ImageID) ~= nil then
@@ -346,7 +337,7 @@ end)
 CreateElement("ImageButton", function(ImageID)
         local Image = Create("ImageButton", {
                 Image = ImageID,
-                BackgroundTransparency = 0.5
+                BackgroundTransparency = 1
         })
         return Image
 end)
@@ -359,7 +350,7 @@ CreateElement("Label", function(Text, TextSize, Transparency)
                 TextSize = TextSize or 15,
                 Font = Enum.Font.FredokaOne,
                 RichText = true,
-                BackgroundTransparency = 0.5,
+                BackgroundTransparency = 1,
                 TextXAlignment = Enum.TextXAlignment.Left
         })
         return Label
@@ -396,7 +387,7 @@ function OrionLib:MakeNotification(NotificationConfig)
                         Parent = NotificationParent, 
                         Size = UDim2.new(1, 0, 0, 0),
                         Position = UDim2.new(1, -55, 0, 0),
-                        BackgroundTransparency = 0.5,
+                        BackgroundTransparency = 0,
                         AutomaticSize = Enum.AutomaticSize.Y
                 }), {
                         MakeElement("Stroke", Color3.fromRGB(93, 93, 93), 1.2),
@@ -418,18 +409,18 @@ function OrionLib:MakeNotification(NotificationConfig)
                                 Font = Enum.Font.FredokaOne,
                                 Name = "Content",
                                 AutomaticSize = Enum.AutomaticSize.Y,
-                                TextColor3 = Color3.fromRGB(255, 255, 0),
+                                TextColor3 = Color3.fromRGB(200, 200, 200),
                                 TextWrapped = true
                         })
                 })
                 TweenService:Create(NotificationFrame, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Position = UDim2.new(0, 0, 0, 0)}):Play()
                 wait(NotificationConfig.Time - 0.88)
-                TweenService:Create(NotificationFrame.Icon, TweenInfo.new(0.1, Enum.EasingStyle.Quint), {ImageTransparency = 0.1}):Play()
-                TweenService:Create(NotificationFrame, TweenInfo.new(0.8, Enum.EasingStyle.Quint), {BackgroundTransparency = 0.1}):Play()
+                TweenService:Create(NotificationFrame.Icon, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {ImageTransparency = 1}):Play()
+                TweenService:Create(NotificationFrame, TweenInfo.new(0.8, Enum.EasingStyle.Quint), {BackgroundTransparency = 0.6}):Play()
                 wait(0.3)
-                TweenService:Create(NotificationFrame.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 0.1}):Play()
-                TweenService:Create(NotificationFrame.Title, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {TextTransparency = 0.1}):Play()
-                TweenService:Create(NotificationFrame.Content, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {TextTransparency = 0.1}):Play()
+                TweenService:Create(NotificationFrame.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 0.9}):Play()
+                TweenService:Create(NotificationFrame.Title, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {TextTransparency = 0.4}):Play()
+                TweenService:Create(NotificationFrame.Content, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {TextTransparency = 0.5}):Play()
                 wait(0.05)
                 NotificationFrame:TweenPosition(UDim2.new(1, 20, 0, 0),'In','Quint',0.8,true)
                 wait(1.35)
@@ -452,6 +443,52 @@ function OrionLib:Init()
         end        
 end        
 
+	local Tabs = {};
+
+	if WindowConfig.SearchBar then
+		local SearchBox = Create("TextBox", {
+			Size = UDim2.new(1, 0, 1, 0),
+			BackgroundTransparency = 1,
+			TextColor3 = Color3.fromRGB(255, 255, 0),
+			PlaceholderColor3 = Color3.fromRGB(255,255,255),
+			PlaceholderText = WindowConfig.SearchBar.Default or "搜索🔍",
+			Font = Enum.Font.GothamBold,
+			TextWrapped = true,
+			Text = '',
+			TextXAlignment = Enum.TextXAlignment.Center,
+			TextSize = 14,
+			ClearTextOnFocus = WindowConfig.SearchBar.ClearTextOnFocus or true
+		})
+
+		local TextboxActual = AddThemeObject(SearchBox, "Text")
+
+		local SearchBar = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 1, 6), {
+			Parent = WindowStuff,
+			Size = UDim2.new(0, 130, 0, 24),
+			Position = UDim2.new(1.013, -12, 0.075, 0),
+			AnchorPoint = Vector2.new(1, 0.5)
+		}), {
+			AddThemeObject(MakeElement("Stroke"), "Stroke"),
+			TextboxActual
+		}), "Main")
+
+		local function SearchHandle()
+			local Text = string.lower(SearchBox.Text);
+
+			for i,v in pairs(Tabs) do
+				if v:IsA('TextButton') then
+					if string.find(string.lower(i), Text) then
+						v.Visible = true
+					else
+						v.Visible = false
+					end
+				end
+			end
+		end
+
+		AddConnection(TextboxActual:GetPropertyChangedSignal("Text"), SearchHandle);
+	end
+
 function OrionLib:MakeWindow(WindowConfig)
         local FirstTab = true
         local Minimized = false
@@ -467,7 +504,7 @@ function OrionLib:MakeWindow(WindowConfig)
                 WindowConfig.IntroEnabled = true
         end
         WindowConfig.IntroToggleIcon = WindowConfig.IntroToggleIcon or "rbxassetid://8834748103"
-        WindowConfig.IntroText = WindowConfig.IntroText or "欢迎使用秋枫脚本"
+        WindowConfig.IntroText = WindowConfig.IntroText or "您好"..game.Players.LocalPlayer.DisplayName.."."
         WindowConfig.CloseCallback = WindowConfig.CloseCallback or function() end
         WindowConfig.ShowIcon = WindowConfig.ShowIcon or false
         WindowConfig.Icon = WindowConfig.Icon or "rbxassetid://8834748103"
@@ -481,7 +518,7 @@ function OrionLib:MakeWindow(WindowConfig)
                 end        
         end
 
-        local TabHolder = AddThemeObject(SetChildren(SetProps(MakeElement("ScrollFrame", Color3.fromRGB(255, 255, 0), 4), {
+        local TabHolder = AddThemeObject(SetChildren(SetProps(MakeElement("ScrollFrame", Color3.fromRGB(255, 255, 255), 4), {
                 Size = UDim2.new(1, 0, 1, -50)
         }), {
                 MakeElement("List"),
@@ -495,7 +532,7 @@ function OrionLib:MakeWindow(WindowConfig)
         local CloseBtn = SetChildren(SetProps(MakeElement("Button"), {
                 Size = UDim2.new(0.5, 0, 1, 0),
                 Position = UDim2.new(0.5, 0, 0, 0),
-                BackgroundTransparency = 0.5
+                BackgroundTransparency = 1
         }), {
                 AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://7072725342"), {
                         Position = UDim2.new(0, 9, 0, 6),
@@ -505,7 +542,7 @@ function OrionLib:MakeWindow(WindowConfig)
 
         local MinimizeBtn = SetChildren(SetProps(MakeElement("Button"), {
                 Size = UDim2.new(0.5, 0, 1, 0),
-                BackgroundTransparency = 0.5
+                BackgroundTransparency = 1
         }), {
                 AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://7072719338"), {
                         Position = UDim2.new(0, 9, 0, 6),
@@ -563,13 +600,13 @@ function OrionLib:MakeWindow(WindowConfig)
                                 AddThemeObject(MakeElement("Stroke"), "Stroke"),
                                 MakeElement("Corner", 1)
                         }),
-                        AddThemeObject(SetProps(MakeElement("Label", "Name:"..game.Players.LocalPlayer.DisplayName.."", WindowConfig.HidePremium and 14 or 13), {
+                        AddThemeObject(SetProps(MakeElement("Label", "名字:"..game.Players.LocalPlayer.DisplayName..".", WindowConfig.HidePremium and 14 or 13), {
                                 Size = UDim2.new(1, -60, 0, 13),
                                 Position = WindowConfig.HidePremium and UDim2.new(0, 50, 0, 19) or UDim2.new(0, 50, 0, 12),
                                 Font = Enum.Font.FredokaOne,
                                 ClipsDescendants = true
                         }), "Text"),
-                        AddThemeObject(SetProps(MakeElement("Label", "B&Z-X YYDS!", 12), {
+                        AddThemeObject(SetProps(MakeElement("Label", "秋枫免费版.", 12), {
                                 Size = UDim2.new(1, -60, 0, 12),
                                 Position = UDim2.new(0, 50, 1, -25),
                                 Visible = not WindowConfig.HidePremium
@@ -650,8 +687,8 @@ function OrionLib:MakeWindow(WindowConfig)
                 MobileReopenButton.Visible = true
                 UIHidden = true
                 OrionLib:MakeNotification({
-                        Name = "Orion:库已缩小",
-                        Content = " 点击窗口打开界面! \n UI定制:Q3E4",
+                        Name = "冬凌中心:您的 Orion UI 已缩小",
+                        Content = "点击窗口以打开界面 QAQ",
                         Time = 5
                 })
                 WindowConfig.CloseCallback()
@@ -697,7 +734,7 @@ function OrionLib:MakeWindow(WindowConfig)
                         Position = UDim2.new(0.5, 0, 0.4, 0),
                         Size = UDim2.new(0, 28, 0, 28),
                         ImageColor3 = Color3.fromRGB(255, 255, 255),
-                        ImageTransparency = 0.5
+                        ImageTransparency = 1
                 })
 
                 local LoadSequenceText = SetProps(MakeElement("Label", WindowConfig.IntroText, 14), {
@@ -707,7 +744,7 @@ function OrionLib:MakeWindow(WindowConfig)
                         Position = UDim2.new(0.5, 19, 0.5, 0),
                         TextXAlignment = Enum.TextXAlignment.Center,
                         Font = Enum.Font.FredokaOne,
-                        TextTransparency = 0.5
+                        TextTransparency = 1
                 })
 
                 TweenService:Create(LoadSequenceLogo, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageTransparency = 0, Position = UDim2.new(0.5, 0, 0.5, 0)}):Play()
@@ -804,7 +841,7 @@ function OrionLib:MakeWindow(WindowConfig)
                         function ElementFunction:AddLabel(Text)
                                 local LabelFrame = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 5), {
                                         Size = UDim2.new(1, 0, 0, 30),
-                                        BackgroundTransparency = 0.5,
+                                        BackgroundTransparency = 0.7,
                                         Parent = ItemParent
                                 }), {
                                         AddThemeObject(SetProps(MakeElement("Label", Text, 15), {
@@ -828,7 +865,7 @@ function OrionLib:MakeWindow(WindowConfig)
 
                                 local ParagraphFrame = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 5), {
                                         Size = UDim2.new(1, 0, 0, 30),
-                                        BackgroundTransparency = 0.5,
+                                        BackgroundTransparency = 0.7,
                                         Parent = ItemParent
                                 }), {
                                         AddThemeObject(SetProps(MakeElement("Label", Text, 15), {
@@ -872,7 +909,7 @@ function OrionLib:MakeWindow(WindowConfig)
                                         Size = UDim2.new(1, 0, 1, 0)
                                 })
 
-                                local ButtonFrame = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 0), 0, 5), {
+                                local ButtonFrame = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 5), {
                                         Size = UDim2.new(1, 0, 0, 33),
                                         Parent = ItemParent
                                 }), {
@@ -944,12 +981,12 @@ function OrionLib:MakeWindow(WindowConfig)
                                                 Size = UDim2.new(0, 20, 0, 20),
                                                 AnchorPoint = Vector2.new(0.5, 0.5),
                                                 Position = UDim2.new(0.5, 0, 0.5, 0),
-                                                ImageColor3 = Color3.fromRGB(255, 255, 0),
+                                                ImageColor3 = Color3.fromRGB(255, 255, 255),
                                                 Name = "Ico"
                                         }),
                                 })
 
-                                local ToggleFrame = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 0), 0, 5), {
+                                local ToggleFrame = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 5), {
                                         Size = UDim2.new(1, 0, 0, 38),
                                         Parent = ItemParent
                                 }), {
@@ -1096,7 +1133,7 @@ function OrionLib:MakeWindow(WindowConfig)
                                 DropdownConfig = DropdownConfig or {}
                                 DropdownConfig.Name = DropdownConfig.Name or "Dropdown"
                                 DropdownConfig.Options = DropdownConfig.Options or {}
-                                DropdownConfig.Default = DropdownConfig.Default or "选择"
+                                DropdownConfig.Default = DropdownConfig.Default or ""
                                 DropdownConfig.Callback = DropdownConfig.Callback or function() end
                                 DropdownConfig.Flag = DropdownConfig.Flag or nil
                                 DropdownConfig.Save = DropdownConfig.Save or false
@@ -1181,7 +1218,7 @@ function OrionLib:MakeWindow(WindowConfig)
                                                 }), {
                                                         Parent = DropdownContainer,
                                                         Size = UDim2.new(1, 0, 0, 28),
-                                                        BackgroundTransparency = 0.5,
+                                                        BackgroundTransparency = 1,
                                                         ClipsDescendants = true
                                                 }), "Divider")
 
@@ -1262,7 +1299,7 @@ function OrionLib:MakeWindow(WindowConfig)
                                         Size = UDim2.new(1, 0, 1, 0)
                                 })
 
-                                local BindBox = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 0), 0, 4), {
+                                local BindBox = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 4), {
                                         Size = UDim2.new(0, 24, 0, 24),
                                         Position = UDim2.new(1, -12, 0.5, 0),
                                         AnchorPoint = Vector2.new(1, 0.5)
@@ -1384,7 +1421,7 @@ function OrionLib:MakeWindow(WindowConfig)
                                         BackgroundTransparency = 1,
                                         TextColor3 = Color3.fromRGB(255, 255, 255),
                                         PlaceholderColor3 = Color3.fromRGB(210,210,210),
-                                        PlaceholderText = "输入",
+                                        PlaceholderText = "Input",
                                         Font = Enum.Font.FredokaOne,
                                         TextXAlignment = Enum.TextXAlignment.Center,
                                         TextSize = 14,
@@ -1462,7 +1499,7 @@ function OrionLib:MakeWindow(WindowConfig)
                                         Position = UDim2.new(select(3, Color3.toHSV(Colorpicker.Value))),
                                         ScaleType = Enum.ScaleType.Fit,
                                         AnchorPoint = Vector2.new(0.5, 0.5),
-                                        BackgroundTransparency = 0.5,
+                                        BackgroundTransparency = 1,
                                         Image = "http://www.roblox.com/asset/?id=4805639000"
                                 })
 
@@ -1471,7 +1508,7 @@ function OrionLib:MakeWindow(WindowConfig)
                                         Position = UDim2.new(0.5, 0, 1 - select(1, Color3.toHSV(Colorpicker.Value))),
                                         ScaleType = Enum.ScaleType.Fit,
                                         AnchorPoint = Vector2.new(0.5, 0.5),
-                                        BackgroundTransparency = 0.5,
+                                        BackgroundTransparency = 1,
                                         Image = "http://www.roblox.com/asset/?id=4805639000"
                                 })
 
@@ -1497,7 +1534,7 @@ function OrionLib:MakeWindow(WindowConfig)
                                 local ColorpickerContainer = Create("Frame", {
                                         Position = UDim2.new(0, 0, 0, 32),
                                         Size = UDim2.new(1, 0, 1, -32),
-                                        BackgroundTransparency = 0.5,
+                                        BackgroundTransparency = 1,
                                         ClipsDescendants = true
                                 }, {
                                         Hue,
@@ -1783,7 +1820,7 @@ local Menu_Notifi = Create("Frame", ScreenGui, {
   Size = UDim2.new(0, 300, 1, 0),
   Position = UDim2.new(1, 0, 0, 0),
   AnchorPoint = Vector2.new(1, 0),
-  BackgroundTransparency = 0.5
+  BackgroundTransparency = 1
 })
 
 local Padding = Create("UIPadding", Menu_Notifi, {
@@ -1804,7 +1841,7 @@ function OrionLib:MakeNotifi(Configs)
 
   local Frame1 = Create("Frame", Menu_Notifi, {
     Size = UDim2.new(2, 0, 0, 0),
-    BackgroundTransparency = 0.5,
+    BackgroundTransparency = 1,
     AutomaticSize = "Y",
     Name = "Title"
   })
@@ -1819,7 +1856,7 @@ function OrionLib:MakeNotifi(Configs)
   local TextLabel = Create("TextLabel", Frame2, {
     Size = UDim2.new(1, 0, 0, 25),
     Font = Configs_HUB.Text_Font,
-    BackgroundTransparency = 0.5,
+    BackgroundTransparency = 1,
     Text = Title,
     TextSize = 20,
     Position = UDim2.new(0, 20, 0, 5),
@@ -1831,7 +1868,7 @@ function OrionLib:MakeNotifi(Configs)
     Text = "X",
     Font = Configs_HUB.Text_Font,
     TextSize = 20,
-    BackgroundTransparency = 0.5,
+    BackgroundTransparency = 1,
     TextColor3 = Color3.fromRGB(200, 200, 200),
     Position = UDim2.new(1, -5, 0, 5),
     AnchorPoint = Vector2.new(1, 0),
@@ -1848,7 +1885,7 @@ function OrionLib:MakeNotifi(Configs)
     AutomaticSize = "Y",
     Text = text,
     Font = Configs_HUB.Text_Font,
-    BackgroundTransparency = 0.5,
+    BackgroundTransparency = 1,
     AutomaticSize = Enum.AutomaticSize.Y,
     TextWrapped = true
   })
@@ -1861,7 +1898,7 @@ function OrionLib:MakeNotifi(Configs)
   })Corner(FrameSize)Create("Frame", Frame2, {
     Size = UDim2.new(0, 0, 0, 5),
     Position = UDim2.new(0, 0, 1, 5),
-    BackgroundTransparency = 0.5
+    BackgroundTransparency = 1
   })
 
   task.spawn(function()
@@ -1886,7 +1923,7 @@ function OrionLib:MakeNotifi(Configs)
 end
 
 function OrionLib:Destroy()
-        Orion:Destroy() --[[可以删除,删了没事没事的]]--
+        Orion:Destroy()
 end
 
 return OrionLib
