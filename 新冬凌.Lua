@@ -3,6 +3,41 @@ local o = "[秋枫13.2]"
 local v = "秋枫脚本13.2"
 local x = "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant"
 
+local remoteEvent = game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ClientToServerToClient"):WaitForChild("claimRewardFunction")
+local rebirthEvent = game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ClientToServerToClient"):WaitForChild("rebirthFunction")
+
+local firingCoins = false
+local autoRebirth = false
+
+local function startFiringCoins()
+    firingCoins = true
+    spawn(function()
+        while firingCoins do
+            remoteEvent:InvokeServer("9999999999999999999999999999999999999999999 Coins", 1)
+            wait(0.1)
+        end
+    end)
+end
+
+local function stopFiringCoins()
+    firingCoins = false
+end
+
+local function startAutoRebirth()
+    autoRebirth = true
+    spawn(function()
+        while autoRebirth do
+            rebirthEvent:InvokeServer()
+            wait(0.1)
+        end
+    end)
+end
+
+local function stopAutoRebirth()
+    autoRebirth = false
+end
+
+
 local aimbotEnabled = false
 local fovEnabled = false
 local fovRadius = 100
@@ -4840,6 +4875,58 @@ Tab:AddButton({
  Name = "汉化脚本",         
  Callback = function()         
            loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/%E9%A3%8E%E9%99%A9%E8%BF%90%E8%BE%93.Lua"))()
+           
+      end 
+ })
+
+  local Tab= Window:MakeTab({ 
+         Name = "平滑模拟器", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+   local Section = Tab:AddSection({  
+  
+          Name = "搜英文名"  
+  
+  })  
+ Tab:AddButton({         
+ Name = "复制服务器名字",         
+ Callback = function()         
+          setclipboard("Plane Simulator") 
+           
+      end 
+ })
+ Tab:AddToggle({  
+          Name = "无限金钱",  
+          Default = false,  
+          Callback = function(State)  
+        if State then
+            startFiringCoins()
+        else
+            stopFiringCoins()
+        end
+          end  
+  })  
+  Tab:AddToggle({  
+          Name = "自动重生",  
+          Default = false,  
+          Callback = function(State)  
+        if State then
+            startAutoRebirth()
+        else
+            stopAutoRebirth()
+        end
+          end  
+  })  
+Tab:AddButton({         
+ Name = "获取Best Plane",         
+ Callback = function()         
+                   local player = game:GetService("Players").LocalPlayer
+        local dataFolder = player:FindFirstChild("dataFolder")
+
+        if dataFolder and dataFolder:FindFirstChild("activePlaneId") then
+            dataFolder.activePlaneId.Value = 12
+        end
            
       end 
  })
