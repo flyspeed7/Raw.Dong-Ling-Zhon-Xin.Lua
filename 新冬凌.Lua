@@ -404,6 +404,7 @@ about:AddLabel("我们团队:NOOB-TEAM       GUI on 2024.12.2 New")
   
   })  
 about:AddLabel("12月的内容:                 最多记录20天内的更新")
+about:AddParagraph("12.21日", "添加平滑模拟器+")
 about:AddParagraph("12.19日", "添加搜索栏,重置通知")
 about:AddParagraph("12.14日", "添加自瞄、通知修复和优化布局")
 about:AddParagraph("12.11日", "通知优化,代码加载/读取优化")
