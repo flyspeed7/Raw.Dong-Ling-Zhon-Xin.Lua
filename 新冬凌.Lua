@@ -131,7 +131,7 @@ end)
 
 print("\n ---------------------------------     \n          冬凌中心 秋枫 加载好了! \n           谢谢你使用冬凌中心! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
 local msg = Instance.new("Message",workspace)
-msg.Text = "✅基本的已加载完成✅"
+msg.Text = "一个项目正在制作!"
 wait(2)
 msg:Destroy()
 
