@@ -3,47 +3,6 @@ local o = "[秋枫13.2]"
 local v = "秋枫脚本13.2"
 local x = "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant"
 
-while true do
-    VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Unknown, false, game)
-
-    task.wait(Random.new():NextNumber(15, 120))
-end
-
-local remoteEvent = game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ClientToServerToClient"):WaitForChild("claimRewardFunction")
-local rebirthEvent = game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ClientToServerToClient"):WaitForChild("rebirthFunction")
-
-local firingCoins = false
-local autoRebirth = false
-
-local function startFiringCoins()
-    firingCoins = true
-    spawn(function()
-        while firingCoins do
-            remoteEvent:InvokeServer("9999999999999999999999999999999999999999999 Coins", 1)
-            wait(0.1)
-        end
-    end)
-end
-
-local function stopFiringCoins()
-    firingCoins = false
-end
-
-local function startAutoRebirth()
-    autoRebirth = true
-    spawn(function()
-        while autoRebirth do
-            rebirthEvent:InvokeServer()
-            wait(0.1)
-        end
-    end)
-end
-
-local function stopAutoRebirth()
-    autoRebirth = false
-end
-
-
 local aimbotEnabled = false
 local fovEnabled = false
 local fovRadius = 100
@@ -4903,30 +4862,9 @@ Tab:AddButton({
            
       end 
  })
- Tab:AddToggle({  
-          Name = "无限金钱",  
-          Default = false,  
-          Callback = function(State)  
-        if State then
-            startFiringCoins()
-        else
-            stopFiringCoins()
-        end
-          end  
-  })  
-  Tab:AddToggle({  
-          Name = "自动重生",  
-          Default = false,  
-          Callback = function(State)  
-        if State then
-            startAutoRebirth()
-        else
-            stopAutoRebirth()
-        end
-          end  
-  })  
+
 Tab:AddButton({         
- Name = "获取Best Plane",         
+ Name = "自动刷蓝币",         
  Callback = function()         
                    local player = game:GetService("Players").LocalPlayer
         local dataFolder = player:FindFirstChild("dataFolder")
