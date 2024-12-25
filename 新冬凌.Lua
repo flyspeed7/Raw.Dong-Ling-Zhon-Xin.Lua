@@ -6,7 +6,7 @@
 ]]
 
 local n = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"
-local o = "[秋枫13.5] 你好:"..game.Players.LocalPlayer.DisplayName..""--脚本名字😎
+local o = "[秋枫13.5] 你好:"..game.Players.LocalPlayer.DisplayName..""
 local v = "秋枫脚本13.5"
 local x = "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant"
 
