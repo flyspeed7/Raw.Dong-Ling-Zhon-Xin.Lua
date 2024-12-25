@@ -1,7 +1,18 @@
+--[[
+	永久免费开源项目!
+请您不要分享到QQ群! 否则开户+网暴大礼包!
+
+下面是源码:
+]]
+
 local n = "https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Ping%20Fps.Lua"
-local o = "[秋枫13.2]"
-local v = "秋枫脚本13.2"
+local o = "[秋枫13.5]Ping:".. tostring(math.floor(pingTimeMs)) .. "FPS:".. tostring(math.floor(realFPS))
+local v = "秋枫脚本13.5"
 local x = "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant"
+
+        local pingTimeSec = game.Players.LocalPlayer:GetNetworkPing()
+        local pingTimeMs = pingTimeSec * 1000
+        local realFPS = workspace:GetRealPhysicsFPS()
 
 local aimbotEnabled = false
 local fovEnabled = false
