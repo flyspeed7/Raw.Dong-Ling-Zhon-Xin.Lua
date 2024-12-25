@@ -4875,4 +4875,156 @@ Tab:AddButton({
            
       end 
  })
- 
+  local Tab= Window:MakeTab({ 
+         Name = "军事Vs僵尸2", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+   local Section = Tab:AddSection({  
+  
+          Name = "需要多按几次才可关闭"  
+  
+  })  
+ Tab:AddToggle({  
+          Name = "绘制僵尸",  
+          Default = false,  
+          Callback = function(State)  
+
+local zombies = workspace.All_Zombies
+local cg = game:GetService('CoreGui')
+local pg = game:GetService('Players').LocalPlayer.PlayerGui
+local red = Color3.new(1,0,0)
+local bigger = Vector3.new(0.5,0.5,0.5)
+local green = Color3.new(0,1,0)
+
+zombies.DescendantAdded:Connect(function(v)
+    if v:IsA('Model') and v.Parent.Name == 'Zombies' then
+        wait(2)
+        local a = Instance.new("BoxHandleAdornment", game:GetService('CoreGui'))
+        a.Adornee = v.Head
+        a.AlwaysOnTop = true
+        a.Transparency = 0
+        a.Size = Vector3.new(v.Head.Size.X/2, v.Head.Size.Y, v.Head.Size.Z)
+        a.Color3 = green
+        a.ZIndex = 5
+
+        local b = Instance.new("BoxHandleAdornment", game:GetService('Players').LocalPlayer.PlayerGui)
+        b.Adornee = v.Head
+        b.AlwaysOnTop = false
+        b.ZIndex = 10
+        b.Color3 = red
+        b.Transparency = 0
+        b.Size = Vector3.new(v.Head.Size.X/2, v.Head.Size.Y, v.Head.Size.Z) + bigger
+
+        v.Zombie.Died:Connect(function()
+            a:Destroy()
+            b:Destroy()
+        end)
+
+        for _,j in v:GetChildren() do
+            if j:IsA('Part') and j.Name ~= 'HumanoidRootPart' and j.Name ~= 'Head' then
+                local a = Instance.new("BoxHandleAdornment", game:GetService('Players').LocalPlayer.PlayerGui)
+                a.Adornee = j
+                a.AlwaysOnTop = true
+                a.Transparency = 0
+                a.Size = j.Size
+                a.ZIndex = 1
+
+                local b = Instance.new("BoxHandleAdornment", game:GetService('Players').LocalPlayer.PlayerGui)
+                b.Adornee = j
+                b.AlwaysOnTop = false
+                b.ZIndex = 10
+                b.Color3 = red
+                b.Transparency = 0
+                b.Size = j.Size + bigger
+
+                j.Parent.Zombie.Died:Connect(function()
+                    a:Destroy()
+                    b:Destroy()
+                end)
+            end
+        end
+    end
+end)
+
+for _,v in zombies:GetDescendants() do
+    if v:IsA('Model') and v.Parent.Name == 'Zombies' then
+        if v:FindFirstChild('Head') then
+            local a = Instance.new("BoxHandleAdornment", cg)
+            a.Adornee = v.Head
+            a.AlwaysOnTop = true
+            a.Transparency = 0
+            a.Size = Vector3.new(v.Head.Size.X/2, v.Head.Size.Y, v.Head.Size.Z)
+            a.Color3 = green
+            a.ZIndex = 5
+
+            local b = Instance.new("BoxHandleAdornment", pg)
+            b.Adornee = v.Head
+            b.AlwaysOnTop = false
+            b.ZIndex = 10
+            b.Color3 = red
+            b.Transparency = 0
+            b.Size = Vector3.new(v.Head.Size.X/2, v.Head.Size.Y, v.Head.Size.Z) + bigger
+
+            v.Zombie.Died:Connect(function()
+                a:Destroy()
+                b:Destroy()
+            end)
+        end
+        for _,j in v:GetChildren() do
+            if j:IsA('Part') and j.Name ~= 'HumanoidRootPart' and j.Name ~= 'Head' then
+                local a = Instance.new("BoxHandleAdornment", pg)
+                a.Adornee = j
+                a.AlwaysOnTop = true
+                a.Transparency = 0
+                a.Size = j.Size
+                a.ZIndex = 1
+
+                local b = Instance.new("BoxHandleAdornment", pg)
+                b.Adornee = j
+                b.AlwaysOnTop = false
+                b.ZIndex = 10
+                b.Color3 = red
+                b.Transparency = 0
+                b.Size = j.Size + bigger
+
+                j.Parent.Zombie.Died:Connect(function()
+                    a:Destroy()
+                    b:Destroy()
+                end)
+            end
+        end
+    end
+end
+          end  
+  })  
+  local Tab= Window:MakeTab({ 
+         Name = "制造和销毁武器", 
+         Icon = "rbxassetid://7733779610", 
+         PremiumOnly = false 
+ }) 
+   local Section = Tab:AddSection({  
+  
+          Name = "无限所用:金币 钻石 火"  
+  
+  })
+Tab:AddButton({         
+ Name = "无限东西",         
+ Callback = function()         
+
+local ohNumber1 = math.huge
+
+game:GetService("ReplicatedStorage").Event.Train:FireServer(ohNumber1)
+
+local ohNumber1 = math.huge
+local ohNumber2 = -math.huge
+
+game:GetService("ReplicatedStorage").Event.SellWeapon:FireServer(ohNumber1, ohNumber2)
+
+local ohNumber1 = math.huge
+
+game:GetService("ReplicatedStorage").Event.Train:FireServer(ohNumber1)
+           
+      end 
+ })
+   
