@@ -135,6 +135,10 @@ msg.Text = "一个项目正在制作!"
 wait(2)
 msg:Destroy()
 
+local msg = Instance.new("Message",workspace)
+msg.Text = " 半缝合脚本 \n ui制作:小云 \n 效果:颜色、图标、分页栏.都是自己改的"
+wait(2)
+msg:Destroy()
 local Library = loadstring(game:HttpGet(x,true))()
 Library.DefaultColor = Color3.fromRGB(255,0,0)
       local sound = Instance.new("Sound") 
@@ -369,6 +373,7 @@ about:AddLabel("我们团队:NOOB-TEAM       GUI on 2024.12.2 New")
   
   })  
 about:AddLabel("12月的内容:                 最多记录20天内的更新")
+about:AddParagraph("12.25日", "添加军事vs僵尸2、制造和销毁武器")
 about:AddParagraph("12.21日", "添加平滑模拟器+")
 about:AddParagraph("12.19日", "添加搜索栏,重置通知")
 about:AddParagraph("12.14日", "添加自瞄、通知修复和优化布局")
