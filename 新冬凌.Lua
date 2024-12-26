@@ -384,6 +384,7 @@ about:AddLabel("我们团队:NOOB-TEAM       GUI on 2024.12.2 New")
   
   })  
 about:AddLabel("12月的内容:                 最多记录20天内的更新")
+about:AddParagraph("12.26日", "添加平滑模拟器.") 
 about:AddParagraph("12.25日", "添加军事vs僵尸2、制造和销毁武器")
 about:AddParagraph("12.21日", "添加平滑模拟器+")
 about:AddParagraph("12.19日", "添加搜索栏,重置通知")
@@ -406,6 +407,14 @@ about:AddParagraph("12.1日:", "添加脚本搜索,优化公告页面")
           Name = "我制作的(理论上因该是).\n 我在脚本网站找的脚本我缝合到了一起!"  
   
   })  
+Tab:AddButton({         
+ Name = "平滑模拟器",         
+ Callback = function()         
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/%E8%87%AA%E5%88%B6/Hello"))()
+           
+      end 
+ })
+  
 Tab:AddButton({         
  Name = "Y&F scry hide seek",         
  Callback = function()         
