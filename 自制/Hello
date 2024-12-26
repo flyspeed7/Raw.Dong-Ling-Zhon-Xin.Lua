@@ -1,0 +1,89 @@
+--// 加载脚本内容 \\--
+local remoteEvent = game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ClientToServerToClient"):WaitForChild("claimRewardFunction")
+local rebirthEvent = game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ClientToServerToClient"):WaitForChild("rebirthFunction")
+
+local firingCoins = false
+local autoRebirth = false
+
+local function startFiringCoins()
+    firingCoins = true
+    spawn(function()
+        while firingCoins do
+            remoteEvent:InvokeServer("9999999999999999999999999999999999999999999 Coins", 1)
+            wait(0.1)
+        end
+    end)
+end
+
+local function stopFiringCoins()
+    firingCoins = false
+end
+
+local function startAutoRebirth()
+    autoRebirth = true
+    spawn(function()
+        while autoRebirth do
+            rebirthEvent:InvokeServer()
+            wait(0.1)
+        end
+    end)
+end
+
+local function stopAutoRebirth()
+    autoRebirth = false
+end
+
+--// 加载东西 \\--
+--local r = "rbxassetid://7733965118"--密钥
+local e =  "rbxassetid://7734058260"--列表
+local w = "rbxassetid://7733960981"--主页
+local q = "秋枫 | 平滑模拟器"--脚本名字
+local a = "https://raw.githubusercontent.com/flyspeed7/Raw.Main-New.GUI.Lua/refs/heads/main/%E6%96%B0Ui%E5%85%A8%E6%BA%90.lua"
+--// 直接获取库 \\--
+local a = loadstring(game:HttpGet(a,true))()
+--// 窗口/主页加载 \\--
+local a = a:Window(q)
+local Set = a:Tab("公告",w)
+local Main = a:Tab("主要",e)
+--local Esp = a:Tab("绘制",r)
+--// 加载内容 \\--
+--[[
+Main:Textbox("文本框", false, function(i,v)
+
+end)
+Main:Slider("滑块", 0, 350, 300, function(value)
+   
+end)
+Main:Dropdown("下拉菜单", {"1", "2", "3"}, function()
+    
+end)
+]]
+Set:Dropdown("查看公告", {"脚本ui自己找的", "不是翻别人库的", "是多亏了'25ms'DC社区给的UI!"}, function()
+    
+end)
+Set:Button("销毁ui", function()
+a:Destroy()
+end)
+Main:Button("刷云币", function()
+        local player = game:GetService("Players").LocalPlayer
+        local dataFolder = player:FindFirstChild("dataFolder")
+
+        if dataFolder and dataFolder:FindFirstChild("activePlaneId") then
+            dataFolder.activePlaneId.Value = 12
+        end
+end)
+Main:Toggle("无限云币", false, function(i,v)
+        if toggled then
+            startFiringCoins()
+        else
+            stopFiringCoins()
+        end
+end)
+
+Main:Toggle("自动重生", false, function(toggled)
+        if toggled then
+            startAutoRebirth()
+        else
+            stopAutoRebirth()
+        end
+end)
