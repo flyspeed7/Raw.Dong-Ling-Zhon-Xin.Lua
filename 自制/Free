@@ -1,0 +1,65 @@
+           local rs = game:GetService("ReplicatedStorage")
+local eve = rs:WaitForChild("Events")
+
+local function ir(rempath, ...)
+    local remote = rempath:InvokeServer(...)
+    return remote
+end
+
+local function fr(rempath, ...)
+    rempath:FireServer(...)
+end
+
+--// 加载东西 \\--
+--local r = "rbxassetid://7733965118"--密钥
+local e =  "rbxassetid://7734058260"--列表
+local w = "rbxassetid://7733960981"--主页
+local q = "秋枫 | 平滑模拟器"--脚本名字
+local a = "https://raw.githubusercontent.com/flyspeed7/Raw.Main-New.GUI.Lua/refs/heads/main/%E6%96%B0Ui%E5%85%A8%E6%BA%90.lua"
+--// 直接获取库 \\--
+local a = loadstring(game:HttpGet(a,true))()
+--// 窗口/主页加载 \\--
+local a = a:Window(q)
+local Set = a:Tab("公告",w)
+local Main = a:Tab("主要",e)
+--local Esp = a:Tab("绘制",r)
+--// 加载内容 \\--
+Set:Dropdown("查看公告", {"脚本ui自己找的", "不是翻别人库的", "是多亏了'25ms'DC社区给的UI!"}, function()
+
+end)
+
+Main:Button("获取所有通行证", function()
+    local gprem = eve:WaitForChild("Goods"):WaitForChild("GamePassRE")
+    local gamepasses = {
+        { "Cashier", 28 },
+        { "Quick Check-out", 1 },
+        { "Porter", 5 },
+        { "Quick Pricing" }
+    }
+  
+    for _, args in ipairs(gamepasses) do
+        fr(gprem, unpack(args))
+    end
+end)
+Main:Toggle("无限Q币", false, function(i,v)
+    local goldrem = eve:WaitForChild("Gold"):WaitForChild("ChangeGoldRF")
+    ir(goldrem, "ChangeGold", math.huge, false)
+end)
+
+Main:Toggle("无线XP", false, function(val)
+    local xprem = eve:WaitForChild("Exp"):WaitForChild("ChangeExpRE")
+    local XP = 10000000
+
+    local function start()
+        while val do
+            pcall(function()
+                fr(xprem, XP)
+            end)
+            task.wait(0.1)
+        end
+    end
+
+    if val then
+        task.spawn(start)
+    end
+end)
