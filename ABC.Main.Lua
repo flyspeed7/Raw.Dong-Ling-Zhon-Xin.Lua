@@ -12,7 +12,6 @@ Notification.Notify("️小云的通知库☁️", "谢谢小云!☁️", "rbxas
         Rounding = true,
     }
 })
---loadstring(game:HttpGet(n,true))()
 -------------------------------------------------------------------------------------------------- 
 local A = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
 local Window = A:MakeWindow({Name ="秋枫脚本 | 限时版", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
