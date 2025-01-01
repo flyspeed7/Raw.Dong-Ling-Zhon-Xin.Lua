@@ -28,9 +28,6 @@ Q3E4
 如果我看到你的脚本里有一点点我的元素立马删库、注销,永世不做脚本(¯へ¯)
 并且祝他们妈全部死光光,单身一辈子,全世界孤立他!!!⚠️
 ]]
-
-local o = "秋枫"
-local x = "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Revenant"
 print("\n ---------------------------------     \n          冬凌中心 秋枫 加载…! \n           谢谢你使用冬凌中心! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
 local Notification = loadstring(game:HttpGet("https://api.irisapp.ca/Scripts/IrisBetterNotifications.lua"))()
 Notification.Notify("️秋枫脚本", "正在加载中…(开始计时)", "rbxassetid://10483855823", {
@@ -49,7 +46,7 @@ Notification.Notify("️小云的通知库☁️", "谢谢小云!☁️", "rbxas
 --loadstring(game:HttpGet(n,true))()
 -------------------------------------------------------------------------------------------------- 
 local A = loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Raw.Dong-Ling-Zhon-Xin.Lua/refs/heads/main/Raw.Main-Orion-UI.Lua"))()
-local Window = A:MakeWindow({Name =o, HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
+local Window = A:MakeWindow({Name = "秋枫脚本 | 限时版", HidePremium = false, SaveConfig = true, ConfigFolder = "Orion"})
 A:MakeNotification({
       Name = "秋枫脚本.",
       Content = "✅脚本窗口加载完成.",
