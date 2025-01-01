@@ -1,4 +1,3 @@
-print("\n ---------------------------------     \n          冬凌中心 秋枫 加载…! \n           谢谢你使用冬凌中心! \n          作者QQ:1211373508 QQ名字:Q3E4 \n ---------------------------------")
 local Notification = loadstring(game:HttpGet("https://api.irisapp.ca/Scripts/IrisBetterNotifications.lua"))()
 Notification.Notify("️秋枫脚本", "正在加载中…(开始计时)", "rbxassetid://10483855823", {
     Duration = 5,       
@@ -2592,97 +2591,6 @@ local Section = Tab:AddSection({
           Name = "内置脚本"  
 
   })  
-Tab:AddToggle({
-    Name = "开/关 自瞄",
-    Default = false,
-    Callback = function(Value)
-        aimbotEnabled = Value
-    end
-})
-
-Tab:AddToggle({
-    Name = "显示自瞄圈圈",
-    Default = false,
-    Callback = function(Value)
-        fovEnabled = Value
-        fovCircle.Visible = fovEnabled
-    end
-})
-
-Tab:AddSlider({
-    Name = "自瞄大小",
-    Min = 50,
-    Max = 300,
-    Default = 100,
-    Color = Color3.fromRGB(255, 255, 255),
-    Increment = 1,
-    Callback = function(Value)
-        fovRadius = Value
-        fovCircle.Radius = fovRadius
-    end
-})
-
-Tab:AddBind({
-    Name = "自瞄热键",
-    Default = aimbotKey,
-    Hold = false,
-    Callback = function()
-        aimbotEnabled = not aimbotEnabled
-    end
-})
-
-Tab:AddToggle({
-    Name = "开/关 平滑",
-    Default = true,
-    Callback = function(Value)
-        smoothingEnabled = Value
-    end
-})
-
-Tab:AddSlider({
-    Name = "平滑",
-    Min = 1,
-    Max = 10,
-    Default = smoothing,
-    Color = Color3.fromRGB(255, 255, 255),
-    Increment = 1,
-    Callback = function(Value)
-        smoothing = Value
-    end
-})
-
-Tab:AddToggle({
-    Name = "显示人物",
-    Default = false,
-    Callback = function(Value)
-        espEnabled = Value
-    end    
-})
-
-Tab:AddToggle({
-    Name = "开/关",
-    Default = false,
-    Callback = function(Value)
-        chamsEnabled = Value
-    end
-})
-Tab:AddSlider({
-    Name = "视角大小(可能导致自瞄错位)",
-    Min = 70,
-    Max = 200,
-    Default = 70,
-    Color = Color3.fromRGB(255, 255, 255),
-    Increment = 1,
-    Callback = function(Value)
-        workspace.CurrentCamera.FieldOfView = Value
-    end
-})
-A:MakeNotification({
-	Name = "新 | 自瞄记载好了!",
-	Content = "您可以使用自瞄了",
-	Image = "77380683580754",
-	Time = 5
-})
 
 local Tab = Window:MakeTab({
 	Name = "新 | 自瞄 & 绘制",
